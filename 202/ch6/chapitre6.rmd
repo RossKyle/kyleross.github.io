@@ -1,0 +1,113 @@
+---
+title: "Encapsulation"		
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+Le principe de l'encapsulation est au coeur de la POO et est conséquamment très important. Le principe apporte des solutions aux problèmes soulevés par la programmation purement procédurale ([voir chapitre 4](../ch3/chapitre3.html#le-defaut)).
+
+## Cacher des membres non pertinents
+Les membres d'un objet sont ses données (attributs) et les fonctions (méthodes). Souvent, un objet aura besoin de plusieurs attributs afin de décrire un état, ou de plusieurs méthodes afin de décrire des comportements. Nous pouvons imaginer que ce n’est pas tous les membres qui sont intéressants pour un client de l’objet.
+
+Imaginons un distributeur d’argent automatique dans le vrai monde. Il nous offre plusieurs services, tels que le dépôt et le retrait d’argent, le virement entre comptes, l’affichage des détails du compte, etc.
+Par contre, afin de faire ses traitements, la machine doit manipuler beaucoup plus de données que l’on peut s’attendre ! Si tous les traitements et les données utilisées à faire un simple retrait étaient visibles au client, ça serait beaucoup trop d’informations non pertinentes.
+
+Nous voulons créer une classe `ATM` qui représente un distributeur d’argent automatique. Nous voulons créer une instance de cette classe dans notre `Main` afin d’utiliser ses services. Les services offerts seront le retrait et l’affichage de détails d’un compte.
+Voyons un exemple de données dans la définition de la classe `ATM` :
+
+```
+class ATM
+{
+    //Données
+    //Le temps maximum sans interaction avec l'utilisateur avant de quitter automatiquement l'accès à l'ATM.
+    const double TempsInactifMax = 60;
+    
+    //Le temps inactif courant
+    double tempsInactifCourant;
+ 	 ...
+```
+
+Nous pouvons voir que les deux premières données sont pertinentes pour l’état d’un distributeur automatique, mais elles ne sont pas nécessairement intéressantes pour n’importe qui d’autre (du moins, en ce qui concerne les services que nous voulons offrir : le retrait d’argent et l’affichage de détails).
+Ces données sont alors **privée à la classe, c.-à-d. qu’aucun code client ne peut lire ou modifier ces données**.
+
+Souvent, nous voulons aussi cacher des méthodes.
+
+```
+class ATM
+{
+    //Données
+         ...
+    //Méthodes 
+    void ConnecterAuServeurBancaire();
+    public void Retirer();
+    public void AfficherDétailsCompte();
+         ...
+```
+
+La première fonction n’a pas le mot clé `public` au début de sa signature, ce qui implique qu'elle est privée (souvenons-nous que nos membres sont privés par défaut).
+Pourquoi avoir une fonction inaccessible au code client ?
+
+* C’est possible que la fonction `Retirer()`, qui est accessible au code client, utilise la fonction `ConnecterAuServeurBancaire()` afin de réaliser l’opération de retirement.
+* L’objet est responsable d’elle-même d’appeler la fonction `ConnecterAuServeurBancaire()` lorsqu’elle en a besoin. C’est mieux d’éviter l’occasion de donner au code client quelque chose qui peut « briser » l’objet.
+
+Bref, si nous cachons les attributs et les méthodes d’un objet de quelque chose voulant l’utilisé, nous pouvons mieux nous assurer que l’objet demeure dans un état valide, car elle ne peut pas être modifiée aussi librement.
+
+Une montre traditionnelle offre deux services : afficher l’heure et changer l’heure. Imaginons si tous les composants de la montre étaient accessibles facilement. Il serait sans doute plus facile de briser la montre si donnée à un usager qui ne connait pas complètement l’anatomie et la mécanique d’une montre. L’idée de rendre visible seulement de l’extérieur ce qui est voulu s’appelle l’encapsulation. Ça rend nos objets à la fois plus faciles d’utilisation et plus autonome. Nous pouvons cacher sous le capot toute la complexité d’un objet afin d’en offrir une utilisation simple.
+
+## Interface publique
+Si un objet ne fournit pas une façon de le traiter, il est inutilisable. Nous allons alors définir des méthodes publiques qui pourront être appelées par l’utilisateur de la classe. L’ensemble de ces méthodes publiques forme ce qu’on appellera l’**interface publique**. Les traitements qui révèlent de la gestion interne de l’objet doivent rester privés, puisqu’il n’est pas souhaitable qu’ils soient utilisés de l’extérieur de l’objet. 
+
+Pour contrôler la modification et la lecture d'**attributs** d’un objet, nous allons utiliser les `mutateurs` et `accesseurs`.
+
+## Mutateurs
+Un mutateur est une **méthode** qui permet de modifier la valeur d’un attribut de l’objet. Un mutateur change l'état courant d'une instance, comme le terme implique.
+
+Habituellement, nous centraliserons dans le mutateur le processus de validation pour l’attribut qui lui est associé. **À chaque fois que nous souhaiterons modifier un attribut, nous devrions utiliser son mutateur**. Ceci est déjà une grosse différence avec la validation décentralisée du paradigme procédural.
+
+#### Mutateurs publics
+Un mutateur qui est `public` permet à n'importe quel client de modifier un attribut d'un objet, mais il **ne permet pas nécessairement de le modifier n'importe comment**. Ceci peut garantir l'intégrité d'un objet.
+
+Voyons la syntaxe traditionnelle pour écrire un mutateur. Commençons avec les conventions pour la déclaration de la méthode :
+
+* le nom commence par _Set_ et termine par le nom de l'attribut à modifier
+* le type de retour est `void`
+* la méthode prend qu'un seul paramètre et celui-ci est du type de l'attribut qu'elle permettra de modifier
+
+Dans la définition de la fonction, **il faut absolument affecter un attribut**, car affecter un attribut est ce qui modifie l'état d'un objet. Si une méthode ne modifie pas un attribut, elle n'est pas un mutateur. Les développeurs s'attendent qu'un mutateur change qu'un seul attribut et n'emporte pas d'effets de bord cachés et couteuses. Ces méthodes doivent, alors, demeurer simple et respecter la seule tâche qu'elles sont attendues de faire.
+
+Les *attributs doivent toujours être privés* pour garantir l'état valide d'un objet. Si un client veut modifier un objet, il doit passer par les mutateurs offerts par l'interface publique. Ceci permet de laisser un client modifier seulement ce qui pourrait lui être pertinent, en plus de lui forcer à passer par une fonction qui peut contenir de la logique de validation. Ceci est le pouvoir du principe d'encapsulation.
+
+Voici un exemple utilisant des mutateurs publics. Notez comment le constructeur a changé pour utiliser les nouvelles méthodes. Notez également la stratégie utilisée pour gérer des tentatives de mutations considérées invalides.
+
+<iframe width="100%" height="1000" src="https://dotnetfiddle.net/Widget/c75VEX" frameborder="0"></iframe>
+
+#### Mutateurs privés
+Souvent, par contre, un attribut n'a pas besoin d'être modifiable directement par un client. Par exemple, un client pourrait appeler un service d'un objet qui modifie, sous le capot, l'état de l'instance.
+
+Supposons la classe `Rectangle`, mais avec des mutateurs privés :
+
+La méthode `RandomiserDimensions()` permet à un client de modifier indirectement les attributs d'un rectangle. Le rectangle reçoit la demande d'un service et gère le reste lui-même ; il contrôle son propre état.
+
+<iframe width="100%" height="1000" src="https://dotnetfiddle.net/Widget/Wk5Lad" frameborder="0"></iframe>
+
+**N.B. :** Pour l'instant, les énoncés de laboratoire rendront explicite quels mutateurs devront être `private` ou `public`. La pertinence des mutateurs privées sera soulignée davantage avec l'introduction de plusieurs constructeurs dans une classe.
+
+## Accesseurs
+Un accesseur permet de contrôler l'accès en lecture d'un attribut. Un mutateur est pour écrire sur l'état de l'objet; un accesseur est pour *lire* un attribut de l'objet. Au lieu de _setter_ un attribut, nous allons la _getter_.
+
+Les conventions pour un accesseur sont :
+
+* le nom commence par _Get_ et termine par le nom de l'attribut à chercher
+* le type de retour est le type de l'attribut
+* la méthode **ne prends pas de paramètre**
+
+<iframe width="100%" height="1000" src="https://dotnetfiddle.net/Widget/Jcso5V" frameborder="0"></iframe>
+
+Un accesseur peut être soit `private` ou `public`. Cela dépend toujours de ce qui est pertinent de rendre visible aux clients.
+
+## Pratique C\# pour les mutateurs et accesseurs
+Il est conventionnel d'avoir un mutateur et un accesseur **pour chaque attribut déclaré**. Utilisez toujours ces méthodes à l'intérieur de la classe. Bref, nous ne devrions jamais voir l'utilisation des attributs à l'extérieur du code des mutateurs et accesseurs. Il n'est pas nécessaire que chaque mutateur possède de la logique de validation, mais si jamais il en faut, tout sera en place pour l'ajouter rapidement.

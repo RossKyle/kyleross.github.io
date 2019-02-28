@@ -1,0 +1,16 @@
+---
+title: "Profd.info"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: styles.css
+link-citations: true
+urlcolor: blue
+---
+
+Site de secours : profdinfo.ddns.net
+
+# Cours
+* [202 — Programmation orientée objet et structure de données](202/index.html)
+* [KB5 — JavaScript](kb5/index.html)

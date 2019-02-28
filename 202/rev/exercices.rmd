@@ -1,0 +1,49 @@
+---
+title: "Exercices de révisions"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+## Question 1
+
+#### A)
+Programmez une fonction avec le nom _GénérerEntierAléatoire_. Cette fonction a pour but de retourner un entier aléatoire entre deux bornes données en paramètre.
+
+Les deux intrants représentent :
+
+* la borne minimale (inclusive)
+* la borne maximale (inclusive)
+
+Si une borne donnée est inférieure à 0, affectez la à 0. Si une borne donnée est supérieure à 100, affectez la à 100.
+
+Assurez-vous que la fonction ne soulève pas une erreur à cause d'intrants incohérents ; retourner -1 dans ce cas.
+
+**Exemples**
+
+* GénérerEntierAléatoire(0, 6) → {0, 1, 2, 3, 4, 5, 6}
+* GénérerEntierAléatoire(-5, 2) → {0, 1, 2}
+* GénérerEntierAléatoire(98, 350) → {98, 99, 100}
+* GénérerEntierAléatoire(-100, 200) → {0, 1, 2, …, 98, 99, 100}
+* GénérerEntierAléatoire(50, 25) → {-1}
+
+#### B)
+Dans le _Main_, demandez à l’usager d’entrer une valeur pour la borne minimale et la borne maximale et utilisez ces entiers pour tester votre fonction. Tenez pour acquis que l'usager rentrera que des entiers valides.
+
+#### C)
+Sans supprimer votre fonction _GénérerEntierAléatoire_, créer une nouvelle fonction avec le même nom, mais celle-ci prenant un paramètre : une borne minimale. La borne maximale est toujours 100.
+
+Les mêmes règles de validation doivent s’appliquer ici.
+
+#### D)
+Sans supprimer vos fonctions, créer une nouvelle fonction avec le même nom, celle-ci prenant un paramètre : une borne maximale. La borne minimale est toujours 0. Quel est le problème selon vous ?
+
+### Solutions
+
+#### Version 1
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/wvE9Se" frameborder="0"></iframe>
+#### Version 2
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/1rG5wF" frameborder="0"></iframe>

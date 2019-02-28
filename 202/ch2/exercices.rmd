@@ -1,0 +1,43 @@
+---
+title: "Exercices `struct`"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+## Question 3
+#### A)
+Créez une `struct` en C\# qui sert à représenter un bulletin d'étudiant. Appelez cette `struct` _Bulletin_.
+
+Un tel bulletin est composé de 3 données :
+
+* le nom de l'étudiant
+* le prénom de l'étudiant
+* un tableau de notes, où chaque note est un `float`
+
+Avec des commentaires (`//`), identifiez les valeurs par défaut utilisées pour initialiser les variables.
+
+#### B)
+Déclarez, dans le _Main_, une nouvelle variable de type `Bulletin` et nommez-la _monBulletin202_.
+
+Utilisez `Console.WriteLine(...)` pour afficher le nom, prénom et toutes les notes du nouveau bulletin.
+Si vous rencontrez une erreur, tentez de raisonner pourquoi l'erreur survient.
+
+#### C)
+Entre le code qui crée le nouveau bulletin et le code qui affiche des valeurs, modifiez le nom et prénom associés au bulletin. Faites aussi en sorte que le bulletin possède 3 notes ; choisissez n'importe quelles valeurs pour les notes.
+
+L'affichage avec `Console.WriteLine(...)` ne devrait causer problèmes.
+
+#### D)
+Écrivez une fonction `AfficherBulletin` qui prend en paramètre un bulletin et affiche, dans la console, le nom, prénom et toutes les notes associés au bulletin.
+
+Changez votre `Main` pour utiliser cette fonction.
+
+#### E)
+Tentez de modifier un bulletin reçu en paramètre par la fonction `AfficherBulletin`. Est-ce que les changements sont persistents à l'extérieur de la fonction ?
+
+## Solution
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/mG2PQr" frameborder="0"></iframe>

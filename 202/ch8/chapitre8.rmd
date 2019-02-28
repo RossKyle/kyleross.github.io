@@ -1,0 +1,99 @@
+---
+title: "Propriétés"		
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+Les propriétés en C\# sont une façon de simplifier l'écriture de mutateurs et d'accesseurs.
+Ils proposent une syntaxe raccourcie (sucre syntaxique) qui est idiomatique à C\#.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/QvQDkD" frameborder="0"></iframe>
+
+Il y a trois choses importantes à noter de l'exemple ci-dessus :
+1. Comment les propriétés sont nommées;
+2. L'utilisation du mot clé `private` devant le volet `set`;
+3. Le mot clé `value`.
+
+1) Il faut nommer les propriétés pareillement aux attributs qu'elles contrôlent, *mais la première lettre est une majuscule**.
+
+2) La partie `get` et la partie `set` utilisent le niveau d'accessibilité déclaré avant le type de retour. Pour éviter que le mutateur soit public comme l'accesseur, il **faut** ajouter le mot clé `private`.
+
+3) Le mot clé `value`, en C\#, est utilisé dans le `set` d'une propriété. Elle joue le rôle du paramètre dans un mutateur traditionnel.
+
+`void SetX(float nouveauX) { x = nouveauX } → private set { x = value }`
+
+Ici, C\# sait que `value` est un `float`, car la propriété X est déclaré avec le type de retour `float`.
+
+Les propriétés ne sont rien de plus qu'un raccourci, c.-à-d. qu'ils ne sont pas plus ou moins performants que l'utilisation de méthodes mutateurs et accesseurs traditionnelles. Au final, les fonctions Set et Get sont générées à partir des propriétés. C\# est un langage qui offre beaucoup de sucre syntaxique pour permettre d'écrire du code plus rapidement. 
+
+En Java et C++, il n'y a pas de propriété comme en C\# — il faut écrire les mutateurs et accesseurs selon la forme « longue ».
+
+## Utilisation de propriétés comme variable
+Ce qui est particulièrement bien des propriétés est qu'ils nous permettent de les utiliser _comme_ s'ils étaient des variables.
+
+```
+public Vecteur2(float xInitial, float yInitial)
+{
+    X = xInitial; //value dans le set devient xInitial
+    Y = yInitial; //value dans le set devient yInitial
+}
+
+public void IncrémenterX()
+{
+   X++; //au lieu de faire SetX(GetX() + 1);
+}
+```
+
+**Attention**, une propriété **n'est pas réellement une variable**. Elle est une ou deux méthodes. Lorsqu'on affecte une propriété avec `=`, c'est équivalent à appeler une fonction Set en passant l'expression à droite du `=` comme paramètre. Lorsqu'on lit une propriété, c'est équivalent à appeler une fonction Get.  
+
+## Exercices
+### A)
+Écrivez une classe `Vecteur3` qui représente un vecteur à trois dimensions. Une instance de `Vecteur3` doit avoir les attributs `float` suivants :
+
+* x
+* y
+* z
+
+Chaque attribut doit avoir un mutateur privé et un accesseur public. Écrivez ceux-ci sous forme de *propriétés*. Aucune validation est nécessaire pour l'affectation des attributs.
+
+Créez un seul constructeur pour la classe ; celui-ci doit permettre à un client d'instancier des vecteurs en fournissant un x, y et z initial.
+
+Comme d'habitude, utilisez toujours vos mutateurs et accesseurs le plus possible. Évitez l'utilisation des attributs directs, sauf aux moments nécessaires (déclaration, dans les mutateurs et dans les accesseurs).
+
+### B)
+Selon les spécifications pour la classe de la question A, est-ce que la ligne suivante compile ? : `Vecteur2 v = new Vecteur2();`
+Expliquer pourquoi.
+_La ligne ne compile pas, car la classe n'a pas de constructeur par défaut implicite. Il n'y a pas de constructeur implicite, car la classe contient déjà un constructeur paramétrique._
+
+### C)
+Quel est le but d'un constructeur ?
+_De créer un nouvel objet avec un état initial valide_
+
+### D)
+Qu'est-ce qui défini l'état d'un objet ?
+_L'ensemble des valeurs de ses attributs_
+
+## Propriétés calculées
+Une propriété à quasi toujours la partie `get`. Par contre, il est possible de faire plus que seulement `return` un attribut.
+
+Supposons la classe `Projectile`. Un projectile a les attributs `masse` et `accélération`. Les propriétés `Masse` et `Accélération` seront créées, certainement, mais une propriété `Force` pourrait aussi être ajoutée. Bien qu'il n'y a pas d'attribut `force`, une nouvelle propriété peut être créée en fonction d'autres propriétés. Le nombre de propriétés peut donc dépasser le nombre d'attributs.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/aAU2pj" frameborder="0"></iframe>
+
+**Il n'y a jamais de partie `set` dans une propriété calculée.**
+
+Il y a une valeur sémantique que la force d'un projectile soit appelée une propriété. Il est plus approprié, conceptuellement, que la force soit appelée une propriété au lieu d'une méthode, car la force d'un projectile n'est pas une action.
+
+Au lieu d'avoir un attribut `force`, qui doit être manuellement mise à jour à chaque fois que la masse ou l'accélération change, la force est toujours calculée au moment de son accès. Ceci est bien lorsque nous savons que l'objet changera d'état régulièrement entre appel à la propriété. Par contre, si un objet ne change pas et une propriété calculée est appelée à répétition, le calcul donnera toujours le même résultat. Par exemple, c'est une perte de temps recalculer la force, si la masse et l'accélération d'un projectile n'a pas changé. Bref, utiliser une propriété calculée au lieu d'avoir un attribut n'est pas nécessairement mieux. L'optimisation est toujours selon le contexte d'application ; les travaux rendront explicite quelles propriétés doivent être calculées, pour l'instant.
+
+## Exercice
+Écrivez une classe `Joueur` qui représente un joueur dans un jeu vidéo. Un joueur a des points de vie et des points d'attaques, où les deux données sont des entiers. Les points d'attaques sont une propriété **en fonction** des points de vies : les points d'attaque d'un joueur sont toujours le double de ses points de vies. On s'attend que les points de vies d'un joueur change souvent. Assurez-vous que les points de vie ne puissent descendre plus bas que 0. Si une tentative d'affecter les points de vie avec une valeur inférieure à 0 survient, « serrer » les points de vie à 0.
+
+De plus, un joueur a une position dans l'univers qui est représenté par un `Vecteur3`. Assurez-vous que la position du joueur ne peut être dans un x, y ou z négatif. 
+
+### Solution
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/X8sFRK" frameborder="0"></iframe>

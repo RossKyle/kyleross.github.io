@@ -1,0 +1,50 @@
+---
+title: "202"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: styles.css
+link-citations: true
+urlcolor: blue
+---
+
+----
+
+### Examen intra
+L'examen intra aura lieu après la semaine de mise à niveau. Les chapitres 1 à 11 sont à réviser.
+Aucune feuille de note sera permise.
+
+L'examen est composé de questions sur la compréhension théorique de la matière, ainsi de questions à dévelopments où il faut écrire du code. Tout doit être rendu sur papier sans assistance d'un ordinateur.
+
+### Plan de cours
+[Plan hiver 2019](PlanH19_420202LG.pdf)
+
+----
+
+## Chapitres
+1. [Introduction aux paradigmes](ch1/chapitre1.html)
+2. [`struct`](ch2/chapitre2.html)
+3. [Les objets](ch4/chapitre4.html)
+4. [De procédurale à orientée objet](ch3/chapitre3.html)
+5. [`class`](ch5/chapitre5.html)
+6. [Encapsulation](ch6/chapitre6.html)
+7. [Constructeur paramétrique](ch7/chapitre7.html)
+8. [Propriétés](ch8/chapitre8.html)
+9. [`string`, objet immuable et `StringBuilder`](ch9/chapitre9.html)
+10. Distinctions entre conteneur et contenu
+11. Propriété indexée
+ 
+## Exercices
+* [Fonction et Random](rev/exercices.html)
+* [Tableaux 1D](rev/exercices2.html)
+* [Une première `struct`](ch2/exercices.html)
+* [Entier naturel](ex/1.html)
+* [Éléments théoriques (examen intra)](rev/prepex1.html)
+	* Solutions (à venir)
+* Carte de jeux
+
+## Laboratoires
+1. [Tortue](lab/1.html)
+	* [FAQ](lab/1f.html)
+2. [Base de jeux](lab/2.html)

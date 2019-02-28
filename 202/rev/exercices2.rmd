@@ -1,0 +1,31 @@
+---
+title: "Exercices de révisions"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+## Question 2
+#### A)
+Programmez une fonction _TestTableau_ qui retourne un nouveau tableau d’une taille _n_ donnée en paramètre. Ce tableau doit contenir des entiers de n-1 jusqu’à 0.
+
+**Exemple**  
+TestTableau(5) → [4, 3, 2, 1, 0]
+
+#### B)
+Programmez une fonction _TestBouclesImbriquées_ qui affiche à la console le suivant :
+
+```
+1  
+1 2  
+1 2 3       
+1 2 3 4     
+1 2 3 4 5   
+```
+<br>
+
+## Solution
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/3BXjHq" frameborder="0"></iframe>

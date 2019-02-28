@@ -1,0 +1,58 @@
+---
+title: "Introduction au DOM"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+Le DOM est une interface de programmation qui permet de modifier un document HTML. Une interface est un intermédiaire qui permet la communication entre deux entités. Une interface est alors comparable à un protocole.
+
+Le DOM se place entre un programme et le document, permettant au programme de manipuler le document. Un programme JS, par exemple, peut utiliser le DOM pour, au final, changer une page web. D'autre langages peuvent utiliser le DOM, mais le JS est plus populaire.
+
+Le DOM représente un document HTML avec une hiérarchie d'éléments. Basé sur l'HTML d'une page, un modèle est créé (le DOM) qui peut être utilisé. Ce modèle est orienté objet. En effet, DOM → Document Object Model.
+
+Pour voir le DOM généré par du HTML :  
+https://software.hixie.ch/utilities/js/live-dom-viewer/
+
+## Chercher des éléments du DOM
+Dans la hiérarchie, la racine (élément qui contient tous les autres) est appelé `document` et représente le DOM en soi. En JS, il y a un objet `document` disponible. Tous les éléments du DOM sont aussi des objets.
+
+Chercher un élément du DOM est simple. La méthode `document.getElementByID(...)` permet de récupérer un objet qui représente l'élément HTML avec l'`id` donné en paramètre. La propriété `innerHTML` d'un élément permet d'injecter du contenu à l'intérieur.
+
+<iframe width="100%" height="200" src="https://jsfiddle.net/KayRoss/vrLapbnd/embedded/html,js,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+Dans le _Live DOM Viewer_, l'HTML de l'exemple montre deux éléments **P** dans l'hierarchie d'éléments. Ces deux P ont été accédés par le programme JS, afin de modifier le document.
+
+Il est aussi possible de chercher tous les éléments d'une certaine balise HTML avec `document.getElementsByTagName(...)'. La méthode retourne un tableau contenant tous les éléments trouvés.
+
+Sinon, `document.getElementsByClassName(...)` retourne un tableau des éléments ayant la classe donnée en paramètre.
+
+Finalement, la méthode `document.querySelectorAll` retourne un tableau des éléments sélectionner par un sélecteur CSS.
+
+## `window.onload`
+Avant d'accéder aux DOM, il est sage d'attendre que toute la page web soit chargée, afin que tout le DOM soit généré. Une fois que la page est chargé, il est possible de démarrer une fonction. Créer une fonction JS qui servira de point de départ, un peu comme une fonction _Main_ en C/#, peut être utile.
+
+La propriété `onload` de l'objet `window` peut être affectée avec une telle fonction :
+
+**Attention** : `onload` doit être affectée avec une fonction et non la valeur retournée par une fonction. Il ne faut pas appeler la fonction, alors il ne faut pas utiliser de ().
+
+## `onclick`
+Lorsqu'un élément est cliqué, une action peut suivre. Si la propriété `onclick` d'un élément est donné une fonction, la fonction sera exécutée lors d'un clic. Il est pratique ici de créer la fonction au moment d'affecter la propriété :
+
+Remarquer que cette fonction n'a pas de nom ; c'est une **fonction anonyme**.
+
+## Le tableau `document.forms`
+Au lieu d'utiliser `document.getElementBy...` pour chercher un formulaire, `document.forms[...]` prend entre crochet l'indice, `id` ou le `name` d'un formulaire et retourne l'élément qui le représente. L'indice 0 référe au premier `form` du document.
+
+Remarquez que le tableau prend non seulement des entiers pour chercher une donnée. En réalité, `forms` n'est pas un tableau. Plus sur ce sujet dans l'avenir...
+
+La propriété `elements` est un « tableau » qui représente les élément contenu dans un formulaire. Un élément peut être chercher par son indice, `id` ou `name`.
+
+## Changer les attributs d'un éléments
+Les objets JS ont souvent des propriétés avec les mêmes nom d'attributs que leur contrepartie HTML. Par exemple, un élément qui fait référence à une image aura la propriété `src`.
+
+## Chercher le texte et la valeur d'un option dans un `select`
+La propriété `options` permet de récupérer un tableau avec tous les options d'un `select`. Les options ont une propriété `text` et une propriété `value`.

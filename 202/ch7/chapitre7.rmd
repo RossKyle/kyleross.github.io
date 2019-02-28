@@ -1,0 +1,73 @@
+---
+title: "Constructeur paramétrique"		
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+## Constructeur par défaut
+Un constructeur sans paramètres s'appelle aussi un _constructeur par défaut_. Ce type de constructeur est appelé dans les exemples suivants :
+
+* `Random r = new Random();`
+* `Rectangle rect = new Rectangle();`
+
+Par contre, n'avoir qu'un constructeur par défaut de défini dans une classe ne permet pas à un client de personnaliser la construction d'un nouvel instance. C.-à-d que chaque instance d'une classe aura toujours le même état initial, suite à sa construction.
+
+Imaginez s'il était impossible d'instancier un nouvel entier avec une valeur autre que 0 ; que tous les entiers doivent partir à la valeur 0. Sinon, imaginez une classe `Date` qui ne permet pas de créer une nouvelle date à une certaine valeur.
+
+## Constructeur paramétrique
+Un constructeur paramétrique permet de créer un nouvel objet en fonction de paramètres donnés lors de la construction. Car les constructeurs sont essentiellement des fonctions, ils peuvent être appelés par un client (si marqué `public`) et par le code à l'interne de la classe, en fournissant des paramètres.
+
+Supposons que la classe `Rectangle` doit permettre à un client d'instancier un rectangle **en donnant une largeur et une hauteur**. L'état initial d'un nouveau rectangle dépend alors d'intrants du client.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/FGCgqz" frameborder="0"></iframe>
+
+Réalisez l'importance des mutateurs ici. Un client peut créer un nouveau rectangle avec une largeur et hauteur qu'il désire, **tant que les valeurs fournies sont valides**. Si les dimensions sont invalides, une stratégie est adoptée pour gérer le problème (ici, SerrerEntreBornes s'assure de l'intégrité de l'objet).
+
+Après la construction, un client ne peut plus changer les dimensions d'un rectangle directement, car les mutateurs sont privés.
+
+Les classes avec des constructeurs paramétriques et des mutateurs privées sont populaires, car elles permettent à un client 
+
+* de construire un objet **valide** avec un certain degré de personnalisation;
+* de limiter les changements à l'état de l'objet, ce qui rend l'objet plus simple d'utilisation.
+
+## Plusieurs constructeurs
+Il est possible d'avoir plusieurs fonctions avec le même nom, mais distinctes.
+```
+public void Test()
+{
+    ...
+}
+public void Test(int x)
+{
+    ...
+}	
+```
+
+Ceci s'appelle la _surcharge_ (_overloading_, en anglais) de fonction et permet plusieurs « saveurs » dans un groupe de fonctions. 
+
+Surcharge de fonction
+: La surcharge est une possibilité offerte par certains langages de programmation qui permet de choisir entre différentes versions d'une même fonction ou méthode selon le nombre et le type des arguments fournis. Chaque nouvelle fonction portant le même nom d'au moins une autre s'appelle une surcharge. — Wikipedia
+
+Il va de soi que ceci s'applique aussi aux constructeurs. Il est alors possible d'avoir un constructeur par défaut et plusieurs constructeurs paramétriques ou même que des constructeurs paramétriques.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/KhPqx2" frameborder="0"></iframe>
+
+## Appeler un constructeur à partir d'un constructeur
+Pour simplifier le code et éviter la redondance, un constructeur peut faire appel à un autre.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/MRecai" frameborder="0"></iframe>
+
+## Une classe sans constructeur par défaut
+#### et **sans** constructeurs paramétriques
+Si une classe ne contient pas un constructeur par défaut ou au moins un constructeur paramétrique écrient explicitement, **C\# créer un constructeur par défaut implicitement**.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/K2NlNV" frameborder="0"></iframe>
+
+#### et **avec** constructeurs paramétriques
+Une classe sans un constructeur par défaut, mais avec au moins un constructeur paramétrique n'a **pas** de constructeur implicite.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/BEsNNr" frameborder="0"></iframe>

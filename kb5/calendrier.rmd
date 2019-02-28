@@ -1,0 +1,16 @@
+---
+title: Calendrier provisoire KB5
+output:
+  html_document:
+    md_extensions: +multiline_tables
+    mathjax: null
+    theme: lumen
+    css: cal_styles.css
+urlcolor: blue
+---
+| Semaine         | Date            | Contenu                                              |
+| :-------------: | :----------     | -----------:                                         |
+| 1               | lundi 21 jan    | - survol plan de cours, - chap 1 : introduction à JS |
+|                 | mercredi 23 jan | - introduction à WebStorm                            |
+| 2               | lundi 28 jan    | - chap 2 : bases du langage                          |
+

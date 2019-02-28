@@ -1,0 +1,70 @@
+---
+title: "Entier naturel"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## Mise en situation
+Vous devez participer à la conception et à la programmation d’une application permettant d’obtenir la représentation d’un entier naturel en utilisant différents systèmes de numération communs au monde de l’informatique, soit le décimal, le binaire et l’hexadécimal. La gestion de cet entier naturel se fera par le biais d’une classe. 
+
+Un entier naturel ne peut être négatif. De plus, dans le cas présent, nous déterminons que la valeur de cet entier naturel ne pourra excéder 2^21 – 1^, soit 2 097 151. Votre application devra donc veiller à ce que la valeur de l’entier naturel reste comprise dans l’intervalle [0, 2 097 152[.
+
+## Consignes
+Écrivez une classe **EntierNaturel** qui correspond aux critères qui suivront. Du code client est donné afin de tester votre classe.
+
+1. Ajoutez les constantes **publics** `BorneMin` et `BorneMax` qui auront comme valeur respective 0 et 2 097 15**2**. Vous pouvez ajouter d'autres constantes si cela s'avère nécessaire. Par contre, ces dernières devront rester privées;
+2. Ajoutez un attribut `int décimal` qui représente la valeur de l'entier naturela
+3. Ajoutez les propriétés suivantes :
+	* `Décimal`;
+	* (calculée) `Binaire`. Cette propriété retourne une `string` qui représente l'entier naturel en binaire; La chaine doit créer des groupes de 4 bits séparés par un espace. Ajoutez les 0 nécessaires. Ex : Console.WriteLine(new EntierNaturel(422).Binaire); //affiche 0001 1010 0110;
+	* (calculée) `Hexadécimal`. Cette propriété retourne une `string` qui représente l'entier naturel en hexadécimal.
+4. Toutes les propriétés doivent être accessibles en lectures aux clients. Par contre, aucun client ne doit être en mesure de modifier «directement» l'état d'un entier naturel après sa construction (les instances de la classe sont des objets immuables);
+5. Ajoutez un constructeur paramétrique qui prend en paramètre la valeur décimale de l'entier naturel à instancier;
+6. N'utilisez pas la classe `Convert` pour tricher. Le but est d'écrire vos propres algorithmes de conversion de base.
+
+#### Validation
+Si une valeur à affecter à l'attribut `décimal` est hors bornes, «serrez» la nouvelle valeur avant l'affectation.
+
+## Indices
+* `StringBuilder` est votre ami;
+* `%` c'est hot;
+* Les tableaux aussi;
+* Traduire de base 10 à base 2, 8, 16, 27, etc., c'est, en général, la même chose. Tout ce qui change est la base et les symboles utilisés;
+* `new string(uneString.ToString().Reverse().ToArray())`.
+
+## Code client
+```
+static void Main(string[] args)
+{
+    //TEST 1
+    Console.WriteLine("Test 1");
+    EntierNaturel n = new EntierNaturel(422);
+    Console.WriteLine(n.Décimal);
+    Console.WriteLine(n.Binaire);
+    Console.WriteLine(n.Hexadécimal);
+
+    //TEST 2
+    Console.WriteLine("Test 2");
+    EntierNaturel n2 = new EntierNaturel(99999999);
+    Console.WriteLine(n2.Décimal);
+    Console.WriteLine(n2.Binaire);
+    Console.WriteLine(n2.Hexadécimal);
+
+    //TEST 3
+    Console.WriteLine("Test 3");
+    EntierNaturel n3 = new EntierNaturel(-99999999);
+    Console.WriteLine(n3.Décimal);
+    Console.WriteLine(n3.Binaire);
+    Console.WriteLine(n3.Hexadécimal);
+}
+```
+
+## Solution
+À retenir : utilisation des tableaux pour éviter le besoin d'utiliser plusieurs if-else ou switch-case.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/wBNPXn" frameborder="0"></iframe>

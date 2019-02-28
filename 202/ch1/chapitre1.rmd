@@ -1,0 +1,124 @@
+---
+title: "Introduction aux paradigmes"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+## Pourquoi orientée objet ?
+La programmation orientée objet est le courant de pensée le plus populaire chez les programmeurs. Cette idée de représenter un concept ou un modèle du monde physique, comme une voiture, par un objet, domine le monde du développement de :
+
+* jeux vidéos
+* applications mobiles
+* applications web
+* logiciels administratives
+* etc.
+
+## Paradigme de programmation
+La programmation orientée objet (POO) est un parmi plusieurs paradigmes de programmation. Bref, en programmation, un paradigme est un courant de pensée sur comment les données et les traitements sont structurés, et les concepts associés et attendu qui en découle.
+
+Un langage peut être multi paradigme, c.-à-d. que le langage implante plusieurs
+paradigmes. **Un langage n'est pas un paradigme.**
+
+Exemples de paradigmes :
+
+* machine (code machine et assembleur)
+* procédurale
+* orientée objet
+* fonctionnelle
+* etc.
+
+## Un programme à travers plusieurs paradigmes
+Les exemples suivants montre un programme pour déterminer le n^ième^ nombre de Fibonacci sous plusieurs paradigmes.
+
+### Code machine _(pour un ancien processeur Intel 32 bits)_
+```
+10001011 01010100 00100100 00001000 10000011 11111010 00000000 01110111
+00000110 10111000 00000000 00000000 00000000 00000000 11000011 10000011
+11111010 00000010 01110111 00000110 10111000 00000001 00000000 00000000
+00000000 11000011 01010011 10111011 00000001 00000000 00000000 00000000
+10111001 00000001 00000000 00000000 00000000 10001101 00000100 00011001
+10000011 11111010 00000011 01110110 00000111 10001011 11011001 10001001
+11000001 01001010 11101011 11110001 01011011 11000011
+```
+C’est facile à comprendre pour un ordinateur, mais ce ne l’est pas pour nous...
+Le code machine est le langage le plus proche de l’ordinateur. On dit qu’il est le langage du plus bas niveau, car c’est le seul langage qu’un ordinateur peut traiter sans transformations. Il est donc le plus pur (et le plus désagréable) !
+
+Au final, un programme termine toujours par générer du code machine, car **un ordinateur ne comprend que du code machine**. Lorsque nous programmons pas directement avec le langage de l'ordinateur, nous pouvons tenir pour acquis que la tâche de créer le code machine sera réalisée par un compilateur ou autre.
+
+_Rappel : un compilateur est un programme qui transforme du code source à du code cible. Certains compilateurs prennent du code en paramètre pour directement sortir du code machine pouvant être exécuté par le processeur de l'ordinateur._
+
+### Assembleur _(avec une syntaxe Intel)_
+```
+mov    edx,DWORD PTR
+[rsp+0x8]
+cmp    edx,0x0
+ja     0x0000000f
+mov    eax,0x0
+ret
+cmp    edx,0x2
+ja     0x0000001a
+mov    eax,0x1
+ret
+push   rbx
+mov    ebx,0x1
+mov    ecx,0x1
+eax,[rcx+rbx*1]
+cmp    edx,0x3
+jbe    0x00000034
+mov    ebx,ecx
+mov    ecx,eax
+rex.WX jmp 0x00000025
+pop    rbx
+ret
+```
+
+### Procédurale (avec le langage C)
+```{c, results='hide'}
+#include <stdio.h>
+
+int trouverNombreFibonacci(int n) {
+    if (n <= 0)
+        return 0;
+    else if (n <= 2)
+        return 1;
+    else {
+        int a, b, c;
+        a = 1;
+        b = 1;
+        while (1) {
+            c = a + b;
+            if (n <= 3) return c;
+            a = b;
+            b = c;
+            n--;
+        }
+    }
+}
+
+int main() {
+   printf("%i", trouverNombreFibonacci(6));
+}
+```
+
+Voici du code en C – un des langages qui a le plus changé le monde de la programmation. Ce code doit être suffisamment transformé pour être compréhensible par une machine, mais il reste tout de même, selon les conventions d’aujourd’hui, un langage de bas niveau.
+
+### Orienté objet (avec le langage C#)
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Ud3RIT" frameborder="0"></iframe>
+
+## Langage de « haut niveau »
+Lorsqu’un langage permet de la programmation orientée objet, il suffit d’un langage de haut niveau.
+Ce terme n’implique pas que le langage est supérieur aux langages de bas niveau. Le terme « haut niveau » désigne seulement que le langage est plus loin de la machine – plus loin des 0 et des 1.
+Le plus haut que nous sommes, plus nous pouvons écrire du code utilisant des concepts abstraits et généralisés, sans se soucier des spécifications de la machine (modèle du processeur, système d'exploitation, etc.).
+
+## Le C# — langage multi paradigmes
+Le C# est un langage de très haut niveau (encore plus que le C++ !) qui adopte le paradigme procédural, orienté objet, fonctionnel, générique, etc.
+Vous avez travaillé avec un esprit procédural, jusqu’à présent, mais avez utilisé des « objets » sans le savoir. C’est parce que le C# nous lance, par défaut, directement dans un environnement favorable à la POO.
+Il est maintenant le temps d’épanouir notre philosophie de la programmation en voyant comment l’aspect orienté objet de C# complète ce que vous avez vu à la session précédente.
+
+## Base de la programmation
+Peu importe le paradigme, le langage et le « niveau de profondeur » dans lequel nous programmons, les éléments fondamentaux de tous programmes sont les **données** (variables et constantes) et les **fonctions**. 
+Ce qui change d’une pensée à une autre est comment utiliser et interpréter ceux-ci ; la manière de concevoir un programme est différente entre procédurale et orienté objet, par exemple, même si nous travaillons encore – à la base – avec des variables et des fonctions.

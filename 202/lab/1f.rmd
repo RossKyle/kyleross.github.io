@@ -1,0 +1,26 @@
+---
+title: "FAQ Tortue"		
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+### Question
+> Bonjour,<br><br>
+Dans les consignes du labo, on parle de créer un tableau de Tortues. On dirait qu'il n'y a pas de façon d'automatiser ceci. J'ai essayé de créer une constante static qtéDeTortue (pour qu'elle soit pareille pour chaque tortue et non un attribut personnel de chaque tortue), qui est incrémentée à chaque instantiation de tortue. Mais lorsque j'entre la fonction GetQtéDeTortues (qui fonctionne comme prévue) dans les crochets en créant le tableau, Visual Studio me demande une constante à la place. Doit-on créer le tableau à main dans le Main selon la quantité de tortues? Car sinon, je n'ai aucune idée comment créer un tableau de grandeur appropriée selon la qté de tortues déjà créées.
+
+### Réponse
+Bonjour,
+
+Le tableau de tortues est complètement externe de la classe `Tortue`.
+
+Le but de créer un tableau est simplement de tester votre fonction `AfficherTortues` qui doit se situer dans la classe `Program`. Si tu appelles la fonction `AfficherTortues` dans ton `Main`, par exemple, tu dois lui envoyer un tableau de tortues. Donc, tu créeras un tableau de tortues contenant **autant de tortues que tu désires** pour faire tes tests.
+
+Le tableau ne doit pas nécessairement contenir toutes les tortues créées pendant l'exécution du programme. Tu peux mettre qu'un sous-ensemble de tortues que tu veux dedans pour ensuite l'envoyer à `AfficherTortues` et tester si tout s'affiche correctement.
+
+Pour l'instant, nous gardons ça simple. Ton idée d'avoir un compteur statique qui incrémente à chaque instanciation est cool pour d'autres contextes dont nous allons voir plus tard cette session !
+
+Kyle

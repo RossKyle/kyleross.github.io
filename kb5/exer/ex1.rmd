@@ -1,0 +1,46 @@
+---
+title: "Exercices sur `prompt(...)`, `if/else`, `for`"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+urlcolor: blue
+---
+Faites des recherches en ligne sur l'utilisation de la fonction `prompt(...)`, ainsi que sur la structure d'`if/else` et d'une boucle `for`.
+
+<!--
+La fonction `prompt(...)` retourne une `string`. S'il est attendu que l'utilisateur entre un nombre, ce n'est pas nécessaire de convertir la `string` à un autre type manuellement. N'oubliez pas que le JS est à typage dynamique et permet la résolution de type automatique. Si une `string` peut être convertie à un `number`, JS va s'occuper d'interpréter la chaine comme un nombre.
+-->
+
+## Question 1
+Écrivez un programme en JavaScript qui demande la valeur d’un angle en degré et qui affichera, dans la console, le type d’angle.
+Un angle peut être aigu, droit, obtus, plat (180°) ou rentant (entre 180° et 360°).
+
+#### Version simple
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/1vLrk9pu/embedded/js,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<br>
+
+#### Version avancée avec fonctions et meilleure validation
+<iframe width="100%" height="300" src="http://jsfiddle.net/KayRoss/twzapmoc/embedded/js,result" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+## Question 2
+Écrivez un programme qui écrit à la console tous les multiples de 3 entre 0 et 30 inclusivement.
+
+<iframe width="100%" height="150" src="https://jsfiddle.net/KayRoss/t0Le9vxp/embedded/js,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+## Question 3
+Écrivez un programme qui produit une table de multiplication pour les entiers compris entre 1 et 9 inclusivement et affichez-la dans la console.
+
+Le résultat devra ressembler au suivant :
+```
+1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+...
+9 x 9 = 81
+```
+
+Cette question ne doit pas prendre plus de 5 lignes, si vous vous tenez aux conventions populaires d'écriture d'accolades en JS. Il est même possible de résoudre le problème en 3 lignes.
+
+<iframe width="100%" height="150" src="https://jsfiddle.net/KayRoss/0tuLn8vh/embedded/js,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>

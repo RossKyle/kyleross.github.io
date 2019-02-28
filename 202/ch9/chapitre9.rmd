@@ -1,0 +1,100 @@
+---
+title: "`string`, objet immuable et `StringBuilder`"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+Les chaines de caractères en C\# sont des objets de type référence (`class`) qui sont **immuables**.
+
+Objet immuable
+: Un objet immuable est un objet qui ne peut pas changer d'état après qu'il est construit.
+
+**Une `string` ne peut jamais être changée.**
+```
+string s = "foo" //équivalent à String s = new String("foo");
+s[0] = 'b'; //ERREUR
+```
+
+## Sécurité des objets immuables
+Il n'y a aucun danger provenant d'accesseurs publics qui retournent une `string`, car les `string` sont immuables.
+
+Supposons la classe `Étudiant` qui contient une propriété _Nom_. Le mutateur (`set`) est privé, et l'accesseur (`get`) est public. L'accesseur retourne directement une **référence** vers une `string` ; si une chaine était mutable, un client pourrait changer le nom d'un étudiant, malgré le mutateur privé !
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/JDhnbZ" frameborder="0"></iframe>
+
+N'oubliez pas qu'écrire du texte entre "" créer une **nouvelle** chaine. 
+```
+string s = "foo" //s référe à une nouvelle string créée en mémoire 
+s = "bar" //s pointe maintenant à un autre string
+```
+Dans l'exemple ci-dessus, deux objets sont alloués a deux emplacements mémoires distincts. Conséquemment, "bar" n'écrase pas "foo". La chaine avec la valeur de "foo" existe encore, mais `s` ne réfère plus a cette dernière.
+
+## `ToUpper()`, `ToLower()`
+Les méthodes `ToUpper()` et `ToLower()` offertes par les `string` ne modifient pas les chaines ; elles retournent une nouvelle chaine. Dans le cas de `ToUpper()`, une copie de la chaine originale est retournée, mais chaque caractère est en majuscule. Pour `ToLower()`, chaque caractèr est en minuscule.
+
+```
+string s = "foo";
+s.ToUpper(); //retourne une référence vers une nouvelle chaine, 
+	     // mais ne l'affecte à pas à une variable ou constance...
+Console.WriteLine(s) //→ affiche "foo" et non "FOO" 
+
+s = s.ToUpper(); //s référe maintenant à un nouvel objet
+Console.WriteLine(s) //→ affiche "FOO"
+```
+## `Substring(...)`
+
+## `Split(...)`
+
+## `String.IsNullOrWhiteSpace()`
+
+## Concaténation avec l'opérateur `+`
+Ajouter des caractères a une chaine ne modifie pas la chaine d'origine, mais plutôt créer une nouvelle chaine.
+```
+string s = "foo";
+s = s + "bar"; //ou s += "bar"
+```
+
+La nouvelle chaine est créée en copiant les caractères du terme de gauche (ici, "foo") et en ajoutant les caractères du terme de droite ("bar"). Une `string` est essentiellement un tableau de caractères, où il est impossible de changer sa taille, après tout.
+
+Dans l'exemple suivant, 5 nouvelles chaines sont créées : `string s = "bo" + "nj" + "our"`
+
+1. bo
+2. nj
+3. bonj (copies de 'b' et 'o')
+4. our
+5. bonjour (copies de 'b', 'o', 'n' et 'j')
+
+Construire des chaines par concaténation peut être long, à cause de toutes les nouvelles chaines temporaires qui sont instanciées, en plus des copies de caractères.
+
+## Construire une chaine avec `StringBuilder`
+Un `StringBuilder` permet de créer une `string` par concaténation, mais en évitant généralement la copie de caractères et l'instanciation de plusieurs chaines temporaires. Ceci peu apporter un très grand gain de performance, car copier une chaine devient de plus en plus long selon sa taille.
+
+Par exemple, ajouter un caractère par `+` à une chaine de 250 caractères nécessite 250 copies pour créer la nouvelle `string`.
+
+Un `StringBuilder` peut être instancié en donnant une chaine initiale. Avec la méthode `Append(...)`, il est possible d'ajouter des caractères à la fin de la chaine en cours de construction. La méthode `ToString()` retourne la chaine construite.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Lz7RMn" frameborder="0"></iframe>
+
+Voici un exemple de l'efficacité d'un `StringBuilder` :
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/6erFDb" frameborder="0"></iframe>
+
+## Qu'arrive t'il aux objets temporaires et orphelins
+En C\#, lorsqu'il n'y a plus de références à un objet en mémoire, le _Garbage Collector_ passera éventuellement pour libérer l'emplacement mémoire occupé par l'objet. Ceci est un mécanisme qui rend C\# plus « facile » que le C ou le C++ classique : la gestion de la mémoire est fait automagiquement en C\#.
+
+```
+Random r = new Random(); //nouvelle instance en mémoire ; r y fait référence
+r = new Random();
+/*nouvelle instance en mémoire ; r fait référence au nouvel objet et il n'y a plus rien qui réfère au premier. 
+l'accès un premier Random créé est désormais impossible, alors il sera ramassé par le Garbage Collector pour libérer la RAM qu'il occupe.*/
+```
+
+## Bonus : gestion de la mémoire sans _Garbage Collector_
+Dans un langage comme C++, il n'y a pas de _Garbage Collector_ pour nous tenir par la main. La responsabilité de libérer la mémoire est donnée aux programmeurs. Si le développeur oublie de libérer les ressources qu'ils utilisent pendant l'exécution d'un programme, une fuite de mémoire (_memory leak_) survient. Ceci implique qu'il y a de la mémoire « morte » qui devient inaccessible et non recyclable dans un programme. Les fuites seront réparées lorsque le programme qui les contient se terminera,  grâce au système d'exploitation. Par contre, si un programme avec des fuites n'est jamais fermé, une partie de la RAM de l'ordinateur est effectivement perdu.
+
+Il faut payer un _Garbage Collector_, par contre. Celui-ci vient au coût de la performance d'un programme. Le coût peut être suffisamment élevé, ce qui explique pourquoi la majorité des moteurs de jeux vidéos (Unreal, Unity, MT Framework, Source 1 et 2, Frostbite, id Tech 4 à 7,  etc.) sont codés en C++.

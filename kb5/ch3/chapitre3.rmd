@@ -1,0 +1,135 @@
+---
+title: "Typage, variables et constantes"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+urlcolor: blue
+---
+## Pertinence des types
+La base de tous langages de programmation repose sur deux ingrédients : les données (variables et constantes) et les fonctions. Autrement dit, il y a de l'information et des traitements sur ces informations.
+
+Dans l'ordinateur, toutes les valeurs sont représentées par des chaine binaires. En fait, la valeur pour une variable initialisée dans un programme se trouve dans la mémoire vive, par exemple. Dans la RAM, tout n'est que des 0 et des 1, sans informations sur ce que représentent ces 0 et 1.
+
+Les variables ont des **types** pour indiquer comment interpréter la chaine binaire. Un `int` indique au programme d'interpréter 0000 1010 comme un entier, par exemple, tandis qu'un `char` indique d'interpréter commu un caractère.
+<br><br>
+
+## Typage statique c. dynamique
+En C\#, il est possible d'écrire _explicitement_ le type d'une donnée à la déclaration. Il faut aussi indiquer le type des paramètres et s'assurer d'une cohérence de types (affecter un int à un int, un double à un double...). Un programme C\# ne compilera pas si le compilateur est incapable de déduire la cohérence de types. Un langage où tous les types des données sont analysés et déduits à la compilation est dit **statiquement typé**. Une autre façon de voir : si les types doivent être décidés avant l'exécution → statiquement typé.
+
+En informatique, le mot _statique_ est un adjectif qui veut souvent dire « au temps de compilation/avant l'exécution ».
+
+En contraste, il y a aussi le mot _dynamique_, qui est souvent utilisé pour qualifier quelque chose qui se produit **pendant l'exécution**.
+
+Voici en quoi tout ça veut en venir : le JavaScript est un langage **dynamiquement typé**, c.-à-d. que les types sont pas résolus avant l'exécution du programme. Ceci est une distinction que parait majeure avec le C\#.
+
+L'environnement qui exécute le code JavaScript va attribuer un type à une valeur _implicitement_ selon le contexte. Pendant l'exécution d'un programme JS, une variable peut à un moment être un `int` pour plus tard devenir un `char`. Ce genre de mécanisme permet aux développeurs de se libérer de plusieurs restrictions qu'un langage statiquement typé leur impose.
+
+Les langages dans la catégorie _scripting_ implémente souvent un tel système de typage. Du typage dynamique est trouvé en Python, Lua, PHP, PowerShell, Ruby, Bash, etc.
+
+Il y a des contextes où il est plus approprié d'avoir une sorte de typage par-dessus un autre. Il n'y a pas une meilleure façon absolue.
+<br><br>
+
+## `let`
+#### Déclaration de variables
+En JS, les types ne sont pas explicitement donnés par le programmeur ou la programmeuse. Car les types sont donnés automatiquement pendant l'exécution, la pensée JS dit qu'il n'y a pas de pertinence à déclarer des types avant ce temps.
+
+Donc, pour déclarer une nouvelle variable, le mot clé `let` est utilisé. **Aucun type est précisé**.
+```{js}
+let x;
+let y;
+```
+<br>
+
+#### Affectation d'une variable
+Tant que ces variables ne seront initialisées, ils n'ont pas de type « concret ». En fait, elles ont le types `undefined`.
+
+La première fois qu'une variable est affectée, elle aura un type selon la valeur donnée. Les affectations subséquentes **peuvent changer le type**.
+```{js}
+let a = 0; //lorsque cette ligne sera exécutée, a sera un nombre entier
+console.log(a);
+
+a = true //a sera un bool
+console.log(a);
+```
+<br>
+
+#### Portée de variables locales déclarées avec `let`
+Des variables déclarées avec `let` fonctionnent semblablement à C\#. Par exemple, la portée d'une variable locale est décrite par des accolades.
+```{js}
+let foo = 0;
+
+if (foo === 0) {
+  let bar = 1;
+}
+
+//console.log(bar); bar n'est pas accessible ici !
+```
+<br>
+
+#### Déclaration d'une variable globale
+Une variable _globale_ est déclarée à l'extérieur de toutes portées, donc entre *aucun* accolades. 
+```{js}
+let nom = "Pamplemousse";
+
+function test() {
+  let prénom;
+  console.log(nom);
+}
+
+function test2() {
+  console.log(prénom); //prénom n'est pas accessible ici !
+}
+
+//appeler les fonctions
+test();
+test2();
+```
+Par contre, il est préférable d'**éviter les variables globales**, pour des raisons de performances et d'organisation. Il est mieux de déclarer des données dans la portée où elles seront utilisées le plus possible pour éviter d'avoir :
+
+* à se promener dans le code pour trouver le nom d'une donnée
+* accès à des données qui ne sont pas pertinentes dans un contexte
+* des listes de suggestions immenses dans des outils d'auto-complétion.
+
+Conséquemment, l'utilisation de paramètres avec des fonctions est privilégié par-dessus la création de variables globales.
+<br><br> 
+
+#### Déclaration d'une donnée constante
+Pour une constante, `const` est utilisé au lieu de `let`. Il *faut* initialiser une constante.
+```{js}
+function test3() {
+  const z = 5;
+  console.log(z);
+}
+```
+**N.B.** Il y a une particularité avec des données constantes à voir plus tard.
+
+## Les types de données en JS 
+ll existe 7 types :
+
+* `number` : nombre entier ou à virgule
+* `boolean` : vrai ou faux
+* `string` : chaine de caractères
+* `null` : la seule valeur pour le type `null` est `null`
+* `undefined` : la seule valeur pour le type `undefined` est `undefined`
+* `object` : pour les valeurs « complexes »
+* `symbol` : pour des indentificateurs uniques	
+
+Notez qu'il n'y a pas plusieurs types pour distinguer un entier d'un float ou d'un double. Ceci est une autre façon que JS simplifie la programmation.
+
+Cette liste semble limitée, mais le type `object` peut envelopper beaucoup de choses ; à voir plus tard.
+
+## Identifier le type d'une valeur
+JS offre une fonction utilisable en tout temps pour identifier le type d'une valeur : `typeof(...)`. La fonction retourne une `string` dont la valeur est le nom du type de la valeur prise en paramètre.
+
+Par exemple, `console.log(typeof(0.5))` affichera la string _number_.
+
+Il est possible de surveiller comment JS change le type d'une variable de la manière suivante :
+```{js}
+let n = 0;
+console.log(typeof(n));
+
+n = "yo";
+console.log(typeof(n));
+```

@@ -1,0 +1,7 @@
+: Évènement
+Un évènement, dans le modèle Web, est une condition qui, une fois satisfait, est habituellement suivi d'une action. La condition peut être si l'utilisateur clique, modifie, ouvre, ferme, etc., quelque chose, par exemple.
+Lorsqu'un évènement est satisfait, il est dit que l'évènement est _soulevé_ ou _déclenché_.
+
+: Fonction de rappel (_callback_)
+L'action exécutéeà la suite du déclenchement d'un évènement est appelée une fonction de rappel. Si un bouton a un évènement qui est déclenché lorsque l'utilisateur clique dessus, une fonction peut être « rappelée ». Cette fonction peut faire n'importe quelle action désirée.
+

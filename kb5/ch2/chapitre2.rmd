@@ -1,0 +1,90 @@
+---
+title: "Insertion dans du HTML"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+bibliography: my.bib
+link-citat	ions: true
+urlcolor: blue
+nocite: |
+
+---
+Il existe plusieurs façons de faire appel à du JS dans un navigateur. Par exemple, il est possible d'écrire du JS directement dans une page HTML et laisser le navigateur exécuter le code.
+
+## Exemple 1 : JS directement dans un fichier HTML
+
+### HTML
+```
+<html>
+  <body>
+    <script>
+      // CODE JS ICI
+    </script>
+  </body>
+</html>
+```
+
+Notez la balise `<script>`. Celle-ci indique au navigateur d'exécuter le JS dans sa portée.
+
+Supposons le code JS suivant à l'intérieur de la balise :
+
+```{js}
+console.log("Hello World");
+```
+
+En ouvrant la console, le message "Hello World" devrait être imprimé.
+
+## Exemple 2 : Plusieurs `<script>`
+Il est possible d'avoir autant de balise `<script>` que voulu. Si un développeur veut imprimer du texte dans la page à des sections différentes, il ou elle peut faire comme suit :
+
+<iframe width="100%" height="325" src="//jsfiddle.net/KayRoss/cbp59tvL/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+Par contre, cette manière d'écrire le code directement dans le fichier HTML (_inline_) est déconseillée. Un fichier HTML peut rapidement se remplir de code JS et devenir long.
+
+**Il est presque toujours indésirable d'avoir des fichiers long en informatique, car ils sont :**
+
+1. plus difficiles pour trouver de l'information
+2. plus longs à ouvrir, modifier et sauvegarder
+3. plus intimidants à regarder
+4. plus probables de causer de la redondance
+5. plus spaghetti et démontrent une architecture de code naïf
+
+En effet, un site web doit être _scalable_, c.-à-d. prêt à prendre de l'expansion sans « briser ». S'il y a 10 000 lignes de code JS dans un fichier HTML, la page est difficile à maintenir. Ce principe s'applique aussi au CSS et c'est ainsi que le CSS pour une ou plusieurs pages se retrouvent dans son propre fichier.
+
+Donc, comme avec du CSS, il est recommandé d'avoir des fichiers destinés au JS. Les pages peuvent référer au même fichier JS, au lieu de copier-coller le code JS dans chaque page et créer un cauchemar de redondance et de maintenance. En plus, un fichier JS peut être _cached_ (comme un fichier CSS) pour améliorer la performance d'un site web.
+
+Il est parfois mieux d'écrire du JS _inline_ dans un fichier HTML, tout de même. Ces cas se réservent à des petits blocs de code simples.
+
+## Exemple 3 : inclure un fichier JS dans une page HTML
+Cet exemple montre la méthode populaire d'inclure du JS. Dans la balise `<script>`, ajoutez l'option `src` en y affectant l'adresse du fichier JS. Le code sera exécuté à l'endroit où se trouve la balise.
+
+### JavaScript
+#### fichier test.js
+
+```{js eval=FALSE}
+for (var i = 0; i < 5; i++) {
+  document.write(i + "<br>");
+}
+```
+
+### HTML
+#### fichier index.html dans le même répertoire que le fichier test.js
+```
+<html>
+  <body>
+    <script src="test.js"></script>
+  </body>
+</html>
+```
+
+### Sortie
+```
+0
+1
+2
+3
+4
+```
+Pour plus d'informations à propos de l'inclusion de JS dans une page HTML : [w3school - JavaScript Where To](https://www.w3schools.com/js/js_whereto.asp)

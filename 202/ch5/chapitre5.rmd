@@ -1,0 +1,104 @@
+---
+title: "`class`"		
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+## Qu'est-ce qu'une `class` ?
+En POO, la classe est un plan qui décrit les _caractéristiques_ et les _comportements_ qui composeront un objet lorsqu'il sera créé. Nous pouvons présenter la classe comme étant un plan ou encore un moule qui permettra de fabriquer des objets utilisables dans nos programmes.
+
+Le concept de classes a été popularisé par le langage qui est éventuellement devenu C++. Par contre, l'idée a été pris du langage _Simula_. _Simula_ était un des premiers langages à implanter la programmation orientée objet, et les objets étaient modélisés par la notion de classes.
+
+## Attributs
+En C/#, une classe peut contenir des données et des fonctions. Les données sont utilisées pour donner des caractéristiques à un objet ; ceux-ci sont appelés des **attributs**. Par exemple, un instance de la classe `Joueur` peut avoir un attribut `pointsDeVie` qui représente un aspect d'un joueur. 
+
+_Données d'une classe = variables et constantes = attributs_
+
+Les valeurs pour l'ensemble des attributs représente l'_état_ d'un objet. Suposson que la classe `Joueur` déclare qu'un joueur a aussi un attribut `image`. À un moment pendant l'exécution du programme, le joueur se fait attaquer et perd des points de vie et son image change :la valeur de `pointsDeVie` est maintenant 5 et son `image` égal maintenant ouch.jpg.
+
+`pointsDeVie : 5` et `image : ouch.jpg` est l'état actuel de l'objet joueur. L'état du joueur a changé suite a des modifications de ses attributs. Autrement dit, lorsque des mutations a un objet surviennent, il est dans un nouvel état.
+
+## Méthodes
+Les fonctions dans une classe décrivent souvent un comportement ou une action qu'un instance de la classe peut avoir ou faire. Celle-ci sont nommées des **méthodes**. La classe `Joueur` peut contenir une méthode `Sauter` qui représente une action qu'un joueur peut faire. L'action comporte une logique (le code de la fonction) pour être réalisée.
+
+_Fonctions d'une classes = méthodes_
+
+## Les références
+Supposons une classe pour représenter un Rectangle :
+
+```
+class Rectangle
+{
+    int hauteur, largeur;
+    char symbole;
+}
+```
+
+Lorsqu'une donnée `ReferenceType` est déclarée, sa valeur par défaut est `null`, car la variable ou constante réfère à rien. En fait, pour les types références, nous déclarons des *références*. Une référence pointe à quelque chose (elle réfère à quelque chose...). Par exemple, `Rectangle rect;` déclare réellement une référence qui pointe vers un objet `Rectangle` → la variable `rect` n'est pas techniquement un rectangle.
+
+Lorsqu'un objet basé sur une classe est instancié, l'objet en soi est entreposé dans la mémoire vive de l'ordinateur. Le processus d'instanciation, pour une classe, retourne une référence qui indique où se trouve le véritable objet en mémoire.
+ 
+Dans le cas de `Rectangle rect = new Rectangle();`, l'expression `new Rectangle()` retourne l'adresse où se situe le nouveau rectangle créé. Cette référence est sauvegardée dans la variable `rect`. Par la suite, il est possible de manipuler le rectangle, car nous savons où il se trouve et avons les moyens d'aller le chercher.
+
+Si une référence est envoyée en paramètre à une fonction, nous envoyons effectivement l'adresse où se trouve un objet. Si l'objet est accédé par le biais de la référence et ensuite modifié, la modification n'a pas été fait sur une copie !
+
+```
+public static void Main()
+{
+    Rectangle rect = new Rectangle();
+    Test(rect);
+}
+
+static void Test(Rectangle rectangleÀTester)
+{
+   //modification du rectangle à travers la référence rectangleÀTester
+}
+```
+
+Ici, la variable `rect` et la variable `rectangleÀTester` sont deux variables distinctes, mais qui termine par référer *à la même instance en mémoire*. Ceci explique la persistance des modifications appliquées sur quelque chose envoyé par référence.
+
+## Les constructeurs de classe
+Lorsque nous créons une instance avec le mot clé `new`, ce qui suit est le constructeur de l’objet :
+`new Rectangle(); //Rectangle() est un appel à un constructeur`
+
+Les constructeurs sont des méthodes particulières dont l’une est appelée automatiquement durant le processus d’instanciation dans le but de donner à l’objet un **état initial valide**. Ceci est fait en affectant les attributs de l’objet avec des valeurs initiales et en s’assurant que l’objet dans son ensemble est cohérent.
+Un constructeur retourne une référence au nouvel objet construit, c.-à-d. que l'adresse de l'objet en mémoire est retournée.
+
+#### Écrire un constructeur
+Pour l'instant, nos constructeurs seront toujours `public`. La syntaxe pour déclarer un constructeur est la suivante : _public nomDeLaClasse()_.
+
+Dans le corps de la fonction (la définition), le code sert à donner un état au nouvel objet qui sera construit suite à l'appel du constructeur. Ce code est le premier bloc de code exécuter par l’objet. Le constructeur est le point d’entrée d’exécution pour un objet.
+
+```
+public Rectangle()
+{
+    largeur = 1;
+    hauteur = 1;
+    symbole = '*';
+}
+```
+Dans l'exemple ci-haut, chaque nouveau rectangle instancié à partir de ce constructeur aura l'état {largeur : 1, hauteur : 1, symbole : *}. Chaque rectangle sera unique (occupe leur propre place en mémoire) mais ils auront le même état initial.
+
+## Code client
+Le code qui utilise une instance est appelé **code client** de l'instance. Un objet offre des services à travers ses méthodes, par exemple, alors le terme « client » est approprié.
+
+```
+public static void Main()
+{
+   Rectangle r1 = new Rectangle();
+  
+  // utilsation de r1...
+  // la fonction Main est cliènte de r1
+}
+```
+
+## Bonus : mémoire d'un ordinateur
+La mémoire vive (RAM) d'un ordinateur peut être visualisée comme un tableau contenant des données. Chaque cellule de ce tableau à une adresse (sa position).
+
+Chaque adresse peut contenir un octet (8 bits) de données. Un `int` en C# prend 32 bits pour être représenté, donc 4 octets. Créer un `int` occupe alors 4 cellules de la mémoire vive.
+
+Si un ordinateur possède 4 Go de RAM, il possède 4,295 x 10^9^ octets, alors 4,295 x 10^9^ cellules. À cause du grand nombre d'adresses possibles, l'hexadécimal est souvent utilisé pour identifier une adresse. Généralement, moins de caractères sont necéssaires pour exprimer un nombre en base16 qu'en base 10.

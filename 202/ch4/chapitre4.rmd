@@ -1,0 +1,51 @@
+---
+title: "Les objets"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+**Avertissement :** Le contenu suivant présente et utilise beaucoup de vocabulaires techniques. Une tâche importante est de se familiariser avec la terminologie et de l'utiliser avec précision. En informatique, la compréhension se retrouve dans les détails.
+
+## Objets en C\#
+En C\#, il est accepté de dire que _tout est un objet_, car tout est soit une `struct` (`int`, `char`, ...) ou une `class` (`Random`, les tableaux, ...).
+
+Ce qui distingue une `struct` d'une `class`, **en C#**,  le plus immédiatement est que les `struct` décrivent des `ValueType`, tandis que les `classes` décrivent des `ReferenceType`. Pour bien comprendre la distinction entre un type _par valeur_ et un type _par référence_, il faut apprivoiser qu'est-ce une référence.
+
+Ce sujet sera élaboré en profondeur à travers l'exploration des `class`. La conception de classe sera notre effort principal, par-dessus l'écriture de `struct`.
+
+## Instanciation
+L'**instanciation** est l'action de créer un objet à partir d'une `struct` ou d'une `class`. Les objets étant créés par une instanciation, ils sont nommés des **instances**. En C\#, car tout est un objet, tout est une instance d'une classe ou d'une `struct`. 
+**N.B. :* Souvenez-vous que ce n'est pas ainsi dans tous les langages qui permets la POO.
+
+Une instanciation d'objet est très explicitement fait lorsque le mot clé `new` apparait.
+Les cas familiers d'utilisation de `new` sont :
+
+* création d'un nouveau objet `Random`
+* création d'un tableau
+* création d'un `ÉtudiantSIM`
+
+Certains types, à la déclaration, vont implicitement faire un `new`. En C/#, c'est nécessaire qu'un `new` ce produit à quelque part, car tout doit être instancié, car tout est un objet.
+
+```
+int x = 0; //est réellement Int32 x = new Int32();
+string nom = "Greg"; //est réellement String nom = new String("Greg");
+```
+
+## La vérité sur les « primitifs »
+Un `int` en C\# est techniquement un type complexe (`struct`) comparé à un primitif pur (une donnée seule). Nous pouvons voir qu'une instance de `int` est beaucoup plus qu'une simple donnée, car nous pouvons accéder a des membres de ce `int` par le biais d'un point (.). 
+
+```
+int x = 0;
+string foo = x.ToString();
+```
+
+En pratique, par contre, nous traitons un `int` comme un primitif et l'appelons souvent ainsi, tout en sachant que c'est réellement un objet plus compliqué qu'une valeur unique. Cela va de soi également pour `double`, `float`, `char`, `bool`, ...
+
+Une `string` est évidemment un objet complex, par contre, et n'est pas considérée une « primitive ». Les chaine de caractères méritent un chapitre en soi ; à venir.
+
+## Mini-exercice
+Envoyez un tableau en paramètre et modifier son contenu. Observez si la modification est persistente et identifiez si un tableau est type valeur (`struct`) ou type référence (`class`).

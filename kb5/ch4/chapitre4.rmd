@@ -1,0 +1,10 @@
+---
+title: ""
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+urlcolor: blue
+---
+

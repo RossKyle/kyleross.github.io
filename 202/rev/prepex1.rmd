@@ -1,0 +1,37 @@
+---
+title: "Préparation éléments théoriques"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles2.css
+link-citations: true
+urlcolor: blue
+---
+1. Au plus bas niveau, quel est le code qu'un ordinateur comprend réellement ?
+2. Quels sont les éléments fondamentaux de tous programmes, peu importe le langage dans lesquels ils sont écrits ?
+3. Quelle est la différence principale entre une struct et une classe, en C\# ?
+4. Nommez un langage de programmation qui a précédé le C\# et qui avait des `struct`.
+5. Lorsqu'une fonction reçoit un tableau en paramètre, le paramètre représente une copie du tableau envoyé. V ou F ?
+6. Il est impossible que plusieurs fonctions portent le même nom. V ou F ?
+7. Quelle est la valeur par défaut pour n'importe quelle donnée qui est d'un type défini par une classe ?
+8. En C\#, est-ce que toutes les données sont des objets ?
+9. Nommez le défaut principal, vu en classe, du paradigme procédural.
+10. Qu'est-ce l'instanciation ?
+11. Qu'est-ce un attribut d'objet ?
+12. Qu'est-ce une méthode d'objet ?
+13. Qu'est-ce qui défini l'état d'un objet ? (pour modifier un objet, il faut modifier ces ...)
+14. Qu'est-ce qu'une référence ?
+15. Pourquoi cacher des éléments d'un objet d'un client ? (pourquoi l'encapsulation ?)
+16. Qu'est-ce qui forme l'interface publique d'une classe ?
+17. Une propriété est une façon raccourcie d'écrire une méthode «mutateur» et une méthode «accesseur». V ou F ?
+18. Une propriété calculée a un volet `set` où il faut affecter un attribut. V ou F ?
+19. Il est **toujours** garanti qu'un client ne peut modifier l'état d'un objet à travers un accesseur public.
+20. Quel est le but d'un mutateur ?
+21. Il est approprié d'avoir une stratégie de validation dans un mutateur. V ou F ?
+22. Dans quel cas est-ce qu'il est sécuritaire de retourner une référence à un attribut d'un objet ?
+23. Supposons que `s` est une référence vers une `string`. `s.ToLower()` retourne une nouvelle `string`. V ou F ?
+24. Concaténer des `string` par `+` peut être long pour quelles raisons ? Quelle est la solution ?
+25. Pourquoi est-ce que c'est déconseillé de retourner un attribut de type tableau ?
+26. Si le `set` d'une propriété qui contrôle un attribut de type tableau est public, le client peut modifier le contenu du tableau. V ou F ?
+27. Pourquoi est-ce que c'est long insérer un élément au début d'un tableau ?

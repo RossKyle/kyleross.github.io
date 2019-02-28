@@ -1,0 +1,79 @@
+---
+title: "De procédurale à orientée objet"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+## Un retour sur la procédurale
+Dans des méthodologies plus traditionnelles, comme en programmation procédurale, nous avons deux éléments distincts à la conception de logiciel : les _données_ et les _traitements_ sur ces données.
+Voyons un exemple d’un programme simple, afin de voir qui est la vedette entre les deux, dans le monde procédural (spoiler : c’est les procédures/traitements). 
+
+## Rectangle procédurale
+### Mise en situation
+Nous voulons créer un programme console qui affiche un rectangle à l’écran. Ce rectangle doit être représenté graphiquement par un motif d’un symbole qui se répète, comme dans l’exemple si dessous :
+
+_Un rectangle 7 x 5_
+
+```
+*******  
+*******  
+*******  
+*******  
+*******  
+```
+
+Les dimensions du rectangle, ainsi que le symbole, sont demandées à l’utilisateur lors de l’exécution.
+
+### Analyse des données
+Toutes les données de ce programme vont être par rapport à un rectangle. 
+Nous déterminons qu’un rectangle peut être défini par trois données : 
+* La hauteur du rectangle
+* La largeur du rectangle
+* Le caractère (symbole) utilise pour afficher le rectangle
+
+Nous pouvons alors choisir de regrouper ces trois données, puisqu’elles ont un lien entre elles (définir ce qu’est un rectangle dans notre programme). Nous obtenons alors une structure qui décrit les données permettant de représenter un rectangle.
+
+```
+struct Rectangle
+{
+    public int largeur, hauteur;
+    public char symbole;
+}
+```
+
+**N.B. :** Souvenons-nous que nous nous tenons à émuler une structure C classique. Cette `struct` ne peut pas décrire de traitements sur les données (fonctions).
+
+### Traitement des données
+Maintenant que nous avons organisé les informations d’un rectangle dans une structure, nous devons faire quelque chose avec ces informations. En premier lieu, il faudra demander à l’utilisateur la hauteur, la largeur et le symbole du rectangle. Ensuite, en utilisant ces valeurs, il faut afficher le rectangle.
+Nous allons créer deux fonctions indépendantes de la structure afin d’effectuer chaque traitement. Ces fonctions prendront en paramètre une variable de type `Rectangle` afin d’affecter ou de lire les données de cette variable.
+
+```
+public static void LireDonnéesRectangle(ref Rectangle rectangle) ...
+
+public static void AfficherRectangle(ref Rectangle rectangle) ...
+```
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/URmkrx" frameborder="0"></iframe>
+
+### Le « défaut »
+Organiser nos données, qui représente ensemble un rectangle, dans une telle `struct` soulève un problème : la structure est inerte – elle ne fait que contenir des données afin quelles soit mieux organiser.
+La structure ne réagit pas lors de la modification ou de la lecture d’un de ses membres. Ceci entraîne, par exemple, l’impossibilité à la structure de valider ses données.
+
+Supposons que l’utilisateur donne la valeur -5 comme largeur du rectangle ; la structure n’a pas le contrôle sur la validité de la largeur. -5 est bien un `int`, alors il n’y a pas d’erreurs de programme, mais dans notre contexte d’un rectangle, une dimension négative n’est pas sensée. Conceptuellement, cela implique qu’il est facile pour qu’une variable de type `Rectangle`, ne représente plus vraiment un rectangle (surtout si quelqu'un d'autre utilise naïvement la structure...).
+
+Où ferions-nous la validation, alors ?
+Si nous pensons procédurale, la première idée serait de faire la validation dans les procédures qui traitent les membres d'un rectangle. Par contre, cela cause plusieurs problèmes.
+
+## Validation décentralisée
+
+* N’importe quelle fonction de notre programme peut modifier sans contrainte les membres d'un rectangle. Une fonction peut valider les dimensions, et une autre non, par ignorance. Il y a toujours ce risque.
+* Répétition de code de validation dans toutes fonctions qui modifient les membres de la structure (chaque fonction pouvant modifier la donnée largeur, par exemple, devrait valider la nouvelle valeur). Si l'algorithme de validation change, il faudra la corriger dans toutes les fonctions.
+* Importer la `struct Rectangle` dans un nouveau projet ne vient pas avec les validations à faire sur les données d'un rectangle.
+  
+Bref, notre structure n’est pas facilement réutilisable pour un programmeur ou une programmeuse paresseux et la structure n’est pas autonome. Conceptuellement, ça serait préférable que la structure `Rectangle` s’occupe d’elle-même, au lieu que le programmeur se soucie constamment de l’intégrité des données.
+
+Tous ces problèmes rencontrés lors du développement de grandes applications en utilisant la programmation procédurale expliquent l’émergence d’une nouvelle approche de programmation.

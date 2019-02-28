@@ -1,0 +1,157 @@
+---
+title: "Chapitre 1 : introduction au langage JavaScript"
+output: pdf_document
+bibliography: my.bib
+link-citations: true
+urlcolor: blue
+nocite: |
+  @mdn_web_docs
+---
+# Qu'est-ce le JavaScript ?
+Le _JavaScript_ est un langage de programmation, tel que le C\#. Son but est donc d'offrir aux développeurs une façon structurée de réaliser des tâches sur un ordinateur en écrivant du code. Chaque langage offre une saveur différente, ce qui rend certain langage plus approprié que d'autre selon le contexte. Le contexte principalement associé avec le JavaScript est le développement web, ce qui le distingue du C\# traditionnel. Ceci est bien souligné dans _JavaScript : The Definitive Guide_, où l'auteur admet que le JavaScript est une des trois technologies principales du web – les deux autres étant l'HTML et le CSS. Une page web moderne repose sur l'HTML pour le contenu, le CSS pour la présentation et le JavaScript pour le **comportement** d'une page web [@flanagan_2011].
+
+Un comportement populaire dans une page est la validation de données d'un formulaire, où la page peut signaler à l'utilisateur si ses entrants sont mal formatées ou invalides. Cette réaction est un exemple d'une page dynamique, car elle se transforme selon des conditions **pendant** l'expérience utilisateur.
+
+## Exemple 1 : validation d'un intrant
+### HTML
+```{html}
+<html>
+  <head>
+    <script type="text/javascript" src="test.js"></script>
+  </head>
+  <body>
+    <h2>Validation avec JavaScript</h2>
+
+    <p>Entrez un chiffre entre 0 et 9 (inclusivement)</p>
+
+    <input id="chiffreEntrée" value="0">
+    <button
+    	type="button" onclick="validerChiffre('chiffreEntrée', 'résultat')">Soumettre
+    </button>
+    <p id="résultat"></p>
+</html>
+```
+### JavaScript
+```{js, tidy=TRUE, tidy.opts=list(width.cutoff=30)}
+function validerChiffre(idEntrée, idSortie) {
+  var chiffre, texte;
+
+  //Chercher la valeur d'un champ d'entrée
+  chiffre = document.getElementById(idEntrée).value;
+  //Si l'entrée de l'utilisateur est null, une chaine vide, n'est pas un nombre,
+  //plus petit que 0, ou plus grand que 9
+  if (!chiffre.trim() || isNaN(chiffre) || chiffre < 0 || chiffre > 9) {
+    texte = "Entrée non valide. Réessayez";
+  } else {
+    texte = "Entrée valide !";
+  }
+
+  //Écrire (en écrasant) la valeur de la variable texte dans un élément destiné à la
+  //sortie
+  document.getElementById(idSortie).innerHTML = texte;
+}
+```
+Remarquez l'utilisation d'HTML pour décrire le contenu de la page (titre, champ d'entrée, bouton). Le JavaScript complète en ajoutant de la fonctionnalité.
+
+Du code JavaScript est souvent compilé directement par un navigateur web. Les résultats peuvent être affichés directement dans une page, ce qui permet de créer des sites dynamiques qui réalisent divers comportements selon les intrants utilisateur. Conséquamment, le JavaScript est un langage effectivement multiplateforme.
+
+**N.B.** il est possible d'utiliser JavaScript sans environnement web. Notamment, un programme pourrait s'exécuter dans un terminal.
+
+Le langage est dite de _haut niveau_, ce qui n'est pas un indicateur de sa difficulté. En contraste, c'est plutôt une qualité qui souligne sa simplicité et sa polyvalence. Le développeur JavaScript typique ne se préoccupe pas des mêmes enjeux qu'un développeur assembleur, car il ou elle programme pour un environnement plus distant des mécanismes internes de l'ordinateur physique. En général, plus de distance implique plus de fonctionnalités gérées pour le programmeur, permettant la personne de se concentrer sur des problèmes plus immédiats. Notamment, le JavaScript permet de rapidement animer un objet dans une fenêtre, avec peu de codification. Cette tâche n'est pas simple avec des langages de _bas niveau_, comme le C, sans faire recours à des ressources tiers au langage.
+
+## Exemple 2 : animer l'orbite de la Terre et de la Lune
+Exemple venant de [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations).
+
+### HTML
+```{html}
+<html>
+  <head>
+    <script type="text/javascript" src="test.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas" width="300" height="300"></canvas>
+  </body>
+</html>
+```
+
+### JavaScript
+```{js}
+var sun = new Image();
+var moon = new Image();
+var earth = new Image();
+
+function init() {
+  sun.src = 'https://mdn.mozillademos.org/files/1456/Canvas_sun.png';
+  moon.src = 'https://mdn.mozillademos.org/files/1443/Canvas_moon.png';
+  earth.src = 'https://mdn.mozillademos.org/files/1429/Canvas_earth.png';
+  window.requestAnimationFrame(draw);
+}
+
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+
+  ctx.globalCompositeOperation = 'destination-over';
+  ctx.clearRect(0, 0, 300, 300); // clear canvas
+
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+  ctx.strokeStyle = 'rgba(0, 153, 255, 0.4)';
+  ctx.save();
+  ctx.translate(150, 150);
+
+  // Earth
+  var time = new Date();
+  ctx.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000)
+  * time.getMilliseconds());
+  ctx.translate(105, 0);
+  ctx.fillRect(0, -12, 40, 24); // Shadow
+  ctx.drawImage(earth, -12, -12);
+
+  // Moon
+  ctx.save();
+  ctx.rotate(((2 * Math.PI) / 6) * time.getSeconds() + ((2 * Math.PI) / 6000)
+  * time.getMilliseconds());
+  ctx.translate(0, 28.5);
+  ctx.drawImage(moon, -3.5, -3.5);
+  ctx.restore();
+
+  ctx.restore();
+
+  ctx.beginPath();
+  ctx.arc(150, 150, 105, 0, Math.PI * 2, false); // Earth orbit
+  ctx.stroke();
+
+  ctx.drawImage(sun, 0, 0, 300, 300);
+
+  window.requestAnimationFrame(draw);
+}
+
+init();
+```
+Réalisez le peu de code pour accomplir la tâche. Dans le script, que du JavaScript pure a été utilisé, c'est-à-dire qu'il n'y a aucun appels a des bibliothèques additionnelles et que tout le code n'est que du JavaScript de base.
+
+# Importance du JavaScript dans l'informatique moderne
+Selon _Stackify_, une recherche sur le site d'emplois _Indeed_ montre que des compétences en JavaScript sont très en demandes [@website:1]. En décembre 2017, le langage était au deuxième rang des langages avec le plus d'ouverture de postes, par exemple. Parmi la communauté de développeurs sur _StackOverflow_, JavaScript a été voté premier en popularité pour la sixième année consécutives [@website:2].
+
+Malgré que JavaScript est intégral à l'expérience web moderne, la polyvalence du langage et ses outils périphériques rend le langage approprié pour une diversité d'applications. En effet, le JavaScript est utilisé par FaceBook, Google, Reddit, Netflix, Paypal, NASA, etc. [@nag; @stackshare] pour la réalisation de sites web, de communications avec des serveurs, d'applications mobiles et de jeux\footnote{Un exemple de jeu : \href{http://hexgl.bkcore.com/play/}{HexGL}}.
+
+Certes, il est très probable qu'un développeur logiciel devra éventuellement écrire ou lire du JavaScript. La familiarité des consommateurs avec le web est trop significatif pour être ignoré ; une application pouvant s'exécuter dans un navigateur atteindra le plus de gens.
+
+# À propos du nom
+Le JavaScript n'est pas une version du langage _Java_. L'histoire du nommage repose sur des enjeux corporatifs entre plusieurs compagnies, ainsi que le processus de standardisation du langage. Certains disent que le mot « Java » a été sélectionné pour l'association positive avec le succès du langage Java.
+
+Il est important de ne pas confondre les technologies Java avec les technologies JavaScript. Il est prudent de considérer ces derniers comme étant distincts.
+
+# Point de départ
+Avant d'explorer les fonctionnalités avancées que le JavaScript permet, débutons avec un outil familié : une console. Le point d'entrée vers l'apprentissage d'un nouveau langage est souvent l'environnement console, car il est **simple**.
+
+Le code suivant imprime une chaine de caractères dans une console.
+
+## Exemple 3 : bonjour monde !
+```{js }
+console.log("Bonjour monde ! @ " + new Date());
+```
+Si vous êtes dans _Chrome_ ou _Chromium_, pressez sur **Ctrl+J** pour ouvrir la console web. Il est possible que ce raccourci fonctionne pour d'autres navigateurs.
+
+Les premiers exercices serviront à explorer les fondements du langages, à l'aide de la console.
+
+# Références

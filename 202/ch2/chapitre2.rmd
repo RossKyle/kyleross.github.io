@@ -1,0 +1,137 @@
+---
+title: "`struct`"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+## Qu'est-ce qu'une `struct` ?
+Avant de se lancer dans la programmation orientée objet et les classes, nous allons voir le parent du concept de la classe : la struct.
+Le langage C a été un des premiers langages à introduire le concept des structs. En C, une struct est une structure contenant des données. Contrairement à une donnée seule, comme une variable booléenne, une structure rassemble plusieurs données ensemble sous un thème commun. 
+Dans une structure traditionnelle, comme en C, nous retrouvons seulement des données (variables et constantes), c.-à-d. que la structure ne contient aucune fonctions.
+
+Bref, nous utilisons le mot-clé struct pour définir une structure.
+À l’intérieur de la définition, nous inscrivons les variables et constantes que nous voulons envelopper par la structure.  
+
+### Exemple d'une `struct` (en C)
+```{c, results='hide'}
+struct etudiantSIM 
+{ 
+    char prenom[12];
+    char nom[12];
+    int moyenne;
+};
+```
+## Pourquoi utiliser une `struct` ?
+Le but des structures est principalement pour mieux organiser le code. Plus précisément, les structures nous permettent de bien organiser les données afin de représenter quelque chose dans notre programme, comme un étudiant, par exemple.
+
+## `struct` → un type
+Une struct peut être dite un type complexe, contrairement à un type primitif. Par contre, un type complexe ou primitif représente quelque chose de bien précis :
+
+* Un `int` représente un entier entre -2,147,483,648 et 2,147,483,647 inclusivement.
+* Un `char` représente un caractère Unicode
+* Un `bool` représente une valeur logique (vrai ou faux)
+* Un `etudiantSIM` représente une étudiant ou étudiant au SIM
+
+Lorsque nous définissons une structure, nous pouvons l’utiliser _semblablement_ à n’importe quel autre type, tel qu’un `int` ou un `char`.
+Nous pouvons donc déclarer des variables ou des constantes du type d’une structure.
+
+### Exemple de déclaration de variables et constantes définies par une `struct` (en C)
+```{c, results='hide'}
+struct etudiantSIM 
+{ 
+    char prenom[12];
+    char nom[12];
+    int moyenne;
+};
+
+int main()
+{
+    struct etudiantSIM etudiant1;
+    struct etudiantSIM etudiant2;
+    const struct etudiantSIM etudiant3;
+}
+
+```
+
+## Accès aux données
+Une fois que nous avons déclaré des variables ou constantes d’une structure, il nous serait fort pertinent d’accéder aux données de la structure.
+
+Nous utilisons le point (**.**), pour réaliser cette tâche. 
+
+Par exemple, pour affecter la moyenne d'un étudiant `etudiant1` : `etudiant1.moyenne = 79`
+
+Plusieurs langages utilisent le point comme moyen d'accéder à un membre d'une structure.
+
+## `struct` → code léger
+### Exemple sans `struct`
+```{c, results='hide'}
+int main()
+{
+    //Données
+    char prenomEtudiant1[12];
+    char nomEtudiant1[12];
+    int moyenneEtudiant1;
+
+    char prenomEtudiant2[12];
+    char nomEtudiant2[12];
+    int moyenneEtudiant2;
+
+    //Affecter la moyenne de l’étudiant 2
+    moyenneEtudiant2 = 86;
+}
+```
+
+### Exemple avec `struct`
+
+```{c, results='hide'}
+struct etudiantSIM 
+{ 
+    char prenom[12];
+    char nom[12];
+    int moyenne;
+};
+
+int main()
+{
+    //Données
+    struct etudiantSIM etudiant1;
+    struct etudiantSIM etudiant2;
+
+    //Affecter la moyenne de l’étudiant 2
+    etudiant2.moyenne = 86;
+}
+```
+## `struct` dans d'autres langages 
+Le concept d’une structure existe dans plusieurs langages procéduraux et orienté objets, par contre, ils ne sont pas toute identiques. En C#, les structs sont beaucoup plus « complets » qu’en C, par exemple. Aussi, les structs en C++ diffère de ceux en C et en C#. Les grandes lignes demeure semblables, mais il y a des particularités et des détails qui peut différencier les structs, selon le langage.
+Pour nous, nous allons garder les choses simples avec notre notion traditionnelle d’une structure, tel qu’il existe dans le langage C. 
+Nous allons voir comment créer une struct « équivalente » en C#.
+
+## Équivalence C\#
+En C, il n’y a pas le mot clé `private`, ni `public`. Nous pouvons imaginer que toutes les données et fonctions en C sont `public`.
+En C\#, à l’intérieur de la définition d’une structure, les données sont `private`, par défaut. Pour avoir une structure traditionnelle en C#, il faut donc mettre `public` avant chaque donnée.
+
+Nous allons explorer plus tard l'importance de tels mot-clef.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/LcCIeM" frameborder="0"></iframe>
+
+En C\#, nous accédons aux données d’une structure de la même façon qu’en C (avec le point). Dans l’avenir, nous allons voir pourquoi c’est dangereux d’avoir autant de liberté sur l’accès et la modification des données – et comment la programmation orientée objet règle ce problème.
+
+_Rappel : En C\#, une variable qui n'a jamais été affectée explicitement va avoir une valeur par défaut, selon son type. Lorsqu'un nouveau étudiant est créé, dans l'exemple, ses données sont toutes initialisées à des valeurs par défaut._
+
+Voici un tableau pour quelques types :
+
+| type    | val défaut      |
+| ------  | --------------- |
+| int     | 0               |
+| float   | 0.0f            |
+| double  | 0.0             |
+| char    | '\0'            |
+| bool    | `false`         |
+| string  | `null`          |
+| tableau | `null`          |
+
+*N.B.* Ne tenez pas pour acquis que tous les langages initialisent des variables avec des valeurs par défaut implicitement. De plus, même si un langage le fait, tenez pas pour acquis que les valeurs seront les mêmes qu'en C\#. 

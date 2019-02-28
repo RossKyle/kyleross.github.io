@@ -1,0 +1,121 @@
+---
+title: "Les tableaux"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+Les tableaux en JS portent le même but que ceux en C\#, par contre, ils sont beaucoup plus flexibles que les tableaux classiques, en partie grâce au système de typage dynamique.
+
+## Instanciation
+Pour créer un tableau, la syntaxe `[]` est utilisée.
+
+```{js}
+let t = [];
+```
+
+Notez l'absence de déclaration de type (évidemment), mais aussi de taille. Un tableau instancié ainsi a une taille de 0, car elle est vide. 
+
+Pour instancier un tableau avec des valeurs, il suffit de mettre les données entre les `[]`.
+
+```{js}
+let t2 = ["Bill", "Stan", "Rick"];
+```
+
+En JS, il est possible de mettre des valeurs de **plusieurs types** dans le même tableau. Les tableaux en JS sont **non homogènes** ­ contrairement au langage C\#.
+
+```{js}
+let t3 = ["Bill", 3.1419, [true, 0, "yo"]];
+t3[0] = false;
+```
+
+## Tableau en tant qu'objet
+Parmi les types existants en JS, il n'y a pas un type pour les tableaux en soi. En fait, les tableaux sont des `object`. 
+
+```{js}
+console.log(typeof([]));
+```
+_N'oubliez de faire CTRL+SHIFT+J pour voir la sortie à la console._
+
+## Itérer à travers les éléments
+#### Avec `for`
+Il est possible d'utiliser une boucle `for` pour itérer à travers chaque «case» d'un tableau. Pour savoir la taille d'un objet tableau, la propriété d'instance `length` peut être utilisée. Les tableaux ­ étant une structure complexe ­ offrent plusieurs propriétés.
+
+```{js}
+let t4 = [0, 2, 4, 6, 8];
+for (let i = 0; i < t4.length; i++) {
+  console.log(t4[i]);
+}
+```
+
+#### Avec `for-of`
+Par contre, il existe une syntaxe plus idiomatique en JS pour itérer à travers tous les éléments d'un tableau : la boucle `for-in`.
+
+```{js}
+let chiffresChanceux = [0, 1, 2, 3, 4, 5];
+for (let chiffre of chiffresChanceux) {
+  console.log(chiffre)
+}
+```
+
+Cette syntaxe permet d'itérer à travers les caractères d'une `string`, aussi.
+```{js}
+for (let caractère of "Bonjour") {
+  console.log(caractère);
+}
+```
+
+Voici un exemple d'itération «en pseudo-profondeur» en utilisant `Array.isArray`:
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/tvxjgfbo/embedded/js,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+
+## Fonctions recevant un tableau
+En JS, les `object` sont envoyés effectivement par référence. Ceci implique que modifié un objet pris en paramètre **ne modifie pas une copie**. Car les tableaux sont des objets, les tableaux sont envoyés par référence.
+
+```{js}
+function test(val) {
+  val[0] = -1;
+}
+
+let t7 = [true, false, false];
+test(t7);
+console.log(t7[0]);
+```
+
+## Taille dynamique
+Les tableaux n'ont pas une taille statique. Il est possible d'ajouter un élément à un tableau sans problème, car la taille du tableau sera automatiquement ajustée.
+
+#### Ajouter un élément à la fin d'un tableau : `.push(...)`
+Sur une instance de tableau, la méthode `push(...)` peut être utilisée pour ajouter un élément à la fin d'un tableau.
+
+```{js}
+let t8 = [];
+t8.push("A");
+
+console.log(t8.length);
+```
+
+#### Retirer des éléments à la fin d'un tableau : `.pop()`
+La méthode `pop()` enlève le dernier élément et le _retourne_.
+
+```{js}
+let t9 = [0, 1, 2, 3];
+
+console.log(t9.pop());
+console.log(t8.length);
+```
+Il existe plusieurs autres méthodes qui manipulent les données dans un tableau : https://www.w3schools.com/jsref/jsref_obj_array.asp
+
+## Structures de données
+Grâce à la grande flexibilité retrouvée chez les tableaux en JS, il est possible d'utiliser un tableau pour implanter plusieurs structures de données. Notamment :
+
+* Vecteur
+* File
+* Pile
+* Tableaux circulaire
+
+Ces structures seront vues en KB4.

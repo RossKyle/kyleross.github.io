@@ -1,0 +1,38 @@
+---
+title: "KB5"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: styles.css
+link-citations: true
+urlcolor: blue
+---
+----
+
+### Plan de cours
+[Plan hiver 2019](PlanH19_420KB5LG.pdf)
+
+### Conventions
+[w3school](https://www.w3schools.com/js/js_conventions.asp)
+
+----
+
+## Chapitres
+1. [Introduction au JavaScript](ch1/chapitre1.html)
+2. [Insertion dans du HTML](ch2/chapitre2.html)
+3. [Typage, variables et constantes](ch3/chapitre3.html)
+4. [Test d'égalité](https://developer.mozilla.org/fr/docs/Web/JavaScript/Les_diff%C3%A9rents_tests_d_%C3%A9galit%C3%A9)
+5. [Tableaux](ch5/chapitre5.html)
+6. [`form`](ch6/chapitre6.html)	
+7. [Introduction au DOM](ch8/chapitre8.html)
+8. [Suite au DOM](ch9/chapitre9.html)
+
+## Exercices d'apprentissage
+1. [`prompt`, `if/else`, `for`](exer/ex1.html)
+
+## Laboratoires
+1. [Tableaux et chaines de caractères](lab/1.html)
+2. [Formulaire pizza](lab/2.html)
+	* [partie B](lab/2b.html)
+

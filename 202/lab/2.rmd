@@ -1,0 +1,179 @@
+---
+title: "Base de jeux"		
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+[**Télécharger le projet de départ**](Labo2_2019_départ.zip)  
+**Télécharger les tests graphiques**
+
+## Mise en situation
+Vous travaillez pour une nouvelle compagnie de jeux vidéos. Votre équipe doit écrire une bibliothèque de classes C\# qui pourront être réutilisées dans plusieurs jeux. Les jeux avenirs de la compagnie utiliseront votre bibliothèque comme fondation, que le jeu soit dans un environnement console ou graphique (2D ou 3D).
+
+Vous êtes en charges de :
+
+* Concevoir les classes;
+* Implémenter les classes;
+* Tester les classes.
+
+Pour assister à la conceptualisation, un énoncé des spécifications vous êtes rendu.
+
+Pour implémenter les classes, vous décidez de créer un projet qui compilera un **dll**. Un dll étant une bibliothèque qui contiendra les classes. Cette bibliothèque pourra ensuite être importée dans plusieurs projets pouvant profiter des services publics offerts par vos classes.
+
+Pour tester les classes, vous créez un deuxième projet qui importe le dll et exécute des tests sur des instances des classes trouvées dans la bibliothèque. Ces tests afficheront des résultats dans la console.
+
+Une fois satisfait avec le comportement des classes, vous testez dans un environnement graphique 3D. Un jeu déjà compilé vous êtes donné ; ce dernier importe votre dll et exécute des tests automatiquement. Vous êtes alors en mesure de représenter vos objets dans la console et graphiquement.
+
+## Les classes
+Vous devez écrire 4 classes, soit `Vecteur3`, `Item`, `Inventaire` et `Joueur`. Afin de simplifier le dévelopement de ces dernières, rédigez les classes dans l'ordre suivant :
+
+1. `Vecteur3`;
+2. `Item`;
+3. `Inventaire`;
+4. `Joueur`.
+
+----
+
+### `Vecteur3`
+Cette classe représente un vecteur avec trois composantes. Les objets de cette classe sont **immuables**.
+
+#### Attributs
+La classe `Vecteur3` doit contenir 3 attributs `float` : x, y et z.
+
+#### Propriétés
+Comme toujours, écrivez des propriétés pour chaque attribut. Tous les accesseurs doivent être publics, tandis que les mutateurs doivent être privés. Aucune validation des valeurs à affecter aux attributs est nécessaire (toutes les valeurs de `float` sont acceptables).
+
+#### Constructeurs
+Créez deux constructeurs ; un par défaut et un paramétrique. Le constructeur par défaut doit instancier un vecteur 3 à la position {0,0,0}. La surcharge paramétrique doit prendre en paramètres les 3 composantes du vecteur à construire.
+Utilisez le racourci d'un constructeur qui appel un constructeur pour écrire la version par défaut.
+
+#### Méthodes publics
+
+* `GénérerChaine()` qui retourne une `string` représentant le vecteur. Cette chaine doit être une coordonnée donnée par les composantes du vecteur. Par exemple, "(0, 0, 0)".
+
+----
+
+### `Item`
+La classe `Item` représente un item dans un jeu. Les instances de cette classe doivent être **immuables**.
+
+#### Attributs et propriétés
+Un item a un nom et une description. Le nom et la description ne doivent pas être `null`, ni être que des caractères invisibles. Dans ces cas de nouvelles valeurs invalides, affectez l'attribut en question avec "défaut".
+
+De plus, le nom et la description ne doit pas contenir des espaces superflues. Votre code doit corriger les valeurs pour respecter ce critère.
+
+#### Constructeur
+Écrivez un constructeur paramétrique qui prend en paramètre le nom et la description de l'item à construire.
+
+#### Méthode public
+
+* `GénérerChaine()` qui retourne une `string` représentant l'item, c.-à-d. contenant le nom et la description de l'item. 
+
+----
+
+### `Inventaire`
+La classe `Inventaire` est essentiellement un conteneur d'`Item`. 
+
+#### Attributs et propriétés
+Ajoutez un attribut `items` qui est un tableau d'`Item`. Assurez-vous que la propriété pour cet attribut ne retourne pas le tableau aux clients, car un client pourrait modifier les items d'un inventaire, sinon. Il doit aussi être impossible, pour les clients, de changer le tableau d'item d'un inventaire pour un autre.
+
+Ajoutez également un attribut `nbItems` qui indique le nombre d'items dans l'inventaire et un attribut `capacité` qui représente la taille maximale de l'inventaire. Assurez-vous que la capacité ne peut être 0 ou négatif en donnant une valeur par défaut de 1 au besoin.
+
+#### Constructeur
+Écrivez un constructeur paramétrique qui prend en paramètre la capacité du nouvel inventaire.
+
+#### Méthodes publics
+
+* `AjouterItem(...)` qui prend en paramètre un `Item` à ajouter dans l'inventaire. Les items doivent être ajoutés séquentiellement dans l'inventaire, c.-à-d. un à la suite de l'autre. Si l'inventaire est plein, la méthode n'a aucun effet.
+* `InsérerItemDébut(...)` qui prend en paramètre un `Item` à ajouter dans l'inventaire. L'item doit être inséré à la première position. Conséquemment, les autres items doivent être décalés d'une case. Si l'inventaire est plein, la méthode n'a aucun effet.
+* `ChercherItem(...)` qui prend en paramètre l'indice de l'item à retourner.
+* `GénérerChaine()` qui retourne une `string` représentant l'inventaire. Cette chaine doit avoir une ligne pour chaque item qui contient le nom et la description de l'item.
+
+#### Propriété indexée
+Écrivez une propriété indexée qui permet aux clients de **chercher** n'importe quel item avec la syntaxe [] (ex : `objetInventaire[0]`). Par contre la propriété indexée ne doit pas laisser un client modifier le contenu du tableau d'`Items`. N'écrivez pas de volet `set` pour la propriété indexée ou assurez-vous que le `set` est `private`. La seule manière qu'un client peut changer le contenu d'un inventaire est à travers les méthodes `AjouterItem` et `InsérerItemDébut`.
+
+----
+
+### Joueur
+#### Attributs et propriétés
+Un joueur doit avoir les attributs suivants :
+
+* int pV;
+* int pVMax;
+* Inventaire inventairePrincipal;
+* Vecteur3 position;
+* Vecteur3 vitesse;
+* Vecteur3 accélération;
+* float masse;
+
+Créez des propriétés pour chaque attributs. Aucune validation est nécéssaire dans les volets `set`, à l'exception d'un endroit : assurez-vous que l'inventaire ne puisse être `null`.
+
+#### Propriété calculée
+Écrivez une propriété calculée `AngleVitesseXY` qui donne l'angle formé par la composante X et Y du vecteur de vitesse. Utilisez `Math.Atan2(...)` comme outil.
+
+#### Constructeur
+Ajoutez un constructeur paramétrique à votre classe. Ce constructeur prend en paramètre la position initiale du joueur, la capacité de son inventaire, et sa masse initiale. Les PV sont affectés à 10, de même que le maximum de PV. La vitesse initiale est affectée à (0,0,0), ainsi que l'accélération.
+
+#### Méthodes publics
+
+* `DéposerItem(...)` qui prend en paramètre un item à ajouter à son inventaire. Le nouveau item est ajouté après les items déjà placés dans l'inventaire.
+* `GénérerChaine()` qui retourne une `string` représentant le joueur. Cette chaine doit contenir 
+	* combien de PV le joueur possède par rapport à ses PVMax. Par exemple (9/10);
+	* la position actuelle du joueur;
+	* la représentation `string` de son inventaire principal.
+
+Les méthodes suivantes ajoutent un comportement physique (notamment la cinématique) aux joueurs :
+
+* `AppliquerForceContinue(...)` qui prend en paramètre un `Vecteur3` qui représente une force à appliquer sur le joueur. Toutes anciennes forces sont remplacées par la nouvelle. Souvenez-vous, appliquer une force implique un changement d'accélération. Aussi, une force continue (ou constante) est une force comme la gravité.
+* `AjouterForceContinue(...)` est semblable à la méthode précédente, mais elle ajoute une nouvelle force aux forces déjà exercées sur le joueur.
+* `MettreÀJour(...)` qui prend en paramètre un `float` qui représente la différence de temps ($\Delta t$) entre la dernière mise à jour et l'appel de la méthode. Cette méthode doit mettre à jour la position du joueur et ensuite mettre à jour sa vitesse.
+
+**N.B** : Il n'est pas nécessaire d'avoir une variable qui accumule le temps.
+
+#### Formules de physiques pertinentes
+
+* $F = ma$
+* $\Delta x = x_i  \Delta t + 0.5a_x\Delta t^2$
+* $\Delta y = y_i \Delta t + 0.5a_y\Delta t^2$
+* $\Delta z = z_i \Delta t + 0.5a_z\Delta t^2$
+* $V_x = V_x_0 + a_x\Delta t$
+* ...
+
+**N.B** : N'oubliez pas que les données telles que $x_i$ n'indique pas la position X initiale à la création du joueur. Les positions initiales, en physique, sont les positions avant d'avoir avancer dans un interval de temps ($\Delta t$). Semblablement, $V_x_0$ est la vitesse avant d'être mise à jour selon l'accélération et $\Delta t$.
+
+Le site suivant exprime bien les connaissances physiques nécessaires, si vous avez oublié votre cours de physique du secondaire : https://physics.info/motion-equations/
+
+**N.B.** : Vous pouvez toujours créer autant de méthodes privées que vous voulez, afin de mieux diviser votre code et éliminer de la redondance dans le projet.
+
+## Tests console
+Testez vos classes dans le projet _TestsLibJeux_. Assurez-vous de la fonctionnalité d'une classe avant de tester le prochain. Une fois satisfait avec vos classes, passez aux tests graphiques.
+ 
+## Tests graphiques
+Copiez le fichier _LibJeux.dll_ trouvé dans _LibJeux/obj/Debug/_ à partir du dossier _Labo2_2019_départ_. Collez le fichier dans le répertoire _Labo2_2019_TestsGraphiques/build_Data/Managed_. Si vous modifiez votre code de bibliothèque, vous devez recompiler votre projet et refaire l'étape de copie-colle.
+
+Dans _Labo2_2019_TestsGraphique_, démarrez l'exécutable et observez les résultats.
+
+La table suivante montre les contrôles :
+
+| touche   | action(s)                     |
+| :------: | ----------------------------- |
+| w        |                               |
+| a        |                               |
+| s        |                               |
+| d        |                               |
+| tab      | afficher informations joueur  |
+
+## Bonus
+
+* Ajouter une surcharge d'opérateur à la classe `Vecteur3` qui permet d'additionner deux vecteurs ensembles (ex : v1 + v2);
+* Ajouter une surcharge d'opérateur à la classe `Vecteur3` qui permet de multiplier un vecteur avec un scalaire (`float` dans ce cas) [ex : v1 * 9f].
+
+## Remise
+Ce travail peut être fait en équipe de deux **maximum**.
+Renommez votre projet de départ pour inclure les noms des participants.
+
+La date de remise pour la version électronique est le 14 mars. La version imprimée (les 4 classes) doit être rendue le cours suivant.

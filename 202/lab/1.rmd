@@ -1,0 +1,101 @@
+---
+title: "Tortue"		
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+## Mise en situation
+Vous êtes en charge de concevoir et tester une classe `Tortue`. Cette classe représente une tortue qui peut se déplacer sur un plan 2D et être affichée dans une console.
+
+Votre fonction `Main` sera cliente de tortues dans le but de réaliser des tests. Dans votre classe `Program`, vous créera une nouvelle fonction qui sera également cliente de tortues.
+
+## La classe `Tortue`
+### Attributs
+
+* `int positionX` : chaque instance de tortue possède une position x
+* `int positionY` : chaque instance de tortue possède une position y
+* `int directionActuelle` : chaque instance de tortue possède une direction pour son prochain déplacement
+
+La position {0,0} est le coin supérieur gauche de la console. Donc, plus que la position Y est élevée, plus que la tortue sera affichée « en bas » de la console.
+
+Des positions négatives ne sont pas acceptées. Si une tentative d'affecter une position avec une valeur invalide survient, ignorer l'affectation (l'état de la tortue ne change pas). Assurez-vous de ne pas avoir une validation décentralisée.
+
+Pour les directions, la valeur
+
+* 0 représente par en haut
+* 1 par la droite
+* 2 par en bas
+* 3 par la gauche
+
+Ces 4 valeurs sont les seules acceptées. Si une tentative d'affecter la direction actuelle avec une valeur négative survient, ignorer l'affectation.
+
+Par contre, si la nouvelle valeur est plus que 3, corrigez-la avant d'affecter l'état de l'objet :
+
+* si la nouvelle valeur est un multiple de 4, la direction devient 0
+* si la nouvelle valeur est un multiple de 5, la direction devient 1
+* si la nouvelle valeur est un multiple de 6, la direction devient 2
+* si la nouvelle valeur est un multiple de 7, la direction devient 3
+
+**Indice :** L'opérateur modulo (%) est votre ami.
+
+### Méthodes
+#### Mutateurs
+Chaque attribut **doit** avoir un mutateur qui **n'est pas compris** dans l'interface publique de l'objet.
+
+#### Accesseurs
+Chaque attribut **doit** avoir un accesseur qui est accessible aux clients des instances de la classe.
+
+#### Constructeur
+Le constructeur doit initialiser une nouvelle tortue à la position {X:0, Y:0}. Sa direction initiale pointe vers la droite.
+
+#### Services aux clients
+1. Écrivez une fonction `PivoterSensHorloge` qui modifie la direction d'une tortue comme le nom de la fonction implique. Si la tortue pointe vers le haut, elle devra pointer vers la droite, après qu'un client lui demande de pivoter, par exemple.
+
+2. Écrivez une fonction `Avancer` qui fait avancer une tortue d'une position dans la direction qu'elle pointe. Par exemple, si la tortue est à la position {2, 3} et pointe vers la gauche, elle devra se situer à {1, 3} après avoir avancé.
+
+3. Écrivez une fonction `AfficherSymbole` qui affiche un caractère qui représente la direction de la tortue. Supposons une tortue `t1` : `t1.AfficherSymbole()` devra afficher un des 4 caractères suivant :
+
+| direction | caractère |
+| --------- | --------- |
+| haut      | ^         |
+| droite    | >         |
+| bas       | v         |
+| gauche    | <         |
+
+**Indice :** Un tableau de caractères serait très pratique pour simplifier votre code. Pour créer un tableau constant, utilisez le mot clé `readonly` au lieu de `const`, en C#.
+
+#### Services internes (méthodes privées)
+Vous pouvez en tout temps créer d'autres méthodes pour simplifier votre code et éliminer de la redondance. Ces méthodes devront être privées, car elles ne seront pas pertinentes pour un client d'une tortue. Dans ce travail, que les accesseurs, le constructeur, et les 3 autres méthodes devront être visible à l'extérieur de la classe.
+
+## La classe `Program`
+Dans le `Main`, testez votre classe `Tortue` en créant des instances basées sur la classe. Faites pivoter et avancer des tortues et affichez des valeurs dans la console pour déterminer si vous obtenez des valeurs attendues.
+
+Passez ensuite à **la partie compliquée** :
+
+Dans la classe `Program`, écrivez une fonction `AfficherTortues` qui prend en paramètre un tableau de `Tortue`.
+
+Cette fonction doit afficher toutes les tortues du tableau à la bonne position, en utilisant leurs coordonnées XY. Les tortues doivent également être affichées avec leur symbole approprié. Aux positions sans tortues, un point ('.') est affiché.
+
+Par exemple, si la fonction reçoit une tortue à la position {0, 1} qui pointe vers le bas et une autre à la position {2, 4} qui pointe vers la droite, le résultat attendu est :
+```
+...
+v..
+...
+...
+..>
+```
+
+**Indice :** Il se peut que vous deviez utiliser une boucle `for` dans une boucle `for` ... dans une boucle `for` (3 niveaux de boucles imbriquées.) Il n'est pas nécessaire d'utiliser une matrice (tableau 2d).
+
+Assurez-vous de tester cette fonction avec vos propres tortues.
+
+## Remise
+Chaque équipe devra déposer une copie de leur projet dans la boite de remise dédiée sur ColNet. Assurez-vous d'avoir les deux noms dans le nom du fichier .zip.
+
+Imprimez également une copie de vos classes `Tortue` et `Program`. 
+
+La date limite pour la soumission électronique est le 14 février avant minuit. La date limite pour la version physique est le 19 février. Le code dans les deux versions doit être identique. 

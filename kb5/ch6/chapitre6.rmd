@@ -1,0 +1,157 @@
+---
+title: "`form`"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## La balise `form`
+Un formulaire est représenté par la balise `form`. À l'intérieur de cette balise se trouvera tous les éléments d'un formulaire. Un formulaire est alors un conteneur et que son contenu est affiché.
+
+```
+<form>
+ ...
+</form>
+ ```
+ 
+La balise peut être identifié avec l'attribut `id` :
+```
+<form id="frm1">
+ ... 
+</form>
+```
+Il y a plusieurs attributs importants pour un `form`, mais il est plus approprié d'apprendre comment ajouter du contenu à un formulaire avant.
+
+## `input`
+Le corps d'un formulaire est principalement composé de **champs**. Un champ sert à accueillir une entrée (_input_) de l'utilisateur.
+
+Une nouvelle entrée est créée avec la balise `input`. Il y a plusieurs types d'entrée, les plus populaires étant :
+
+* zone de texte
+* pastille
+* cases à cocher
+* mot de passe
+* courriel
+* bouton
+* soumettre
+
+Afin de sélectionner le type d'un `input`, l'attribut `type` est utilisé.
+
+Une balise `input` peut avoir une valeur pour l'identifier (`id`), mais aussi un **nom**. L'attribut `name` est utilisé de façon différente que `id`, alors il est souvent pertinent qu'une entrée possède une identification et un nom. Par exemple, une identité doit être unique pour tout le document, mais plusieurs champs peuvent avoir le même nom.
+
+## Zone de texte
+`<input type="text">` créer un champ de texte dans le document.
+```
+<label>Formulaire 1</label>
+<form id="frm1">
+  prénom premier enfant<br>
+  <input type="text" id="prenom-frm2" name="prenom">
+</form>
+
+<label>Formulaire 2</label>
+<form id="frm2">
+  prénom deuxième enfant<br>
+  <input type="text" id="prenom-frm3" name="prenom">
+</form>
+```
+----
+<label>Formulaire 1</label>
+<form id="frm1">
+  prénom premier enfant<br>
+  <input type="text" id="prenom-frm2" name="prenom">
+  
+</form>
+
+<label>Formulaire 2</label>
+<form id="frm2">
+  prénom deuxième enfant<br>
+  <input type="text" id="prenom-frm3" name="prenom">
+</form>
+----
+
+### Attribut `value`
+L'attribut `value` pour un champ de texte de donner une valeur par défaut :
+```
+<input type="text" value="remplissez-moi, j'suis tellement vide à l'intérieur...">
+```
+<input type="text" value="remplissez-moi, j'suis tellement vide à l'intérieur...">
+
+## Pastille (_radio button_)
+Les pastilles servent à donner à l'utilisateur une façon de sélectionner une valeur, souvent parmi plusieurs. Le type est `radio` et l'attribut `name` sert à grouper des pastilles, afin que l'utilisateur choisisse une valeur en cliquant sur une pastille du groupe.
+
+```
+<label>Choix de poutine</label>
+<form>
+  <input type="radio" name="option-poutine" value="ordinaire" checked> bin' simple<br>
+  <input type="radio" name="option-poutine" value="poulet"> au poulet<br>
+  <input type="radio" name="option-poutine" value="italienne"> à l'italienne
+</form>
+```
+----
+<label>Choix de poutine</label>
+<form>
+  <input type="radio" name="option-poutine" value="ordinaire" checked> bin' simple<br>
+  <input type="radio" name="option-poutine" value="poulet"> au poulet<br>
+  <input type="radio" name="option-poutine" value="italienne"> à l'italienne
+</form>
+----
+
+**N.B. :** La valeur de l'entrée n'est pas le texte affiché à droite de l'entrée. Aussi, ajouter l'attribut `checked` marque une pastille par défaut. Si plusieurs sont `checked` (à éviter), que la dernière avec l'attribut sera sélectionneée.
+
+## Soumettre
+Les valeurs des `input` ont comme but d'être envoyé à un serveur pour traitements. Le serveur prend donc les intrants qui lui ont été soumis pour ensuite retourner un résultat.
+
+Par exemple, des données pour un _login_ sont entrées par un utilisateur par un formulaire et soumises à un serveur. Le serveur regarde si l'utilisateur existe dans une base de données et, si oui, fait naviguer l'utilisateur a une nouvelle page.
+
+Bien que du JS peut être utilisé sur un serveur pour faire les traitements, il est plus habituel que le serveur utilise PHP ou ASP.Net (des technologies à voir dans un autre cours). Dans le Web, le JS est plutôt utilisé pour les tâches du côté de l'utilisateur dans son navigateur (côté client), tandis que PHP et ASP.Net exécute sur un autre ordinateur (côté serveur).
+
+L'utilisateur est le client des services rendus par le serveur et les formulaires sont une façon de faire une requête à ces services.
+
+![image laide, mais efficace](https://worldofwebservices.files.wordpress.com/2014/09/1.png)
+Pour créer un bouton qui servira d'envoyer les `value` entrées ou sélectionnées d'un formulaire, il y a `input type="submit"`. Le serveur recevra une valeur par `name`, et c'est ainsi qu'il peut traiter les données d'une façon significative.
+
+Dans l'exemple ci-dessous, le serveur recevra une valeur associée au nom "acheteur" et soit "ordinaire", "poulet" ou "italienne" comme valeur pour nom "option-poutine".
+
+----
+<label>Choix de poutine</label>
+<form>
+  <input type="text" name="acheteur"><br>
+  <input type="radio" name="option-poutine" value="ordinaire" checked> bin' simple<br>
+  <input type="radio" name="option-poutine" value="poulet"> au poulet<br>
+  <input type="radio" name="option-poutine" value="italienne"> à l'italienne<br>
+</form>
+----
+
+**N.B. :** Presser sur _Enter_ lorsque le navigateur est capturé par un champ est équivalent à cliquer sur le bouton.
+
+Pour changer le texte à l'intérieur du bouton, il y a l'attribut `value`.
+
+## Styliser avec CSS
+Il est possible de styliser toutes les entrées d'un certain type avec CSS :
+```{css}
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+}
+```
+Ce style s'applique sur toutes zones de texte du document.
+
+## Autres types d'entrées
+https://www.w3schools.com/html/html_form_input_types.asp
+
+## Attributs pour les entrées
+https://www.w3schools.com/html/html_form_attributes.asp
+
+## Balise `select`
+https://www.w3schools.com/tags/tag_select.asp
+
+## Balise `button`
+https://www.w3schools.com/tags/tag_button.asp
+
+## Attribut `action` pour décider à quel serveur soumettre les `values`
+https://www.w3schools.com/tags/att_form_action.asp

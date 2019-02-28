@@ -1,0 +1,120 @@
+---
+title: "Laboratoire 1 : Tableaux et chaines de caractères"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+### Question 1
+Écrivez une fonction qui retourne le plus long `string` dans un tableau de `string` pris en paramètre. Assurez-vous que le paramètre est un tableau.
+
+**Indice :**
+
+* Utilisez la propriété `length` disponible sur les chaines.
+
+Testez votre fonction avec le paramètre suivant : ["voiture", "chaise", "table", "peinture"].
+
+#### Solution
+Un minimum de validation demande de vérifier si le paramètre est un tableau qui contient au moins un élément. Une validation plus rigoureuse vérifirait si tous les éléments du tableau sont bien des `string`. Si un élément du tableau ne possède pas la propriété `length`, il y aura une erreur.
+La solution suivante opte pour la validation minimale.
+```{js}
+function chercherPlusLongueChaine(chaines) {
+  if (Array.isArray(chaines) && chaines.length != 0) {
+    let plusLongue = chaines[0];
+    let taillePlusLongue = plusLongue.length;
+    for (let chaine of chaines) {
+      if (chaine.length > taillePlusLongue)
+        plusLongue = chaine;
+    }
+    return plusLongue;
+  }
+}
+
+console.log(chercherPlusLongueChaine(["voiture", "chaise", "table", "peinture"]));
+```
+
+### Question 2
+Écrivez une fonction `trouverJournéeEnAnglais` qui prend en paramètre une chaine de caractères. Si la chaine de caractères représente un jour de la semaine en français, retournez une `string` qui est le jour en anglais. Sinon, retournez `null`. 
+
+**N.B. :** Ignorez les différences de cases. Par exemple, si la fonction reçoit "mARdI" en paramètre, la fonction devra tout de même retourner "Tuesday". Utilisez la méthode `.toLowerCase()` sur une instance de `string`.
+
+**Indices :**
+
+* Ajoutez la ligne suivante dans votre fonction :
+const journéesFr = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+* Utilisez la méthode `.indexOf(...)` accessible aux tableaux.
+
+#### Solution
+Utiliser un deuxième tableau évite les if/else ou switch/case. Aussi,Il est possible de normaliser l'intrant (`chaine`) en utilisant la fonction `.toLowerCase()`.
+```{js}
+function trouverJournéeEnAnglais(chaine) {
+  const journéesFr = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+  let valRetour = null;
+  
+  let index = journéesFr.indexOf(chaine.toLowerCase());
+  if (index != -1) {
+    const journéesAn = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    valRetour = journéesAn[index];
+  } 
+  
+  return valRetour;
+}
+
+console.log(trouverJournéeEnAnglais("MaRDi"));
+```
+
+### Question 3
+Écrivez une fonction `construireMatrice` qui a pour but de retourner une matrice. Cette fonction prend en paramètre 3 valeurs :
+
+* le nombre de lignes pour la matrice
+* le nombre de colonne pour la matrice
+* la valeur à mettre dans chaque cellule de la matrice
+
+S'il est impossible de construire une matrice avec les données envoyées en paramètre, retournez `null`. Les dimensions de 0 ne sont pas acceptées, non plus.
+
+#### Solution
+```{js}
+function construireMatrice(nbLignes, nbColonnes, val) {
+  if (isNaN(nbLignes) || isNaN(nbColonnes) || nbLignes < 1 || nbColonnes < 1)
+    return null;
+  
+  let ligneContenu = [];
+  for (let i = 0; i < nbColonnes; i++)
+    ligneContenu.push(val);
+    
+  let matrice = [];
+  for (let i = 0; i < nbLignes; i++)
+    matrice.push(ligneContenu.slice());
+    
+  return matrice;
+}
+
+function afficherMatrice(matriceÀAfficher) {
+  for (let ligne of matriceÀAfficher) {
+    for (let valeur of ligne)
+      document.write(`${valeur}, `);
+    document.write("<br>"); 
+  }
+}
+
+afficherMatrice(construireMatrice(2, 3, "x"));
+```
+### Question 4
+Écrivez une fonction `couperSoulignment` qui reçoit une `string`. Si la chaine contient un ou plusieurs '_' (trait de soulignement), retournez tout ce qui suit le **premier** trait. Sinon, la fonction retourne une string vide.
+
+**Indices :**
+
+* Utilisez la méthode `.split(...)` qui est accessible sur les `string`.
+* La méthode `.join(...)` pour les tableaux peut être intéressante.
+
+## Remise
+Le laboratoire sera vérifié en classe le 11 février. Vous devez montrer le code de chaque fonction, ainsi que du code qui les test. Évidemment, vous devez aussi montrer les résultats dans un navigateur.
+
+
+## Documentation
+https://www.w3schools.com/js/js_array_methods.asp
+https://www.w3schools.com/js/js_string_methods.asp

@@ -1,0 +1,81 @@
+---
+title: "Suite au DOM"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## Manipuler les classes CSS d'un élément du DOM
+### `classList.add(...)`
+La propriété `classList` d'un élément du DOM retourne un objet contenant les noms des classes CSS associées à l'élément.
+
+Pour ajouter une classe CSS à un élément de façon dynamique, il y a la méthode `add` qui peut être appelée par l'objet retourné par la propriété `classList`.
+
+La méthode `add` prend en paramètre le nom de la classe CSS à ajouter.
+
+Par exemple :
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/w8rx5z60/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+### `classList.remove(...)`
+Pour enlever une classe CSS appliquée sur un élément, il y a la méthode `remove`.
+
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/zns6mhuL/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>	
+
+### `className`
+Afin de chercher une `string` énumérant toutes les classes CSS appliquées sur un élément, utilisez la propriété `className`.
+
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/2u1k5Lwf/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+### Exercice
+Créez 3 `div` et un `p`. Mettez le contenu que vous voulez dans chaque balise. 2 des 3 `div` et le `p` doivent avoir la classe "survole".
+
+En utilisant `classList`, `document.querySelectorAll` et les événements `onmouseover` et `onmouseout`, réalisez les tâches suivantes :
+
+* Si l'utilisateur survole les **div** avec la classe "survole", ajouter une bordure verte sur le `div`.
+* Si l'utilisateur arrête de survoler un **div** avec la classe "survole", le `div` doit revenir à son style initial.
+
+<!--
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/4dzucvxg/20/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+-->
+
+### `classList.toggle`
+La méthode `toggle` accessible sur l'objet retourné par `classList` permet d'ajouter et retirer un style CSS, envoyé en paramètre,  comme un interupteur : si la classe n'est pas présente, elle est ajoutee, et si la classe est présente, elle est retirée. 
+
+### Exercices
+1)
+Créez un bouton et un `div`. Créez aussi une classe CSS "accentue" ayant une bordure verte. Si le bouton est cliqué, basculer le style du `div` entre accentué et non-accentué.
+
+2)
+Créez un `div` qui est stylisé avec une image d'une flèche qui pointe vers la droite. Le `div` devra aussi contenir le texte "Section". Créez également un `p` qui contient du texte. Par défaut, ce `p` devra être caché (display: none;).
+
+Si le `div` est cliqué lorsque la flèche pointe vers la droite, l'image doit changer pour une flèche qui pointe vers le bas et le `p` devra s'afficher (display: block;). Si le `div` est recliqué, la flèche devra pointer à nouveau vers la droite et le `p` devra être encore caché. Bref, cliquer sur le `div` fait basculer l'apparition d'une section.
+
+Si le `div` est survoler, changer la couleur de fond du `div`. Si le curseur arrête de survoler, remettez la couleur initiale. Utilisez **seulement** `toggle` pour cette tâche.
+
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/adt9e76p/embedded/result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+<!--
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/nad8q0oy/3/embedded/result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+-->
+
+### `classList.contains`
+Pour savoir si un élément utilise une classe, la méthode `contains` existe. La méthode prend en paramètre le nom d'une classe et retourne `true` ou `false`.
+
+## Ajouter aux DOM de manière dynamique
+### `document.createElement(...)` et `appendChild(...)`
+Avec JS, il est possible d'ajouter des éléments aux DOM pendant l'expérience utilisateur. Pour créer un élément : `document.createElement(...)` qui prend en paramètre le nom de l'élément à créer.
+
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/neow36Lj/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+Dans l'hierarchie du DOM, un élément est ajouté à un autre. Ce nouveau élément est un _enfant_ de son élément _parent_. Il faut donc ajouter les nouveaux éléments à un parent. En premier lieu, il faut chercher une référence a un parent et ensuite appeler la méthode `appendChild(...)` dessus. La méthode prend en paramètre l'élément à ajouter comme enfant au parent.
+ex
+
+### `document.createTextNode(...)`
+Les éléments du DOM contiennent souvent un enfant _texte_. Par exemple, un `p` ou un `div` contiennent un sous élément qui représente le texte à l'intérieur du paragraphe ou de la division. Pour créer un contenu textuel, utilisez `document.createTextNode(...)` qui prend en paramètre votre texte (`string`). Ensuite ajoutez cet objet a un parent.
+ex
+
+
