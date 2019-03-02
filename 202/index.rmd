@@ -32,8 +32,8 @@ L'examen est composé de questions sur la compréhension théorique de la matiè
 7. [Constructeur paramétrique](ch7/chapitre7.html)
 8. [Propriétés](ch8/chapitre8.html)
 9. [`string`, objet immuable et `StringBuilder`](ch9/chapitre9.html)
-10. Distinctions entre conteneur et contenu
-11. Propriété indexée
+10. Distinctions entre conteneur et contenu (notes prises en classe)
+11. Propriété indexée (notes prises en classe)
  
 ## Exercices
 * [Fonction et Random](rev/exercices.html)

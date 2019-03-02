@@ -120,5 +120,5 @@ Vous avez travaillé avec un esprit procédural, jusqu’à présent, mais avez 
 Il est maintenant le temps d’épanouir notre philosophie de la programmation en voyant comment l’aspect orienté objet de C# complète ce que vous avez vu à la session précédente.
 
 ## Base de la programmation
-Peu importe le paradigme, le langage et le « niveau de profondeur » dans lequel nous programmons, les éléments fondamentaux de tous programmes sont les **données** (variables et constantes) et les **fonctions**. 
+Peu importe le paradigme, le langage et le « niveau de profondeur » dans lequel nous programmons, les éléments fondamentaux de tous programmes sont les **données** (variables et constantes) et les **fonctions**.
 Ce qui change d’une pensée à une autre est comment utiliser et interpréter ceux-ci ; la manière de concevoir un programme est différente entre procédurale et orienté objet, par exemple, même si nous travaillons encore – à la base – avec des variables et des fonctions.

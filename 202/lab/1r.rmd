@@ -1,0 +1,38 @@
+---
+title: "Problèmes populaires"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## Utilisation des attributs à des endroits innapropriés
+Supposons la fonctions `Test()` dans la classe tortue :
+
+```
+void Test()
+{
+    directionActuelle = 1;
+    Console.Write(GetDirectionActuelle());
+}
+```
+
+Ceci n'est pas conforme aux pratiques du cours. Il faut utiliser les **mutateurs et accesseurs le plus possible**. Ne pas utilisez un mutateur, par exemple, outrepasse toutes validations possibles.
+
+```
+void Test()
+{
+    SetDirectionActuelle(1);
+    Console.Write(GetDirectionActuelle());
+}
+```
+
+## Des noms de variables et constantes insignificatifs
+Une des choses les plus difficiles pendant l'apprentissage de la programmation est le nommage des données. Assurez-vous de ne pas avoir des noms de données qui ne véhiculent aucune information pertinentes.
+
+Par exemple, nommer une variable `tableauEntiers` est souvent innapprorié, car il n'est pas rendu explicite ce que les entiers représentent. En plus, il n'est pas claire dans quel contexte la variable sera utilisée.
+
+Sur le sujet des noms de conteneurs, comme un tableaux, utilisez le pluriel. Si un tableau contient des int qui représente des notes de bulletin, appelez ce tableau _note**s**_.
