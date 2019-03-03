@@ -417,34 +417,110 @@ $(document).ready(function () {
 
 
 <ol style="list-style-type: decimal">
-<li>Au plus bas niveau, quel est le code qu’un ordinateur comprend réellement ? <em>le code machine qui peut être exprimé purement en binaire</em></li>
-<li>Quels sont les éléments fondamentaux de tous programmes, peu importe le langage dans lesquels ils sont écrits ? <em>les données (variables et constantes) et les fonctions</em></li>
-<li>Quelle est la différence principale entre une struct et une classe, en C# ? <em>Une struct va donner des objets type valeur, tandis qu’une classe va donner des objets type référence</em></li>
-<li>Nommez un langage de programmation qui a précédé le C# et qui avait des <code>struct</code>. <em>Le C</em></li>
-<li>Lorsqu’une fonction reçoit un tableau en paramètre, le paramètre représente une copie du tableau envoyé. V ou F ? <em>F. Les tableaux sont des objets basés sur une classe, donc ils sont type référence. Lorsqu’on envoit un tableau à une fonction, on envoit réellement une référence á un tableau</em></li>
-<li>Il est impossible que plusieurs fonctions portent le même nom. V ou F ? <em>F. Il est possible ; c’est la surcharge de fonction</em></li>
-<li>Quelle est la valeur par défaut pour n’importe quelle donnée qui est d’un type défini par une classe ? <em>La valeur par défaut pour une référence est null</em></li>
-<li>En C#, est-ce que toutes les données sont des objets ? <em>Oui. Les objets peuvent être type valeur ou type référence</em></li>
-<li>Nommez le défaut principal, vu en classe, du paradigme procédural. <em>La validation décentralisée</em></li>
-<li>Qu’est-ce l’instanciation ? <em>L’action de créer un nouvel objet dans la mémoire de l’ordinateur</em></li>
-<li>Qu’est-ce un attribut d’objet ? <em>Une donnée propre à une instance (un objet)</em></li>
-<li>Qu’est-ce une méthode d’objet ? <em>Une action ou un comportement qu’un objet peut réaliser, souvent en traitant la valeur de ses attributs. Une méthode est une fonction</em></li>
-<li>Qu’est-ce qui défini l’état d’un objet ? (pour modifier un objet, il faut modifier ces …) <em>L’ensemble des valeurs des attributs de l’objet définit son état</em></li>
-<li>Qu’est-ce qu’une référence ? <em>Quelque chose qui réfère à un objet instancié en mémoire. C’est l’adresse où se trouve un tel objet</em></li>
-<li>Pourquoi cacher des éléments d’un objet d’un client ? (pourquoi l’encapsulation ?) <em>Assurer une utilisation contrôler de l’objet qui ne permet pas à un client de mettre l’objet dans un étant incohérent</em></li>
-<li>Qu’est-ce qui forme l’interface publique d’une classe ? <em>L’ensemble de ses membres (données et méthodes) publics. Autrement dit : tout ce qui est public</em></li>
-<li>Une propriété est une façon raccourcie d’écrire une méthode «mutateur» et une méthode «accesseur». V ou F ? <em>V. Les propriétés offrent une syntaxe alternative pour écrire des méthodes Get/Set</em></li>
-<li>Une propriété calculée a un volet <code>set</code> où il faut affecter un attribut. V ou F ? <em>F. Une propriété calculée ne contrôle pas un attribut. Ce genre de propriété n’a qu’une partie get, où le résultat d’un traitement est retourné</em></li>
-<li>Il est <strong>toujours</strong> garanti qu’un client ne peut modifier l’état d’un objet à travers un accesseur public. <em>F. Si un objet α retourne une référence à un objet mutable β qui le compose, le client peut modifier β et indirectement modifier l’état de α. Par exemple, si un objet retourne une référence à un tableau qu’il possède comme attribut…</em></li>
-<li>Quel est le but d’un mutateur ? <em>De faire une mutation à l’état d’un objet en modifiant un seul attribut de l’objet</em></li>
-<li>Il est approprié d’avoir une stratégie de validation dans un mutateur. V ou F ? <em>V. Si le mutateur (set) est public et que l’attribut associé est privé, le client sera forcé à passer à travers la validation écrit dans le mutateur</em></li>
-<li>Dans quel cas est-ce qu’il est sécuritaire de retourner une référence à un attribut d’un objet ? <em>Dans le cas où la reférérence réfère à un objet immuable (comme une string)</em></li>
-<li>Supposons que <code>s</code> est une référence vers une <code>string</code>. <code>s.ToLower()</code> retourne une nouvelle <code>string</code>. V ou F ? <em>V. Les string sont immuables</em></li>
-<li>Concaténer des <code>string</code> par <code>+</code> peut être long pour quelles raisons ? Quelle est la solution ? <em>La création de string temporaire, mais surtout à cause du besoin de copier tous les caractères des deux strings pour en former une nouvelle. La solution est d’utiliser un StringBuilder pour construire des string potentiellement longues</em></li>
-<li>Pourquoi est-ce que c’est déconseillé de retourner un attribut de type tableau ? <em>Les tableaux ne sont pas des objets immuables, alors un client peut faire ce qu’il veut avec le contenu du tableau</em></li>
-<li>Si le <code>set</code> d’une propriété qui contrôle un attribut de type tableau est public, le client peut modifier le contenu du tableau. V ou F ? <em>F. Il peut modifier le CONTENEUR</em></li>
-<li>Pourquoi est-ce que c’est long insérer un élément au début d’un tableau ? <em>Il faut décaller tous les éléments du tableau d’une position !</em></li>
+<li>Au plus bas niveau, quel est le code qu’un ordinateur comprend réellement ?</li>
 </ol>
+<p><em>le code machine qui peut être exprimé purement en binaire</em></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Quels sont les éléments fondamentaux de tous programmes, peu importe le langage dans lesquels ils sont écrits ?</li>
+</ol>
+<p><em>les données (variables et constantes) et les fonctions</em></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Quelle est la différence principale entre une struct et une classe, en C# ?</li>
+</ol>
+<p><em>Une struct va donner des objets type valeur, tandis qu’une classe va donner des objets type référence</em></p>
+<ol start="7" style="list-style-type: decimal">
+<li>Nommez un langage de programmation qui a précédé le C# et qui avait des <code>struct</code>.</li>
+</ol>
+<p><em>Le C</em></p>
+<ol start="9" style="list-style-type: decimal">
+<li>Lorsqu’une fonction reçoit un tableau en paramètre, le paramètre représente une copie du tableau envoyé. V ou F ?</li>
+</ol>
+<p><em>F. Les tableaux sont des objets basés sur une classe, donc ils sont type référence. Lorsqu’on envoit un tableau à une fonction, on envoit réellement une référence á un tableau</em></p>
+<ol start="11" style="list-style-type: decimal">
+<li>Il est impossible que plusieurs fonctions portent le même nom. V ou F ?</li>
+</ol>
+<p><em>F. Il est possible ; c’est la surcharge de fonction</em></p>
+<ol start="13" style="list-style-type: decimal">
+<li>Quelle est la valeur par défaut pour n’importe quelle donnée qui est d’un type défini par une classe ?</li>
+</ol>
+<p><em>La valeur par défaut pour une référence est null</em></p>
+<ol start="15" style="list-style-type: decimal">
+<li>En C#, est-ce que toutes les données sont des objets ?</li>
+</ol>
+<p><em>Oui. Les objets peuvent être type valeur ou type référence</em></p>
+<ol start="17" style="list-style-type: decimal">
+<li>Nommez le défaut principal, vu en classe, du paradigme procédural.</li>
+</ol>
+<p><em>La validation décentralisée</em></p>
+<ol start="19" style="list-style-type: decimal">
+<li>Qu’est-ce l’instanciation ?</li>
+</ol>
+<p><em>L’action de créer un nouvel objet dans la mémoire de l’ordinateur</em></p>
+<ol start="21" style="list-style-type: decimal">
+<li>Qu’est-ce un attribut d’objet ?</li>
+</ol>
+<p><em>Une donnée propre à une instance (un objet)</em></p>
+<ol start="23" style="list-style-type: decimal">
+<li>Qu’est-ce une méthode d’objet ?</li>
+</ol>
+<p><em>Une action ou un comportement qu’un objet peut réaliser, souvent en traitant la valeur de ses attributs. Une méthode est une fonction</em></p>
+<ol start="25" style="list-style-type: decimal">
+<li>Qu’est-ce qui défini l’état d’un objet ? (pour modifier un objet, il faut modifier ces …)</li>
+</ol>
+<p><em>L’ensemble des valeurs des attributs de l’objet définit son état</em></p>
+<ol start="27" style="list-style-type: decimal">
+<li>Qu’est-ce qu’une référence ?</li>
+</ol>
+<p><em>Quelque chose qui réfère à un objet instancié en mémoire. C’est l’adresse où se trouve un tel objet</em></p>
+<ol start="29" style="list-style-type: decimal">
+<li>Pourquoi cacher des éléments d’un objet d’un client ? (pourquoi l’encapsulation ?)</li>
+</ol>
+<p><em>Assurer une utilisation contrôler de l’objet qui ne permet pas à un client de mettre l’objet dans un étant incohérent</em></p>
+<ol start="31" style="list-style-type: decimal">
+<li>Qu’est-ce qui forme l’interface publique d’une classe ?</li>
+</ol>
+<p><em>L’ensemble de ses membres (données et méthodes) publics. Autrement dit : tout ce qui est public</em></p>
+<ol start="33" style="list-style-type: decimal">
+<li>Une propriété est une façon raccourcie d’écrire une méthode «mutateur» et une méthode «accesseur». V ou F ?</li>
+</ol>
+<p><em>V. Les propriétés offrent une syntaxe alternative pour écrire des méthodes Get/Set</em></p>
+<ol start="35" style="list-style-type: decimal">
+<li>Une propriété calculée a un volet <code>set</code> où il faut affecter un attribut. V ou F ?</li>
+</ol>
+<p><em>F. Une propriété calculée ne contrôle pas un attribut. Ce genre de propriété n’a qu’une partie get, où le résultat d’un traitement est retourné</em></p>
+<ol start="37" style="list-style-type: decimal">
+<li>Il est <strong>toujours</strong> garanti qu’un client ne peut modifier l’état d’un objet à travers un accesseur public.</li>
+</ol>
+<p><em>F. Si un objet α retourne une référence à un objet mutable β qui le compose, le client peut modifier β et indirectement modifier l’état de α. Par exemple, si un objet retourne une référence à un tableau qu’il possède comme attribut…</em></p>
+<ol start="39" style="list-style-type: decimal">
+<li>Quel est le but d’un mutateur ?</li>
+</ol>
+<p><em>De faire une mutation à l’état d’un objet en modifiant un seul attribut de l’objet</em></p>
+<ol start="41" style="list-style-type: decimal">
+<li>Il est approprié d’avoir une stratégie de validation dans un mutateur. V ou F ?</li>
+</ol>
+<p><em>V. Si le mutateur (set) est public et que l’attribut associé est privé, le client sera forcé à passer à travers la validation écrit dans le mutateur</em></p>
+<ol start="43" style="list-style-type: decimal">
+<li>Dans quel cas est-ce qu’il est sécuritaire de retourner une référence à un attribut d’un objet ?</li>
+</ol>
+<p><em>Dans le cas où la reférérence réfère à un objet immuable (comme une string)</em></p>
+<ol start="45" style="list-style-type: decimal">
+<li>Supposons que <code>s</code> est une référence vers une <code>string</code>. <code>s.ToLower()</code> retourne une nouvelle <code>string</code>. V ou F ?</li>
+</ol>
+<p><em>V. Les string sont immuables</em> 47. Concaténer des <code>string</code> par <code>+</code> peut être long pour quelles raisons ? Quelle est la solution ?</p>
+<p><em>La création de string temporaire, mais surtout à cause du besoin de copier tous les caractères des deux strings pour en former une nouvelle. La solution est d’utiliser un StringBuilder pour construire des string potentiellement longues</em></p>
+<ol start="49" style="list-style-type: decimal">
+<li>Pourquoi est-ce que c’est déconseillé de retourner un attribut de type tableau ?</li>
+</ol>
+<p><em>Les tableaux ne sont pas des objets immuables, alors un client peut faire ce qu’il veut avec le contenu du tableau</em></p>
+<ol start="51" style="list-style-type: decimal">
+<li>Si le <code>set</code> d’une propriété qui contrôle un attribut de type tableau est public, le client peut modifier le contenu du tableau. V ou F ?</li>
+</ol>
+<p><em>F. Il peut modifier le CONTENEUR</em></p>
+<ol start="53" style="list-style-type: decimal">
+<li>Pourquoi est-ce que c’est long insérer un élément au début d’un tableau ?</li>
+</ol>
+<p><em>Il faut décaller tous les éléments du tableau d’une position !</em></p>
 
 
 
