@@ -4,7 +4,7 @@ output:
   html_document:
     mathjax: null
     theme: lumen
-    css: styles.css
+    css: ../styles.css
 link-citations: true
 urlcolor: blue
 ---

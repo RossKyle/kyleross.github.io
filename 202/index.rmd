@@ -47,4 +47,5 @@ L'examen est composé de questions sur la compréhension théorique de la matiè
 ## Laboratoires
 1. [Tortue](lab/1.html)
 	* [FAQ](lab/1f.html)
+	* [Problèmes populaires](lab/1r.html)
 2. [Base de jeux](lab/2.html)
