@@ -33,6 +33,6 @@ void Test()
 ## Des noms de variables et constantes insignificatifs
 Une des choses les plus difficiles pendant l'apprentissage de la programmation est le nommage des données. Assurez-vous de ne pas avoir des noms de données qui ne véhiculent aucune information pertinentes.
 
-Par exemple, nommer une variable `tableauEntiers` est souvent innapprorié, car il n'est pas rendu explicite ce que les entiers représentent. En plus, il n'est pas claire dans quel contexte la variable sera utilisée.
+Par exemple, nommer une variable `tableauEntiers` est souvent innapprorié, car il n'est pas rendu explicite ce que les entiers représentent. En plus, il n'est pas clair dans quel contexte la variable sera utilisée.
 
-Sur le sujet des noms de conteneurs, comme un tableaux, utilisez le pluriel. Si un tableau contient des int qui représente des notes de bulletin, appelez ce tableau _note**s**_.
+Sur le sujet des noms de conteneurs, comme un tableau, utilisez le pluriel. Si un tableau contient des int qui représente des notes de bulletin, appelez ce tableau _note**s**_.
