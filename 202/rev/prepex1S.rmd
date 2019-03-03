@@ -1,5 +1,5 @@
 ---
-title: "Solution :préparation éléments théoriques"
+title: "Solution : préparation éléments théoriques"
 output:
   html_document:
     mathjax: null
@@ -10,107 +10,108 @@ urlcolor: blue
 ---
 1. Au plus bas niveau, quel est le code qu'un ordinateur comprend réellement ?
 
-_le code machine qui peut être exprimé purement en binaire_
+*  _le code machine qui peut être exprimé purement en binaire_
 
-3. Quels sont les éléments fondamentaux de tous programmes, peu importe le langage dans lesquels ils sont écrits ?
+2. Quels sont les éléments fondamentaux de tous programmes, peu importe le langage dans lesquels ils sont écrits ?
 
-_les données (variables et constantes) et les fonctions_
+* _les données (variables et constantes) et les fonctions_
 
 5. Quelle est la différence principale entre une struct et une classe, en C\# ?
 
-_Une struct va donner des objets type valeur, tandis qu'une classe va donner des objets type référence_
+* _Une struct va donner des objets type valeur, tandis qu'une classe va donner des objets type référence_
 
 7. Nommez un langage de programmation qui a précédé le C\# et qui avait des `struct`.
 
-_Le C_
+* _Le C_
 
 9. Lorsqu'une fonction reçoit un tableau en paramètre, le paramètre représente une copie du tableau envoyé. V ou F ?
 
-_F. Les tableaux sont des objets basés sur une classe, donc ils sont type référence. Lorsqu'on envoit un tableau à une fonction, on envoit réellement une référence á un tableau_
+* _F. Les tableaux sont des objets basés sur une classe, donc ils sont type référence. Lorsqu'on envoit un tableau à une fonction, on envoit réellement une référence á un tableau_
 
 11. Il est impossible que plusieurs fonctions portent le même nom. V ou F ?
 
-_F. Il est possible ; c'est la surcharge de fonction_
+* _F. Il est possible ; c'est la surcharge de fonction_
 
 13. Quelle est la valeur par défaut pour n'importe quelle donnée qui est d'un type défini par une classe ?
 
-_La valeur par défaut pour une référence est null_
+* _La valeur par défaut pour une référence est null_
 
 15. En C\#, est-ce que toutes les données sont des objets ?
 
-_Oui. Les objets peuvent être type valeur ou type référence_
+* _Oui. Les objets peuvent être type valeur ou type référence_
 
 17. Nommez le défaut principal, vu en classe, du paradigme procédural.
 
-_La validation décentralisée_
+* _La validation décentralisée_
 
 19. Qu'est-ce l'instanciation ?
 
-_L'action de créer un nouvel objet dans la mémoire de l'ordinateur_
+* _L'action de créer un nouvel objet dans la mémoire de l'ordinateur_
 
 21. Qu'est-ce un attribut d'objet ?
 
-_Une donnée propre à une instance (un objet)_
+* _Une donnée propre à une instance (un objet)_
 
 23. Qu'est-ce une méthode d'objet ?
 
-_Une action ou un comportement qu'un objet peut réaliser, souvent en traitant la valeur de ses attributs. Une méthode est une fonction_
+* _Une action ou un comportement qu'un objet peut réaliser, souvent en traitant la valeur de ses attributs. Une méthode est une fonction_
 
 25. Qu'est-ce qui défini l'état d'un objet ? (pour modifier un objet, il faut modifier ces ...)
 
-_L'ensemble des valeurs des attributs de l'objet définit son état_
+* _L'ensemble des valeurs des attributs de l'objet définit son état_
 
 27. Qu'est-ce qu'une référence ?
 
-_Quelque chose qui réfère à un objet instancié en mémoire. C'est l'adresse où se trouve un tel objet_
+* _Quelque chose qui réfère à un objet instancié en mémoire. C'est l'adresse où se trouve un tel objet_
 
 29. Pourquoi cacher des éléments d'un objet d'un client ? (pourquoi l'encapsulation ?)
 
-_Assurer une utilisation contrôler de l'objet qui ne permet pas à un client de mettre l'objet dans un étant incohérent_
+* _Assurer une utilisation contrôler de l'objet qui ne permet pas à un client de mettre l'objet dans un étant incohérent_
 
 31. Qu'est-ce qui forme l'interface publique d'une classe ?
 
-_L'ensemble de ses membres (données et méthodes) publics. Autrement dit : tout ce qui est public_
+* _L'ensemble de ses membres (données et méthodes) publics. Autrement dit : tout ce qui est public_
 
 33. Une propriété est une façon raccourcie d'écrire une méthode «mutateur» et une méthode «accesseur». V ou F ?
 
-_V. Les propriétés offrent une syntaxe alternative pour écrire des méthodes Get/Set_
+* _V. Les propriétés offrent une syntaxe alternative pour écrire des méthodes Get/Set_
 
 35. Une propriété calculée a un volet `set` où il faut affecter un attribut. V ou F ?
 
-_F. Une propriété calculée ne contrôle pas un attribut. Ce genre de propriété n'a qu'une partie get, où le résultat d'un traitement est retourné_
+* _F. Une propriété calculée ne contrôle pas un attribut. Ce genre de propriété n'a qu'une partie get, où le résultat d'un traitement est retourné_
 
-37. Il est **toujours** garanti qu'un client ne peut modifier l'état d'un objet à travers un accesseur public.
+37. Il est * *toujours** garanti qu'un client ne peut modifier l'état d'un objet à travers un accesseur public.
 
-_F. Si un objet α retourne une référence à un objet mutable β qui le compose, le client peut modifier β et indirectement modifier l'état de α. Par exemple, si un objet retourne une référence à un tableau qu'il possède comme attribut..._
+* _F. Si un objet α retourne une référence à un objet mutable β qui le compose, le client peut modifier β et indirectement modifier l'état de α. Par exemple, si un objet retourne une référence à un tableau qu'il possède comme attribut..._
 
 39. Quel est le but d'un mutateur ?
 
-_De faire une mutation à l'état d'un objet en modifiant un seul attribut de l'objet_
+* _De faire une mutation à l'état d'un objet en modifiant un seul attribut de l'objet_
 
 41. Il est approprié d'avoir une stratégie de validation dans un mutateur. V ou F ?
 
-_V. Si le mutateur (set) est public et que l'attribut associé est privé, le client sera forcé à passer à travers la validation écrit dans le mutateur_
+* _V. Si le mutateur (set) est public et que l'attribut associé est privé, le client sera forcé à passer à travers la validation écrit dans le mutateur_
 
 43. Dans quel cas est-ce qu'il est sécuritaire de retourner une référence à un attribut d'un objet ?
 
-_Dans le cas où la reférérence réfère à un objet immuable (comme une string)_
+* _Dans le cas où la reférérence réfère à un objet immuable (comme une string)_
 
 45. Supposons que `s` est une référence vers une `string`. `s.ToLower()` retourne une nouvelle `string`. V ou F ?
 
-_V. Les string sont immuables_
+* _V. Les string sont immuables_
+
 47. Concaténer des `string` par `+` peut être long pour quelles raisons ? Quelle est la solution ?
 
-_La création de string temporaire, mais surtout à cause du besoin de copier tous les caractères des deux strings pour en former une nouvelle. La solution est d'utiliser un StringBuilder pour construire des string potentiellement longues_
+* _La création de string temporaire, mais surtout à cause du besoin de copier tous les caractères des deux strings pour en former une nouvelle. La solution est d'utiliser un StringBuilder pour construire des string potentiellement longues_
 
 49. Pourquoi est-ce que c'est déconseillé de retourner un attribut de type tableau ?
 
-_Les tableaux ne sont pas des objets immuables, alors un client peut faire ce qu'il veut avec le contenu du tableau_
+* _Les tableaux ne sont pas des objets immuables, alors un client peut faire ce qu'il veut avec le contenu du tableau_
 
 51. Si le `set` d'une propriété qui contrôle un attribut de type tableau est public, le client peut modifier le contenu du tableau. V ou F ?
 
-_F. Il peut modifier le CONTENEUR_
+* _F. Il peut modifier le CONTENEUR_
 
 53. Pourquoi est-ce que c'est long insérer un élément au début d'un tableau ?
 
-_Il faut décaller tous les éléments du tableau d'une position !_
+* _Il faut décaller tous les éléments du tableau d'une position !_
