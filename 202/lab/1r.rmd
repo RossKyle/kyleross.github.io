@@ -30,6 +30,9 @@ void Test()
 }
 ```
 
+## Une fonction → une tâche
+Une fonction devrait réaliser une seule tâche dont celle décrite pas son nom. Le nom de la fonction **doit commencer par un verbe**, car une fonction réalise une action. Si c'est difficile de nommer votre fonction, elle devrait surement être divisée en plusieurs fonctions qui sont plus simples et donc facile à nommer.
+
 ## Des noms de variables et constantes insignificatifs
 Une des choses les plus difficiles pendant l'apprentissage de la programmation est le nommage des données. Assurez-vous de ne pas avoir des noms de données qui ne véhiculent aucune information pertinentes.
 
