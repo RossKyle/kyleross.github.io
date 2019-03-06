@@ -90,7 +90,7 @@ Ajoutez également un attribut `nbItems` qui indique le nombre d'items dans l'in
 
 * `AjouterItem(...)` qui prend en paramètre un `Item` à ajouter dans l'inventaire. Les items doivent être ajoutés séquentiellement dans l'inventaire, c.-à-d. un à la suite de l'autre. Si l'inventaire est plein, la méthode n'a aucun effet.
 * `InsérerItemDébut(...)` qui prend en paramètre un `Item` à ajouter dans l'inventaire. L'item doit être inséré à la première position. Conséquemment, les autres items doivent être décalés d'une case. Si l'inventaire est plein, la méthode n'a aucun effet.
-* `ChercherItem(...)` qui prend en paramètre l'indice de l'item à retourner.
+* `ChercherItem(...)` qui prend en paramètre l'indice de l'item à retourner. Assurez-vous de ne pas retourner `null`, par contre. Aussi, il n'est pas nécessaire de valider si l'indice est hors borne.
 * `GénérerChaine()` qui retourne une `string` représentant l'inventaire. Cette chaine doit avoir une ligne pour chaque item qui contient le nom et la description de l'item.
 
 #### Propriété indexée

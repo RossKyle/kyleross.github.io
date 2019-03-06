@@ -498,7 +498,7 @@ $(document).ready(function () {
 <ul>
 <li><code>AjouterItem(...)</code> qui prend en paramètre un <code>Item</code> à ajouter dans l’inventaire. Les items doivent être ajoutés séquentiellement dans l’inventaire, c.-à-d. un à la suite de l’autre. Si l’inventaire est plein, la méthode n’a aucun effet.</li>
 <li><code>InsérerItemDébut(...)</code> qui prend en paramètre un <code>Item</code> à ajouter dans l’inventaire. L’item doit être inséré à la première position. Conséquemment, les autres items doivent être décalés d’une case. Si l’inventaire est plein, la méthode n’a aucun effet.</li>
-<li><code>ChercherItem(...)</code> qui prend en paramètre l’indice de l’item à retourner.</li>
+<li><code>ChercherItem(...)</code> qui prend en paramètre l’indice de l’item à retourner. Assurez-vous de ne pas retourner <code>null</code>, par contre. Aussi, il n’est pas nécessaire de valider si l’indice est hors borne.</li>
 <li><code>GénérerChaine()</code> qui retourne une <code>string</code> représentant l’inventaire. Cette chaine doit avoir une ligne pour chaque item qui contient le nom et la description de l’item.</li>
 </ul>
 </div>
