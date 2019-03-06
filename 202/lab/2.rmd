@@ -64,7 +64,7 @@ La classe `Item` représente un item dans un jeu. Les instances de cette classe 
 #### Attributs et propriétés
 Un item a un nom et une description. Le nom et la description ne doivent pas être `null`, ni être que des caractères invisibles. Dans ces cas de nouvelles valeurs invalides, affectez l'attribut en question avec "défaut".
 
-De plus, le nom et la description ne doit pas contenir des espaces superflues. Votre code doit corriger les valeurs pour respecter ce critère.
+De plus, le nom et la description ne doivent pas contenir des espaces superflues entourantes. Votre code doit corriger les valeurs pour respecter ce critère. Les espaces superflues « internes » sont acceptées ("Potion de   vie" est acceptée", par exemple). 
 
 #### Constructeur
 Écrivez un constructeur paramétrique qui prend en paramètre le nom et la description de l'item à construire.
