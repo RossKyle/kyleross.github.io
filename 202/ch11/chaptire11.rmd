@@ -1,0 +1,24 @@
+## Complexité d`ajouter un élément à la « fin » d'un tableau
+Supposons un tableau d'entier `entiers`. Ce tableau à une taille de 5 est initialement remplie de 0.
+
+| 0 | 0 | 0 | 0 | 0 |
+
+La valeur 0 représente une cellule « vide ». Si une autre valeur est placée dans une cellule, la cellule est considérée « occupée ».
+
+Car ce tableau est « vide », la « fin » est la première position. Si un élément (par exemple la valeur 5) est ajouté à la fin →
+
+| 5 | 0 | 0 | 0 | 0 |
+
+
+Il y avait 0 éléments dans le tableau, alors le nouvel élément a été placé à la position 0.
+
+Si la valeur 7 est ensuite ajoutée « à la fin » →
+
+| 5 | 7 | 0 | 0 | 0 |
+
+Le nouvel élément a été placé à la position 1, car il y avait 1 élément déjà contenu dans le tableau.
+
+**Il est très rapide** d'ajouter un élément à la **fin** d'une structure de donnée comme un tableau, car il suffit de placer le nouvel élément à la position qui égale le nombre d'éléments courants.
+
+
+

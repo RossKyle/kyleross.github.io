@@ -38,6 +38,8 @@ En utilisant `classList`, `document.querySelectorAll` et les événements `onmou
 * Si l'utilisateur survole les **div** avec la classe "survole", ajouter une bordure verte sur le `div`.
 * Si l'utilisateur arrête de survoler un **div** avec la classe "survole", le `div` doit revenir à son style initial.
 
+**N.B.** : Cet exercice reproduit l'effet de `:hover` en CSS.
+
 <!--
 <iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/4dzucvxg/20/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 -->
@@ -67,15 +69,50 @@ Pour savoir si un élément utilise une classe, la méthode `contains` existe. L
 
 ## Ajouter aux DOM de manière dynamique
 ### `document.createElement(...)` et `appendChild(...)`
-Avec JS, il est possible d'ajouter des éléments aux DOM pendant l'expérience utilisateur. Pour créer un élément : `document.createElement(...)` qui prend en paramètre le nom de l'élément à créer.
+Avec JS, il est possible d'ajouter des éléments aux DOM pendant l'expérience utilisateur. Pour créer un élément : `document.createElement(...)` qui prend en paramètre le nom de l'élément à créer. Le nom d'élément est habituellement le même nom d'une balise HTML (div, p, input, etc.).
+
+Dans l'hierarchie du DOM, un élément est ajouté à un autre. Ce nouveau élément est un _enfant_ de son élément _parent_. Il faut donc ajouter les nouveaux éléments à un parent. En premier lieu, il faut chercher une référence a un parent et ensuite appeler la méthode `appendChild(...)` dessus. La méthode prend en paramètre l'élément à ajouter comme enfant au parent.
 
 <iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/neow36Lj/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
-Dans l'hierarchie du DOM, un élément est ajouté à un autre. Ce nouveau élément est un _enfant_ de son élément _parent_. Il faut donc ajouter les nouveaux éléments à un parent. En premier lieu, il faut chercher une référence a un parent et ensuite appeler la méthode `appendChild(...)` dessus. La méthode prend en paramètre l'élément à ajouter comme enfant au parent.
-ex
-
 ### `document.createTextNode(...)`
-Les éléments du DOM contiennent souvent un enfant _texte_. Par exemple, un `p` ou un `div` contiennent un sous élément qui représente le texte à l'intérieur du paragraphe ou de la division. Pour créer un contenu textuel, utilisez `document.createTextNode(...)` qui prend en paramètre votre texte (`string`). Ensuite ajoutez cet objet a un parent.
+Les éléments du DOM contiennent souvent un enfant _texte_. Par exemple, un `p` ou un `div` contiennent un sous élément qui représente le texte à l'intérieur du paragraphe ou de la division, si la balise n'est pas « vide ».
+
+#### Élément DOM avec enfant _texte_
+``` 
+<body>
+  <div>Bonjour</div>
+</body>
+```
+
+#### Élément DOM sans enfant _texte_
+``` 
+<body>
+  <div></div>
+</body>
+```
+Pour créer un contenu textuel, utilisez `document.createTextNode(...)` qui prend en paramètre votre texte (`string`). Ensuite ajoutez cet objet a un parent.
+
 ex
 
+### Propriété `textContent`
+Pour modifier le contenu textuel d'un élément, utilisez la propriété `textContent`. Un noeud de texte est ajouté, au besoin.
 
+ex
+
+### Exercice
+Écrivez une fonction `creerBoutons` qui prend en paramètre un tableau et une `string`. Pour le bon fonctionnement de la fonction, le tableau doit contenur des `string` et le deuxième paramètre doit être l'id d'un élément du DOM.
+
+Créez un bouton par `string` dans le tableau. Ces boutons doivent être des enfants d'un élément parent qui a l'id donné en paramètre à la fonction. En autre mots, les boutons sont du contenus dans le conteneur avec l'id. Chaque bouton doit avoir comme texte sa `string` associée.
+
+Appliquez les stratégies de validations suivantes :
+
+* Si le premier paramètre n'est pas un tableau, affichez une alerte et quitter la fonction avec un `return`;
+* Si le deuxième paramètre n'est pas une `string` (`typeof(val) != "string"`), affichez une alerte et quitter la fonction;
+* Si aucun élément du DOM correspond avec l'id donné, affichez une alerte et quitter la fonction;
+* Si une valeur dans le tableau n'est pas une `string`, ignorez la ; c.-à-d. ne créez pas de bouton pour cette valeur.
+
+<!--
+#### Solution
+<iframe width="100%" height="300" src="//jsfiddle.net/KayRoss/2s3zda96/19/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+-->

@@ -441,6 +441,7 @@ $(document).ready(function () {
 <li>Si l’utilisateur survole les <strong>div</strong> avec la classe “survole”, ajouter une bordure verte sur le <code>div</code>.</li>
 <li>Si l’utilisateur arrête de survoler un <strong>div</strong> avec la classe “survole”, le <code>div</code> doit revenir à son style initial.</li>
 </ul>
+<p><strong>N.B.</strong> : Cet exercice reproduit l’effet de <code>:hover</code> en CSS.</p>
 <!--
 <iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/4dzucvxg/20/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 -->
@@ -472,14 +473,49 @@ $(document).ready(function () {
 <h2>Ajouter aux DOM de manière dynamique</h2>
 <div id="document.createelement...-et-appendchild..." class="section level3">
 <h3><code>document.createElement(...)</code> et <code>appendChild(...)</code></h3>
-<p>Avec JS, il est possible d’ajouter des éléments aux DOM pendant l’expérience utilisateur. Pour créer un élément : <code>document.createElement(...)</code> qui prend en paramètre le nom de l’élément à créer.</p>
+<p>Avec JS, il est possible d’ajouter des éléments aux DOM pendant l’expérience utilisateur. Pour créer un élément : <code>document.createElement(...)</code> qui prend en paramètre le nom de l’élément à créer. Le nom d’élément est habituellement le même nom d’une balise HTML (div, p, input, etc.).</p>
+<p>Dans l’hierarchie du DOM, un élément est ajouté à un autre. Ce nouveau élément est un <em>enfant</em> de son élément <em>parent</em>. Il faut donc ajouter les nouveaux éléments à un parent. En premier lieu, il faut chercher une référence a un parent et ensuite appeler la méthode <code>appendChild(...)</code> dessus. La méthode prend en paramètre l’élément à ajouter comme enfant au parent.</p>
 <iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/neow36Lj/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0">
 </iframe>
-<p>Dans l’hierarchie du DOM, un élément est ajouté à un autre. Ce nouveau élément est un <em>enfant</em> de son élément <em>parent</em>. Il faut donc ajouter les nouveaux éléments à un parent. En premier lieu, il faut chercher une référence a un parent et ensuite appeler la méthode <code>appendChild(...)</code> dessus. La méthode prend en paramètre l’élément à ajouter comme enfant au parent. ex</p>
 </div>
 <div id="document.createtextnode..." class="section level3">
 <h3><code>document.createTextNode(...)</code></h3>
-<p>Les éléments du DOM contiennent souvent un enfant <em>texte</em>. Par exemple, un <code>p</code> ou un <code>div</code> contiennent un sous élément qui représente le texte à l’intérieur du paragraphe ou de la division. Pour créer un contenu textuel, utilisez <code>document.createTextNode(...)</code> qui prend en paramètre votre texte (<code>string</code>). Ensuite ajoutez cet objet a un parent. ex</p>
+<p>Les éléments du DOM contiennent souvent un enfant <em>texte</em>. Par exemple, un <code>p</code> ou un <code>div</code> contiennent un sous élément qui représente le texte à l’intérieur du paragraphe ou de la division, si la balise n’est pas « vide ».</p>
+<div id="element-dom-avec-enfant-texte" class="section level4">
+<h4>Élément DOM avec enfant <em>texte</em></h4>
+<pre><code>&lt;body&gt;
+  &lt;div&gt;Bonjour&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+</div>
+<div id="element-dom-sans-enfant-texte" class="section level4">
+<h4>Élément DOM sans enfant <em>texte</em></h4>
+<pre><code>&lt;body&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+<p>Pour créer un contenu textuel, utilisez <code>document.createTextNode(...)</code> qui prend en paramètre votre texte (<code>string</code>). Ensuite ajoutez cet objet a un parent.</p>
+<p>ex</p>
+</div>
+</div>
+<div id="propriete-textcontent" class="section level3">
+<h3>Propriété <code>textContent</code></h3>
+<p>Pour modifier le contenu textuel d’un élément, utilisez la propriété <code>textContent</code>. Un noeud de texte est ajouté, au besoin.</p>
+<p>ex</p>
+</div>
+<div id="exercice-1" class="section level3">
+<h3>Exercice</h3>
+<p>Écrivez une fonction <code>creerBoutons</code> qui prend en paramètre un tableau et une <code>string</code>. Pour le bon fonctionnement de la fonction, le tableau doit contenur des <code>string</code> et le deuxième paramètre doit être l’id d’un élément du DOM.</p>
+<p>Créez un bouton par <code>string</code> dans le tableau. Ces boutons doivent être des enfants d’un élément parent qui a l’id donné en paramètre à la fonction. En autre mots, les boutons sont du contenus dans le conteneur avec l’id. Chaque bouton doit avoir comme texte sa <code>string</code> associée.</p>
+<p>Appliquez les stratégies de validations suivantes :</p>
+<ul>
+<li>Si le premier paramètre n’est pas un tableau, affichez une alerte et quitter la fonction avec un <code>return</code>;</li>
+<li>Si le deuxième paramètre n’est pas une <code>string</code> (<code>typeof(val) != &quot;string&quot;</code>), affichez une alerte et quitter la fonction;</li>
+<li>Si aucun élément du DOM correspond avec l’id donné, affichez une alerte et quitter la fonction;</li>
+<li>Si une valeur dans le tableau n’est pas une <code>string</code>, ignorez la ; c.-à-d. ne créez pas de bouton pour cette valeur.</li>
+</ul>
+<!--
+#### Solution
+<iframe width="100%" height="300" src="//jsfiddle.net/KayRoss/2s3zda96/19/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+-->
 </div>
 </div>
 

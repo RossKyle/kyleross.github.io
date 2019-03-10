@@ -11,12 +11,12 @@ urlcolor: blue
 nocite: |
   @mdn_web_docs
 ---
-# Qu'est-ce le JavaScript ?
+## Qu'est-ce le JavaScript ?
 Le _JavaScript_ est un langage de programmation, tel que le C\#. Son but est donc d'offrir aux développeurs une façon structurée de réaliser des tâches sur un ordinateur en écrivant du code. Chaque langage offre une saveur différente, ce qui rend certain langage plus approprié que d'autre selon le contexte. Le contexte principalement associé avec le JavaScript est le développement web, ce qui le distingue du C\# traditionnel. Ceci est bien souligné dans _JavaScript : The Definitive Guide_, où l'auteur admet que le JavaScript est une des trois technologies principales du web – les deux autres étant l'HTML et le CSS. Une page web moderne repose sur l'HTML pour le contenu, le CSS pour la présentation et le JavaScript pour le **comportement** d'une page web [@flanagan_2011].
 
 Un comportement populaire dans une page est la validation de données d'un formulaire, où la page peut signaler à l'utilisateur si ses intrants sont mal formatés ou invalides. Cette réaction est un exemple d'une page dynamique, car elle se transforme selon des conditions **pendant** l'expérience utilisateur.
 
-## Exemple 1 : validation d'un intrant
+### Exemple 1 : validation d'un intrant
 <iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/9e1p2dju/embedded/result,html,js/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 Remarquez l'utilisation d'HTML pour décrire le contenu de la page (titre, champ d'entrée, bouton). Le JavaScript complète en ajoutant de la fonctionnalité.
 
@@ -26,13 +26,13 @@ Du code JavaScript est souvent compilé par un navigateur web. Les résultats pe
 
 Le langage est dit de _haut niveau_, ce qui n'est pas un indicateur de sa difficulté. En contraste, c'est plutôt une qualité qui souligne sa simplicité et sa polyvalence. Le développeur JavaScript typique ne se préoccupe pas des mêmes enjeux qu'un développeur assembleur, car il ou elle programme pour un environnement plus distant des mécanismes internes de l'ordinateur physique. En général, plus de distance implique plus de fonctionnalités gérées pour le programmeur, permettant la personne de se concentrer sur des problèmes plus immédiats. Notamment, le JavaScript permet de rapidement animer un objet dans une fenêtre, avec peu de codification. Cette tâche n'est pas simple avec des langages de _bas niveau_, comme le C, sans faire recours à des ressources tierces au langage.
 
-## Exemple 2 : animer l'orbite de la Terre et de la Lune
+### Exemple 2 : animer l'orbite de la Terre et de la Lune
 <iframe width="100%" height="370" src="https://jsfiddle.net/KayRoss/cnbsLf5d/embedded/result,html,js"/ allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 Exemple venant de [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations).
 
 Réalisez le peu de code pour accomplir la tâche. Dans le script, que du JavaScript pure a été utilisé, c'est-à-dire qu'il n'y a aucun appels a des bibliothèques additionnelles et que tout le code n'est que du JavaScript de base.
 
-# Importance du JavaScript dans l'informatique moderne
+## Importance du JavaScript dans l'informatique moderne
 Selon _Stackify_, une recherche sur le site d'emplois _Indeed_ montre que des compétences en JavaScript sont très en demandes [@website:1]. En décembre 2017, le langage était au deuxième rang des langages avec le plus d'ouverture de postes, par exemple. Parmi la communauté de développeurs sur _StackOverflow_, JavaScript a été voté premier en popularité pour la sixième année consécutives [@website:2].
 
 Bien que le JavaScript est intégral à l'expérience web moderne, la polyvalence du langage et ses outils périphériques rendent le langage approprié pour une diversité d'applications. En effet, le JavaScript est utilisé par FaceBook, Google, Reddit, Netflix, Paypal, NASA, etc. [@nag; @stackshare] pour la réalisation de sites web, de communications avec des serveurs, d'applications mobiles et de jeux.[^1]
@@ -41,17 +41,17 @@ Bien que le JavaScript est intégral à l'expérience web moderne, la polyvalenc
 
 Certes, il est très probable qu'un développeur logiciel devra éventuellement écrire ou lire du JavaScript. La familiarité des consommateurs avec le web est trop significatif pour être ignoré ; une application pouvant s'exécuter dans un navigateur atteindra le plus de gens.
 
-# À propos du nom
+## À propos du nom
 Le JavaScript n'est pas une version du langage _Java_. L'histoire du nommage repose sur des enjeux corporatifs entre plusieurs compagnies, ainsi que le processus de standardisation du langage. Certains disent que le mot « Java » a été sélectionné pour l'association positive avec le succès du langage Java.
 
 Il est important de ne pas confondre les technologies Java avec les technologies JavaScript. Il est prudent de considérer ces derniers comme étant distincts.
 
-# Point de départ
+## Point de départ
 Avant d'explorer les fonctionnalités avancées que le JavaScript permet, débutons avec un outil familier: une console. Le point d'entrée vers l'apprentissage d'un nouveau langage est souvent l'environnement console, car il est **simple**.
 
 Le code suivant imprime une chaine de caractères dans une console.
 
-## Exemple 3 : bonjour monde !
+### Exemple 3 : bonjour monde !
 ```{js}
 console.log("Bonjour monde ! @ " + new Date());
 ```
@@ -59,4 +59,4 @@ Si vous êtes dans _Chrome_ ou _Chromium_, pressez sur **Ctrl+Shift+J** pour ouv
 
 Les premiers exercices serviront à explorer les fondements du langage, à l'aide de la console.
 
-# Références
+## Références

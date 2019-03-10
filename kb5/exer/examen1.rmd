@@ -1,0 +1,61 @@
+## Consignes générales
+
+* Créez une page HTML et un JS par question. Créez un fichier CSS au besoin;
+* Utilisez `window.onload = ...`
+* Votre code ne doit **pas** utiliser `InnerHTML` ni `InnerText`;
+* Votre HTML ne doit **pas** contenir de JS. Ajoutez des actions à des évènements par les propriétés disponibles sur les objets du DOM. Par exemple, `document.GetElementByID("test").onclick = function() { ... };`;
+* Pour modifier le style CSS d'un élément du DOM, utilisez **seulement** les méthodes par `classList` (la bonne pratique);
+* Découpez votre code avec des sous-fonctions, au besoin, pour la propreté et éviter de la redondances;
+* Soyez attentionné sur le nommage de vos données et fonctions.
+
+
+## Question 1 
+Avec l´HTML suivant, affichez l'heure dans la `div` _contenu-heure_. Votre code JS ne doit pas dépasser **3 lignes**. 
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="q1.js"></script>
+</head>
+<body>
+    <div>Heure :</div>
+    <div id="contenu-heure"></div>
+</body>
+</html>
+```
+
+## Question 2
+Avec l'HTML suivant, demandez à l'utilisateur d'entrer le nombre de chats qu'il possède. Pour chaque chat, ajoutez dans le formulaire _form-chats_ un entrée de type texte où l'utilisateur pourra écrire le nom d'un chat. Ajoutez également un bouton qui fait basculer la taille du texte dans les entrées entre 1em et 2em.
+
+## Question 3
+Créez fonction `afficherTableau2D` qui prend en paramètre une tableau 2D et une string. La matrice sera affichée dans le premier élément du DOM ayant le nom de la classe équivalente à la string envoyée en paramètre. Pour afficher la matrice, la représentation suivante est choisie : 
+
+* Chaque cellule est un entrée de texte carré;
+* Lorsqu'une cellule est _hovered_, la bordure de la cellule devient bleue, sinon, elle revient à son état normal;
+* L'utilisateur peut rentrer du contenu dans les cellules.
+
+Aussi, à la fin de chaque ligne, la somme des valeurs de la ligne doit être affichée. Cette somme doit être mise à jour à chaque fois qu'une valeur de la ligne est changée. L'évènement `onchange`, qui existe sur les `input`, doit être utiliser.
+
+Une tableau 2D en JS est un tableau contenant d'autres tableaux (tableau de tableaux).
+Pour référer à une valeur, cherchez un des sous-tableaux (une ligne) et ensuite une colonne de ce sous-tableaux : `tableau2D[ligne][colonne]`.
+
+Si jamais une valeur dans le tableau 2D n'est pas un nombre (`isNaN(...)`), changez la valeur pour 0. Ceci s'applique aussi aux valeurs entrées par l'utilisateur. Si le nombre de lignes ou de colonnes d'une ligne du tableau 2D reçu en paramètre dépassent 5, arrêter l'exécution avec un `return` également. Finalement, si un élément du tableau 2D n'est pas une ligne (`!Array.isArray(...)`), faîtes aussi un `return`.
+
+
+Testez votre fonction avec l'HTML et CSS suivant :
+
+```
+
+```
+
+et les tableaux 2D suivants :
+
+* [[1, -2], [3, 4]]
+* [[1, 2], [3, 4, 5], [6]]
+* [[1, 2, 3], [4, a, 5], [6, 7, 8]]
+* [[1], 1, [1]]
+* [[a, 1], [2]]
+* []
+
+## Question 4
+Créez une page `index.html` avec des boutons permettant de naviguer entre trois autres pages de ce laboratoire.

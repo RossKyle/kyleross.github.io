@@ -12,10 +12,10 @@ urlcolor: blue
 ----
 
 ### Examen intra
-L'examen intra aura lieu après la semaine de mise à niveau. Les chapitres 1 à 11 sont à réviser.
+L'examen intra aura lieu après le 28 mars. Les chapitres 1 à 14 sont à réviser.
 Aucune feuille de note sera permise.
 
-L'examen est composé de questions sur la compréhension théorique de la matière, ainsi de questions à dévelopments où il faut écrire du code. Tout doit être rendu sur papier sans assistance d'un ordinateur.
+L'examen est composé de questions sur la compréhension théorique de la matière, ainsi de questions à dévelopments où il faut écrire du code. Tout doit être rendu sur papier sans assistance d'un ordinateur. Les 3 périodes seront consacrées à cette évaluation.
 
 ### Plan de cours
 [Plan hiver 2019](PlanH19_420202LG.pdf)
