@@ -141,7 +141,7 @@ Les méthodes suivantes ajoutent un comportement physique (notamment la cinémat
 * $\Delta x = V_x_i  \Delta t + 0.5a_x\Delta t^2$
 * $\Delta y = V_y_i \Delta t + 0.5a_y\Delta t^2$
 * $\Delta z = V_z_i \Delta t + 0.5a_z\Delta t^2$
-* x = x_i + \Delta x
+* $x = x_i + \Delta x$
 * ...
 * $V_x = V_x_0 + a_x\Delta t$
 * ...
