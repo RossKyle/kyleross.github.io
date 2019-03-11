@@ -53,11 +53,11 @@ La méthode `toggle` accessible sur l'objet retourné par `classList` permet d'a
 Créez un bouton et un `div`. Créez aussi une classe CSS "accentue" ayant une bordure verte. Si le bouton est cliqué, basculer le style du `div` entre accentué et non-accentué.
 
 2)
-Créez un `div` qui est stylisé avec une image d'une flèche qui pointe vers la droite. Le `div` devra aussi contenir le texte "Section". Créez également un `p` qui contient du texte. Par défaut, ce `p` devra être caché (display: none;).
+Créez un `div` qui est stylisé avec une image d'une flèche qui pointe vers la droite. Le `div` devra aussi contenir le texte "Section". Créez également un `p` qui contient du texte. Par défaut, ce `p` devra être caché (display: none;).<br><br>Implémentez les comportements suivants à l'aide de `toggle`:
 
-Si le `div` est cliqué lorsque la flèche pointe vers la droite, l'image doit changer pour une flèche qui pointe vers le bas et le `p` devra s'afficher (display: block;). Si le `div` est recliqué, la flèche devra pointer à nouveau vers la droite et le `p` devra être encore caché. Bref, cliquer sur le `div` fait basculer l'apparition d'une section.
-
-Si le `div` est survoler, changer la couleur de fond du `div`. Si le curseur arrête de survoler, remettez la couleur initiale. Utilisez **seulement** `toggle` pour cette tâche.
+	* le `div` est cliqué lorsque la flèche pointe vers la droite, l'image doit changer pour une flèche qui pointe vers le bas et le `p` devra s'afficher (display: block;).
+	* Si le `div` est recliqué, la flèche devra pointer à nouveau vers la droite et le `p` devra être encore caché. Bref, cliquer sur le `div` fait basculer l'apparition d'une section.
+	* Si le `div` est survoler, changer la couleur de fond du `div`. Si le curseur arrête de survoler, remettez la couleur initiale.
 
 <iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/adt9e76p/embedded/result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
