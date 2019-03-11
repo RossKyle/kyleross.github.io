@@ -102,7 +102,7 @@ Pour modifier le contenu textuel d'un élément, utilisez la propriété `textCo
 <iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/hwtv216c/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
 ### Exercice
-Écrivez une fonction `creerBoutons` qui prend en paramètre un tableau et une `string`. Pour le bon fonctionnement de la fonction, le tableau doit contenur des `string` et le deuxième paramètre doit être l'id d'un élément du DOM.
+Écrivez une fonction `creerBoutons` qui prend en paramètre un tableau et une `string`. Pour le bon fonctionnement de la fonction, le tableau doit contenir des `string` et le deuxième paramètre doit être l'id d'un élément du DOM.
 
 Créez un bouton par `string` dans le tableau. Ces boutons doivent être des enfants d'un élément parent qui a l'id donné en paramètre à la fonction. En autre mots, les boutons sont du contenus dans le conteneur avec l'id. Chaque bouton doit avoir comme texte sa `string` associée.
 
