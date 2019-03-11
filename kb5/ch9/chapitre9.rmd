@@ -34,7 +34,7 @@ Afin de chercher une `string` énumérant toutes les classes CSS appliquées sur
 ### Exercice
 Créez 3 `div` et un `p`. Mettez le contenu que vous voulez dans chaque balise. 2 des 3 `div` et le `p` doivent avoir la classe "survole".
 
-En utilisant `classList`, `document.querySelectorAll` et les événements `onmouseover` et `onmouseout`, réalisez les tâches suivantes :
+En utilisant `classList`, `document.querySelectorAll` et les événements `onmouseenter` et `onmouseleave`, réalisez les tâches suivantes :
 
 * Si l'utilisateur survole les **div** avec la classe "survole", ajouter une bordure verte sur le `div`.
 * Si l'utilisateur arrête de survoler un **div** avec la classe "survole", le `div` doit revenir à son style initial.
