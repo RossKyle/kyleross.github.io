@@ -1,7 +1,16 @@
+---
+title: "Opérations de tableau et tableau dynamique"
+output:
+  html_document:
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
 ## Complexité d'ajouter un élément à la « fin » d'un tableau
 Supposons un tableau d'entier `entiers`. Ce tableau à une taille de 5 et est initialement remplie de -1.
 
-| -1 | -1 | -1 | 0 | -1 |
+| -1 | -1 | -1 | -1 | -1 |
 
 La valeur -1 représente une cellule « vide ». Si une autre valeur est placée dans une cellule, la cellule est considérée « occupée ».
 
@@ -47,12 +56,41 @@ Un compromis est recherché entre l'adaptabilité du tableau pendant l'exécutio
 Les ingrédients suivants sont utilisés pour créer un objet qui représente un tableau dynamique :
 
 * un attribut tableau (un tableau classique) qui contient les éléments d'un certain type;
-* une constante pour représenter une case « vide » dans le tableau (ex. -1 ou `null`);
+* une donnée pour représenter une case « vide » dans le tableau (ex. -1 ou `null`);
 * un attribut `int` capacité qui représente la taille du tableau décrit ci-haut;
 * un attribut `int` nbÉléments qui représente le nombre d'éléments;
 * un algorithme pour copier les éléments dans un nouveau tableau plus grand, lorsque le tableau est plein;
 * une formule pour déterminer la taille du nouveau tableau lors des redimensions;
 * une façon pour ajouter des éléments à la « fin » du tableau et une façon pour chercher des éléments existants (et non des cases « vide »).
+
+## Implémentation d'un tableau dynamique contenant des `int`
+<!--
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/kI6At2" frameborder="0"></iframe>
+-->
+
+## Implémentation d'un tableau dynamique générique
+Un problème avec la sorte de tableau dynamique créée plus haut est son non-polyvalence. En effet, un `TableauDynamiqueInt` est pour du contenu `int` seulement et il faudra créer une nouvelle classe pour chaque type de contenu. Ceci serait un cauchemar de redondance et difficile à maintenir. Par chance, il est possible de créer des structs et des classes **génériques**.
+
+Une classe générique, par exemple, utilise un paramètre pour représenter un type. À l'instanciation d'un objet de la classe, un client peut fournir un paramètre de type qui « complète la classe ».
+
+```
+class TableauDynamique<T>
+{
+    T[] éléments;
+    ...
+}
+```
+
+```
+public static void main()
+{
+    TableauDynamique<int> notes = new TableauDynamique<int>(5);
+}
+```
+
+Dans l'exemple ci-dessus, le paramètre de type est nommé **T**, ce qui est la convention. Une classe générique est utilisée comme un patron où toutes occurences de T seront éventuellement remplacées. Quand un nouvel objet basé sur la classe est instancié, un paramètre de type est donné et une nouvelle classe est automatiquement générée avec le type donné qui remplace les T.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/inku6e" frameborder="0"></iframe>
 
 ## Choisir entre un tableau fixe ou dynamique
 Utiliser un tableau fixe lorsque sa taille peut être déterminer au temps de compilation (avant l'exécution).

@@ -90,7 +90,8 @@ Ajoutez également un attribut `nbItems` qui indique le nombre d'items dans l'in
 
 * `AjouterItem(...)` qui prend en paramètre un `Item` à ajouter dans l'inventaire. Les items doivent être ajoutés séquentiellement dans l'inventaire, c.-à-d. un à la suite de l'autre. Si l'inventaire est plein, la méthode n'a aucun effet.
 * `InsérerItemDébut(...)` qui prend en paramètre un `Item` à ajouter dans l'inventaire. L'item doit être inséré à la première position. Conséquemment, les autres items doivent être décalés d'une case. Si l'inventaire est plein, la méthode n'a aucun effet.
-* `ChercherItem(...)` qui prend en paramètre l'indice de l'item à retourner. Assurez-vous de ne pas retourner `null`, par contre. Aussi, il n'est pas nécessaire de valider si l'indice est hors borne.
+* `ChercherItem(...)` qui prend en paramètre l'indice de l'item à retourner. Assurez-vous de ne pas retourner `null`, par contre. Donc, si l'indice est invalide, exécutez la ligne suivante :
+`throw new ArgumentOutOfRangeException();`
 * `GénérerChaine()` qui retourne une `string` représentant l'inventaire. Cette chaine doit avoir une ligne pour chaque item qui contient le nom et la description de l'item.
 
 #### Propriété indexée
@@ -137,9 +138,11 @@ Les méthodes suivantes ajoutent un comportement physique (notamment la cinémat
 #### Formules de physiques pertinentes
 
 * $F = ma$
-* $\Delta x = v_x_i  \Delta t + 0.5a_x\Delta t^2$
-* $\Delta y = v_y_i \Delta t + 0.5a_y\Delta t^2$
-* $\Delta z = v_z_i \Delta t + 0.5a_z\Delta t^2$
+* $\Delta x = V_x_i  \Delta t + 0.5a_x\Delta t^2$
+* $\Delta y = V_y_i \Delta t + 0.5a_y\Delta t^2$
+* $\Delta z = V_z_i \Delta t + 0.5a_z\Delta t^2$
+* x = x_i + \Delta x
+* ...
 * $V_x = V_x_0 + a_x\Delta t$
 * ...
 
@@ -155,10 +158,9 @@ Testez vos classes dans le projet _TestsLibJeux_. Assurez-vous de la fonctionnal
 ## Tests graphiques
 Copiez le fichier _LibJeux.dll_ trouvé dans _LibJeux/obj/Debug/_ à partir du dossier _Labo2_2019_départ_. Collez le fichier dans le répertoire _Labo2_2019_TestsGraphiques/build_Data/Managed_. Si vous modifiez votre code de bibliothèque, vous devez recompiler votre projet et refaire l'étape de copie-colle.
 
-Dans _Labo2_2019_TestsGraphique_, démarrez l'exécutable et observez les résultats.
+Dans _Labo2_2019_TestsGraphiques_, démarrez l'exécutable et observez les résultats.
 
 ## Bonus
-
 * Ajouter une surcharge d'opérateur à la classe `Vecteur3` qui permet d'additionner deux vecteurs ensembles (ex : v1 + v2);
 * Ajouter une surcharge d'opérateur à la classe `Vecteur3` qui permet de multiplier un vecteur avec un scalaire (`float` dans ce cas) [ex : v1 * 9f].
 
