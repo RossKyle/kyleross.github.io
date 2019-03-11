@@ -1,24 +1,61 @@
-## Complexité d`ajouter un élément à la « fin » d'un tableau
-Supposons un tableau d'entier `entiers`. Ce tableau à une taille de 5 est initialement remplie de 0.
+## Complexité d'ajouter un élément à la « fin » d'un tableau
+Supposons un tableau d'entier `entiers`. Ce tableau à une taille de 5 et est initialement remplie de -1.
 
-| 0 | 0 | 0 | 0 | 0 |
+| -1 | -1 | -1 | 0 | -1 |
 
-La valeur 0 représente une cellule « vide ». Si une autre valeur est placée dans une cellule, la cellule est considérée « occupée ».
+La valeur -1 représente une cellule « vide ». Si une autre valeur est placée dans une cellule, la cellule est considérée « occupée ».
 
 Car ce tableau est « vide », la « fin » est la première position. Si un élément (par exemple la valeur 5) est ajouté à la fin →
 
-| 5 | 0 | 0 | 0 | 0 |
+| 5 | -1 | -1 | -1 | -1 |
 
-
-Il y avait 0 éléments dans le tableau, alors le nouvel élément a été placé à la position 0.
+Il y avait -1 éléments dans le tableau, alors le nouvel élément a été placé à la position -1.
 
 Si la valeur 7 est ensuite ajoutée « à la fin » →
 
-| 5 | 7 | 0 | 0 | 0 |
+| 5 | 7 | -1 | -1 | -1 |
 
 Le nouvel élément a été placé à la position 1, car il y avait 1 élément déjà contenu dans le tableau.
 
 **Il est très rapide** d'ajouter un élément à la **fin** d'une structure de donnée comme un tableau, car il suffit de placer le nouvel élément à la position qui égale le nombre d'éléments courants.
 
+## Complexité d'insérer un élément dans un tableau
+Supposons un tableau d'entier `entiers`. Ce tableau à une taille de 5 et contient les entiers suivants :
 
+| 3 | 1 | 8 | 9 | -1 |
 
+La valeur -1 représente une cellule « vide ». Si une autre valeur est placée dans une cellule, la cellule est considérée « occupée ».
+
+Insérer une donnée à une position qui **n'est pas la « fin »** est potentiellement très long.
+
+Par exemple, insérer la valeur _2_ au début de ce tableau oblige de décaller **tous** les éléments d'une position. Ceci implique $n-1$ copies, où $n$ est la taille du tableau.
+
+Insérer la valeur _2_ à la position 1 demande de faire 3 copies, soit $n-1-1$ copies.
+
+Insérer la valeur _2_ à la position 2 demande de faire 2 copies, soit $n-2-1$ copies.
+
+Bref, insérer une valeur à une position $i$ implique la copie de $n-i-1$ éléments. Ceci peut être **très lent** selon $i$ et $n$. Le plus proche du début du tableau qu'un élément est insérer, le plus que c'est lent.
+
+## « Tableau » à taille dynamique
+Souvent, il est désirable d'avoir une structure de donnée comme un tableau, mais avec une taille non-fixe. S'il est impossible de savoir en avance combien d'éléments seront contenu dans un conteneur, une structure de donnée pouvant acceuillir un nombre indéterminé d'éléments est un bon choix.
+
+Supposons l'exemple suivant :
+Un programme demande à l'utilisateur d'entrer des `string` au clavier. À chaque fois qu'une `string` est saisie, elle doit être placée dans un tableau. Ceci n'arrête pas tant que l'utilisateur n'entre pas "stop". Il est impossible de déterminer en avance le nombre de `string` que l'utilisateur va entrer, donc la taille du tableau est également indéterminée. Le programmeur ou la programmeuse peu créer un tableau géant, mais celui-ci occupera beaucoup de mémoire vive inutilemnent. Si l'utilisateur entre seulement une valeur, trop de mémoire a été allouée au tableau.
+
+Un compromis est recherché entre l'adaptabilité du tableau pendant l'exécution et la gestion de la mémoire. La solution est un tableau dynamique.
+
+Les ingrédients suivants sont utilisés pour créer un objet qui représente un tableau dynamique :
+
+* un attribut tableau (un tableau classique) qui contient les éléments d'un certain type;
+* une constante pour représenter une case « vide » dans le tableau (ex. -1 ou `null`);
+* un attribut `int` capacité qui représente la taille du tableau décrit ci-haut;
+* un attribut `int` nbÉléments qui représente le nombre d'éléments;
+* un algorithme pour copier les éléments dans un nouveau tableau plus grand, lorsque le tableau est plein;
+* une formule pour déterminer la taille du nouveau tableau lors des redimensions;
+* une façon pour ajouter des éléments à la « fin » du tableau et une façon pour chercher des éléments existants (et non des cases « vide »).
+
+## Choisir entre un tableau fixe ou dynamique
+Utiliser un tableau fixe lorsque sa taille peut être déterminer au temps de compilation (avant l'exécution).
+Utiliser un tableau dynamique lorsque sa taille ne peut être déterminer au temps de compilation.
+
+La structure de donnée à choisir pour contenir les noms des journées de la semaine devrait être un tableau classique, tandis que celle à choisir pour contenir toutes les touches pressées par l'utilisateur pendant un jeu est un tableau dynamique.

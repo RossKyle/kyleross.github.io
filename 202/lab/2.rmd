@@ -137,9 +137,9 @@ Les méthodes suivantes ajoutent un comportement physique (notamment la cinémat
 #### Formules de physiques pertinentes
 
 * $F = ma$
-* $\Delta x = x_i  \Delta t + 0.5a_x\Delta t^2$
-* $\Delta y = y_i \Delta t + 0.5a_y\Delta t^2$
-* $\Delta z = z_i \Delta t + 0.5a_z\Delta t^2$
+* $\Delta x = v_x_i  \Delta t + 0.5a_x\Delta t^2$
+* $\Delta y = v_y_i \Delta t + 0.5a_y\Delta t^2$
+* $\Delta z = v_z_i \Delta t + 0.5a_z\Delta t^2$
 * $V_x = V_x_0 + a_x\Delta t$
 * ...
 
@@ -156,16 +156,6 @@ Testez vos classes dans le projet _TestsLibJeux_. Assurez-vous de la fonctionnal
 Copiez le fichier _LibJeux.dll_ trouvé dans _LibJeux/obj/Debug/_ à partir du dossier _Labo2_2019_départ_. Collez le fichier dans le répertoire _Labo2_2019_TestsGraphiques/build_Data/Managed_. Si vous modifiez votre code de bibliothèque, vous devez recompiler votre projet et refaire l'étape de copie-colle.
 
 Dans _Labo2_2019_TestsGraphique_, démarrez l'exécutable et observez les résultats.
-
-La table suivante montre les contrôles :
-
-| touche   | action(s)                     |
-| :------: | ----------------------------- |
-| w        |                               |
-| a        |                               |
-| s        |                               |
-| d        |                               |
-| tab      | afficher informations joueur  |
 
 ## Bonus
 
