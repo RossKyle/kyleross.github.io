@@ -41,9 +41,8 @@ En utilisant `classList`, `document.querySelectorAll` et les événements `onmou
 
 **N.B.** : Cet exercice reproduit l'effet de `:hover` en CSS.
 
-<!--
+#### Solution
 <iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/4dzucvxg/20/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
--->
 
 ### `classList.toggle`
 La méthode `toggle` accessible sur l'objet retourné par `classList` permet d'ajouter et retirer un style CSS, envoyé en paramètre,  comme un interupteur : si la classe n'est pas présente, elle est ajoutee, et si la classe est présente, elle est retirée. 
