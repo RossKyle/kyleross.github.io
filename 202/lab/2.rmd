@@ -10,7 +10,7 @@ urlcolor: blue
 ---
 
 [**Télécharger le projet de départ**](Labo2_2019_départ.zip)  
-**Télécharger les tests graphiques**
+[**Télécharger les tests graphiques**](https://drive.google.com/open?id=18k_6yrgTwAMiJUZkM3jKzfhfpPbxJcEa)
 
 ## Mise en situation
 Vous travaillez pour une nouvelle compagnie de jeux vidéos. Votre équipe doit écrire une bibliothèque de classes C\# qui pourront être réutilisées dans plusieurs jeux. Les jeux avenirs de la compagnie utiliseront votre bibliothèque comme fondation, que le jeu soit dans un environnement console ou graphique (2D ou 3D).
