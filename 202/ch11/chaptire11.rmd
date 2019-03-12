@@ -95,5 +95,3 @@ Dans l'exemple ci-dessus, le paramètre de type est nommé **T**, ce qui est la 
 ## Choisir entre un tableau fixe ou dynamique
 Utiliser un tableau fixe lorsque sa taille peut être déterminer au temps de compilation (avant l'exécution).
 Utiliser un tableau dynamique lorsque sa taille ne peut être déterminer au temps de compilation.
-
-La structure de donnée à choisir pour contenir les noms des journées de la semaine devrait être un tableau classique, tandis que celle à choisir pour contenir toutes les touches pressées par l'utilisateur pendant un jeu est un tableau dynamique.

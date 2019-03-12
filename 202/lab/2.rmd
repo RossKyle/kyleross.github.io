@@ -156,7 +156,7 @@ Le site suivant exprime bien les connaissances physiques nécessaires, si vous a
 Testez vos classes dans le projet _TestsLibJeux_. Assurez-vous de la fonctionnalité d'une classe avant de tester le prochain. Une fois satisfait avec vos classes, passez aux tests graphiques.
  
 ## Tests graphiques
-Copiez le fichier _LibJeux.dll_ trouvé dans _LibJeux/obj/Debug/_ à partir du dossier _Labo2_2019_départ_. Collez le fichier dans le répertoire _Labo2_2019_TestsGraphiques/build_Data/Managed_. Si vous modifiez votre code de bibliothèque, vous devez recompiler votre projet et refaire l'étape de copie-colle.
+Copiez le fichier _LibJeux.dll_ trouvé dans _LibJeux/obj/Debug/_ à partir du dossier _Labo2_2019_départ_. Collez le fichier dans le répertoire _Labo2_2019_TestsGraphiques/TestsGraphiques_Data/Managed_. Si vous modifiez votre code de bibliothèque, vous devez recompiler votre projet et refaire l'étape de copie-colle.
 
 Dans _Labo2_2019_TestsGraphiques_, démarrez l'exécutable et observez les résultats.
 
