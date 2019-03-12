@@ -431,10 +431,10 @@ $(document).ready(function () {
 <div class="line-block">3 | 1 | 8 | 9 | -1 |</div>
 <p>La valeur -1 représente une cellule « vide ». Si une autre valeur est placée dans une cellule, la cellule est considérée « occupée ».</p>
 <p>Insérer une donnée à une position qui <strong>n’est pas la « fin »</strong> est potentiellement très long.</p>
-<p>Par exemple, insérer la valeur <em>2</em> au début de ce tableau oblige de décaller <strong>tous</strong> les éléments d’une position. Ceci implique <span class="math inline">\(n-1\)</span> copies, où <span class="math inline">\(n\)</span> est la taille du tableau.</p>
-<p>Insérer la valeur <em>2</em> à la position 1 demande de faire 3 copies, soit <span class="math inline">\(n-1-1\)</span> copies.</p>
-<p>Insérer la valeur <em>2</em> à la position 2 demande de faire 2 copies, soit <span class="math inline">\(n-2-1\)</span> copies.</p>
-<p>Bref, insérer une valeur à une position <span class="math inline">\(i\)</span> implique la copie de <span class="math inline">\(n-i-1\)</span> éléments. Ceci peut être <strong>très lent</strong> selon <span class="math inline">\(i\)</span> et <span class="math inline">\(n\)</span>. Le plus proche du début du tableau qu’un élément est insérer, le plus que c’est lent.</p>
+<p>Par exemple, insérer la valeur <em>2</em> au début de ce tableau oblige de décaller <strong>tous</strong> les éléments d’une position. Ceci implique <span class="math inline">\(n\)</span> copies, où <span class="math inline">\(n\)</span> est le nombre d’éléments (le nombre de cases non-vide).</p>
+<p>Insérer la valeur <em>2</em> à la position 1 demande de faire 3 copies, soit <span class="math inline">\(n-1\)</span> copies.</p>
+<p>Insérer la valeur <em>2</em> à la position 2 demande de faire 2 copies, soit <span class="math inline">\(n-2\)</span> copies.</p>
+<p>Bref, insérer une valeur à une position <span class="math inline">\(i\)</span> implique la copie de <span class="math inline">\(n-i\)</span> éléments. Ceci peut être <strong>très lent</strong> selon <span class="math inline">\(i\)</span> et <span class="math inline">\(n\)</span>. Le plus proche du début du tableau qu’un élément est insérer, le plus que c’est lent.</p>
 </div>
 <div id="tableau-a-taille-dynamique" class="section level2">
 <h2>« Tableau » à taille dynamique</h2>
@@ -454,9 +454,8 @@ $(document).ready(function () {
 </div>
 <div id="implementation-dun-tableau-dynamique-contenant-des-int" class="section level2">
 <h2>Implémentation d’un tableau dynamique contenant des <code>int</code></h2>
-<!--
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/kI6At2" frameborder="0"></iframe>
--->
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/kobZUz" frameborder="0">
+</iframe>
 </div>
 <div id="implementation-dun-tableau-dynamique-generique" class="section level2">
 <h2>Implémentation d’un tableau dynamique générique</h2>
@@ -472,7 +471,7 @@ $(document).ready(function () {
     TableauDynamique&lt;int&gt; notes = new TableauDynamique&lt;int&gt;(5);
 }</code></pre>
 <p>Dans l’exemple ci-dessus, le paramètre de type est nommé <strong>T</strong>, ce qui est la convention. Une classe générique est utilisée comme un patron où toutes occurences de T seront éventuellement remplacées. Quand un nouvel objet basé sur la classe est instancié, un paramètre de type est donné et une nouvelle classe est automatiquement générée avec le type donné qui remplace les T.</p>
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/inku6e" frameborder="0">
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/OJur9a" frameborder="0">
 </iframe>
 </div>
 <div id="choisir-entre-un-tableau-fixe-ou-dynamique" class="section level2">

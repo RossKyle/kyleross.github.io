@@ -37,13 +37,13 @@ La valeur -1 représente une cellule « vide ». Si une autre valeur est plac�
 
 Insérer une donnée à une position qui **n'est pas la « fin »** est potentiellement très long.
 
-Par exemple, insérer la valeur _2_ au début de ce tableau oblige de décaller **tous** les éléments d'une position. Ceci implique $n-1$ copies, où $n$ est la taille du tableau.
+Par exemple, insérer la valeur _2_ au début de ce tableau oblige de décaller **tous** les éléments d'une position. Ceci implique $n$ copies, où $n$ est le nombre d'éléments (le nombre de cases non-vide).
 
-Insérer la valeur _2_ à la position 1 demande de faire 3 copies, soit $n-1-1$ copies.
+Insérer la valeur _2_ à la position 1 demande de faire 3 copies, soit $n-1$ copies.
 
-Insérer la valeur _2_ à la position 2 demande de faire 2 copies, soit $n-2-1$ copies.
+Insérer la valeur _2_ à la position 2 demande de faire 2 copies, soit $n-2$ copies.
 
-Bref, insérer une valeur à une position $i$ implique la copie de $n-i-1$ éléments. Ceci peut être **très lent** selon $i$ et $n$. Le plus proche du début du tableau qu'un élément est insérer, le plus que c'est lent.
+Bref, insérer une valeur à une position $i$ implique la copie de $n-i$ éléments. Ceci peut être **très lent** selon $i$ et $n$. Le plus proche du début du tableau qu'un élément est insérer, le plus que c'est lent.
 
 ## « Tableau » à taille dynamique
 Souvent, il est désirable d'avoir une structure de donnée comme un tableau, mais avec une taille non-fixe. S'il est impossible de savoir en avance combien d'éléments seront contenu dans un conteneur, une structure de donnée pouvant acceuillir un nombre indéterminé d'éléments est un bon choix.
@@ -64,9 +64,7 @@ Les ingrédients suivants sont utilisés pour créer un objet qui représente un
 * une façon pour ajouter des éléments à la « fin » du tableau et une façon pour chercher des éléments existants (et non des cases « vide »).
 
 ## Implémentation d'un tableau dynamique contenant des `int`
-<!--
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/kI6At2" frameborder="0"></iframe>
--->
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/kobZUz" frameborder="0"></iframe>
 
 ## Implémentation d'un tableau dynamique générique
 Un problème avec la sorte de tableau dynamique créée plus haut est son non-polyvalence. En effet, un `TableauDynamiqueInt` est pour du contenu `int` seulement et il faudra créer une nouvelle classe pour chaque type de contenu. Ceci serait un cauchemar de redondance et difficile à maintenir. Par chance, il est possible de créer des structs et des classes **génériques**.
@@ -90,7 +88,7 @@ public static void main()
 
 Dans l'exemple ci-dessus, le paramètre de type est nommé **T**, ce qui est la convention. Une classe générique est utilisée comme un patron où toutes occurences de T seront éventuellement remplacées. Quand un nouvel objet basé sur la classe est instancié, un paramètre de type est donné et une nouvelle classe est automatiquement générée avec le type donné qui remplace les T.
 
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/inku6e" frameborder="0"></iframe>
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/OJur9a" frameborder="0"></iframe>
 
 ## Choisir entre un tableau fixe ou dynamique
 Utiliser un tableau fixe lorsque sa taille peut être déterminer au temps de compilation (avant l'exécution).
