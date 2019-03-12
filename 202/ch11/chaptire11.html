@@ -471,11 +471,13 @@ $(document).ready(function () {
 {
     TableauDynamique&lt;int&gt; notes = new TableauDynamique&lt;int&gt;(5);
 }</code></pre>
+<p>Dans l’exemple ci-dessus, le paramètre de type est nommé <strong>T</strong>, ce qui est la convention. Une classe générique est utilisée comme un patron où toutes occurences de T seront éventuellement remplacées. Quand un nouvel objet basé sur la classe est instancié, un paramètre de type est donné et une nouvelle classe est automatiquement générée avec le type donné qui remplace les T.</p>
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/inku6e" frameborder="0">
+</iframe>
 </div>
 <div id="choisir-entre-un-tableau-fixe-ou-dynamique" class="section level2">
 <h2>Choisir entre un tableau fixe ou dynamique</h2>
 <p>Utiliser un tableau fixe lorsque sa taille peut être déterminer au temps de compilation (avant l’exécution). Utiliser un tableau dynamique lorsque sa taille ne peut être déterminer au temps de compilation.</p>
-<p>La structure de donnée à choisir pour contenir les noms des journées de la semaine devrait être un tableau classique, tandis que celle à choisir pour contenir toutes les touches pressées par l’utilisateur pendant un jeu est un tableau dynamique.</p>
 </div>
 
 
