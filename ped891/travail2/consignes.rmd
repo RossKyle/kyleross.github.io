@@ -12,7 +12,7 @@ _Strutures de données et programmation orientée objet_
 _429-202-RE_
 
 ## Consignes générales
-Lisez attentivement les notes du chapitre 4 sur le site [profd.info](profd.info/ped891/notes.html).
+Lisez attentivement les notes du chapitre 4 sur le site [profd.info](http://profd.info/ped891/travail2/notes.html).
 
 Visionnez ensuite les capsules sur le site. Pendant le visionnement, les capsules s'arrêreteront à des moments clés. Vous serez mené de répondre à des questions à propos du contenu, afin de reprendre la capsule.
 
