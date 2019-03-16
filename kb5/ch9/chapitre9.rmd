@@ -64,11 +64,8 @@ Créez un `div` qui est stylisé avec une image d'une flèche qui pointe vers la
 
 <iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/adt9e76p/embedded/result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
-<!--
 #### Solution
-
 <iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/nad8q0oy/3/embedded/result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
--->
 
 ### `classList.contains(...)`
 Pour savoir si un élément utilise une classe, la méthode `contains` existe. La méthode prend en paramètre le nom d'une classe et retourne `true` ou `false`.
@@ -118,7 +115,5 @@ Appliquez les stratégies de validations suivantes :
 * Si aucun élément du DOM correspond avec l'id donné, affichez une alerte et quitter la fonction;
 * Si une valeur dans le tableau n'est pas une `string`, ignorez la ; c.-à-d. ne créez pas de bouton pour cette valeur.
 
-<!--
 #### Solution
 <iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/2s3zda96/19/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
--->
