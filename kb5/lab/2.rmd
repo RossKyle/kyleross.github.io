@@ -9,6 +9,8 @@ link-citations: true
 urlcolor: blue
 ---
 
+[**SOLUTION**](Labo2.zip)
+
 Ce laboratoire porte sur la création d'un formulaire à l'aide du HTML et un CSS. Ce travail se concentre sur l'intégration des nouvelles balises vu en classe (`form`, `input`, `button`, ...), ainsi que sur la révision de CSS.
 
 Votre travail servira comme base pour la partie B, qui ajoutera plus de fonctionnalités à votre formulaire grâce à JS.

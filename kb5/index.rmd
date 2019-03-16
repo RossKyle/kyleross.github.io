@@ -10,6 +10,13 @@ urlcolor: blue
 ---
 ----
 
+**Nouvelles : **
+
+* L'examen sera le 25 mars.
+* La solution pour le laboratoire 2 est disponible à partir de l'énoncé.
+
+----
+
 ### Plan de cours
 [Plan hiver 2019](PlanH19_420KB5LG.pdf)
 
