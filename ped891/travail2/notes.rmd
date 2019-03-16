@@ -1,0 +1,45 @@
+---
+title: "Définition des éléments de base d'un objet"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: styles.css
+link-citations: true
+urlcolor: blue
+---
+
+Un objet en C\# est instancié à partir d'une classe (`class`) ou d'une structure (`struct`). Dans les deux cas, un objet possède trois éléments principaux : les attributs, les méthodes et les constructeurs.
+
+## Les attributs
+Un attribut d'un objet est une caractéristique que l'objet possède. Cette information possède un nom symbolique et une valeur en tout tant.
+
+Par exemple :
+
+* Le nombre d'étudiants inscrit dans un cours est un attribut d'un objet qui représente un cours <br>→ `public int nbÉtudiants`;
+* Le nom de la couleur d'un objet qui représente une voiture <br>→ `public string couleur`;
+* La coordonnées $x$ d'un objet qui représente un point 2D <br>→ `public double coordonnéeX`.
+
+Un objet contient souvent plusieurs attributs. L'ensemble des valeurs des attributs définit l'**état** de l'objet.
+
+Supposons un objet qui représente un rectangle. Ce rectangle possède une largeur et une hauteur. L'état du rectangle dépend de la valeur pour sa largeur et la valeur pour sa hauteur. Modifier un de ses attributs modifie conséquemment l'état du rectangle.
+
+## Les méthodes
+Une méthode d'un objet représente un comportement ou une action que l'objet peut faire. En réalité, les méthode sont des fonctions.
+
+Par exemple : 
+
+* Un objet qui représente un générateur de nombre a une méthode qui peut générer un nombre aléatoire <br>→ `public int GénérerNombreAléatoire()`;
+* Un objet qui représente un rectangle a une méthode qui peut calculer son aire <br>→ `public int CalculerAire()`;
+* Un objet qui représente un point 2D a une méthode qui peut calculer la distance entre lui et un autre point 2D <br>→ `public double CalculerDistance(Point2D autrePoint)`.  
+
+## Les constructeurs
+Un constructeur est une sorte de **méthode spéciale**. C'est une fonction qui permet de « construire » un nouvel objet basé sur une classe ou une structure.
+
+Le but d'un constructeur est de donner un état initial aux nouvels objet construit. Ceci implique d'affecter les attributs du nouvel objet avec des valeurs sensées.
+
+Par exemple :
+
+* Construire un objet qui représente une voiture implique de définir sa couleur initiale;
+* Constuire un objet qui représente un point 2D implique de définir sa position initiale;
+* Construire un objet qui représente un rectangle implique de définir ses dimensions initiaux.
