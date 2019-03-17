@@ -1,5 +1,5 @@
 ---
-title: "Activité préparatoire 4 : écrire sa première classe"
+title: "Activité préparatoire 4"
 output:
   html_document:
     theme: lumen
@@ -8,7 +8,7 @@ link-citations: true
 urlcolor: blue
 ---
 
-_Strutures de données et programmation orientée objet_
+_Strutures de données et programmation orientée objet_  
 _429-202-RE_
 
 ## Consignes générales
@@ -23,7 +23,7 @@ La théorie présentée ne sera pas réexpliqué en classe. Donc, la maîtrise d
 ## Consignes particulières
 Il y a deux capsules de 5 minutes chacune. La première capsule présente comment écrire une classe en C\# avec tous les ingrédients de base (attributs, méthodes, constructeur). La deuxième capsule est à propos de tester la classe en profondeur et d'identifer, par la suite, les limites de celle-ci avec l'implémentation employée. La solution à ces limites sera vu au prochain cours. Chaque capsule contient des courtes phases d'exercices où vous devriez rédigez du code. Celles-ci doivent être réalisée afin de poursuivre la vidéo.
 
-Pour l'exercice préparatoire, vous devriez créer une nouvelle classe, dont la classe _Chat_, qui représente un chat. Vous devriez concevoir les caractéristiques et comportements d'un chat, implémentez la classe et ensuite la testez. Consultez le [guide d'accompagnement](ped891/exercicePrep.html#guide) pour cet exercice, pour des pistes de travail.
+Pour l'exercice préparatoire, vous devriez créer une nouvelle classe, dont la classe _Chat_, qui représente un chat. Vous devriez concevoir les caractéristiques et comportements d'un chat, implémentez la classe et ensuite la testez. Consultez le [guide d'accompagnement](exercicePrep.html#guide), pour des pistes de travail.
 
 ## Objectif d'apprentissage
 

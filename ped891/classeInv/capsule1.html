@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapitre 4 — capsule #1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="capsule1.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="default.css">
+    <script src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad()</script>
+</head>
+<body>
+<h1>Capsule #1</h1>
+<table align="center">
+    <tr>
+        <td width="30%">
+            <h3>Code</h3>
+            <div id="code">
+                <textarea spellcheck="false" class="cs" placeholder="Répondez aux questions ici, dès que demandé dans la vidéo." disabled id="codetext"></textarea>
+            </div>
+        </td>
+        <td width="70%">
+            <h3>Vidéo</h3>
+            <div id="vid">
+                <video autoplay="autoplay">
+                    <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm">
+                </video>
+                <div>
+                    <span id="time">00:00</span>
+                    <button id="btnStart">Commencer</button>
+                    <button id="btnPause">Pause</button>
+                    <button id="btnRewind">Retour</button>
+                    <button id="btnSkip">Sauter la question</button>
+                </div>
+            </div>
+            <h3 id="q">Question</h3>
+            <div id="question">
+            </div>
+        </td>
+
+    </tr>
+</table>
+</body>
+</html>
