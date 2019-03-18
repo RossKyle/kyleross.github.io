@@ -42,4 +42,4 @@ urlcolor: blue
 1. [Tableaux et chaines de caractères](lab/1.html)
 2. [Formulaire pizza](lab/2.html)
 	* [partie B](lab/2b.html)
-
+3. [Récapitulatif](lab/3.html)

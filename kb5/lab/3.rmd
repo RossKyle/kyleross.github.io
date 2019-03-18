@@ -1,0 +1,124 @@
+## Consignes générales
+
+* Ce laboratoire peut être fait en équipe de 2 **max**;
+* Créez une page HTML et un JS par question. Créez un fichier CSS au besoin;
+* Utilisez `window.onload = ...`;
+* Votre code ne doit **pas** utiliser `InnerHTML` ni `InnerText`;
+* Votre HTML ne doit **pas** contenir de JS. Ajoutez des actions à des évènements par les propriétés disponibles sur les objets du DOM. Par exemple, `document.GetElementByID("test").onclick = function() { ... };`;
+* Pour modifier le style CSS d'un élément du DOM, utilisez **seulement** les méthodes par `classList` (la bonne pratique);
+* Découpez votre code avec des sous-fonctions, au besoin, pour la propreté et éviter de la redondance;
+* Soyez attentionné sur le nommage de vos données et fonctions.
+
+
+## Question 1 
+Avec l´HTML suivant, affichez l'heure dans la `div` _contenu-heure_. Votre code JS ne doit pas dépasser **3 lignes**. 
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="q1.js"></script>
+</head>
+<body>
+    <div>Heure :</div>
+    <div id="contenu-heure"></div>
+</body>
+</html>
+```
+
+## Question 2
+Avec l'HTML suivant, demandez à l'utilisateur d'entrer le nombre de chats qu'il possède via un `prompt`.
+Continuez de demander à l'utilisateur d'entrer une valeur tant que l'utilisateur n'entre pas un nombre.
+
+Pour chaque chat, ajoutez dans le formulaire _form-chats_ un entré de type texte où l'utilisateur pourra écrire le nom d'un chat. Ajoutez également un bouton qui fait basculer la taille du texte dans les entrées entre 1em et 2em.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles-q2.css">
+    <script src="q2.js"></script>
+</head>
+<body>
+<form id="form-chats">
+</form>
+<button id="btn1">Changer taille du texte</button>
+</body>
+</html>
+```
+
+## Question 3
+Créez une fonction `afficherTableau2D` qui prend en paramètre un tableau 2D et une string. Le tableau 2D sera affiché dans le premier élément du DOM ayant le nom de la classe équivalente à la string envoyée en paramètre. Par exemple, si le deuxième paramètre est "conteneur-tableau2D", les cellules du tableau 2D seront des enfants du premier élément dont la classe est "conteneur-tableau2D".
+
+Pour afficher le tableau 2D, la représentation suivante est choisie : 
+
+* Chaque cellule est un entré de texte carré;
+* Lorsqu'une cellule est _hovered_, la bordure de la cellule devient bleue, sinon, elle revient à son état normal;
+* L'utilisateur peut rentrer du contenu dans les cellules.
+
+Aussi, à la fin de chaque ligne, la somme des valeurs de la ligne doit être affichée. Cette somme doit être mise à jour à chaque fois qu'une valeur de la ligne est changée. L'évènement `onchange`, qui existe sur les `input`, doit être utilisé.
+
+Un tableau 2D en JS est un tableau contenant d'autres tableaux (tableau de tableaux).
+Pour référer à une valeur, cherchez un des sous-tableaux (une ligne) et ensuite une colonne de ce sous-tableaux : `tableau2D[ligne][colonne]`.
+
+Si jamais une valeur dans le tableau 2D n'est pas un nombre (`isNaN(...)`), changez la valeur pour 0. Ceci s'applique aussi aux valeurs entrées par l'utilisateur. Si le nombre de lignes du tableau 2D reçu en paramètre dépassent 5, arrêter l'exécution avec un `return`. Faites la même chose si le nombre de colonnes d'une ligne (taille d'une ligne) dépassent 5. Finalement, si un élément du tableau 2D n'est pas une ligne (`!Array.isArray(...)`), faîtes aussi un `return`.
+
+
+Testez votre fonction avec l'HTML et CSS suivant :
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles-q3.css">
+    <script src="q3.js"></script>
+</head>
+<body>
+    <div>Test :</div>
+    <div class="conteneur-tableau2D"></div>
+</body>
+</html>
+```
+
+```{css}
+body {
+    height: 100vh;
+}
+.conteneur-tableau2D {
+    width: 50%;
+    height: 50%;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.cellule {
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 7px;
+}
+
+.somme {
+    margin: 5px;
+    text-align: center;
+    background-color: gray;
+    color: white;
+}
+
+.cellule:hover {
+    border-color: blue;
+}
+```
+et les tableaux 2D suivants :
+
+* [[1, -2], [3, 4]]
+* [[1, 2], [3, 4, 5], [6]]
+* [[1, 2, 3], [4, 'a', 5], [6, 7]]
+* [[1], 1, [1]]
+* [[a, 1], [2]]
+* [] (tableau vide)
+
+## Question 4
+Créez une page `index.html` avec des boutons permettant de naviguer entre trois autres pages de ce laboratoire.
