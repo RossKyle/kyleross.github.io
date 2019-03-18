@@ -1,3 +1,13 @@
+---
+title: "Laboratoire 3"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+urlcolor: blue
+---
+
 ## Consignes générales
 
 * Ce laboratoire peut être fait en équipe de 2 **max**;
@@ -121,4 +131,4 @@ et les tableaux 2D suivants :
 * [] (tableau vide)
 
 ## Question 4
-Créez une page `index.html` avec des boutons permettant de naviguer entre trois autres pages de ce laboratoire.
+Créez une page `index.html` avec des boutons permettant de naviguer entre les trois autres pages de ce laboratoire.
