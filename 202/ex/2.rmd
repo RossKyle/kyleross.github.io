@@ -20,7 +20,7 @@ Une carte est essentiellement une matrice qui contient des entiers. Selon la val
 * Placer des ennemis;
 * etc.
 
-Pour l'instant, vous décidez de tester une carte pour afficher des tuiles dans une console. Chaque tuile sera donc un caractère.
+Pour l'instant, vous décidez de tester une carte pour afficher sont contenu dans une console.
 
 ## La classe `Carte`
 ### Attributs
@@ -61,6 +61,6 @@ Peu importe le constructeur choisi, vous savez, qu'en moyenne, il y aura 4 types
 ## Le code client
 La classe `Program` sera un client d'objets `Carte`. Faites des tests dans le `Main`, afin d'autoévaluer le bon fonctionnememnt de votre classe.
 
-Dans `Program`, ajoutez une fonction `AfficherCarte(...)` qui prend en paramètre une carte à afficher dans la console.
+Dans `Program`, ajoutez une fonction `AfficherCarte(...)` qui prend en paramètre une carte à afficher dans la console. 
 
 Testez la fonction dans le `Main`.
