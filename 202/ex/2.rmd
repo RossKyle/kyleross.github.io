@@ -1,0 +1,66 @@
+---
+title: "Carte de jeux"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## Mise en situation
+Vous planifiez de faire des jeux utilisant des grilles 2D pour positionner des objets dans un espace 2D ou 3D.
+Vous décidez alors de créer une classe qui servira de conteneur réutilisable. Ce conteneur est la classe `Carte`.
+
+Une carte est essentiellement une matrice qui contient des entiers. Selon la valeur d'une cellule de la matrice, un client de la carte pourrait :
+
+* Afficher une tuile associée;
+* Placer des objets d'environnement (mur, roche, arbre, etc.);
+* Placer des ennemis;
+* etc.
+
+Pour l'instant, vous décidez de tester une carte pour afficher des tuiles dans une console. Chaque tuile sera donc un caractère.
+
+## La classe `Carte`
+### Attributs
+Ajoutez les attributs suivants à la classe `Carte` :
+
+* `int[,] tuiles`;
+* `int nbLignes`;
+* `int nbColonnes`;
+* `List<int> typesTuile`
+
+L'attribut `typesTuile` est un ensemble de valeurs acceptées pour les tuiles. Par exemple, si la liste contient _0_ et _3_, les seules valeurs dans la matrice devront être _0_ et _3_.
+
+### Les conteneurs
+Un client ne doit pas pouvoir modifier les **conteneur** (c.-à-d. `tuiles` et `typesTuiles`).
+Les seules façons que les contenus des conteneurs peuvent être changés sont les suivantes :
+
+* Une propriété indexée qui permet de chercher **et affecter** le contenu de la matrice de tuiles. Par contre, il est seulement possible d'affecter une position de la carte avec une valeur de tuile acceptée. Si la nouvelle valeur à affecter dans la carte est invalide, ignorez (ne changer pas l'état de la carte).
+* Une méthode `AjouterTypeTuile(...)` qui prend en paramètre un `int`. Le paramètre représente un nouveau type de tuile que la carte peut contenir (c.-à-d. une nouvelle valeur acceptée pour les cellules de la matrice). Si le type à ajouter est déjà présente dans l'ensemble, n'ajoutez pas le duplicat et retournez `false`. Si tout ce passe correctement, retournez `true`.
+
+La propriété indexée est la **seule** chose qui permet à un client de modifier l'état d'une carte.
+
+**Indice :** Regardez la méthode `Contains(...)` disponible aux objets `List<T>`.
+
+### Autres propriétés
+Ajoutez les propriétés pour chaque attribut, comme d'habitude.
+
+Pour les propriétés `NbLignes` et `NbColonnes`, validez les nouvelles valeurs dans le `set` afin que le nombre de lignes/colonnes soit toujours un minimum de 1 (serrer le minimum à 1).
+
+Finalement, ajoutez une propriété calculée `NbTypesTuile` qui retourne le nombre de types de tuiles.
+
+### Constructeurs
+Écrivez un constructeur paramétrique qui prend en paramètre le nombre de lignes et le nombre de colonne de la nouvelle carte à construire.
+
+Écrivez aussi un constructeur par défaut qui construit une carte 5x5. Réutilisez le constructeur paramètrique pour cette tâche.
+
+Peu importe le constructeur choisi, vous savez, qu'en moyenne, il y aura 4 types de tuiles pour une carte. De plus, chaque carte possède le type _0_, par défaut.
+
+## Le code client
+La classe `Program` sera un client d'objets `Carte`. Faites des tests dans le `Main`, afin d'autoévaluer le bon fonctionnememnt de votre classe.
+
+Dans `Program`, ajoutez une fonction `AfficherCarte(...)` qui prend en paramètre une carte à afficher dans la console.
+
+Testez la fonction dans le `Main`.

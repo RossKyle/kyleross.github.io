@@ -45,7 +45,7 @@ L'examen est composé de questions sur la compréhension théorique de la matiè
 * [Entier naturel](ex/1.html)
 * [Éléments théoriques (examen intra)](rev/prepex1.html)
 	* [Solutions](rev/prepex1S.html) 
-* Carte de jeux
+* [Carte de jeux](ex/2.html)
 
 ## Laboratoires
 1. [Tortue](lab/1.html)
