@@ -35,3 +35,13 @@ urlcolor: blue
 25. Pourquoi est-ce que c'est déconseillé de retourner un attribut de type tableau ?
 26. Si le `set` d'une propriété qui contrôle un attribut de type tableau est public, le client peut modifier le contenu du tableau. V ou F ?
 27. Pourquoi est-ce que c'est long insérer un élément au début d'un tableau ?
+
+**Nouvelles questions**
+28. Pourquoi est-ce que c'est long retirer un élément au début d'un tableau ?
+29. Quelle est la différence significative entre un tableau « classique » et un tableau dynamique ?
+30. Décrivez les étapes necéssaires pour redimensionner un tableau dynamique.
+31. Lorsqu'un élément type référence est ajouté à une `List<T>` par la méthode `Add(...)`, la liste va réellement contenir une **copie** de la référence ajoutée. V ou F ?
+32. Supposons un élément `e` de type référence qui est ajouté dans une `List<T> éléments` initialement vide. L'état de `e` est ensuite changé d'une manière quelconque. Est-ce que l'objet modifier est le même que celui retourné par `éléments[0]` ? Autrement dit, est-ce que modifier `éléments[0]` modifie aussi `e` ? Expliquez.
+33. En C\#, le mot clé `using` sert seulement à importer des bibliothèques (System.IO, LibJeux, etc.). V ou F ?
+34. Qu'est-ce qui arrive si un `StreamReader` ayant ouvert un fichier n'est pas fermé ?
+35. Expliquez une façon possible de savoir si tout le contenu d'un fichier a été lu par un `StreamReader`.
