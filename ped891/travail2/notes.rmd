@@ -25,7 +25,7 @@ Un objet contient souvent plusieurs attributs. L'ensemble des valeurs des attrib
 Supposons un objet qui représente un rectangle. Ce rectangle possède une largeur et une hauteur. L'état du rectangle dépend de la valeur pour sa largeur et la valeur pour sa hauteur. Modifier un de ses attributs modifie conséquemment l'état du rectangle.
 
 ## Les méthodes
-Une méthode d'un objet représente un comportement ou une action que l'objet peut faire. En réalité, les méthode sont des fonctions.
+Une méthode d'un objet représente un comportement ou une action que l'objet peut faire. En réalité, les méthodes sont des fonctions.
 
 Par exemple : 
 
@@ -36,10 +36,10 @@ Par exemple :
 ## Les constructeurs
 Un constructeur est une sorte de **méthode spéciale**. C'est une fonction qui permet de « construire » un nouvel objet basé sur une classe ou une structure.
 
-Le but d'un constructeur est de donner un état initial aux nouvels objet construit. Ceci implique d'affecter les attributs du nouvel objet avec des valeurs sensées.
+Le but d'un constructeur est de donner un état initial aux nouveaux objets construits. Ceci implique d'affecter les attributs du nouvel objet avec des valeurs sensées.
 
 Par exemple :
 
 * Construire un objet qui représente une voiture implique de définir sa couleur initiale;
 * Constuire un objet qui représente un point 2D implique de définir sa position initiale;
-* Construire un objet qui représente un rectangle implique de définir ses dimensions initiaux.
+* Construire un objet qui représente un rectangle implique de définir ses dimensions initiales.

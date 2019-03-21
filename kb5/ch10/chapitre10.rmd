@@ -1,0 +1,43 @@
+
+## `required`
+
+Si un `input` d'un formulaire doit être non-vide avant de soumettre les données à un serveur, l'attribut `required` peut être ajouté à la balise.
+
+<form id="frm1" method="post" action="serveur.php">
+  <input type="text" required>
+  <input type="submit" value="soumettre">
+</form>
+
+## `min`, `max`
+
+Il existe un type _number_ pour les `input`.
+
+<input type="number">
+
+Les bornes peuvent être déterminées par les attributs `min` et `max`.
+
+<form id="frm1" method="post" action="serveur.php">
+  <input type="number" min="1" max="5">
+  <input type="submit" value="soumettre">
+</form>
+
+<br>
+Ces attributs peuvent aussi s'appliquer sur les intrants de type _date_. Le format pour les valeurs est AAAA-MM-JJ.
+
+<form id="frm1" method="post" action="serveur.php">
+  <input type="date" value="2019-02-01" min="2019-02-01" max="2019-04-01">
+  <input type="submit" value="soumettre">
+</form>
+
+<br>
+Chaque navigateur possède habituellement une interface de calendrier permettant de sélectionner une date. Ce calendrier permet de sélectionner que des dates dans la plage définie par `min` et `max`.
+
+## `minlength`, `maxlength`
+
+Les champs contenant du texte peuvent être accordés des attributs pour contrôler le nombre de caractères.
+
+
+<form id="frm1" method="post" action="serveur.php">
+  <input type="" value="2019-02-01" min="2019-02-01" max="2019-04-01">
+  <input type="submit" value="soumettre">
+</form>
