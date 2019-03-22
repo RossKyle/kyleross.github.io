@@ -133,7 +133,7 @@ function question2() {
     "<br>Faites un saut de ligne après les attributs avant d'écrire la déclaration de la méthode.";
 
   qh.textContent = "Question 2";
-  codeText.placeholder = "Écrivez le code pour la question 1 ici."
+  codeText.value = ""
   codeText.disabled = false;
   codeText.onkeyup = function () {
     if (codeText.value.includes(

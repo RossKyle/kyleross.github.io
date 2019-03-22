@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36052648-c559-4e29-8832-2e2f11b369da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2.DotSettings.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/.yo-rc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Test.Tests/ProgramTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Test.Tests/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Test.Tests/Test.Tests.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Test.Tests/packages.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Test.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Test/App.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Test/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Test/Program.cs.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Test/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Test/Test.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/Test/packages.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/ex-formatif2.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/ex-formatif2.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ex/ex-formatif2/test.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/capsule1.html" beforeDir="false" afterPath="$PROJECT_DIR$/capsule1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie.mpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1.js" beforeDir="false" afterPath="$PROJECT_DIR$/capsule1.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/capsule1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+            <state relative-caret-position="500">
+              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -56,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/capsule1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="105" selection-start-line="105" selection-end-line="105" />
+            <state relative-caret-position="400">
+              <caret line="132" column="22" lean-forward="true" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -84,8 +65,8 @@
       <list>
         <option value="$PROJECT_DIR$/bootstrap.css" />
         <option value="$PROJECT_DIR$/styles.css" />
-        <option value="$PROJECT_DIR$/capsule1.js" />
         <option value="$PROJECT_DIR$/capsule1.html" />
+        <option value="$PROJECT_DIR$/capsule1.js" />
       </list>
     </option>
   </component>
@@ -159,31 +140,46 @@
       <workItem from="1552780222133" duration="9421000" />
       <workItem from="1552789666159" duration="6680000" />
       <workItem from="1552926897621" duration="709000" />
-      <workItem from="1553193597522" duration="4585000" />
+      <workItem from="1553193597522" duration="6082000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1553202961626</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553202961626</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update">
+      <created>1553202973662</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553202973663</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21395000" />
+    <option name="totallyTimeSpent" value="22892000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="-18" width="1926" height="1101" extended-state="0" />
+    <frame x="10" y="19" width="627" height="1051" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13559322" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13559322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32996634" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.048988286" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49947035" visible="true" weight="0.048988286" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.67741936" weight="0.3295838" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052965" side_tool="true" visible="true" weight="0.048988286" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -192,6 +188,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bootstrap.css">
@@ -220,8 +220,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/capsule1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        <state relative-caret-position="500">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -234,8 +234,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/capsule1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        <state relative-caret-position="400">
+          <caret line="132" column="22" lean-forward="true" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="22" />
         </state>
       </provider>
     </entry>
