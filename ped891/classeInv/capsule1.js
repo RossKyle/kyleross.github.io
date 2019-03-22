@@ -4,12 +4,14 @@ let btns;
 let btnSkip;
 let btnStart;
 let btnRewind;
+let btnForward;
 let codeText;
 let btnPause;
 let qh;
 let video;
-let firstplay = true;
 let timer;
+let firstplay = true;
+let times = [(3*60+42)]
 
 window.onload = function() {
   video = document.getElementsByTagName("video")[0];
@@ -17,6 +19,7 @@ window.onload = function() {
   btnStart = document.getElementById("btnStart");
   btnPause = document.getElementById("btnPause");
   btnRewind = document.getElementById("btnRewind");
+  btnForward = document.getElementById("btnForward");
   btnSkip = document.getElementById("btnSkip");
 
   let question = document.getElementById("question");
@@ -34,6 +37,7 @@ window.onload = function() {
     btnStart.disabled = true;
     btnPause.disabled = false;
     btnRewind.disabled = false;
+    btnForward.disabled = false;
     t.textContent = msToTime(video.currentTime * 1000)
   }
 
@@ -51,19 +55,30 @@ window.onload = function() {
     t.textContent = msToTime(video.currentTime * 1000)
   }
 
+  btnForward.disabled = true;
+  btnForward.onclick = function() {
+    if (video.currentTime + 10 < times[questionIndex]) {
+      video.currentTime = video.currentTime + 10;
+      t.textContent = msToTime(video.currentTime * 1000)
+    }
+  }
+
   questionIndex = 0;
-  setInterval(function() {t.textContent = msToTime(video.currentTime * 1000)}, 500);
+  setInterval(function() {
+    t.textContent = msToTime(video.currentTime * 1000);
+    if (video.currentTime + 10 > times[questionIndex]) {
+      btnForward.disabled = true;
+    }
+  }, 500);
+
   btnSkip.disabled = true;
   btnSkip.onclick = function() {
-    questionIndex++;
-    video.play();
-    btnStart.disabled = false;
-    btnRewind.disabled = false;
-    q.textContent = "";
+    questionComplete();
   }
 
 
-  btns = [btnStart, btnPause, btnRewind];
+
+  btns = [btnStart, btnPause, btnRewind, btnForward];
 
   let questions = [question1, question2];
   timer = setInterval(function() {
@@ -84,28 +99,37 @@ function msToTime(s) {
   var secs = s % 60;
   s = (s - secs) / 60;
   var mins = s % 60;
-  var hrs = (s - mins) / 60;
 
   return pad(mins) + ':' + pad(secs);
 }
 
-function toggleBtns() {
+function turnOffBtns() {
   for (let b of btns)
     b.disabled = true;
   btnSkip.disabled = false;
 }
 
+function questionComplete() {
+  btnPause.disabled = false;
+  btnRewind.disabled = false;
+  btnSkip.disabled = true;
+  btnForward.disabled = false;
+  questionIndex++;
+  video.play();
+  q.textContent = "";
+}
+
 function question1() {
-  if (Math.floor(video.currentTime) != 15)
+  if (Math.floor(video.currentTime) != times[0])
     return;
   video.pause();
-  toggleBtns();
+  turnOffBtns();
   q.innerHTML = "Réécrivez la déclaration de la classe Rectangle et ses attributs dans l'espace désigné." +
     "<br><br>Suivez <b>exactement</b> le même format et la même orthographe présenté dans la vidéo." +
     "<br>Les indentations sont de 4 espaces."
 
   qh.textContent = "Question 1";
-  codeText.placeholder = "Écrivez le code pour la question 1 ici."
+  codeText.placeholder = "Écrivez le code pour la question 1 ici.";
   codeText.disabled = false;
   codeText.onkeyup = function () {
     if (codeText.value.includes(
@@ -114,11 +138,7 @@ function question1() {
       "    public int largeur;\n" +
       "    public int hauteur;\n" +
       "}")) {
-      btnStart.disabled = false;
-      btnRewind.disabled = false;
-      questionIndex++;
-      video.play();
-      q.textContent = "";
+      questionComplete();
     }
   }
 }
@@ -127,48 +147,59 @@ function question2() {
   if (Math.floor(video.currentTime) != 20)
     return;
   video.pause();
-  toggleBtns();
+  turnOffBtns();
   q.innerHTML = "Ajoutez la méthode <code>public int CalculerAire()</code> dans votre code." +
     "<br><br>Suivez <b>exactement</b> le même format et la même orthographe présenté dans la vidéo." +
     "<br>Faites un saut de ligne après les attributs avant d'écrire la déclaration de la méthode.";
 
   qh.textContent = "Question 2";
-  codeText.value = ""
+  codeText.value = "";
   codeText.disabled = false;
   codeText.onkeyup = function () {
     if (codeText.value.includes(
       "class Rectangle\n" +
       "{\n" +
       "    public int hauteur;\n" +
-      "    public int largeur;\n" +
+      "    public int largeur;\n\n" +
+      "    public int CalculerAire()\n" +
+      "    {\n" +
+      "        return largeur + hauteur;\n" +
+      "    }\n" +
       "}")) {
-      toggleBtns();
-      video.play();
+      questionComplete();
     }
   }
 }
 
-function Timer(callback, delay) {
-  var timerId, start, remaining = delay;
+function question3() {
+  if (Math.floor(video.currentTime) != 20)
+    return;
+  video.pause();
+  turnOffBtns();
+  q.innerHTML = "Ajoutez la méthode <code>public int CalculerPérimètre()</code> dans votre code." +
+    "<br><br>Suivez <b>exactement</b> le même format et la même orthographe présenté dans la vidéo." +
+    "<br>Faites un saut de ligne après la méthode <code>CalculerAire()</code> avant d'écrire la déclaration de la méthode." +
+    "<br>Aussi, utilisez <code>2 * (largeur + hauteur)</code>";
 
-  this.pause = function() {
-    window.clearTimeout(timerId);
-    remaining -= new Date() - start;
-  };
-
-  this.resume = function() {
-    start = new Date();
-    window.clearTimeout(timerId);
-    timerId = window.setTimeout(callback, remaining);
-  };
-
-  this.rewind = function() {
-    remaining += 10000;
-    window.clearTimeout(timerId);
-    timerId = window.setTimeout(callback, remaining);
-  };
-
-  this.resume();
+  qh.textContent = "Question 3";
+  codeText.value = "";
+  codeText.disabled = false;
+  codeText.onkeyup = function () {
+    if (codeText.value.includes(
+      "class Rectangle\n" +
+      "{\n" +
+      "    public int hauteur;\n" +
+      "    public int largeur;\n\n" +
+      "    public int CalculerAire()\n" +
+      "    {\n" +
+      "        return largeur + hauteur;\n" +
+      "    }\n" +
+      "    public int CalculerPérimètre()\n" +
+      "    {\n" +
+      "        return 2 * (largeur + hauteur);\n" +
+      "    }\n" +
+      "}")) {
+      questionComplete();
+    }
+  }
 }
-
-
