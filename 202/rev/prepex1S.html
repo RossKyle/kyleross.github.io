@@ -428,155 +428,204 @@ $(document).ready(function () {
 <ul>
 <li><em>les données (variables et constantes) et les fonctions</em></li>
 </ul>
-<ol start="5" style="list-style-type: decimal">
+<ol start="3" style="list-style-type: decimal">
 <li>Quelle est la différence principale entre une struct et une classe, en C# ?</li>
 </ol>
 <ul>
 <li><em>Une struct va donner des objets type valeur, tandis qu’une classe va donner des objets type référence</em></li>
 </ul>
-<ol start="7" style="list-style-type: decimal">
+<ol start="4" style="list-style-type: decimal">
 <li>Nommez un langage de programmation qui a précédé le C# et qui avait des <code>struct</code>.</li>
 </ol>
 <ul>
 <li><em>Le C</em></li>
 </ul>
-<ol start="9" style="list-style-type: decimal">
+<ol start="5" style="list-style-type: decimal">
 <li>Lorsqu’une fonction reçoit un tableau en paramètre, le paramètre représente une copie du tableau envoyé. V ou F ?</li>
 </ol>
 <ul>
 <li><em>F. Les tableaux sont des objets basés sur une classe, donc ils sont type référence. Lorsqu’on envoit un tableau à une fonction, on envoit réellement une référence á un tableau</em></li>
 </ul>
-<ol start="11" style="list-style-type: decimal">
+<ol start="6" style="list-style-type: decimal">
 <li>Il est impossible que plusieurs fonctions portent le même nom. V ou F ?</li>
 </ol>
 <ul>
 <li><em>F. Il est possible ; c’est la surcharge de fonction</em></li>
 </ul>
-<ol start="13" style="list-style-type: decimal">
+<ol start="7" style="list-style-type: decimal">
 <li>Quelle est la valeur par défaut pour n’importe quelle donnée qui est d’un type défini par une classe ?</li>
 </ol>
 <ul>
 <li><em>La valeur par défaut pour une référence est null</em></li>
 </ul>
-<ol start="15" style="list-style-type: decimal">
+<ol start="8" style="list-style-type: decimal">
 <li>En C#, est-ce que toutes les données sont des objets ?</li>
 </ol>
 <ul>
 <li><em>Oui. Les objets peuvent être type valeur ou type référence</em></li>
 </ul>
-<ol start="17" style="list-style-type: decimal">
+<ol start="9" style="list-style-type: decimal">
 <li>Nommez le défaut principal, vu en classe, du paradigme procédural.</li>
 </ol>
 <ul>
 <li><em>La validation décentralisée</em></li>
 </ul>
-<ol start="19" style="list-style-type: decimal">
+<ol start="10" style="list-style-type: decimal">
 <li>Qu’est-ce l’instanciation ?</li>
 </ol>
 <ul>
 <li><em>L’action de créer un nouvel objet dans la mémoire de l’ordinateur</em></li>
 </ul>
-<ol start="21" style="list-style-type: decimal">
+<ol start="11" style="list-style-type: decimal">
 <li>Qu’est-ce un attribut d’objet ?</li>
 </ol>
 <ul>
 <li><em>Une donnée propre à une instance (un objet)</em></li>
 </ul>
-<ol start="23" style="list-style-type: decimal">
+<ol start="12" style="list-style-type: decimal">
 <li>Qu’est-ce une méthode d’objet ?</li>
 </ol>
 <ul>
 <li><em>Une action ou un comportement qu’un objet peut réaliser, souvent en traitant la valeur de ses attributs. Une méthode est une fonction</em></li>
 </ul>
-<ol start="25" style="list-style-type: decimal">
+<ol start="13" style="list-style-type: decimal">
 <li>Qu’est-ce qui défini l’état d’un objet ? (pour modifier un objet, il faut modifier ces …)</li>
 </ol>
 <ul>
 <li><em>L’ensemble des valeurs des attributs de l’objet définit son état</em></li>
 </ul>
-<ol start="27" style="list-style-type: decimal">
+<ol start="14" style="list-style-type: decimal">
 <li>Qu’est-ce qu’une référence ?</li>
 </ol>
 <ul>
 <li><em>Quelque chose qui réfère à un objet instancié en mémoire. C’est l’adresse où se trouve un tel objet</em></li>
 </ul>
-<ol start="29" style="list-style-type: decimal">
+<ol start="15" style="list-style-type: decimal">
 <li>Pourquoi cacher des éléments d’un objet d’un client ? (pourquoi l’encapsulation ?)</li>
 </ol>
 <ul>
 <li><em>Assurer une utilisation contrôler de l’objet qui ne permet pas à un client de mettre l’objet dans un étant incohérent</em></li>
 </ul>
-<ol start="31" style="list-style-type: decimal">
+<ol start="16" style="list-style-type: decimal">
 <li>Qu’est-ce qui forme l’interface publique d’une classe ?</li>
 </ol>
 <ul>
 <li><em>L’ensemble de ses membres (données et méthodes) publics. Autrement dit : tout ce qui est public</em></li>
 </ul>
-<ol start="33" style="list-style-type: decimal">
+<ol start="17" style="list-style-type: decimal">
 <li>Une propriété est une façon raccourcie d’écrire une méthode «mutateur» et une méthode «accesseur». V ou F ?</li>
 </ol>
 <ul>
 <li><em>V. Les propriétés offrent une syntaxe alternative pour écrire des méthodes Get/Set</em></li>
 </ul>
-<ol start="35" style="list-style-type: decimal">
+<ol start="18" style="list-style-type: decimal">
 <li>Une propriété calculée a un volet <code>set</code> où il faut affecter un attribut. V ou F ?</li>
 </ol>
 <ul>
 <li><em>F. Une propriété calculée ne contrôle pas un attribut. Ce genre de propriété n’a qu’une partie get, où le résultat d’un traitement est retourné</em></li>
 </ul>
-<ol start="37" style="list-style-type: decimal">
+<ol start="19" style="list-style-type: decimal">
 <li>Il est * *toujours** garanti qu’un client ne peut modifier l’état d’un objet à travers un accesseur public.</li>
 </ol>
 <ul>
 <li><em>F. Si un objet α retourne une référence à un objet mutable β qui le compose, le client peut modifier β et indirectement modifier l’état de α. Par exemple, si un objet retourne une référence à un tableau qu’il possède comme attribut…</em></li>
 </ul>
-<ol start="39" style="list-style-type: decimal">
+<ol start="20" style="list-style-type: decimal">
 <li>Quel est le but d’un mutateur ?</li>
 </ol>
 <ul>
 <li><em>De faire une mutation à l’état d’un objet en modifiant un seul attribut de l’objet</em></li>
 </ul>
-<ol start="41" style="list-style-type: decimal">
+<ol start="21" style="list-style-type: decimal">
 <li>Il est approprié d’avoir une stratégie de validation dans un mutateur. V ou F ?</li>
 </ol>
 <ul>
 <li><em>V. Si le mutateur (set) est public et que l’attribut associé est privé, le client sera forcé à passer à travers la validation écrit dans le mutateur</em></li>
 </ul>
-<ol start="43" style="list-style-type: decimal">
+<ol start="22" style="list-style-type: decimal">
 <li>Dans quel cas est-ce qu’il est sécuritaire de retourner une référence à un attribut d’un objet ?</li>
 </ol>
 <ul>
 <li><em>Dans le cas où la reférérence réfère à un objet immuable (comme une string)</em></li>
 </ul>
-<ol start="45" style="list-style-type: decimal">
+<ol start="23" style="list-style-type: decimal">
 <li>Supposons que <code>s</code> est une référence vers une <code>string</code>. <code>s.ToLower()</code> retourne une nouvelle <code>string</code>. V ou F ?</li>
 </ol>
 <ul>
 <li><em>V. Les string sont immuables</em></li>
 </ul>
-<ol start="47" style="list-style-type: decimal">
+<ol start="24" style="list-style-type: decimal">
 <li>Concaténer des <code>string</code> par <code>+</code> peut être long pour quelles raisons ? Quelle est la solution ?</li>
 </ol>
 <ul>
 <li><em>La création de string temporaire, mais surtout à cause du besoin de copier tous les caractères des deux strings pour en former une nouvelle. La solution est d’utiliser un StringBuilder pour construire des string potentiellement longues</em></li>
 </ul>
-<ol start="49" style="list-style-type: decimal">
+<ol start="25" style="list-style-type: decimal">
 <li>Pourquoi est-ce que c’est déconseillé de retourner un attribut de type tableau ?</li>
 </ol>
 <ul>
 <li><em>Les tableaux ne sont pas des objets immuables, alors un client peut faire ce qu’il veut avec le contenu du tableau</em></li>
 </ul>
-<ol start="51" style="list-style-type: decimal">
+<ol start="26" style="list-style-type: decimal">
 <li>Si le <code>set</code> d’une propriété qui contrôle un attribut de type tableau est public, le client peut modifier le contenu du tableau. V ou F ?</li>
 </ol>
 <ul>
 <li><em>F. Il peut modifier le CONTENEUR</em></li>
 </ul>
-<ol start="53" style="list-style-type: decimal">
+<ol start="27" style="list-style-type: decimal">
 <li>Pourquoi est-ce que c’est long insérer un élément au début d’un tableau ?</li>
 </ol>
 <ul>
 <li><em>Il faut décaller tous les éléments du tableau d’une position !</em></li>
+</ul>
+<p><strong>Nouvelles questions</strong></p>
+<ol start="28" style="list-style-type: decimal">
+<li>Pourquoi est-ce que c’est long retirer un élément au début d’un tableau ?</li>
+</ol>
+<ul>
+<li><em>Il faut décaller tous les éléments du tableau d’une position !</em></li>
+</ul>
+<ol start="29" style="list-style-type: decimal">
+<li>Quelle est la différence significative entre un tableau « classique » et un tableau dynamique ?</li>
+</ol>
+<ul>
+<li>_ Un tableau dynamique peut changer sa capacité pendant l’exécution du programme_</li>
+</ul>
+<ol start="30" style="list-style-type: decimal">
+<li>Décrivez les étapes necéssaires pour redimensionner un tableau dynamique.</li>
+</ol>
+<ul>
+<li><em>Calculer la nouvelle capacité; Créer un nouveau tableau avec la capacité calculée; Copier les éléments du tableau actuel dans le nouveau tableau; Faire pointer la référence aux éléments vers le nouveau tableau</em></li>
+</ul>
+<ol start="31" style="list-style-type: decimal">
+<li>Lorsqu’un élément type référence est ajouté à une <code>List&lt;T&gt;</code> par la méthode <code>Add(...)</code>, la liste va réellement contenir une <strong>copie</strong> de la référence ajoutée. V ou F ?</li>
+</ol>
+<ul>
+<li><em>V. La méthode <code>Add(...)</code> prend un paramètre par copie (pas de mot clé <code>ref</code>), donc la méthode va utiliser une copie de la référence envoyée</em></li>
+</ul>
+<ol start="32" style="list-style-type: decimal">
+<li>Supposons un élément <code>e</code> de type référence qui est ajouté dans une <code>List&lt;T&gt; éléments</code> initialement vide. L’état de <code>e</code> est ensuite changé d’une manière quelconque. Est-ce que l’objet modifier est le même que celui retourné par <code>éléments[0]</code> ? Autrement dit, est-ce que modifier <code>éléments[0]</code> modifie aussi <code>e</code> ? Expliquez.</li>
+</ol>
+<ul>
+<li><em>Oui, car <code>e</code> et <code>éléments[0]</code> sont des références qui pointe au <strong>même</strong> objet en mémoire</em></li>
+</ul>
+<ol start="33" style="list-style-type: decimal">
+<li>En C#, le mot clé <code>using</code> sert seulement à importer des bibliothèques (System.IO, LibJeux, etc.). V ou F ?</li>
+</ol>
+<ul>
+<li><em>F. Il est aussi utiliser pour créer des blocs <code>using (...){...}</code>. Un bloc using est souvent utilisé pour créer une section de code <em>utilisant</em> un <code>StreamReader</code>, par exemple</em></li>
+</ul>
+<ol start="34" style="list-style-type: decimal">
+<li>Qu’est-ce qui arrive si un <code>StreamReader</code> ayant ouvert un fichier n’est pas fermé ?</li>
+</ol>
+<ul>
+<li><em>Aucun autre programme pourra modifier le fichier, car le fichier reste occupé</em></li>
+</ul>
+<ol start="35" style="list-style-type: decimal">
+<li>Expliquez une façon possible de savoir si tout le contenu d’un fichier a été lu par un <code>StreamReader</code>.</li>
+</ol>
+<ul>
+<li><em>Lorsque la méthode <code>ReadLine()</code> de l’objet <code>StreamReader</code> retourne <code>null</code></em></li>
 </ul>
 
 
