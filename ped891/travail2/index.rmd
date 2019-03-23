@@ -10,7 +10,7 @@ urlcolor: blue
 ---
 
 ## Introduction
-Le chapitre 4 présente les ingrédients pour écrire sa propre classe. Les activités préparatoires amènent à l'élaboration d'une première classe, ainsi qu'à la réalisation d'un enjeu par rapport à cette classe et à la programmation orientée objet en générale.
+Le chapitre 4 présente les ingrédients pour écrire ses propres classes. Les activités préparatoires amènent à l'élaboration de petites classes, ainsi qu'à la réalisation d'un enjeu par rapport à ces classes et à la programmation orientée objet en générale.
 
 Pendant les heures de cours, un nouveau principe sera acquis afin de créer des classes idiomatiques qui n'ont pas les faiblesses identifiées.
 
