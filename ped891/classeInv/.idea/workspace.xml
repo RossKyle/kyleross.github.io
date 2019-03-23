@@ -2,11 +2,141 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36052648-c559-4e29-8832-2e2f11b369da" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/capsule2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capsule1.html" beforeDir="false" afterPath="$PROJECT_DIR$/capsule1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capsule1.js" beforeDir="false" afterPath="$PROJECT_DIR$/capsule1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capsule1.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/capsule1.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1e/eff1e368.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1e/eff1e4e4.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1e/eff1e87b.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1e/eff1eb9a.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1e/eff1eb9e.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1e/eff1ee1c.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1e/eff1ee22.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1e/eff1ef4e.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f00b.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f018.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f030.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f037.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f03a.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f072.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f0c1.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f0fe.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f111.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f15c.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f182.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f1a6.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f1e8.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f1ea.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f21a.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f237.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f24c.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f276.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f292.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f2af.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f2d1.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f2e3.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f31e.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f362.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f380.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f39c.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f3ac.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f3ba.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f3dd.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f3fb.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f406.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f418.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f444.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f4ca.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f4d3.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f4fa.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f4ff.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f50a.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f536.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f59f.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f5a9.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f5c5.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f600.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f602.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f627.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f693.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f6a3.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f6ac.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f6c2.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f6e3.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f719.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f73f.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f74f.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f753.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f756.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f76d.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f773.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f79a.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f7a1.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f7c5.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f7e2.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f81a.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f81d.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f835.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f853.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f861.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f87e.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f882.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f8b8.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f938.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f98f.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f993.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f9e4.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1f9ef.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fa05.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fa22.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fa3d.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fa76.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fa8c.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fa95.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fac5.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fad4.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fade.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1faef.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fafc.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fb09.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fb27.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fb37.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fb4e.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fb50.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fb5c.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fb67.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fb70.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fb86.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fb8a.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fbe6.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fc02.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fc16.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fc33.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fc35.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fc4b.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fc94.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fc9f.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fca5.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fcdd.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fce3.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fcf4.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fd51.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fd88.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fd8e.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fddf.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fe18.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fea1.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fead.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1fef4.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1ff11.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1ff1d.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1ff39.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1ff64.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1ff9f.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1ffac.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1ffc1.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1ffd3.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule1_data/eff/d1f/eff1ffe2.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capsule2.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/capsule2.mp4" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,11 +179,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/capsule1.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="490">
               <caret line="149" column="40" selection-start-line="149" selection-start-column="40" selection-end-line="149" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/capsule2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -79,13 +218,14 @@
         <option value="$PROJECT_DIR$/styles.css" />
         <option value="$PROJECT_DIR$/capsule1.html" />
         <option value="$PROJECT_DIR$/capsule1.js" />
+        <option value="$PROJECT_DIR$/capsule2.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="8" />
-    <option name="width" value="642" />
+    <option name="width" value="962" />
     <option name="height" value="1073" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -116,6 +256,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/capsule1_data" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -154,7 +302,7 @@
       <workItem from="1552926897621" duration="709000" />
       <workItem from="1553193597522" duration="11160000" />
       <workItem from="1553267496462" duration="3105000" />
-      <workItem from="1553301434477" duration="8754000" />
+      <workItem from="1553301434477" duration="10478000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1553202961626</created>
@@ -174,26 +322,26 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39829000" />
+    <option name="totallyTimeSpent" value="41553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="8" width="962" height="1073" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.43377483" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.43290043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32996634" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49891776" weight="0.04919786" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4978355" visible="true" weight="0.050493963" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.67741936" weight="0.3295838" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49891776" weight="0.32941177" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50108224" side_tool="true" visible="true" weight="0.04939627" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5021645" side_tool="true" visible="true" weight="0.050493963" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -250,6 +398,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
           <caret line="149" column="40" selection-start-line="149" selection-start-column="40" selection-end-line="149" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capsule2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
         </state>
       </provider>
     </entry>

@@ -22,8 +22,8 @@ Lisez les [**consignes**](consignes.html) à propos du travail à faire à la ma
 
 1. [Notes : définition des éléments de bases d'un objet](notes.html);
 2. [Capsule #1 : écrire sa première classe](../classeInv/capsule1.html);
-3. Capsule #2 : tester sa première classe et le problème de validation;
-4. Mini exercice : écrire une classe `Chat`.
+3. [Capsule #2 : tester sa première classe et le problème de validation](../classeInv/capsule2.html);
+4. [Mini exercice : écrire une classe `Chat`](exercice.html).
 
 ## Activités en classe
 

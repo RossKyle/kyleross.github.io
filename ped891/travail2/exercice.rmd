@@ -1,0 +1,56 @@
+---
+title: "Exercice préparatoire : la classe `Chat`"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## Consignes
+Vous devez écrire une classe `Chat` qui possède des attributs, des méthodes et un constructeur par défaut. Vous êtes libre de conceptualiser ce qu'est un chat en utilisant votre créativité. Par contre, il faut que votre classe contiennent **au moins** :
+
+* 2 attributs;
+* 2 méthodes;
+* 1 constructeur.
+
+Pour évaluer le fonctionnement de votre classe personnalisée, créez un chat et exécuter une série de tests. Dans vos tests, souligner le problème de validation vu dans la [capsule #2](../classeInv/capsule2.html) en mettant un chat dans un état qui serait considéré invalide.
+
+Votre création sera montrée à vos pairs et à l'enseignant au prochain cours. De plus, elle servira de base au prochain exercice en classe.
+
+<h2 id="guide">Guide</h2>
+Attaquez le problème en le divisant en trois sous-problèmes :
+
+1. Conceptualisation;
+2. Implémentation;
+3. Tests.
+
+### Conceptualisation
+Identifiez des attributs que tous les chats possèdent. Par exemple, tous les chats ont un nombre de patte, une couleur, etc.
+Identifiez ensuite les méthodes que tous les chats possèdent. Par exemple, une méthode pour retourner une `string` indiquant l'état du chat (valeurs pour son nombre de patte, couleur, etc.).
+
+### Implémentation
+Écrivez maintenant le code pour la classe `Chat`. 
+
+Déclarez la classe dans un fichier approprié et ensuite ajoutez les attributs.
+Souvenez-vous que, pour l'instant, la syntaxe pour les attributs est `public type nomSignificatif;`.
+
+Ajoutez ensuite vos méthodes et leurs logiques. Utilisez encore le mot clé `public`. Les méthodes peuvent accepter des paramètres.
+
+Finalement, écrivez un constructeur par défaut qui initialise les attributs à des valeurs par défaut.
+
+### Tests
+Dans le `Main` du programme, créez un nouveau chat.
+
+Testez la fonctionnalité d'un chat en affichant les valeurs de ses attributs dans la console.
+
+Ensuite, testez le résultat de chaque méthode.
+Par exemple, si un chat :
+
+* Peut retourner une `string`, affichez la `string` dans la console;
+* A une méthode qui change un ou plusieurs attributs (donc qui change l'état du chat), affichez les valeurs de ses attributs à nouveau dans la console et observez les différences;
+
+Finalement, affectez un attribut du chat avec une valeur insensée, mais du bon type, pour souligner le danger avec la classe. Par exemple, affectez le nombre de pattes d'un chat avec la valeur -99.
+
