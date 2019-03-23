@@ -28,4 +28,4 @@ Lisez les [**consignes**](consignes.html) à propos du travail à faire à la ma
 ## Activités en classe
 
 1. Présentation : principe d'encapsulation;
-2. Exercice : implémenter l'encapsulation dans la classe `Chat`.
+2. [Exercice : implémenter l'encapsulation dans la classe `Chat`](exerciceCours.html).

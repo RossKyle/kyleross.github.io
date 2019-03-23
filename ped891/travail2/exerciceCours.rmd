@@ -1,0 +1,28 @@
+---
+title: "Exercice en classe : l'encapsulation dans classe `Chat`"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## Consignes
+Pour simuler une tâche essentielle dans le milieu du développement logiciel, vous devez implémenter le concept de l'encapsulation dans votre classe `Chat` et ensuite la soumettre pour une revue par les pairs.
+
+### L'encapsulation
+Changer vos attributs pour suivre le modèle d'encapsulation présenté par l'enseignant. Ajouter également des méthodes _accesseurs_ et _mutateurs_ pour chaque attribut. Ceci implique des modification dans le constructeur de votre classe.
+
+Pour chaque _mutateurs_, justifier, avec des commentaires (`//`), pourquoi il devrait être `public` ou `private`.
+
+### La revue par les pairs
+Votre équipe est formé des mêmes personnes avec qui vous avez travaillé au début du cours. Chaque participant doit montrer sa classe aux autres, afin qu'ils critiquent le code. Les points importants à vérifier sont :
+
+* Le respect du principe d'encapsulation;
+* Le respect des normes de nommage du cours;
+* La qualité des algorithmes (simplicité et optimisation);
+* La réutilisation de code pour éviter la redondance;
+
+Suivant la phase de revue, chaque participant doit corriger sa classe `Chat`. Une fois confiant de la qualité du code, l'enseignant fera une vérification du travail.
