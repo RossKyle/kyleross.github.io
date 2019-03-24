@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36052648-c559-4e29-8832-2e2f11b369da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../202/ch5/chapitre5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../202/ch5/chapitre5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../202/ch5/chapitre5.rmd" beforeDir="false" afterPath="$PROJECT_DIR$/../../202/ch5/chapitre5.rmd" afterDir="false" />
-    </list>
+    <list default="true" id="36052648-c559-4e29-8832-2e2f11b369da" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -31,8 +28,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/default.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
+            <state relative-caret-position="-690">
               <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bootstrap.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="10948" column="18" selection-start-line="10948" selection-end-line="10948" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -55,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/capsule2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
@@ -169,7 +175,7 @@
       <workItem from="1552926897621" duration="709000" />
       <workItem from="1553193597522" duration="11160000" />
       <workItem from="1553267496462" duration="3105000" />
-      <workItem from="1553301434477" duration="13594000" />
+      <workItem from="1553301434477" duration="14147000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1553202961626</created>
@@ -189,19 +195,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44669000" />
+    <option name="totallyTimeSpent" value="45222000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="8" width="1922" height="1073" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.43290043" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.43259025" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32996634" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49840763" visible="true" weight="0.050493963" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49840763" visible="true" weight="0.050493963" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -223,13 +229,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="10955" column="22" selection-start-line="10955" selection-start-column="22" selection-end-line="10955" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/highlight.pack.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -240,24 +239,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/capsule1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -272,6 +257,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-690">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="10948" column="18" selection-start-line="10948" selection-end-line="10948" selection-end-column="28" />
         </state>
       </provider>
     </entry>
