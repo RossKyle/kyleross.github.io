@@ -1,0 +1,52 @@
+#btn-changer-theme {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+
+    font-size: xx-small;
+}
+
+.sombre {
+    background-color: #1c1c1c;
+    color: #e8e8e8;
+}
+
+.entrainement
+{
+    padding: 10px;
+    margin-bottom: 15px;
+
+    border: 1px solid darkgray;
+    border-radius: 10px;
+}
+
+body {
+    font-family: "Nimbus Sans" ;
+}
+
+form {
+    width: 90%;
+    margin: auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    display: block;
+    padding: 5px;
+    margin-bottom: 10px;
+
+    border: 1px solid darkgray;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    font-style: italic;
+}

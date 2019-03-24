@@ -8,9 +8,6 @@ link-citations: true
 urlcolor: blue
 ---
 
-_Strutures de données et programmation orientée objet_  
-_429-202-RE_
-
 ## Consignes générales
 Lisez attentivement les notes du chapitre 4 sur le site [profd.info](http://profd.info/ped891/travail2/notes.html).
 
@@ -21,7 +18,7 @@ Après le visionnement des capsules, complétez l'[exercice préparatoire](exerc
 La théorie présentée ne sera pas réexpliquée en classe. Donc, la maîtrise du contenu présenté dans les capsules est nécessaire pour la compréhension et la réussite des activités du prochain cours.
 
 ## Consignes particulières
-Il y a deux capsules de 5 minutes chacune. La première capsule présente l'écriture d'une classe en C\# avec tous les ingrédients de base (attributs, méthodes, constructeur). La deuxième capsule est à propos de tester la classe en profondeur et d'identifier, par la suite, les limites de celle-ci avec l'implémentation employée. La solution à aux limites sera vue au prochain cours. Chaque capsule contient des courtes phases d'exercices où vous devriez rédiger du code. Celles-ci doivent être réalisées afin de poursuivre la vidéo.
+Il y a deux capsules de 5 minutes chacune. La première capsule présente l'écriture d'une classe en C\# avec tous les ingrédients de base (attributs, méthodes, constructeur). La deuxième capsule est à propos de tester la classe en profondeur et d'identifier, par la suite, les limites de celle-ci avec l'implémentation employée. La solution aux limites sera vue au prochain cours. Chaque capsule contient des courtes phases d'exercices où vous devriez rédiger du code. Celles-ci doivent être réalisées afin de poursuivre la vidéo.
 
 Pour l'exercice préparatoire, vous devriez créer une nouvelle classe, dont la classe _Chat_, qui représente un chat. Vous devriez concevoir les caractéristiques et comportements d'un chat, implémentez la classe et ensuite la testez. Consultez le [guide d'accompagnement](exercicePrep.html#guide), pour des pistes de travail.
 

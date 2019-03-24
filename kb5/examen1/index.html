@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moniteur d'exercice</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+</head>
+<body class="theme">
+<h1>Moniteur d'exercice</h1>
+<!-- Question 1 -->
+Heure d'accès : <span id="conteneur-heure"></span>
+<hr>
+
+<form id="frm-exercice" action="serveur.php" method="post">
+    <div>
+        <label for="champ-nom">Nom</label>
+        <!-- Question 2 -->
+        <input type="text" id="champ-nom">
+    </div>
+
+    <div id="conteneur-entrainement1" class="entrainement">
+        Entrainement #1
+        <button type="button" id="btn-ajouter-durée">+</button>
+        <div>
+            <label for="date1">Date</label>
+            <input type="date" id="date1">
+        </div>
+        <div>
+            <label for="heure1">Durée en heure</label>
+            <input type="text" id="heure1" class="champ-heure">
+        </div>
+    </div>
+    <div class="conteneur-entrainement2">
+       Entrainement #2
+        <div>
+            <label for="date2">Date</label>
+            <input type="date" id="date2">
+        </div>
+        <div>
+            <label for="heure2">Durée en heure</label>
+            <input type="text" id="heure2" class="champ-heure">
+        </div>
+    </div>
+
+    <button type="button" id="btn-calculer-total">Calculer durée totale</button>
+    Durée totale : <span id="conteneur-total-heures">0</span>h
+</form>
+<button id="btn-changer-theme">Thème sombre</button>
+</body>
+</html>
