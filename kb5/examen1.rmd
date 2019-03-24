@@ -1,41 +1,36 @@
----
-title: "Examen 1"
-output:
-  pdf_document
----
-
 ## Consignes
 
 * Récupérer l'HTML et CSS pour l'examen sur ColNet;
 * Ne modifiez **pas** l'HTML et CSS;
 * Créez le fichier _main.js_ dans votre projet. Tous le travail doit être écrit dans ce fichier;
 * N'utilisez **pas** `InnerHTML` et `InnerText`;
-* Découpez votre code en créant des fonctions;
 * Utilisez vos exercices et laboratoires comme référence;
 * Vous ne pouvez **pas** naviguer sur le web pour des références.
 
 ### Question 1
-Dans le span _conteneur-heure_, affichez l'heure d'accès à la page web.
+Dans le div _conteneur-heure_, affichez l'heure d'accès à la page web.
 
 ### Question 2
-Mettez le texte temporaire (_placeholder_) "Entrez votre nom" dans le champ de texte _champ-nom_.
+Mettez le texte temporaire (_placeholder_) "Entrez votre nom" dans le champ de texte _nom_.
 
 ### Question 3
-Ajoutez une action au bouton _btn-changer-theme_ qui change le thème de la page. L'action permet de basculer entre le thème initial et le thème "sombre".
+Ajoutez une action au bouton _btn-changer-theme-sombre_ qui change le thème de plusieurs éléments de la page. L'action permet de basculer entre le thème initial et le thème "sombre".
 
-Lorsque le bouton est cliqué et son texte est "Thème sombre", la classe _.sombre_ est ajoutée au _body_. De plus, le texte du bouton doit changer de "Thème sombre" à "Thème initial".
+Lorsque le bouton est cliqué et son texte est "Thème sombre", la classe _.sombre_ est ajoutée à tous les éléments de la classe _.theme_. De plus, le texte du bouton doit changer de "Thème sombre" à "Thème initial".
 
-Lorsque le bouton est cliqué et son texte est "Thème initial", la classe _.sombre_ est retirée du _body_. De plus, le texte du bouton doit changer de "Thème initial" à "Thème sombre".
+Lorsque le bouton est cliqué et son texte est "Thème initial", la classe _.sombre_ est retirée à tous les éléments de la classe _.theme_. De plus, le texte du bouton doit changer de "Thème initial" à "Thème sombre".
 
 ### Question 4	
-**a**. Écrivez une fonction `calculerSomme(...)` qui prend un paramètre. Ce paramètre devrait être un tableau de nombre. Retourner la somme des nombres dans le tableau.
+**a**. Écrivez une fonction `CalculerSomme(...)` qui prend un paramètre. Ce paramètre devrait être un tableau de nombre. Retourner la somme des nombres dans le tableau.
 
-Si le paramètre reçu n'est pas un tableau, affichez une alerte avec le message "Il faut envoyer un tableau" et faites un `return`. Si un élément du tableau n'est pas un nombre, affichez une alerte avec le message "Il faut que tous les éléments du tableau soient des nombres" et faite un `return`.
+Si le paramètre reçu n'est pas un tableau, affichez une alerte avec le message "Il faut envoyé un tableau" et faites un `return`. Si un élément du tableau n'est pas un nombre, affichez une alerte avec le message "Il faut que tous les élément du tableau soient des nombres" et faite un `return`.
 
-**b**. Lorsque le bouton _btn-calculer-total_ est cliqué, appelez la fonction `calculerSomme(...)` avec un tableau contenant toutes les valeurs des champs de texte du formulaire. Écrivez la valeur retournée dans le span _conteneur-total-heures_. Il est possible que cette valeur soit `undefined`.
+**b**. À chaque fois qu'un champ de texte est modifié, appelez la fonction `CalculerSomme(...)` avec un tableau contenant toutes les valeurs des champs de texte du formulaire. Écrivez la valeur retournée dans le div _conteneur-somme_. Il est possible que cette valeur soit `undefined`.
 
 ### Question 5
-Ajoutez une action au bouton _btn-ajouter-durée_ qui ajoute un champ de texte dans _conteneur-entrainement1_.
+**a**. Ajoutez une action au bouton _btn-ajouter-champ_ qui ajoute un champ de texte après le dernier champ de texte déjà présent dans le formulaire.
 
-Le contenu dans ces nouveaux champs devra aussi être utilisé dans le calcul de la durée totale.
+**b**. Le nouveau champ doit avoir la classe _.theme_;
+
+
 
