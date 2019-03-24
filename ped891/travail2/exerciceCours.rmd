@@ -18,7 +18,15 @@ Changer vos attributs pour suivre le modèle d'encapsulation présenté par l'en
 Pour chaque _mutateurs_, justifier, avec des commentaires (`//`), pourquoi il devrait être `public` ou `private`.
 
 ### La revue par les pairs
-Votre équipe est formé des mêmes personnes avec qui vous avez travaillé au début du cours. Chaque participant doit montrer sa classe aux autres, afin qu'ils critiquent le code. Les points importants à vérifier sont :
+Votre équipe est formé des mêmes personnes avec qui vous avez travaillé au début du cours. Chaque participant doit montrer sa classe aux autres, afin qu'ils critiquent le code.
+
+Procédez de la façon suivante :
+1. Chaque membre imprime suffisament de copies de sa classe pour toute l'équipe;
+2. Le travail d'un membre en choisi pour la revue;
+3. Chaque membre critique le code choisi en écrivant des commentaires sur sa copie;
+4. L'équipe discutte ensuite en soulevant leurs commentaires;
+
+Lors de la critique, les points importants à vérifier sont :
 
 * Le respect du principe d'encapsulation;
 * Le respect des normes de nommage du cours;

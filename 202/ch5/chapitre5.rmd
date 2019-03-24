@@ -23,9 +23,12 @@ Les valeurs pour l'ensemble des attributs représente l'_état_ d'un objet. Supo
 `pointsDeVie : 5` et `image : ouch.jpg` est l'état actuel de l'objet joueur. L'état du joueur a changé suite a des modifications de ses attributs. Autrement dit, lorsque des mutations a un objet surviennent, il est dans un nouvel état.
 
 ## Méthodes
-Les fonctions dans une classe décrivent souvent un comportement ou une action qu'un instance de la classe peut avoir ou faire. Celle-ci sont nommées des **méthodes**. La classe `Joueur` peut contenir une méthode `Sauter` qui représente une action qu'un joueur peut faire. L'action comporte une logique (le code de la fonction) pour être réalisée.
+Les fonctions dans une classe décrivent souvent un comportement ou une action qu'un instance de la classe peut avoir ou faire. Celle-ci sont nommées des **méthodes**. La classe `Joueur` peut contenir une méthode `Sauter()` qui représente une action qu'un joueur peut faire. L'action comporte une logique (le code de la fonction) pour être réalisée.
 
 _Fonctions d'une classes = méthodes_
+
+Un objet a un état ; selon l'état, l'objet peut offrir des services sous forme de méthodes. Une méthode va habituellement utiliser ou modifier les attributs de l'objet afin de réaliser sa tâche, c.-à-d. lire et/ou modifier des aspect de l'état de l'objet. Par exemple, si un objet de la classe `Joueur` est demandé de `Sauter()`, on s'attend que la valeur de plusieurs attributs de l'objet va changer. Ceci implique que l'état du joueur va changer.
+
 
 ## Les références
 Supposons une classe pour représenter un Rectangle :
