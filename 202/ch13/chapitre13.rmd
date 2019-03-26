@@ -1,0 +1,131 @@
+---
+title: "La pile"
+output:
+  html_document:
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+Une pile (_stack_ en anglais) est une structure de données où les éléments sont « empilés ». Ceci implique la caractéristique principale d'une pile : **FILO**.
+
+F → first  
+I → in  
+L → last  
+O → out  
+
+_First in, last out_ veut dire que le plus tôt qu'un élément est mis dans une pile, le plus tard il en sortira.
+
+Imaginez une pile d'assiette. Si plusieurs assiettes sont empilées, la première placée sera la dernière à être prise.
+Une assiette est toujours ajoutée **sur** la pile, et non insérée entre d'autres assiettes. S'il faut retirer une assiette, celle sur le dessus (la dernière ajoutée) sera sélectionnée.
+
+## Opérations d'une pile
+
+Dans une pile, les opérations principales sont :
+
+* Empiler/Ajouter (_Push_, en anglais) : ajoute un élément sur la pile;
+* Dépiler/Retirer (_Pop_, en anglais) : retire le dernier élément ajouté;
+* Regarder (_Peek_, en anglais) : retourne le dernier élément ajouté **sans** le retirer;
+
+C'est trois opérations sont **très vite**, car il n'y a jamais d'élément à déplacer où de recherche à faire. 
+
+## Implémentation
+Plusieurs saveurs de piles existent, mais les plus populaires sont ceux implémenter avec un tableau fixe ou un tableau dynamique. La majorité des piles sont alors une suite d'éléments contigus en mémoire, c.-à-d. des éléments un à la suite de l'autre sans « trous ».
+
+### Pile avec un tableau fixe
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/r0gygp" frameborder="0"></iframe>
+
+### Pile avec un tableau dynamique
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/lvhRwk" frameborder="0"></iframe>
+
+## Exemple d'utilisation : la pile d'appel
+Les logiciels utilise une pile afin de suivre l'ordre d'appels et de retours de fonctions. Chaque fois qu'une fonction est appelée, elle est placée sur une pile. Quand un `return` survient, la pile est dépilée. Grâce à la pile, il est possible de suivre le déroulement d'un programme. C'est ainsi que les exceptions sont capables de nous dire d'où elles proviennent, par exemple.
+
+Par exemple, supposons le code suivant :
+
+```
+class Program
+{
+    public static void Main()
+    {
+        A(B(2, 5));
+    }
+}
+```
+
+Le programme est en mesure de savoir dans quelle fonction il se situe grâce à une pile.
+
+Voici une visualisation de la pile en fonction du temps d'exécution du programme :
+
+Le programme démarre et la fonction `Main` est appelée;
+
+```
+
+
+[Main]
+```
+
+La fonction `B` est appelée;
+
+```
+
+[ B  ] 
+[Main]
+```
+
+Supposons que la fonction `B` n'appelle pas d'autres fonctions. `B` retourne une valeur;
+
+```
+
+
+[Main]
+```
+
+La fonction `A` est appelée;
+
+```
+
+[ A  ]
+[Main]
+```
+
+Supposons que la fonction `A` **appel une fonction `C`.
+
+```
+[ C  ]
+[ A  ]
+[Main]
+```
+
+Supposons que la fonction `C` n'appelle pas d'autres fonctions. `C` retourne;
+```
+
+[ A  ]
+[Main]
+```
+Supposons que la fonction `A` n'appelle pas d'autres fonctions. `A` retourne;
+
+```
+
+[Main]
+```
+
+La fonction `Main` se termine;
+
+```
+
+
+```
+
+La pile est vide, donc c'est la fin du programme !
+
+## Voir la pile d'appel dans Visual Studio
+Placer un breakpoint à chaque moment que la pile veut être inspectée. N'oubliez pas que frapper un breakpoint survient **avant** d'exécuter la ligne associée.
+
+<video width="100%" controls>
+  <source src="callStackVS.mp4" type="video/mp4">
+</video>
+

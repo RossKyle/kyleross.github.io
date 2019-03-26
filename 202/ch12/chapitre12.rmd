@@ -1,0 +1,43 @@
+---
+title: "`StreamWriter`"
+output:
+  html_document:
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+Un `StreamWriter` est un objet qui permet d'écrire dans un flux d'informations. Avec `StreamReader`, il est possible de lire et écrire dans un flux.
+
+Utiliser un `StreamWriter` est très simple. La syntaxe idiomatique pour un bloc de code utilisant un `StreamWriter` est :
+
+```
+using (StreamWriter sw = new StreamWriter("../../fichier"))
+{
+    //utiliser le sw
+}
+```
+
+À la fin du bloc `using`, le `StreamWriter` sera fermé et supprimé automatiquement.
+
+## Écrire un caractère
+
+## Écrire une ligne
+
+## Écrire un octet
+
+## Exemple d'utilisation d'un `StreamWriter` avec un `StreamReader`
+
+<video width="100%" controls>
+    <source src="vid.mp4" type="video/mp4">
+</video>
+
+Un programme $A$ avec un `StreamReader` est en exécution sur le robot. Ce programme lit dans un flux des octets (8 bits) qui proviennent d'un programme $B$ en exécution sur un autre appareil.
+Le programme $B$ utilise un `StreamWriter` pour écrire des octets dans le flux en direction du robot. Selon les intrants de la manette, des octets différents sont envoyés. Selon la valeur de l'octet, le robot fait une action correspondant. Par exemple, si le programme $B$ envoie `1000 1010` au programme $A$, le programme $A$ va lire la valeur et l'interpréter. L'interprétation peut être de fermer le robot ou d'activer un moteur, par exemple.
+
+Le flux passe par la technologie _BlueTooth_, qui est très facile à utiliser.
+
+Les flux sont à la base de la **communication** informatique, que ce soit entre plusieurs appareils ou non.
+
+
