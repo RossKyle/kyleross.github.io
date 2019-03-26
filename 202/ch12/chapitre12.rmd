@@ -19,13 +19,16 @@ using (StreamWriter sw = new StreamWriter("../../fichier"))
 }
 ```
 
+Instancier un `StreamWriter` avec le constructeur qui prend qu'une `string` créer un `StreamWriter` qui va _écraser_ le contenu dans la destination (un fichier, par exemple), au lieu d'ajouter. `new StreamWriter("../../fichier", true)` est un `StreamWriter` qui va _ajouter_ du contenu à la fin de la destination.
+
 À la fin du bloc `using`, le `StreamWriter` sera fermé et supprimé automatiquement.
+## Écrire dans un `StreamWriter`
 
-## Écrire un caractère
+* `.Write(...);
+* `.WriteLine(...);
 
-## Écrire une ligne
+Ces méthodes écrivent de l'information dans un tampon (_buffer_) et pas immédiatement dans la destination. Lorsque le `StreamWriter` est fermé ou la méthode `Flush()` est appelée, les données du tampon se font réellement écrire dans la destination.
 
-## Écrire un octet
 
 ## Exemple d'utilisation d'un `StreamWriter` avec un `StreamReader`
 
