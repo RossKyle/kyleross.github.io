@@ -1,0 +1,9 @@
+.hidden {
+    visibility: hidden;
+}
+
+.game-canvas {;
+    border: 1px solid black;
+    margin: auto;
+    display: block;
+}
