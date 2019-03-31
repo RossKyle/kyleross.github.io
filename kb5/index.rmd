@@ -37,6 +37,7 @@ urlcolor: blue
 
 ## Exercices d'apprentissage
 1. [`prompt`, `if/else`, `for`](exer/ex1.html)
+2. [Début de jeu](exer/3.html)
 
 ## Laboratoires
 1. [Tableaux et chaines de caractères](lab/1.html)

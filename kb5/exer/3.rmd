@@ -1,0 +1,46 @@
+---
+title: "Début de jeu"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+urlcolor: blue
+---
+
+**Ce travail servira de base pour le prochain laboratoire ! Un solutionnaire sera mis en ligne plus tard.**
+
+## Mise en situation
+Votre équipe a la tâche de réaliser un jeu web. Pour la base, vous devez créer un compte à rebours (_countdown_) qui prépare le joueur à l'action.
+
+<video controls width="100%">
+  <source src="3.mp4" type="video/mp4">
+</video>
+
+## Nouveaux outils
+
+* `canvas`;
+* `setTimeout(...)`;
+* `setInterval(...)`;
+* `clearTimeout(...)`;
+* `clearInterval(...)`;
+* `clearRect(...)` → à regarder par vous-même;
+* Envoyer un `number` par référence.
+
+## Tâche 1 : _Start Game_ et créer le `canvas`
+Au chargement de votre page, qu'un seul bouton devrait être présent. Ce bouton doit contenir le texte "_Start Game_".
+
+Lorsque ce bouton est cliqué, il doit disparaître et créer un canevas de 640x480 pixels. Ce canevas doit être centré horizontalement dans la page.
+
+## Tâche 2 : le _countdown_
+Une fois que le canvas est ajouté à la page, il faut commencer le _countdown_.
+
+Créez une fonction `countdown(...)` qui prend en paramètre un élément `canvas` et un tableau contenant un `number`. Cette fonction doit nettoyer le canvas et, ensuite, afficher le nombre dans le tableau sur le canvas. Le nombre doit être affiché au centre du canvas et être alligné aux centres horizontal et vertical. Finalement, la fonction doit décrémenter la valeur du nombre.
+
+## Tâche 3 : "GO!"
+Une fois que le _countdown_ est terminé, affichez dans le canvas "GO!". Pour l'instant, plus rien ne devrait se passer après l'affichage du "GO!".
+
+## Tâche 4 : Tests
+Testez votre travail avec des valeurs de départs différentes pour le _countdown_. Par exemple, au lieu de faire "3.2.1.GO!", testez `countdown(...)` pour commencer avec 5 et vérifiez si votre canevas affiche bien "5.4.3.2.1.GO!"
+
+Vous devriez avoir à changer qu'une seule valeur ; le tout devrait s'adapter. Cette valeur pourrait être une constante telle que `const countdownStartingNumber = 3;`.
