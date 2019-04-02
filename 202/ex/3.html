@@ -448,7 +448,10 @@ $(document).ready(function () {
 <ul>
 <li><code>TrouverDéséquilibre(...)</code> qui prend une <code>string</code> à vérifier en paramètre. Cette méthode doit retourner une nouvelle <code>string</code> qui est identique à celle reçue en paramètre, <strong>mais qui contient des * aux endroits où des mauvaises parenthèses fermantes se trouvent</strong>. De plus, la chaine retournée doit contenir, à la fin, un * pour chaque parenthèse ouvrante qui n’a pas été fermée. <a href="sortie.log">Exemple</a></li>
 </ul>
-<p><strong>Indice</strong> Pour chaque caractère de la <code>string</code> reçu : Regarder si le caractère est une parenthèse ouvrante ( ‘(’, ‘{’ ou ‘[’ ) Si oui : Push le caractère dans la pile …</p>
+<p><strong>Indice</strong> Pour chaque caractère de la <code>string</code> reçu :<br />
+Regarder si le caractère est une parenthèse ouvrante ( ‘(’, ‘{’ ou ‘[’ )<br />
+Si oui : Push le caractère de parenthèse ouvrante dans la pile<br />
+…</p>
 </div>
 <div id="constructeur" class="section level3">
 <h3>Constructeur</h3>

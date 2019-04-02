@@ -38,10 +38,10 @@ Le but des instances de cette classe est de vérifier une `string` pour l'équil
 * `TrouverDéséquilibre(...)` qui prend une `string` à vérifier en paramètre. Cette méthode doit retourner une nouvelle `string` qui est identique à celle reçue en paramètre, **mais qui contient des * aux endroits où des mauvaises parenthèses fermantes se trouvent**. De plus, la chaine retournée doit contenir, à la fin, un * pour chaque parenthèse ouvrante qui n'a pas été fermée. [Exemple](sortie.log)
 
 **Indice**
-Pour chaque caractère de la `string` reçu :
-    Regarder si le caractère est une parenthèse ouvrante ( '(', '{' ou '[' )
-    Si oui : Push le caractère dans la pile
-     ...
+Pour chaque caractère de la `string` reçu :  
+    Regarder si le caractère est une parenthèse ouvrante ( '(', '{' ou '[' )  
+    Si oui : Push le caractère de parenthèse ouvrante dans la pile  
+     ...  
 
 ### Constructeur
 
