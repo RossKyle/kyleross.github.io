@@ -61,8 +61,6 @@ class Test {
 		{
 			int[ tableau;
 		}
-}]]
+}]](
 ```
-
 Vous sauvegarder ensuite la valeur retournée par la méthode dans un fichier _sortie.log_.
-
