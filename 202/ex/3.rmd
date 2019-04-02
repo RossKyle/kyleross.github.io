@@ -55,13 +55,13 @@ Afin de tester la méthode `TrouverDéséquilibre(...)`, vous lui envoyé tout l
 **Test.cs**
 ```
 class Test {
-    public Test(]
-    {
-        for (int i = 0; i < 5; ++i)
+	public Test(]
 	{
-	    int[ tableau;
-	}
-}
+		for (int i = 0; i < 5; ++i)
+		{
+			int[ tableau;
+		}
+}]]
 ```
 
 Vous sauvegarder ensuite la valeur retournée par la méthode dans un fichier _sortie.log_.
