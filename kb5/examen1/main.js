@@ -1,24 +1,19 @@
+
 window.onload = function () {
-  //insérer l'heure d'accés
+  //q1
   document.getElementById("conteneur-heure").textContent = new Date().toLocaleTimeString();
-
+  //q2
   document.getElementById("champ-nom").placeholder = "Entrez votre nom";
-
+  //q3
   initialiserBoutonTheme();
-  initialiserBoutonCalculer()
-
-  document.getElementById("btn-ajouter-durée").onclick = function () {
-    let nouveauChamp = document.createElement("input");
-    nouveauChamp.type = "text";
-    nouveauChamp.classList.add("champ-heure");
-    nouveauChamp.classList.add("theme");
-    document.getElementById("conteneur-entrainement1").appendChild(nouveauChamp);
-  }
-}
+  //q4
+  initialiserBoutonCalculer();
+  //q5
+  initialiserBoutonAjouterChamp();
+};
 
 function initialiserBoutonTheme() {
   let btnTheme = document.getElementById("btn-changer-theme");
-  let elementsTheme = document.querySelectorAll(".theme");
   let contenuTexte = [btnTheme.textContent, "Thème initial"];
   let indiceContenuTexte = 0;
 
@@ -36,7 +31,8 @@ function initialiserBoutonCalculer() {
     for (let champ of champsHeures)
       valeursHeures.push(+champ.value);
 
-    document.getElementById("conteneur-total-heures").textContent = calculerSomme(valeursHeures);
+    document.getElementById("conteneur-total-heures").textContent =
+      calculerSomme(valeursHeures);
   }
 }
 
@@ -58,3 +54,11 @@ function calculerSomme(nombres) {
   return somme;
 }
 
+function initialiserBoutonAjouterChamp() {
+  document.getElementById("btn-ajouter-durée").onclick = function () {
+    let nouveauChamp = document.createElement("input");
+    nouveauChamp.type = "text";
+    nouveauChamp.classList.add("champ-heure");
+    document.getElementById("conteneur-entrainement1").appendChild(nouveauChamp);
+  };
+}

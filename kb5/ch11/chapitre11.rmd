@@ -1,0 +1,44 @@
+## POO basée sur les classe c. POO basée sur les prototypes
+JS implémente le modèle de conception du POO d'une façon très différente que des langages comme le C\# et Java. Ceci est parce-que JS utilise des _prototypes_ pour instancier des objets.
+
+Par chance, il est possible de conceptualiser des objets de façon familier à C\#, sans aller en profondeur sur le concept des _prototypes_.
+
+Pour l'instant, voyons comment transposer les connaissances d'une classe C/# à JS. Peu importe le langage, les éléments fondamentaux à la POO sont les attributs/propriétés, les méthodes, les constructeurs et l'encapsulation.
+
+## Déclarer une classe
+Le JS moderne permet d'utiliser une syntaxe basée sur le modèle d'une classe pour implémenter le « plan » d'un objet. Ceci est très semblable à C\#, Java, C++, etc.
+
+```{js}
+class Personne {
+}
+```
+
+**N.B. :** Sous le capot, une classe en JS est réellement une fonction. Ceci est une particularité du paradigme _prototype_ auquel JS appartient.
+
+## Ajouter les attributs d'instance
+Par conventions, les attributs d'une classe sont écrits au haut de la portée d'une déclaration de classe.
+
+Supposons qu'une instance de `Personne` possède un nom propre à elle (pas un attribut _static_).
+
+```{js}
+class Personne {
+  #nom;
+} 
+```
+
+En JS moderne, le `#` indique que l'attribut est privé, c.-à-d. qu'elle est inaccesible à tout code extérieur de la portée de la classe. Cacher des membres d'une classe rejoint le principe d'encapsulation.
+
+## Les propriétés
+En JS, il n'y a pas de sucre syntaxique comme les propriétés C\# pour créer des méthodes _getter_ et _setter_. Par contre, il y a tout de même les mots clés `get` et `set`.
+
+Ceux-ci servent à contrôler l'accès et la modification d'une donnée d'instance, comme le nom d'une personne, par exemple.
+
+En fait, il est plus fréquent d'utiliser le mot **propriété pour dire attributs**, dans le monde du JS.
+
+**Dorénavant, le terme _propriété_ sera utilisé au lieu du terme _attribut_.**
+
+
+## Ajouter un constructeur par défaut
+
+## Ajouter un constructeur paramétrique
+

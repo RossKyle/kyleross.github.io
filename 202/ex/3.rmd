@@ -1,0 +1,68 @@
+---
+title: "Équilibre de parenthèses"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## Mise en situation
+Vous devez créez un programme qui lie tout le contenu d'un fichier et détecte si les caractères de parenthèses ouvrante se font tous fermés et ce dans l'ordre approprié. À la fin, un rapport est généré sous form d'un fichier.
+
+## Outils
+
+* `Stack<T>`;
+* Méthodes `Push`, `Pop` et `Clear`;
+* `StreamReader` et méthode `ReadToEnd()`;
+* `StreamWriter`;
+* `Tuple`;
+* `break` pour arrêter une boucle `for` ou `foreach`;
+* `StringBuilder`.
+
+## La classe `DétecteurParenthèses`
+Le but des instances de cette classe est de vérifier une `string` pour l'équilibre des caractères de parenthèses.
+
+### « Constante »
+
+* Un tableau `readonly` de tuples (`char`, `char`). Ce tableau contient des pairs de caractères. Les pairs sont : ('(', ')'), ('{','}') et ('[',']').
+
+### Attributs
+
+* Une pile de caractères.
+
+### Méthodes
+
+* `TrouverDéséquilibre(...)` qui prend une `string` à vérifier en paramètre. Cette méthode doit retourner une nouvelle `string` qui est identique à celle reçue en paramètre, **mais qui contient des * aux endroits où des mauvaises parenthèses fermantes se trouvent**. De plus, la chaine retournée doit contenir, à la fin, un * pour chaque parenthèse ouvrante qui n'a pas été fermée. [Exemple](sortie.log)
+
+**Indice**
+Pour chaque caractère de la `string` reçu :
+    Regarder si le caractère est une parenthèse ouvrante ( '(', '{' ou '[' )
+    Si oui : Push le caractère dans la pile
+     ...
+
+### Constructeur
+
+* Un constructeur par défaut seulement. La capacité initiale de la pile devrait être 3.
+
+## Tests de la classe
+Vous devez tester votre classe `DétecteurParenthèses` dans le `Main` de la classe `Program`.
+
+Afin de tester la méthode `TrouverDéséquilibre(...)`, vous lui envoyé tout le contenu du fichier _Test.cs_ en paramètre.
+
+**Test.cs**
+```
+class Test {
+    public Test(]
+    {
+        for (int i = 0; i < 5; ++i)
+	{
+	    int[ tableau;
+	}
+}
+```
+
+Vous sauvegarder ensuite la valeur retournée par la méthode dans un fichier _sortie.log_.
+
