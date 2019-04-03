@@ -34,6 +34,7 @@ urlcolor: blue
 6. [`form`](ch6/chapitre6.html)	
 7. [Introduction au DOM](ch8/chapitre8.html)
 8. [Suite au DOM](ch9/chapitre9.html)
+9. [Introduction à la POO](ch11/chapitre11.html)
 
 ## Exercices d'apprentissage
 1. [`prompt`, `if/else`, `for`](exer/ex1.html)

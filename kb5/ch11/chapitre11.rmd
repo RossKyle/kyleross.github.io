@@ -1,12 +1,23 @@
-## POO basée sur les classe c. POO basée sur les prototypes
-JS implémente le modèle de conception du POO d'une façon très différente que des langages comme le C\# et Java. Ceci est parce-que JS utilise des _prototypes_ pour instancier des objets.
+---
+title: "Introduction à la POO en JS"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
 
-Par chance, il est possible de conceptualiser des objets de façon familier à C\#, sans aller en profondeur sur le concept des _prototypes_.
+## POO basée sur les classes c. POO basée sur les prototypes
+JS implémente le modèle de conception du POO d'une façon très différente que des langages comme le C\# et Java. Ceci est parce que JS utilise des _prototypes_ pour instancier des objets.
+
+Par chance, il est possible de conceptualiser des objets de façon familière à C\#, sans aller en profondeur sur le concept des _prototypes_.
 
 Pour l'instant, voyons comment transposer les connaissances d'une classe C/# à JS. Peu importe le langage, les éléments fondamentaux à la POO sont les attributs/propriétés, les méthodes, les constructeurs et l'encapsulation.
 
 ## Déclarer une classe
-Le JS moderne permet d'utiliser une syntaxe basée sur le modèle d'une classe pour implémenter le « plan » d'un objet. Ceci est très semblable à C\#, Java, C++, etc.
+Le JS moderne permet d'utiliser une syntaxe basée sur le modèle d'une classe pour implémenter le « plan » d'un objet. Ceci est très semblable à C\#, Java, C++, etc. Par contre, cette syntaxe est récente ; les anciennes pratiques demeurent populaires.
 
 ```{js}
 class Personne {
@@ -22,11 +33,17 @@ Supposons qu'une instance de `Personne` possède un nom propre à elle (pas un a
 
 ```{js}
 class Personne {
-  #nom;
+  _nom;
 } 
 ```
+Le `_` indique qu'une donnée doit être _considérée_ privée, c.-à-d. qu'elle est symboliquement inaccesible à tout code extérieur de la portée de la classe. Cacher des membres d'une classe rejoint le principe d'encapsulation.
 
-En JS moderne, le `#` indique que l'attribut est privé, c.-à-d. qu'elle est inaccesible à tout code extérieur de la portée de la classe. Cacher des membres d'une classe rejoint le principe d'encapsulation.
+La pratique de mettre un `_` devant le nom d'une variable est populaire dans les langages de scripting, où des vrais données privées n'existait pas ou n'existe pas encore.
+
+Notez l'absensce du mot clé `let`, aussi.
+ 
+## À venir dans la prochaine version de Chrome
+En JS ultra-moderne, le `#` indique que l'attribut est privé, mais pas seulement symboliquement. Ceci donne un résultat similaire à un attribut privé en C\#.
 
 ## Les propriétés
 En JS, il n'y a pas de sucre syntaxique comme les propriétés C\# pour créer des méthodes _getter_ et _setter_. Par contre, il y a tout de même les mots clés `get` et `set`.
@@ -37,8 +54,161 @@ En fait, il est plus fréquent d'utiliser le mot **propriété pour dire attribu
 
 **Dorénavant, le terme _propriété_ sera utilisé au lieu du terme _attribut_.**
 
+## `get`
+Pour créer un _getter_, la syntaxe conventionnelle est ```get donnéeMembre() { return this._donnéeMembre; }```.
+
+```{js}
+class Personne {
+  _nom;
+  get nom() {
+    return this._nom;
+  }
+}
+```
+
+## `this`
+Dans une définition de classe, il faut utiliser `this.` pour accéder à un membre (attributs et méthodes). Par exemple, pour appeler le _getter_ **dans la classe** (et non à partir d'un client) il faut utiliser `this.membre`.
+
+## `set`
+Dans un _setter_, il est possible de faire la validation d'intrant. Il est donc possible de forcer un client à passer à travers la validation, avant d'affecter l'état d'un objet (s'il suit la norme de ne pas appeler les membres avec le préfixe `_`).
+
+```{js}
+class Personne {
+  _nom;
+  get nom() {
+    return this._nom;
+  }
+  set nom(nouveauNom) {
+    if (nouveau === null)
+      nouveauNom = "défaut";
+      
+    this._nom = nouveauNom;
+  }
+}
+```
+
+## Tout est public
+Les `get` et `set` sont réellement des méthodes. Toutes les fonctions dans une `class` JS sont publics, car, comme pour les attributs, les mécanismes pour rendre les choses réellement privées en JS ne sont pas encore adoptés par les navigateurs.
+
+## Constructeur par défaut implicite
+La classe `Personne` peut déjà être instanciée, malgré-qu'il n'y a pas de constructeurs explicitement écrits dans la classe. Comme en C\#, un constructeur par défaut implicite existe, au besoin. Évidemment, tous les attributs auront la valeur `undefined`, s'ils n'ont pas été initialisés.
+
+```{js}
+class Personne {
+  _nom;
+  get nom() {
+    return this._nom;
+  }
+  set nom(nouveauNom) {
+    if (nouveau === null)
+      nouveauNom = "défaut";
+      
+    this._nom = nouveauNom;
+  }
+}
+
+let p1 = new Personne();
+alert(p1.nom);
+
+p1.nom = null;
+alert(p1.nom);
+```
 
 ## Ajouter un constructeur par défaut
 
-## Ajouter un constructeur paramétrique
+```{js}
+class Personne {
+  _nom;
+  get nom() {
+    return this._nom;
+  }
+  set nom(nouveauNom) {
+    if (nouveau === null)
+      nouveauNom = "défaut";
+      
+    this._nom = nouveauNom;
+  }
+  
+  constructor() {
+    this.nom = "défaut"; //this.nom, pas this._nom
+  }
+}
 
+let p1 = new Personne();
+alert(p1.nom);
+
+p1.nom = null;
+alert(p1.nom);
+```
+
+## Constantes dans une classe
+Malheureusement, les constantes définies dans une `class` arrive avec la prochaine version de Chrome, aussi.
+
+## Ajouter un constructeur paramétrique
+ 
+```{js}
+class Personne {
+  _nom;
+  get nom() {
+    return this._nom;
+  }
+  set nom(nouveauNom) {
+    if (nouveau === null)
+      nouveauNom = "défaut";
+      
+    this._nom = nouveauNom;
+  }
+  constructor(nomInitial) {
+    this.nom = nomInitial;
+  }
+}
+
+let p1 = new Personne(null);
+alert(p1.nom);
+```
+
+**N.B : ** Une classe ne peut avoir qu'un seul constructeur en JS !
+
+## « Propriété » calculée/de seconde ordre à la C\#
+Dans la classe suivante, `representationChaine` est un _getter_ sans qui retourne le résultat d'un traitement, et non directment la valeur d'une propriété (attribut).
+
+```{js}
+class Point2D {
+  _x;
+  _y;
+  get x() {
+    return this._x;
+  }
+  set x(nouveauX) {
+    this._x = nouveauX;
+  }
+  get y() {
+    return this._y;
+  }
+  set y(nouveauX) {
+    this._y = nouveauX;
+  }
+  constructor(xInitial, yInitial) {
+    this.x = xInitial;
+    this.y = yInitial;
+  }
+
+  get representationChaine() {
+    return `(${this.x}, ${this.y})`;
+  }
+}
+
+let point = new Point2D(8, -9);
+alert(point.representationChaine);
+```
+
+## Méthodes d'instances
+Distance entre deux point
+
+## Agrégation
+Classe joueur
+## Convention pour le cours KB5
+
+* Toujours utilisez les _getter_ et _setter_, même à l'intérieur du code d'une classe;
+* Créer un `get` et un `set` pour chaque propriété (attribut). Pour l'instant, c'est correct si tous les `set` sont publics.
+* 
