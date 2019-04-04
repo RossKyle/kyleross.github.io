@@ -12,9 +12,9 @@ urlcolor: blue
 [**Télécharger le projet de départ ici**](Labo3_2019_etudiant.zip)
 
 ## Mise en situation
-Votre équipe travail sur le nouveau service de _streaming_ ColNet.tv. Vous devez, tout d'abbord, faire une preuve de concept. Cette preuve est la transmission d'images via le protocol TCP.
+Votre équipe travail sur le nouveau service de _streaming_ ColNet.tv. Vous devez, tout d'abord, faire une preuve de concept. Cette preuve est la transmission d'images via le protocol TCP.
 
-Vous développez votre propre représentation d'image. Celle-ci est une chaine de texte qui contient tous les informations nécessaires pour reconstruire une image. Le _streamer_ (serveur) pourra envoyer ces chaines de texte à un _viewer_ (client), où l'application du viewer sauvegardera les images reconstruites.
+Vous développez votre propre représentation d'image. Celle-ci est une chaine de texte qui contient toutes les informations nécessaires pour reconstruire une image. Le _streamer_ (serveur) pourra envoyer ces chaines de texte à un _viewer_ (client), où l'application du viewer sauvegardera les images reconstruites.
 
 # Partie A
 ## Représentation d'une image
