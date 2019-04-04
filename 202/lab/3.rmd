@@ -44,6 +44,7 @@ Le suivant représente **2** images :
 ```
 
 ## La classe `Bitmap`
+_Cette classe existe dans la bibliothèque `System.Drawing`_
 Un objet `Bitmap`, en C\#, représente une image. Il est possible de manipuler un bitmap pixel par pixel et de sauvegarder l'image sous forme de png, jpeg, etc.
 
 La classe contient un constructeur paramétrique prenant les dimensions (largeur, hauteur) en paramètre.
@@ -54,5 +55,11 @@ L'alpha permet la transparence dans les images. Pour la simplicité, les images 
 
 Pour sauvegarder un bitmap, il suffit d'appeler sa méthode `Save(...)`.
 
+## Travail à faire
+Compléter le projet de départ aux endroit indiqués. La majorité du travail se retrouve dans la méthode `LireImage()` de la classe `Client`.
+
 # Partie B
 À venir...
+
+# Remise
+La date de remise est à déterminer. Celle-ci serait, au plus tôt, le 16 avril.
