@@ -1,0 +1,58 @@
+---
+title: "ColNet.tv"		
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+[**Télécharger le projet de départ ici**](Labo3_2019_etudiant.zip)
+
+## Mise en situation
+Votre équipe travail sur le nouveau service de _streaming_ ColNet.tv. Vous devez, tout d'abbord, faire une preuve de concept. Cette preuve est la transmission d'images via le protocol TCP.
+
+Vous développez votre propre représentation d'image. Celle-ci est une chaine de texte qui contient tous les informations nécessaires pour reconstruire une image. Le _streamer_ (serveur) pourra envoyer ces chaines de texte à un _viewer_ (client), où l'application du viewer sauvegardera les images reconstruites.
+
+# Partie A
+## Représentation d'une image
+Les données pour images se font encoder de la façon suivante :
+
+```
+largeur:hauteur
+R,V,B/R,V,B/R,V,B/...
+```
+
+Par exemple, une image 3px par 2px contenant que des pixels rouges :
+
+```
+3:2
+255,0,0/255,0,0/255,0,0/255,0,0/255,0,0/255,0,0/
+```
+
+Toutes les données de pixels se trouvent sur la deuxième ligne de la représentation textuelle.
+
+Le suivant représente **2** images :
+
+```
+3:2
+255,0,0/255,0,0/255,0,0/255,0,0/255,0,0/255,0,0/
+1:2
+0,0,255/0,0,255/
+```
+
+## La classe `Bitmap`
+Un objet `Bitmap`, en C\#, représente une image. Il est possible de manipuler un bitmap pixel par pixel et de sauvegarder l'image sous forme de png, jpeg, etc.
+
+La classe contient un constructeur paramétrique prenant les dimensions (largeur, hauteur) en paramètre.
+Elle contient aussi une méthode `SetPixel(...)` qui permet d'affecter un pixel de l'image avec une couleur.
+
+Il est possible de créer une couleur à partir du format ARVB (alpha, rouge, vert, bleu) avec la méthode `Color.FormArgb(...)`. 
+L'alpha permet la transparence dans les images. Pour la simplicité, les images n'auront pas de transparence. Une couleur opaque a un alpha de 255.
+
+Pour sauvegarder un bitmap, il suffit d'appeler sa méthode `Save(...)`.
+
+# Partie B
+À venir...
