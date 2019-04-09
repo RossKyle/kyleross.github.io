@@ -1,0 +1,5 @@
+L'agrégation et la composition sont des formes particulières d'associations entre deux objets. Cette relation est généralement de type « a un » entre les objets. Ainsi, on pourrait dire qu'un inventaire **a une** liste 
+
+Notez la différence fondamentale entre le lien « a un » et le lien « est un ». Un étudiant « est une » personne, ce qui dénote un héritage alors qu'un groupe « a des » étudiants, ce qui dénote une agrégation ou une composition.
+
+Supposons la classe `Tuile` qui représente une tuile texturée. Cette classe 
