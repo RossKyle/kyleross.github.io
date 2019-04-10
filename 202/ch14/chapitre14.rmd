@@ -1,5 +1,13 @@
-L'agrégation et la composition sont des formes particulières d'associations entre deux objets. Cette relation est généralement de type « a un » entre les objets. Ainsi, on pourrait dire qu'un inventaire **a une** liste 
+## 
+
+L'agrégation et la composition sont des formes particulières d'associations entre deux objets qui décrit leur cycle de vie. Cette relation est généralement de type « a un » entre les objets. Ainsi, on pourrait dire qu'un inventaire **a une** liste d'items. 
+
+## Relations entre un objet et ses attributs
+En POO, un objet **a des** attributs. L'objet est soit en relation d'agrégation ou de composition avec chacun de ses attributs.
 
 Notez la différence fondamentale entre le lien « a un » et le lien « est un ». Un étudiant « est une » personne, ce qui dénote un héritage alors qu'un groupe « a des » étudiants, ce qui dénote une agrégation ou une composition.
 
-Supposons la classe `Tuile` qui représente une tuile texturée. Cette classe 
+Supposons la classe `Étudiant` qui représente un étudiant. Cette classe contient un attribut `string` pour le nom de l'étudiant. Les objets dérivés de cette classe ont alors une relation avec leur `string`.
+
+## Agrégation
+Dans le cas de l'agrégation, il est question d'une association « faible », car l'objet 
