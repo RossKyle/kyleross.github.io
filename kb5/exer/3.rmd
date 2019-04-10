@@ -8,7 +8,7 @@ output:
 urlcolor: blue
 ---
 
-**Ce travail servira de base pour le prochain laboratoire ! Un solutionnaire sera mis en ligne plus tard.**
+**Ce travail servira de base pour le prochain laboratoire !**
 
 ## Mise en situation
 Votre équipe a la tâche de réaliser un jeu web. Pour la base, vous devez créer un compte à rebours (_countdown_) qui prépare le joueur à l'action.
@@ -44,3 +44,6 @@ Une fois que le _countdown_ est terminé, affichez dans le canvas "GO!". Pour l'
 Testez votre travail avec des valeurs de départs différentes pour le _countdown_. Par exemple, au lieu de faire "3.2.1.GO!", testez `countdown(...)` pour commencer avec 5 et vérifiez si votre canevas affiche bien "5.4.3.2.1.GO!"
 
 Vous devriez avoir à changer qu'une seule valeur ; le tout devrait s'adapter. Cette valeur pourrait être une constante telle que `const countdownStartingNumber = 3;`.
+
+## Solution
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/8rhejygw/2/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
