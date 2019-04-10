@@ -46,4 +46,4 @@ Testez votre travail avec des valeurs de départs différentes pour le _countdow
 Vous devriez avoir à changer qu'une seule valeur ; le tout devrait s'adapter. Cette valeur pourrait être une constante telle que `const countdownStartingNumber = 3;`.
 
 ## Solution
-<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/8rhejygw/2/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/8rhejygw/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
