@@ -1,0 +1,18 @@
+---
+title: "Comment installer Babel dans un projet"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+1. Installer Node.js (vient avec npm);
+2. Créer un répertoire pour le projet web (manuellement ou avec un IDE comme WebStorm);
+3. Créer un répertoire _src_ et un répertoire _lib_;
+4. Mettre tout le Javascript dans _src_;
+5. Faire la commande `npm init` dans le répertoire du projet complet;
+6. Suivre le guide officiel pour Babel en ligne de commande (CLI) : https://babeljs.io/setup#installation;
+7. Télécharger et ajouter les plugins nécessaires. Utilisez un moteur de recherche pour trouver les pages de plugins Babel.

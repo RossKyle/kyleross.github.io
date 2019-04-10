@@ -206,9 +206,9 @@ alert(point.representationChaine);
 Distance entre deux point
 
 ## Agrégation
-Classe joueur
+Classe joueur qui a une propriété `position`. Le constructeur prend en paramètre la position initiale du joueur en s'attendant à un objet `Point2D`.
+
 ## Convention pour le cours KB5
 
 * Toujours utilisez les _getter_ et _setter_, même à l'intérieur du code d'une classe;
 * Créer un `get` et un `set` pour chaque propriété (attribut). Pour l'instant, c'est correct si tous les `set` sont publics.
-* 

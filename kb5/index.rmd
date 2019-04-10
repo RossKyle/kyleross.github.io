@@ -10,13 +10,6 @@ urlcolor: blue
 ---
 ----
 
-**Nouvelles : **
-
-* L'examen sera le 25 mars.
-* La solution pour le laboratoire 2 est disponible à partir de l'énoncé.
-
-----
-
 ### Plan de cours
 [Plan hiver 2019](PlanH19_420KB5LG.pdf)
 
@@ -35,6 +28,7 @@ urlcolor: blue
 7. [Introduction au DOM](ch8/chapitre8.html)
 8. [Suite au DOM](ch9/chapitre9.html)
 9. [Introduction à la POO](ch11/chapitre11.html)
+10. [Babel](ch12/chapitre12.html)
 
 ## Exercices d'apprentissage
 1. [`prompt`, `if/else`, `for`](exer/ex1.html)
