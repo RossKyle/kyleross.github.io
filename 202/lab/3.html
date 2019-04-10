@@ -439,12 +439,18 @@ R,V,B/R,V,B/R,V,B/...</code></pre>
 <h2>La classe <code>Bitmap</code></h2>
 <p><em>Cette classe existe dans la bibliothèque <code>System.Drawing</code></em> Un objet <code>Bitmap</code>, en C#, représente une image. Il est possible de manipuler un bitmap pixel par pixel et de sauvegarder l’image sous forme de png, jpeg, etc.</p>
 <p>La classe contient un constructeur paramétrique prenant les dimensions (largeur, hauteur) en paramètre. Elle contient aussi une méthode <code>SetPixel(...)</code> qui permet d’affecter un pixel de l’image avec une couleur.</p>
-<p>Il est possible de créer une couleur à partir du format ARVB (alpha, rouge, vert, bleu) avec la méthode <code>Color.FormArgb(...)</code>. L’alpha permet la transparence dans les images. Pour la simplicité, les images n’auront pas de transparence. Une couleur opaque a un alpha de 255.</p>
+<p>Il est possible de créer une couleur à partir du format ARVB (alpha, rouge, vert, bleu) avec la méthode <code>Color.FromArgb(...)</code>. L’alpha permet la transparence dans les images. Pour la simplicité, les images n’auront pas de transparence. Une couleur opaque a un alpha de 255.</p>
 <p>Pour sauvegarder un bitmap, il suffit d’appeler sa méthode <code>Save(...)</code>.</p>
+</div>
+<div id="section" class="section level2">
+<h2></h2>
+<p>Le caractère <code>\n</code> dans une <code>string</code> démarque un saut de ligne. Celui-ci démarque donc également la fin d’une ligne.</p>
 </div>
 <div id="travail-a-faire" class="section level2">
 <h2>Travail à faire</h2>
 <p>Compléter le projet de départ aux endroit indiqués. La majorité du travail se retrouve dans la méthode <code>LireImage()</code> de la classe <code>Client</code>.</p>
+<p>Chaque fichier d’image créé doit être numéroté. Par exemple, image1.png, image2.png, etc.</p>
+<p>Vous pouvez tenir pour acquis le streamer envoie toujours de l’information bien formatée.</p>
 </div>
 </div>
 <div id="partie-b" class="section level1">
