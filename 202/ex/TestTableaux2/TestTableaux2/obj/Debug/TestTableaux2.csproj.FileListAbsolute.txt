@@ -1,0 +1,6 @@
+/home/kyle/RiderProjects/TestTableaux2/TestTableaux2/bin/Debug/TestTableaux2.exe
+/home/kyle/RiderProjects/TestTableaux2/TestTableaux2/bin/Debug/TestTableaux2.pdb
+/home/kyle/RiderProjects/TestTableaux2/TestTableaux2/obj/Debug/TestTableaux2.csprojResolveAssemblyReference.cache
+/home/kyle/RiderProjects/TestTableaux2/TestTableaux2/obj/Debug/TestTableaux2.csproj.CoreCompileInputs.cache
+/home/kyle/RiderProjects/TestTableaux2/TestTableaux2/obj/Debug/TestTableaux2.exe
+/home/kyle/RiderProjects/TestTableaux2/TestTableaux2/obj/Debug/TestTableaux2.pdb

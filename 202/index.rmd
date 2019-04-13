@@ -50,6 +50,7 @@ L'examen est composé de questions sur la compréhension théorique de la matiè
 * [Carte de jeux](ex/2.html)
 	* [Solution](Exercice_CarteDeJeu.zip)
 * [Équilibre de parenthèses](ex/3.html)
+	* [Solution](ex/SolutionParenthèses.zip)
 
 ## Laboratoires
 1. [Tortue](lab/1.html)
