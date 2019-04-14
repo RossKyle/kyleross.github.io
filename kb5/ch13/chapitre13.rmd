@@ -1,3 +1,13 @@
+---
+title: "POO modèle JS"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+urlcolor: blue
+---
+
 ## Qu'est-ce qui est un objet ?
 En JS, tout est un objet à l'exception des 5 types primitifs définis par le langage. Ceux-ci sont :
 
@@ -39,7 +49,7 @@ console.log([].lenght);
 ### Ajouter une propriété via `.`
 Une propriété peut être ajoutée à un objet dynamiquement (c.-à-d. à n'importe quel moment pendant le déroulement du programme) avec '.'. Ceci est moins rigide que les attributs d'un objet en C\#, qui doivent être déclarées au temps de compilation[^1].
 
-```{js}
+```{js ,eval=FALSE}
 function test(x) {
   alert(x);
 }
