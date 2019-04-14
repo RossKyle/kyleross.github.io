@@ -34,7 +34,7 @@ console.log(typeof(test)); //indique le type "function"
 
 `typeof` indique _object_ pour tous les objets donnés en paramètre, à l'exception d'une fonction. Ceci n'implique pas qu'une fonction n'est pas un objet, par contre. Selon le standard, une fonction est une sorte d'objet spécialisé :
 
-**function**
+**function**  
 member of the Object type that may be invoked as a subroutine
 (4.3.28; [ECMA-262](http://www.ecma-international.org/ecma-262/7.0/index.html#sec-terms-and-definitions-function))
 
