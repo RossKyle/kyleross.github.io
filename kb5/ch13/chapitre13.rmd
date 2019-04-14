@@ -43,7 +43,7 @@ Une propriété est une donnée associée à un nom qui appartient à un objet.
 
 ### Accéder à une propriété via `.`
 ```{js}
-console.log([].lenght);
+console.log([].length);
 ```
 
 ### Ajouter une propriété via `.`
