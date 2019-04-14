@@ -113,7 +113,8 @@ canevasJeu["nouvelleMethode"] = function { alert("bonjour"); };
 canevasJeu["nouvelleMethode"]();
 ```
 
-## Créer un constructeur d'objets
+## Instancier des objets
+### Avec un constructeur d'objets et `new`
 Un constructeur est une fonction qui affecte des valeurs à des propriétés à l'aide du mot clé `this`.
 
 ```{js}
@@ -123,7 +124,7 @@ function Personne(nom, age) {
   this.vieillir = function() { this.age++; };
 }
 ```
-Notez l'utilisation d'une majuscule pour le nom de la fonction. Ceci est la pratique commune pour nommer des constructeur.
+Notez l'utilisation d'une majuscule pour le nom de la fonction. Ceci est la pratique commune pour nommer des constructeurs.
 
 Des objets peuvent être instanciés avec le mot clé `new`.
 
@@ -138,6 +139,20 @@ let p1 = new Personne("Bill", 42);
 p1.vieillir();
 console.log(p1.age);
 ```
-Dans ce contexte, le mot clé `this` dans le constructeur réfère au nouvel objet construit. Les propriété `nom`, `age` et `vieillir` sont alors ajoutés à l'objet `p1`.
+Dans ce contexte, le mot clé `this` dans le constructeur réfère au nouvel objet construit. Les propriétés `nom`, `age` et `vieillir` sont alors ajoutés à l'objet `p1`.
+
+### Avec l'initialisateur d'objets
+La syntaxe `[]` permet de créer un nouveau tableau, tandis que la syntaxe `{}` peut permettre de créer un tableau associatif. Chaque pair clé-valeur suit la forme `clé: valeur` et est séparée par une virgule.
+
+```{js}
+let p1 = { 
+  "nom": "Bill",
+  "age": 42,
+  "vieillir": function() { this.age++; }
+};
+
+p1.vieillir();
+console.log(p1.age);
+```
 
 [^1]: Il est possible d'ajouter des attributs à des objets de façon dynamique en C\# avec la réflexivité, mais ceci n'est pas une pratique commune.

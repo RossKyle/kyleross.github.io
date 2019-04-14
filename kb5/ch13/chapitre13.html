@@ -538,8 +538,10 @@ canevasJeu["nouvelleMethode"]();
 </script>
 </div>
 </div>
-<div id="creer-un-constructeur-dobjets" class="section level2">
-<h2>Créer un constructeur d’objets</h2>
+<div id="instancier-des-objets" class="section level2">
+<h2>Instancier des objets</h2>
+<div id="avec-un-constructeur-dobjets-et-new" class="section level3">
+<h3>Avec un constructeur d’objets et <code>new</code></h3>
 <p>Un constructeur est une fonction qui affecte des valeurs à des propriétés à l’aide du mot clé <code>this</code>.</p>
 <pre class="js"><code>function Personne(nom, age) {
   this.nom = nom;
@@ -553,7 +555,7 @@ function Personne(nom, age) {
   this.vieillir = function() { this.age++; };
 }
 </script>
-<p>Notez l’utilisation d’une majuscule pour le nom de la fonction. Ceci est la pratique commune pour nommer des constructeur.</p>
+<p>Notez l’utilisation d’une majuscule pour le nom de la fonction. Ceci est la pratique commune pour nommer des constructeurs.</p>
 <p>Des objets peuvent être instanciés avec le mot clé <code>new</code>.</p>
 <pre class="js"><code>function Personne(nom, age) {
   this.nom = nom;
@@ -575,7 +577,30 @@ let p1 = new Personne("Bill", 42);
 p1.vieillir();
 console.log(p1.age);
 </script>
-<p>Dans ce contexte, le mot clé <code>this</code> dans le constructeur réfère au nouvel objet construit. Les propriété <code>nom</code>, <code>age</code> et <code>vieillir</code> sont alors ajoutés à l’objet <code>p1</code>.</p>
+<p>Dans ce contexte, le mot clé <code>this</code> dans le constructeur réfère au nouvel objet construit. Les propriétés <code>nom</code>, <code>age</code> et <code>vieillir</code> sont alors ajoutés à l’objet <code>p1</code>.</p>
+</div>
+<div id="avec-linitialisateur-dobjets" class="section level3">
+<h3>Avec l’initialisateur d’objets</h3>
+<p>La syntaxe <code>[]</code> permet de créer un nouveau tableau, tandis que la syntaxe <code>{}</code> peut permettre de créer un tableau associatif. Chaque pair clé-valeur suit la forme <code>clé: valeur</code> et est séparée par une virgule.</p>
+<pre class="js"><code>let p1 = { 
+  &quot;nom&quot;: &quot;Bill&quot;,
+  &quot;age&quot;: 42,
+  &quot;vieillir&quot;: function() { this.age++; }
+};
+
+p1.vieillir();
+console.log(p1.age);</code></pre>
+<script type="text/javascript">
+let p1 = { 
+  "nom": "Bill",
+  "age": 42,
+  "vieillir": function() { this.age++; }
+};
+
+p1.vieillir();
+console.log(p1.age);
+</script>
+</div>
 </div>
 <div class="footnotes">
 <hr />
