@@ -29,7 +29,7 @@ urlcolor: blue
 8. [Suite au DOM](ch9/chapitre9.html)
 9. [Introduction à la POO](ch11/chapitre11.html)
 10. [Babel](ch12/chapitre12.html)
-11. POO par prototype
+11. [Modèle POO en JS](ch13/chapitre13.html)
 
 ## Exercices d'apprentissage
 1. [`prompt`, `if/else`, `for`](exer/ex1.html)

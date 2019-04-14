@@ -1,0 +1,129 @@
+## Qu'est-ce qui est un objet ?
+En JS, tout est un objet à l'exception des 5 types primitifs définis par le langage. Ceux-ci sont :
+
+* number;
+* boolean;
+* string;
+* null;
+* undefined.
+
+Ceci distingue JS de C#, où tous les type de données sont des objets, même les « primitifs ».
+
+Par contre, même **les fonctions sont des objets en JS**.
+
+## Fonction en tant qu'objet
+Supposons la fonction suivante :
+
+```{js}
+function test(x) {
+  alert(x);
+}
+
+console.log(typeof(test)); //indique le type "function"
+```
+
+`typeof` indique _object_ pour tous les objets donnés en paramètre, à l'exception d'une fonction. Ceci n'implique pas qu'une fonction n'est pas un objet, par contre. Selon le standard, une fonction est une sorte d'objet spécialisé :
+
+**function**
+member of the Object type that may be invoked as a subroutine
+(4.3.28; [ECMA-262](http://www.ecma-international.org/ecma-262/7.0/index.html#sec-terms-and-definitions-function))
+
+## Propriétés
+Une propriété est une donnée associée à un nom qui appartient à un objet.
+
+### Accéder à une propriété via `.`
+```{js}
+console.log([].lenght);
+```
+
+### Ajouter une propriété via `.`
+Une propriété peut être ajoutée à un objet dynamiquement (c.-à-d. à n'importe quel moment pendant le déroulement du programme) avec '.'. Ceci est moins rigide que les attributs d'un objet en C\#, qui doivent être déclarées au temps de compilation[^1].
+
+```{js}
+function test(x) {
+  alert(x);
+}
+
+if (prompt("Ajouter une nouvelle propriété ? (o/n)") === 'o') {
+  //une fonction est un objet !
+  test.nouvellePropriete = "bonjour"; //ajout d'une propriété (nom associé avec une valeur)
+  console.log(test.nouvellePropriete);
+}
+```
+
+### Ajouter une méthode via `.`
+Il est possible d'ajouter une propriété qui a la valeur d'un objet.
+```{js}
+let date = new Date();
+date.nouvellePropriete = []; //un tableau est un objet
+```
+
+Il est donc possible d'affecter une propriété avec la valeur d'une fonction. Une méthode est une propriété dont la valeur est une fonction.
+```{js}
+let date = new Date();
+date.nouvellePropriete = function() { console.log("bonjour"); };
+date.nouvellePropriete(); //() pour appeler la fonction associée à la propriété
+```
+
+Ce concept n'est pas nouveau :
+```{js}
+let element = document.getElementById("btn-test");
+
+affectation de la propriété événementielle onclick
+element.onclick = function() { console.log("bonjour"); };
+```
+
+## L'objet en tant que structure de données
+Les objets sont des structures de données, car elles sont une forme de _conteneur_. Par exemple, en JS, un objet est un conteneur de propriétés. Une propriété peut être associée à une `string`, un `number`, un `object` (inclut les fonctions), etc.
+
+### Tableau associatif
+Les objets en JS sont des _tableaux associatifs_. Un tableau associatif est une structure de donnée comme un dictionnaire où chaque entrée est un mot (clé) associé à une définition (valeur). Pour les objets JS, les clés sont des `string`, soit les noms de propriétés.
+
+### Accéder une propriété avec la syntaxe de tableau associatif
+Contrairement aux tableaux indexés, un tableau assocatif utilise une clé, au lieu d'une position, pour accéder à une donnée associée.
+
+```{js}
+console.log(document.createElement("canvas")["width"]);
+```
+
+Car un objet est une sorte de tableau, il est possible d'itérer à travers chaque clé avec une boucle. Une boucle `for ... in`, par exemple, permet d'itérer à travers toutes les clés d'un objet.
+
+```{js}
+let canevasJeu = document.createElement("canvas");
+for (let propriete in canevasJeu)
+{
+  console.log(`la valeur de ${propriete} est ${canevasJeu[propriete]}`);
+}
+```
+
+### Ajouter une propriété avec la syntaxe de tableau associatif
+```{js}
+let canevasJeu = document.createElement("canvas");
+canevasJeu["nouvelleMethode"] = function { alert("bonjour"); };
+canevasJeu["nouvelleMethode"]();
+```
+
+## Créer un constructeur d'objets
+Un constructeur est une fonction qui affecte des valeurs à des propriétés à l'aide du mot clé `this`.
+
+```{js}
+function Personne(nom, age) {
+  this.nom = nom;
+  this.age = age;
+}
+```
+Notez l'utilisation d'une majuscule pour le nom de la fonction. Ceci est la pratique commune pour nommer des constructeur.
+
+Des objets peuvent être instanciés avec le mot clé `new`.
+
+```{js}
+function Personne(nom, age) {
+  this.nom = nom;
+  this.age = age;
+}
+
+let p1 = new Personne("Bill", 42);
+```
+Dans ce contexte, le mot clé `this` dans le constructeur réfère au nouvel objet construit. Les propriété `nom` et `age` sont alors ajoutés à l'objet `p1`.
+
+[^1]: Il est possible d'ajouter des attributs à des objets de façon dynamique en C\# avec la réflexivité, mais ceci n'est pas une pratique commune.
