@@ -543,11 +543,13 @@ canevasJeu["nouvelleMethode"]();
 <pre class="js"><code>function Personne(nom, age) {
   this.nom = nom;
   this.age = age;
+  this.vieillir = function() { this.age++; };
 }</code></pre>
 <script type="text/javascript">
 function Personne(nom, age) {
   this.nom = nom;
   this.age = age;
+  this.vieillir = function() { this.age++; };
 }
 </script>
 <p>Notez l’utilisation d’une majuscule pour le nom de la fonction. Ceci est la pratique commune pour nommer des constructeur.</p>
@@ -555,18 +557,24 @@ function Personne(nom, age) {
 <pre class="js"><code>function Personne(nom, age) {
   this.nom = nom;
   this.age = age;
+  this.vieillir = function() { this.age++; };
 }
 
-let p1 = new Personne(&quot;Bill&quot;, 42);</code></pre>
+let p1 = new Personne(&quot;Bill&quot;, 42);
+p1.vieillir();
+console.log(p1.age);</code></pre>
 <script type="text/javascript">
 function Personne(nom, age) {
   this.nom = nom;
   this.age = age;
+  this.vieillir = function() { this.age++; };
 }
 
 let p1 = new Personne("Bill", 42);
+p1.vieillir();
+console.log(p1.age);
 </script>
-<p>Dans ce contexte, le mot clé <code>this</code> dans le constructeur réfère au nouvel objet construit. Les propriété <code>nom</code> et <code>age</code> sont alors ajoutés à l’objet <code>p1</code>.</p>
+<p>Dans ce contexte, le mot clé <code>this</code> dans le constructeur réfère au nouvel objet construit. Les propriété <code>nom</code>, <code>age</code> et <code>vieillir</code> sont alors ajoutés à l’objet <code>p1</code>.</p>
 </div>
 <div class="footnotes">
 <hr />

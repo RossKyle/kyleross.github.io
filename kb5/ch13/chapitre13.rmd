@@ -120,6 +120,7 @@ Un constructeur est une fonction qui affecte des valeurs à des propriétés à 
 function Personne(nom, age) {
   this.nom = nom;
   this.age = age;
+  this.vieillir = function() { this.age++; };
 }
 ```
 Notez l'utilisation d'une majuscule pour le nom de la fonction. Ceci est la pratique commune pour nommer des constructeur.
@@ -130,10 +131,13 @@ Des objets peuvent être instanciés avec le mot clé `new`.
 function Personne(nom, age) {
   this.nom = nom;
   this.age = age;
+  this.vieillir = function() { this.age++; };
 }
 
 let p1 = new Personne("Bill", 42);
+p1.vieillir();
+console.log(p1.age);
 ```
-Dans ce contexte, le mot clé `this` dans le constructeur réfère au nouvel objet construit. Les propriété `nom` et `age` sont alors ajoutés à l'objet `p1`.
+Dans ce contexte, le mot clé `this` dans le constructeur réfère au nouvel objet construit. Les propriété `nom`, `age` et `vieillir` sont alors ajoutés à l'objet `p1`.
 
 [^1]: Il est possible d'ajouter des attributs à des objets de façon dynamique en C\# avec la réflexivité, mais ceci n'est pas une pratique commune.
