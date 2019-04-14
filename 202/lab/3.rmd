@@ -59,14 +59,11 @@ Pour sauvegarder un bitmap, il suffit d'appeler sa méthode `Save(...)`.
 Le caractère `\n` dans une `string` démarque un saut de ligne. Celui-ci démarque donc également la fin d'une ligne.
 
 ## Travail à faire
-Compléter le projet de départ aux endroit indiqués. La majorité du travail se retrouve dans la méthode `LireImage()` de la classe `Client`.
+Compléter le projet de départ aux endroits indiqués. La majorité du travail se retrouve dans la méthode `LireImage()` de la classe `Client`.
 
 Chaque fichier d'image créé doit être numéroté. Par exemple, image1.png, image2.png, etc.
 
 Vous pouvez tenir pour acquis le streamer envoie toujours de l'information bien formatée.
 
-# Partie B
-À venir...
-
 # Remise
-La date de remise est à déterminer. Celle-ci serait, au plus tôt, le 16 avril.
+La date de remise est mardi le 23 avril. Le travail doit être déposé dans la boite de remise ColNet. Une version papier doit être remis le 25 avril.
