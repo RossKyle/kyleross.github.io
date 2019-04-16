@@ -11,15 +11,19 @@ urlcolor: blue
 
 ----
 
-### Examen intra
-L'examen intra aura lieu après le 28 mars. Les chapitres 1 à 14 sont à réviser.
-Aucune feuille de note sera permise.
-
-L'examen est composé de questions sur la compréhension théorique de la matière, ainsi de questions à développement où il faut écrire du code. Tout doit être rendu sur papier sans assistance d'un ordinateur. Les 3 périodes seront consacrées à cette évaluation.
-
-### Plan de cours
-[Plan hiver 2019](PlanH19_420202LG.pdf)
-
+## Planification 
+1. Mardi 16 avril : Temps laboratoire 3;
+2. Mardi 23 avril : Laboratoire 4 (héritage, polymorphisme, classe abstraite); Remise du laboratoire 3 avant minuit;
+3. Jeudi 25 avril : Interfaces, temps laboratoire 4;
+4. Mardi 30 avril : Exercice interfaces;
+5. Jeudi 2 mai : Cycle de vie, aggrégation, composition;
+6. Mardi 7 mai : Copie superficielle, copie en profondeur, clonage;
+7. Mardi 14 mai : Délégué et lambdas;
+8. Mardi 16 mai : Présentation de la PFI;
+9. Jeudi 23 mai : Examen final;
+10. Samedi 1 juin : Remise de la PFI avant minuit;
+11. Mardi 4 juin : Accès à vos notes finales sur ColNet.
+ 
 ----
 
 ## Chapitres
