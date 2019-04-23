@@ -491,36 +491,6 @@ public Étudiant(string nomInit, string prénomInit, int âgeInit)
 <h2>Object</h2>
 <p>En C#, tout est un objet. Pour consolider le fait, toutes les classes et structs dérivent implicitement de la classe <code>Object</code>. C’est ainsi que toutes les instances ont les méthodes <code>GetHashCode()</code>, <code>GetType()</code>, <code>ToString()</code> et <code>Equals(...)</code>. Une classe qui ne dérive de rien explicitement dérive d’<code>Object</code> directement. Donc, un <code>ÉtudiantPrimaire</code> est un <code>Object</code>, car il est un <code>Étudiant</code>, qui est une <code>Personne</code>, qui est un <code>Object</code>.</p>
 </div>
-<div id="redefinission-override" class="section level2">
-<h2>Redéfinission (<code>override</code>)</h2>
-<p>Il est <strong>impossible de retirer un membre hérité</strong>, mais il est possible de <em>redéfinir</em> la logique d’une méthode ou d’une propriété, dans une classe dérivée.</p>
-<div id="virtual" class="section level3">
-<h3>Virtual</h3>
-<p>Si une propriété ou méthode est <code>virtual</code>, elle peut être redéfinie. Le cas classique est de redéfinir <code>ToString()</code> pour retourner une chaine plus appropriée que celle retourner par défaut dans le <code>ToString()</code> hériter d’<code>Object</code>.</p>
-<pre><code>class Personne
-{
-    ...
-    
-    public override string ToString()
-    {
-        return $&quot;{Nom}, {Prénom}&quot;;
-    }
-}</code></pre>
-</div>
-<div id="appel-a-un-membre-de-la-classe-de-base-immediate" class="section level3">
-<h3>Appel à un membre de la classe de base immédiate</h3>
-<p>Le mot clé <code>base</code> peut être utilisé pour appeler un membre accessible de son parent immédiat. Ceci est souvent vu dans les méthodes qui sont <code>override</code>, afin d’ajouter un comportement pour spécialiser la logique héritée.</p>
-<pre><code>class Étudiant : Personne
-{
-    ...
-    
-    public override string ToString()
-    {
-        return $&quot;{base.ToString()}, {Moyenne}&quot;;
-    }
-}</code></pre>
-</div>
-</div>
 <div id="protected" class="section level2">
 <h2><code>protected</code></h2>
 <p>Le code d’une classe enfant a accès à tout ce qui est déclaré <code>public</code> dans sa classe parent, évidemment. Par contre, tous codes client a accès aux membres et des problèmes d’encapsulation survients. Si un parent déclare un membre <code>private</code>, le code dans la classe dérivée n’y a pas accès.</p>
@@ -568,6 +538,36 @@ public Étudiant(string nomInit, string prénomInit, int âgeInit)
         o.ToString();     
     }
 }</code></pre>
+</div>
+<div id="redefinission-override" class="section level2">
+<h2>Redéfinission (<code>override</code>)</h2>
+<p>Il est <strong>impossible de retirer un membre hérité</strong>, mais il est possible de <em>redéfinir</em> la logique d’une méthode ou d’une propriété, dans une classe dérivée.</p>
+<div id="virtual" class="section level3">
+<h3>Virtual</h3>
+<p>Si une propriété ou méthode est <code>virtual</code>, elle peut être redéfinie. Le cas classique est de redéfinir <code>ToString()</code> pour retourner une chaine plus appropriée que celle retourner par défaut dans le <code>ToString()</code> hériter d’<code>Object</code>.</p>
+<pre><code>class Personne
+{
+    ...
+    
+    public override string ToString()
+    {
+        return $&quot;{Nom}, {Prénom}&quot;;
+    }
+}</code></pre>
+</div>
+<div id="appel-a-un-membre-de-la-classe-de-base-immediate" class="section level3">
+<h3>Appel à un membre de la classe de base immédiate</h3>
+<p>Le mot clé <code>base</code> peut être utilisé pour appeler un membre accessible de son parent immédiat. Ceci est souvent vu dans les méthodes qui sont <code>override</code>, afin d’ajouter un comportement pour spécialiser la logique héritée.</p>
+<pre><code>class Étudiant : Personne
+{
+    ...
+    
+    public override string ToString()
+    {
+        return $&quot;{base.ToString()}, {Moyenne}&quot;;
+    }
+}</code></pre>
+</div>
 </div>
 <div id="polymorphisme" class="section level2">
 <h2>Polymorphisme</h2>

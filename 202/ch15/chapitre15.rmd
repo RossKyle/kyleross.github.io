@@ -91,39 +91,6 @@ class Étudiant : Personne
 ## Object
 En C#, tout est un objet. Pour consolider le fait, toutes les classes et structs dérivent implicitement de la classe `Object`. C'est ainsi que toutes les instances ont les méthodes `GetHashCode()`, `GetType()`, `ToString()` et `Equals(...)`. Une classe qui ne dérive de rien explicitement dérive d'`Object` directement. Donc, un `ÉtudiantPrimaire` est un `Object`, car il est un `Étudiant`, qui est une `Personne`, qui est un `Object`.
 
-## Redéfinission (`override`)
-Il est **impossible de retirer un membre hérité**, mais il est possible de *redéfinir* la logique d'une méthode ou d'une propriété, dans une classe dérivée.
-
-### Virtual
-Si une propriété ou méthode est `virtual`, elle peut être redéfinie. Le cas classique est de redéfinir `ToString()` pour retourner une chaine plus appropriée que celle retourner par défaut dans le `ToString()` hériter d'`Object`.
-
-```
-class Personne
-{
-    ...
-    
-    public override string ToString()
-    {
-        return $"{Nom}, {Prénom}";
-    }
-}
-```
-
-### Appel à un membre de la classe de base immédiate
-Le mot clé `base` peut être utilisé pour appeler un membre accessible de son parent immédiat. Ceci est souvent vu dans les méthodes qui sont `override`, afin d'ajouter un comportement pour spécialiser la logique héritée.
-
-```
-class Étudiant : Personne
-{
-    ...
-    
-    public override string ToString()
-    {
-        return $"{base.ToString()}, {Moyenne}";
-    }
-}
-```
-
 ## `protected`
 Le code d'une classe enfant a accès à tout ce qui est déclaré `public` dans sa classe parent, évidemment. Par contre, tous codes client a accès aux membres et des problèmes d'encapsulation survients. Si un parent déclare un membre `private`, le code dans la classe dérivée n'y a pas accès.
 
@@ -183,6 +150,39 @@ class Program
 	
 	foreach (Objet o in objets)
 	    o.ToString();     
+    }
+}
+```
+
+## Redéfinission (`override`)
+Il est **impossible de retirer un membre hérité**, mais il est possible de *redéfinir* la logique d'une méthode ou d'une propriété, dans une classe dérivée.
+
+### Virtual
+Si une propriété ou méthode est `virtual`, elle peut être redéfinie. Le cas classique est de redéfinir `ToString()` pour retourner une chaine plus appropriée que celle retourner par défaut dans le `ToString()` hériter d'`Object`.
+
+```
+class Personne
+{
+    ...
+    
+    public override string ToString()
+    {
+        return $"{Nom}, {Prénom}";
+    }
+}
+```
+
+### Appel à un membre de la classe de base immédiate
+Le mot clé `base` peut être utilisé pour appeler un membre accessible de son parent immédiat. Ceci est souvent vu dans les méthodes qui sont `override`, afin d'ajouter un comportement pour spécialiser la logique héritée.
+
+```
+class Étudiant : Personne
+{
+    ...
+    
+    public override string ToString()
+    {
+        return $"{base.ToString()}, {Moyenne}";
     }
 }
 ```
