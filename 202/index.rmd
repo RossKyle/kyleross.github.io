@@ -44,7 +44,7 @@ urlcolor: blue
 14. [`StreamReader`](Fichier.pdf)
 15. [`StreamWriter`](ch12/chapitre12.html)
 16. [La pile](ch13/chapitre13.html)
-17. [L'héritage et le polymorphisme](chapitre15/chapitre15.html)
+17. [L'héritage et le polymorphisme](ch15/chapitre15.html)
 18. [Les classes abstraites](ch16/chapitre16.html)
 
 ## Exercices
