@@ -76,11 +76,13 @@ Tous les ennemis, peu importe la spécialisation, ont les suivants :
 * un comportement de patrouillage — les ennemis se déplace dans une direction choisie au hazard tant qu'ils ne peuvent continuer. S'il est impossible de se déplacer, leur direction de patrouillage est inversée.
 * Un constructeur paramétrique qui prend en paramètre une `Texture` et un `Vector2i`. La texture est celle qui sera appliqué au `Sprite` de l'ennemi et le vecteur représente la position initiale de l'ennemi.
 * un attribut `Vector2i directionPatrouille` qui indique la direction que l'ennemi se déplace lors de son patrouillage. Cette direction doit être initialisé dans le constructeur. La direction est choisie au hazard parmi les 8 points cardinaux possibles **et** la direction $0$ (vecteur de (0,0)). Utilisez le `Random` `GestionnaireRessources.RNG` pour générer des nombres aléatoires;
-* Une méthode `MettreÀJour()` qui déplace l'ennemi à chaque 60 
+* une méthode `MettreÀJour()` qui déplace l'ennemi à chaque 60 appel de mise à jour (à chaque 60 frames). Créez un compteur pour cette tâche;
+* 10 PV et 2 DEF.
 
 ### Les guerriers
 Les guerriers sont tellement _hot_ qu'ils peuvent se déplacer sur de la lave.
 
+Ils ont 6 d'ATK.
 En plus, ils ont une caractéristique de plus que les autres ennemis : ils ont de l'armure.
 
 Tous les guerriers ont des points d'armure (`int`). Le nombre de points est déterminé à l'instanciation d'un guerrier et doit être un nombre aléatoire entre 1 et 3 inclusivement. Lorsqu'un guerrier subit une attaque, son armure absorbe des dégâts. Un point d'armure → un dégât reçu de moins.
@@ -98,6 +100,7 @@ où ARM est pour les points d'armures.
 
 ### Les patineurs
 Les patineurs sont tellement _cool_ qu'ils peuvent **seulement** se déplacer sur de la glace.
+Ils ont 3 d'ATK.
 
 ## Bonus
 Soyez créatif et soyez récompensé avec des points bonis. Vous pouvez, par exemple :

@@ -486,12 +486,13 @@ DEF:0</code></pre>
 <li>un comportement de patrouillage — les ennemis se déplace dans une direction choisie au hazard tant qu’ils ne peuvent continuer. S’il est impossible de se déplacer, leur direction de patrouillage est inversée.</li>
 <li>Un constructeur paramétrique qui prend en paramètre une <code>Texture</code> et un <code>Vector2i</code>. La texture est celle qui sera appliqué au <code>Sprite</code> de l’ennemi et le vecteur représente la position initiale de l’ennemi.</li>
 <li>un attribut <code>Vector2i directionPatrouille</code> qui indique la direction que l’ennemi se déplace lors de son patrouillage. Cette direction doit être initialisé dans le constructeur. La direction est choisie au hazard parmi les 8 points cardinaux possibles <strong>et</strong> la direction <span class="math inline">0</span> (vecteur de (0,0)). Utilisez le <code>Random</code> <code>GestionnaireRessources.RNG</code> pour générer des nombres aléatoires;</li>
-<li>Une méthode <code>MettreÀJour()</code> qui déplace l’ennemi à chaque 60</li>
+<li>une méthode <code>MettreÀJour()</code> qui déplace l’ennemi à chaque 60 appel de mise à jour (à chaque 60 frames). Créez un compteur pour cette tâche;</li>
+<li>10 PV et 2 DEF.</li>
 </ul>
 <div id="les-guerriers" class="section level3">
 <h3>Les guerriers</h3>
 <p>Les guerriers sont tellement <em>hot</em> qu’ils peuvent se déplacer sur de la lave.</p>
-<p>En plus, ils ont une caractéristique de plus que les autres ennemis : ils ont de l’armure.</p>
+<p>Ils ont 6 d’ATK. En plus, ils ont une caractéristique de plus que les autres ennemis : ils ont de l’armure.</p>
 <p>Tous les guerriers ont des points d’armure (<code>int</code>). Le nombre de points est déterminé à l’instanciation d’un guerrier et doit être un nombre aléatoire entre 1 et 3 inclusivement. Lorsqu’un guerrier subit une attaque, son armure absorbe des dégâts. Un point d’armure → un dégât reçu de moins.</p>
 <p><strong>N.B. : </strong> Ceci ne sera pas tester <em>in game</em>, car le joueur ne peut pas attaquer les ennemis dans cette version du jeu. Vous devez tout de même implanter ce comportement.</p>
 <p>Finalement, le <code>ToString()</code> des guerriers doit retourner une chaine formatée comme suit :</p>
@@ -503,7 +504,7 @@ ARM:0</code></pre>
 </div>
 <div id="les-patineurs" class="section level3">
 <h3>Les patineurs</h3>
-<p>Les patineurs sont tellement <em>cool</em> qu’ils peuvent <strong>seulement</strong> se déplacer sur de la glace.</p>
+<p>Les patineurs sont tellement <em>cool</em> qu’ils peuvent <strong>seulement</strong> se déplacer sur de la glace. Ils ont 3 d’ATK.</p>
 </div>
 </div>
 <div id="bonus" class="section level2">
