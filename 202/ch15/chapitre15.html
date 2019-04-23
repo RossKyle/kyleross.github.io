@@ -521,9 +521,9 @@ public Étudiant(string nomInit, string prénomInit, int âgeInit)
     public static void Main(string[] args)
     {
         List&lt;Object&gt; objets = new List&lt;Object&gt;(4);
-    objets.Add(new ÉtudiantPrimaire());
-    objets.Add(5);
-    objets.Add(new Random());
+        objets.Add(new ÉtudiantPrimaire());
+        objets.Add(5);
+        objets.Add(new Random());
     }
 }</code></pre>
 <p>Les éléments du conteneur sont tout de même considérés comme des instances de la classe de base dans une boucle. <code>ToString()</code> est accessible, car la méthode est déclarée dans <code>Object</code>. Par contre, les membres propres aux <code>Random</code>, comme <code>.Next(...)</code>, ne sont pas accessible. La liste peut contenir n’importe quoi, alors il n’y a aucun garanti que l’élément <code>o</code> possède une méthode <code>.Next(...)</code>, par exemple.</p>
@@ -532,7 +532,7 @@ public Étudiant(string nomInit, string prénomInit, int âgeInit)
     public static void Main(string[] args)
     {
         List&lt;Object&gt; objets = new List&lt;Object&gt;(4);
-    objets.Add(new Random());
+        objets.Add(new Random());
     
     foreach (Objet o in objets)
         o.ToString();     
@@ -635,9 +635,9 @@ public class B : A
     public static void Main(string[] args)
     {
         List&lt;Object&gt; objets = new List&lt;Object&gt;(4);
-    objets.Add(new ÉtudiantPrimaire());
-    objets.Add(5);
-    objets.Add(new Random());
+        objets.Add(new ÉtudiantPrimaire());
+        objets.Add(5);
+        objets.Add(new Random());
     
     foreach (Object o in objets)
             Console.WriteLine(o.ToString());
