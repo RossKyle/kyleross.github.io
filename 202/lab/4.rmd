@@ -1,6 +1,17 @@
+---
+title: "Jeu 2D"		
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
 ## Consignes
 
-* Récupérer le projet de départ [ici](Labo4_départ);
+* Récupérer le projet de départ [ici](Labo4_Jeu - Départ.zip);
 * Compléter les classes marquées;
 * Pour alléger le travail, **aucune** validation est nécessaire dans ce laboratoire.
 
@@ -63,7 +74,9 @@ Il existe deux sortes d'ennemis concrêtes : les guerriers et les patineurs
 Tous les ennemis, peu importe la spécialisation, ont les suivants :
 
 * un comportement de patrouillage — les ennemis se déplace dans une direction choisie au hazard tant qu'ils ne peuvent continuer. S'il est impossible de se déplacer, leur direction de patrouillage est inversée.
-* un attribut `Vector2i directionPatrouille` qui indique la direction que l'ennemi se déplace lors de son patrouillage.
+* Un constructeur paramétrique qui prend en paramètre une `Texture` et un `Vector2i`. La texture est celle qui sera appliqué au `Sprite` de l'ennemi et le vecteur représente la position initiale de l'ennemi.
+* un attribut `Vector2i directionPatrouille` qui indique la direction que l'ennemi se déplace lors de son patrouillage. Cette direction doit être initialisé dans le constructeur. La direction est choisie au hazard parmi les 8 points cardinaux possibles **et** la direction $0$ (vecteur de (0,0)). Utilisez le `Random` `GestionnaireRessources.RNG` pour générer des nombres aléatoires;
+* Une méthode `MettreÀJour()` qui déplace l'ennemi à chaque 60 
 
 ### Les guerriers
 Les guerriers sont tellement _hot_ qu'ils peuvent se déplacer sur de la lave.

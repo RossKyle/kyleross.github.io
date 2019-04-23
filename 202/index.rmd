@@ -65,3 +65,4 @@ urlcolor: blue
 	* [Problèmes populaires](lab/1r.html)
 2. [Base de jeux](lab/2.html)
 3. [ColNet.tv](lab/3.html)
+4. [Jeu 2D](lab/4.html)
