@@ -487,6 +487,7 @@ DEF:0</code></pre>
 <li>Un constructeur paramétrique qui prend en paramètre une <code>Texture</code> et un <code>Vector2i</code>. La texture est celle qui sera appliquée au <code>Sprite</code> de l’ennemi et le vecteur représente la position initiale de l’ennemi.</li>
 <li>un attribut <code>Vector2i directionPatrouille</code> qui indique la direction que l’ennemi se déplace lors de son patrouillage. Cette direction doit être initialisé dans le constructeur. La direction est choisie au hazard parmi les 8 points cardinaux possibles <strong>et</strong> la direction <span class="math inline">0</span> (vecteur de (0,0)). Utilisez le <code>Random</code> <code>GestionnaireRessources.RNG</code> pour générer des nombres aléatoires;</li>
 <li>une méthode <code>MettreÀJour()</code> qui déplace l’ennemi à chaque 60 appels de mise à jour (à chaque 60 frames). Créez un compteur pour cette tâche;</li>
+<li>une méthode <code>Attaquer(...)</code> qui prend en paramètre une <code>Entité</code> cible pour recevoir l’attaque. La cible doit donc subir des dégats;</li>
 <li>10 PV et 2 DEF.</li>
 </ul>
 <div id="les-guerriers" class="section level3">

@@ -78,6 +78,7 @@ Tous les ennemis, peu importe la spécialisation, ont les suivants :
 * Un constructeur paramétrique qui prend en paramètre une `Texture` et un `Vector2i`. La texture est celle qui sera appliquée au `Sprite` de l'ennemi et le vecteur représente la position initiale de l'ennemi.
 * un attribut `Vector2i directionPatrouille` qui indique la direction que l'ennemi se déplace lors de son patrouillage. Cette direction doit être initialisé dans le constructeur. La direction est choisie au hazard parmi les 8 points cardinaux possibles **et** la direction $0$ (vecteur de (0,0)). Utilisez le `Random` `GestionnaireRessources.RNG` pour générer des nombres aléatoires;
 * une méthode `MettreÀJour()` qui déplace l'ennemi à chaque 60 appels de mise à jour (à chaque 60 frames). Créez un compteur pour cette tâche;
+* une méthode `Attaquer(...)` qui prend en paramètre une `Entité` cible pour recevoir l'attaque. La cible doit donc subir des dégats;
 * 10 PV et 2 DEF.
 
 ### Les guerriers
