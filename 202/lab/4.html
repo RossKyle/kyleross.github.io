@@ -460,7 +460,7 @@ $(document).ready(function () {
 <li>la nouvelle position est hors borne (Utilisez <code>Program.ScèneActuelle.CarteActuelle.NbColonnes/NbLignes</code>);</li>
 <li>la nouvelle position tombe sur une tuile bloquée (Utilisez <code>Program.ScèneActuelle.CarteActuelle[y,x]</code>). Cette méthode doit être accessible dans les classes enfants, mais pas à d’autres codes clients.</li>
 </ul></li>
-<li><code>MettreÀJour()</code> : cette méthode sera appelée à chaque mise à jour de la scène (l’univers du jeu). C’est ici que la logique principale des entités se fait. Par exemple, pour le joueur, l’état des touches pressées est vérifié et le joueur se déplace en accord. Pour un ennemi, il est déplac dans sa direction de patrouille. Cette méthode doit être <code>public</code>.</li>
+<li><code>MettreÀJour()</code> : cette méthode sera appelée à chaque mise à jour de la scène (l’univers du jeu). C’est ici que la logique principale des entités se fait. Par exemple, pour le joueur, l’état des touches pressées est vérifié et le joueur se déplace en accord. Pour un ennemi, il est déplacé dans sa direction de patrouille. Cette méthode doit être <code>public</code>. Le jeu est conçu pour faire 60 mise à jour par seconde.</li>
 <li><code>SubirDégats</code> : cette méthode doit prendre en paramètre un <code>int</code> qui représente des dégâts à infliger sur l’entité. Par défaut, une entité perd un nombre de point de vie équivalent aux dégâts à infliger moins sa défense. Par contre, un entité doit toujours subir au moins un dégat. Cette méthode doit être <code>public</code>.</li>
 <li><code>ToString()</code> : cette méthode doit retourner une chaine formattée de la façon suivante :</li>
 </ul>
