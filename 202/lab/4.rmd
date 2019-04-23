@@ -1,0 +1,93 @@
+## Consignes
+
+* Récupérer le projet de départ [ici](Labo4_départ);
+* Compléter les classes marquées;
+* Pour alléger le travail, **aucune** validation est nécessaire dans ce laboratoire.
+
+## Le gestionnaire de ressources
+La classe `GestionnaireRessources` est une classe `static` (une classe qui ne sert pas de plan pour créer des instances, mais plutôt que de « conteneur » pour des données et méthodes utiles, comme la classe `Math`). Cette classe contient des ressources chargées dans la mémoire du programme, comme des textures.
+
+Dans cette classe, il existe la propriété `Textures` qui est un tableau de textures. Pour accéder à cette propriété, il faut utiliser la syntaxe `GestionnaireRessources.Textures[...]`. La syntaxe _nomDeLaClasse.Membre_ est pour les membres (attributs, propriété, méthodes) `static`.
+
+Ce tableau contient déjà des textures chargées. Voici son contenu par position :
+
+0. texture du joueur;
+1. texture d'un guerrier;
+2. texture d'un patineur.
+
+## Les entités
+Une entité est quelque chose de « vivant » dans le jeu. Par exemple, le joueur et les ennemis sont des entités. La classe entité en soi **n'est pas instanciable**, car elle sert que de base pour des classes dérivées.
+
+Les entités se déplacent par des unités discrètes, pour donner l'impression de se déplacer par cases dans une grille.
+
+### Attributs/Propriétés
+
+* un `Vector2i position` qui représente la position de l'entité. `Vector2i` est une classe accessible grâce au `using SFML.System` et représente un vecteur 2D où les composantes sont des entiers;
+* un `Sprite spriteÀDessiner` qui représente essentiellement l'image à afficher pour visualiser une entité;
+* un `int pV` qui représente les points de vie de l'entité;
+* un `int déf` qui représente les points de défense de l'entité;
+* un `int atq` qui représente les points d'attaque de l'entité;
+* une `List<uint> tuileBloquées` qui représente une liste de type de tuiles dont l'entité ne peut pas se déplacer dessus. Un `uint` est un nombre naturel (entier positif).
+
+Tous les types références qui ne sont pas immuables doivent être `private` pour le `get` et le `set`. Une `Sprite` est une `class`. Un `Vector2i` est une `struct`.
+
+### Méthodes
+
+* `AjouterTuilesBloquée(...)` : cette méthode doit prendre en paramètre un `uint` qui représente une type de tuile inaccessible à l'entité. Ce type est ajouté dans la liste, si elle n'est pas déja présente dans la liste. Cette méthode doit être accessible dans les classes enfants, mais pas à d'autres codes clients.
+* `Déplacer(...)` : cette méthode doit prendre en paramètre un `Vector2i` qui représente le _delta_ de position à faire. Par exemple, le delta pourrait être de (1,0), ce qui déplacera l'entité à droite d'un unité. En plus de tenter de changer la position de l'entité, cette méthode doit retourner un `bool` indiquant si le déplacement est réussit ou non. Il est possible que déplacer une entité soit impossible si :
+	* la nouvelle position est hors borne (Utilisez `Program.ScèneActuelle.CarteActuelle.NbColonnes/NbLignes`);
+	* la nouvelle position tombe sur une tuile bloquée (Utilisez `Program.ScèneActuelle.CarteActuelle[y,x]`).
+Cette méthode doit être accessible dans les classes enfants, mais pas à d'autres codes clients.
+* `MettreÀJour()` : cette méthode sera appelée à chaque mise à jour de la scène (l'univers du jeu). C'est ici que la logique principale des entités se fait. Par exemple, pour le joueur, l'état des touches pressées est vérifié et le joueur se déplace en accord. Pour un ennemi, il est déplacer dans sa direction de patrouille. Cette méthode doit être `public`.
+* `SubirDégats` : cette méthode doit prendre en paramètre un `int` qui représente des dégâts à infliger sur l'entité. Par défaut, un entité perd un nombre de point de vie équivalent aux dégâts à infliger moins sa défense. Par contre, un entité doit toujours subir au moins un dégat. Cette méthode doit être `public`.
+* `ToString()` doit retourner une chaine formatter de la façon suivante :
+```
+PV:0
+ATK:0
+DEF:0
+```
+où les `0` sont les valeurs respectives de PV, ATK et DEF de l'entité.
+
+### Constructeur
+La classe possède un constructeur paramétrique qui prend en paramètre une `Texture` et un `Vector2i`. Il est possible d'initialiser le `spriteÀDessiner` avec un `new Sprite` en utilisant le constructeur paramètrique de `Sprite` qui prend en paramètre une `Texture`.
+
+## Les ennemis
+Il existe deux sortes d'ennemis concrêtes : les guerriers et les patineurs
+
+Tous les ennemis, peu importe la spécialisation, ont les suivants :
+
+* un comportement de patrouillage — les ennemis se déplace dans une direction choisie au hazard tant qu'ils ne peuvent continuer. S'il est impossible de se déplacer, leur direction de patrouillage est inversée.
+* un attribut `Vector2i directionPatrouille` qui indique la direction que l'ennemi se déplace lors de son patrouillage.
+
+### Les guerriers
+Les guerriers sont tellement _hot_ qu'ils peuvent se déplacer sur de la lave.
+
+En plus, ils ont une caractéristique de plus que les autres ennemis : ils ont de l'armure.
+
+Tous les guerriers ont des points d'armure (`int`). Le nombre de points est déterminé à l'instanciation d'un guerrier et doit être un nombre aléatoire entre 1 et 3 inclusivement. Lorsqu'un guerrier subit une attaque, son armure absorbe des dégâts. Un point d'armure → un dégât reçu de moins.
+
+**N.B. : ** Ceci ne sera pas tester _in game_, car le joueur ne peut pas attaquer les ennemis dans cette version du jeu. Vous devez tout de même implanter ce comportement.
+
+Finalement, le `ToString()` des guerriers doit retourner une chaine formatée comme suit :
+```
+PV:0
+ATK:0
+DEF:0
+ARM:0
+```
+où ARM est pour les points d'armures.
+
+### Les patineurs
+Les patineurs sont tellement _cool_ qu'ils peuvent **seulement** se déplacer sur de la glace.
+
+## Bonus
+Soyez créatif et soyez récompensé avec des points bonis. Vous pouvez, par exemple :
+
+* Changer la carte;
+* Changer les graphiques;
+* Ajouter un nouveau type d'ennemi;
+* Ajouter de nouvelles cartes et un mécanisme pour naviguer entre elle;
+* etc.
+
+## Remise
+Le projet complet doit être soumis avant minuit pour le mardi 7 mai. Assurez-vous de nommer le .zip avec les noms des participants. La version « papier » doit être remise le 14 mai, en classe.

@@ -1,0 +1,274 @@
+---
+title: "L'héritage et le polymorphisme"
+output:
+  html_document:
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## Classe dérivée
+L'héritage d'implémentation est un mécanisme qui permet à une classe d'être **dérivée** d'une autre. Comme en biologie, l'héritage marque une relation entre un parent et un ou plusieurs enfants. Dans le contexte de la P.O.O., une classe peut servir de **base** pour d'autres classes.
+
+Une classe dérivée hérite de tous les membres de son parent. Par exemple, supposons la classe de base `Personne` et la classe dérivée `Étudiant`. Un étudiant possède tous les mêmes attributs, propriétés et méthodes qu'une personne, car un étudiant **est une** personne.
+
+## Être
+L'héritage marque une relation avec le verbe **« être »**, au lieu du verbe « avoir ». Un étudiant _a_ un nom, mais **est** une personne.
+Bref :
+
+* avoir : attribut, propriété, méthode;
+* être : héritage.
+
+Une classe dérivée **peut également servir de classe de base**. La classe `Étudiant` peut servir du parent pour les classes `ÉtudiantPrimaire` et `ÉtudiantSecondaire`, par exemple.
+
+## Spécialisation
+Chaque classe dérivée est une **spécialisation** de son parent. Une personne est bien plus général comme concept qu'un étudiant. Un étudiant est une personne, mais encore **plus**. Une classe dérivée contient plus de membres (attributs, propriétés, méthodes) que la classe sur laquelle elle est basée, ce qui la rend plus _précise_.
+
+Voici un autre exemple de relations d'héritage :
+
+![animalChart](https://d2aw5xe2jldque.cloudfront.net/books/ruby/images/animal_hierarchy.jpg)
+
+## Syntaxe pour dériver d'une classe
+`class NomClasseDérivée : NomClasseDeBase` → `class Étudiant : Personne`
+
+Les deux-points (:) veulent indiquer le terme _est un_ ou _est une_. Donc, un étudiant _est une_ personne.
+
+## Appeler un constructeur de base
+Pour construire un étudiant, il faut d'abbord construire une personne, car est un étudiant est une personne. Pour appeler un constructeur de la classe de base à partir d'un constructeur d'une classe dérivée, il faut utiliser le mot clé `base` au lieu du mot clé `this`.
+
+```
+private List<int> notes; //propre aux étudiants (ce qui spécialise un étudiant d'une personne)
+private List<int> Notes
+{
+    get { return notes; }
+    set { notes = value; }
+}
+
+public Étudiant(string nomInit, string prénomInit, int âgeInit)
+    : base(nomInit, prénomInit, âgeInit)
+{
+    Console.WriteLine("construction d'un étudiant...");
+    Notes = new List<int>(4);
+}
+```
+
+Le constructeur appelé dans `Personne` peut ressembler à :
+
+```
+public Personne(string nomInit, string prénomInit, int âgeInit)
+{
+    Console.WriteLine("construction d'une personne...");
+    Nom = nomInit;
+    Prénom = prénomInit;
+    Âge = âgeInit;
+}
+```
+Le constructeur de `Personne` est appelé avant celui d'`Étudiant`. Les attributs qui spécialisent la classe dérivée sont ensuite initialisés.
+
+## Propriétés et méthodes spécialisées
+Une classe dérivée peut avoir des propriétés et méthodes ajoutées
+```
+class Étudiant : Personne
+{
+    ...
+    
+    public float Moyenne
+    {
+        get { return CalculerMoyenne(); }
+    }
+    
+    float CalculerMoyenne()
+    {
+        var somme = 0f;
+        foreach (var note in Notes)
+            somme += note;
+        return somme / Notes.Count;
+    }
+}
+```
+
+## Object
+En C#, tout est un objet. Pour consolider le fait, toutes les classes et structs dérivent implicitement de la classe `Object`. C'est ainsi que toutes les instances ont les méthodes `GetHashCode()`, `GetType()`, `ToString()` et `Equals(...)`. Une classe qui ne dérive de rien explicitement dérive d'`Object` directement. Donc, un `ÉtudiantPrimaire` est un `Object`, car il est un `Étudiant`, qui est une `Personne`, qui est un `Object`.
+
+## Redéfinission (`override`)
+Il est **impossible de retirer un membre hérité**, mais il est possible de *redéfinir* la logique d'une méthode ou d'une propriété, dans une classe dérivée.
+
+### Virtual
+Si une propriété ou méthode est `virtual`, elle peut être redéfinie. Le cas classique est de redéfinir `ToString()` pour retourner une chaine plus appropriée que celle retourner par défaut dans le `ToString()` hériter d'`Object`.
+
+```
+class Personne
+{
+    ...
+    
+    public override string ToString()
+    {
+        return $"{Nom}, {Prénom}";
+    }
+}
+```
+
+### Appel à un membre de la classe de base immédiate
+Le mot clé `base` peut être utilisé pour appeler un membre accessible de son parent immédiat. Ceci est souvent vu dans les méthodes qui sont `override`, afin d'ajouter un comportement pour spécialiser la logique héritée.
+
+```
+class Étudiant : Personne
+{
+    ...
+    
+    public override string ToString()
+    {
+        return $"{base.ToString()}, {Moyenne}";
+    }
+}
+```
+
+## `protected`
+Le code d'une classe enfant a accès à tout ce qui est déclaré `public` dans sa classe parent, évidemment. Par contre, tous codes client a accès aux membres et des problèmes d'encapsulation survients. Si un parent déclare un membre `private`, le code dans la classe dérivée n'y a pas accès.
+
+Par exemple, si une classe $B$ dérive de $A$, et que $A$ possède un attribut `private`, le code dans la classe $B$ n'a pas accès à l'attribut. 
+
+**N.B : ** Les instances de $B$ possède bien l'attribut en mémoire (car $B$ est un $A$); ils n'y ont simplement pas accès directement.
+
+Le niveau d'accès `protected` est un compromis entre `public` et `private`. Quelque chose de `protected` dans une classe de base est accessible dans le code des classes dérivées, mais pas à d'autre classes (d'autres codes client).
+
+Si quelque chose est `virtual`, elle peut être redéfinie dans une classe enfant. Pour ce faire, cette chose doit être accessible à l'enfant. Donc, ce qui est `virtual` doit être `public` ou `protected`.
+
+## Affecter un type dérivé à un type de base
+Il est possible d'affecter une instance d'une classe dérivée à une donnée d'un type parent.
+
+```
+Personne p = new Étudiant(...);
+```
+
+Ceci est sensé, car un étudiant **est une** personne. La référence `p` pointe bien à une personne en mémoire.
+
+## L'héritage et l'impact sur les structures de données
+Malgré que les conteneurs en C# soient homogènes, c.-à-d. qu'ils ne peuvent contenir un seul type de données, il est possible que ce type soit une classe de base. Car les instances d'une classe dérivée sont aussi des instances de la classe de base, il est possible de faire des choses comme suit :
+
+```
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<Personne> personnes = new List<Personne>(4);
+        personne.Add(new ÉtudiantPrimaire()); //un étudiant primaire est dérivé de la classe Étudiant
+    }
+}
+```
+
+```
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<Object> objets = new List<Object>(4);
+	objets.Add(new ÉtudiantPrimaire());
+	objets.Add(5);
+	objets.Add(new Random());
+    }
+}
+```
+
+Les éléments du conteneur sont tout de même considérés comme des instances de la classe de base dans une boucle. `ToString()` est accessible, car la méthode est déclarée dans `Object`. Par contre, les membres propres aux `Random`, comme `.Next(...)`, ne sont pas accessible. La liste peut contenir n'importe quoi, alors il n'y a aucun garanti que l'élément `o` possède une méthode `.Next(...)`, par exemple.
+
+```
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<Object> objets = new List<Object>(4);
+	objets.Add(new Random());
+	
+	foreach (Objet o in objets)
+	    o.ToString();     
+    }
+}
+```
+
+## Polymorphisme
+Le mot polymorphisme veut dire « plusieurs formes ». En P.O.O, il s'agit de plusieurs « formes » qu'une fonction peut prendre, selon le type de l'objet qui l'appel.
+
+Par exemple, voici un cas **sans** comportement polymorphique :
+```
+public class Program
+{
+	public static void Main()
+	{
+		A foo = new A();
+		foo.MéthodeTest(); //affiche "A"
+		
+		A bar = new B();
+		bar.MéthodeTest(); //affiche "A"
+	}
+}
+
+public class A
+{
+	public  void MéthodeTest()
+	{
+		Console.WriteLine("A");
+	}
+}
+
+public class B : A
+{
+	public  void MéthodeTest()
+	{
+		Console.WriteLine("B");
+	}
+}
+```
+
+Malgré que `bar` est réellement une instance de `B`, `MéthodeTest()` de `A` a été appelée, car `bar` est déclarée comme étant un `A`. Ceci est parce-que l'instanciation d'objet avec le mot clé `new` ce fait pendant l'exécution du programme, mais les méthodes non-polymorphiques sont « attachées » à la variable `bar` pendant la compilation du programme. Lorsque le programme compile, tout ce qu'il sait c'est que `foo` est un `A`, alors la `MéthodeTest()` de `A` lui est donnée.
+
+Pour utiliser la « vrai » forme de `MéthodeTest()`, soit celle qui correspond réellement au type de l'objet, il faut que la méthode soit polymorphique. Le mot clé `virtual` marque une méthode comme étant polymorphique, ce qui permet au programme de sélectionner le bon `override` pendant l'exécution du programme.
+
+```
+public class Program
+{
+	public static void Main()
+	{
+		A foo = new A();
+		foo.MéthodeTest();
+		
+		A bar = new B();
+		bar.MéthodeTest(); //affiche maintenant "B" !
+	}
+}
+
+public class A
+{
+	public virtual void MéthodeTest()
+	{
+		Console.WriteLine("A");
+	}
+}
+
+public class B : A
+{
+	public override void MéthodeTest()
+	{
+		Console.WriteLine("B");
+	}
+}
+```
+
+Par exemple, le suivant appel la saveur de `ToString()` approprié pour chaque type.
+
+```
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<Object> objets = new List<Object>(4);
+	objets.Add(new ÉtudiantPrimaire());
+	objets.Add(5);
+	objets.Add(new Random());
+	
+	foreach (Object o in objets)
+            Console.WriteLine(o.ToString());
+    }
+}
+```

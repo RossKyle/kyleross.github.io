@@ -19,10 +19,11 @@ urlcolor: blue
 5. Jeudi 2 mai : Cycle de vie, aggrégation, composition;
 6. Mardi 7 mai : Copie superficielle, copie en profondeur, clonage;
 7. Mardi 14 mai : Délégué et lambdas;
-8. Mardi 16 mai : Présentation de la PFI;
-9. Jeudi 23 mai : Examen final;
-10. Samedi 1 juin : Remise de la PFI avant minuit;
-11. Mardi 4 juin : Accès à vos notes finales sur ColNet.
+8. Jeudi 16 mai : Présentation de la PFI;
+9. Mardi 21 mai : Exercices divers, cours de révision;
+10. **Jeudi 30 mai : Examen final;**
+11. Samedi 2 juin : Remise de la PFI avant minuit;
+12. Mardi 6 juin : Accès à vos notes finales sur ColNet.
  
 ----
 
@@ -43,7 +44,7 @@ urlcolor: blue
 14. [`StreamReader`](Fichier.pdf)
 15. [`StreamWriter`](ch12/chapitre12.html)
 16. [La pile](ch13/chapitre13.html)
-17. L'héritage, le polymorphisme et les classes abstraites (exemples faits en classe). Notes à venir...
+17. [L'héritage et le polymorphisme](chapitre15/chapitre15.html)
 
 ## Exercices
 * [Fonction et Random](rev/exercices.html)
