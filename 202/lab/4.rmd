@@ -48,12 +48,12 @@ Tous les types références qui ne sont pas immuables doivent être `private` po
 ### Méthodes
 
 * `AjouterTuilesBloquée(...)` : cette méthode doit prendre en paramètre un `uint` qui représente une type de tuile inaccessible à l'entité. Ce type est ajouté dans la liste, si elle n'est pas déja présente dans la liste. Cette méthode doit être accessible dans les classes enfants, mais pas à d'autres codes clients.
-* `Déplacer(...)` : cette méthode doit prendre en paramètre un `Vector2i` qui représente le _delta_ de position à faire. Par exemple, le delta pourrait être de (1,0), ce qui déplacera l'entité à droite d'un unité. En plus de tenter de changer la position de l'entité, cette méthode doit retourner un `bool` indiquant si le déplacement est réussit ou non. Il est possible que déplacer une entité soit impossible si :
+* `Déplacer(...)` : cette méthode doit prendre en paramètre un `Vector2i` qui représente le _delta_ de position à faire. Par exemple, le delta pourrait être de (1,0), ce qui déplacera l'entité à droite d'une unité. En plus de tenter de changer la position de l'entité, cette méthode doit retourner un `bool` indiquant si le déplacement est réussit ou non. Il est possible que déplacer une entité soit impossible si :
 	* la nouvelle position est hors borne (Utilisez `Program.ScèneActuelle.CarteActuelle.NbColonnes/NbLignes`);
 	* la nouvelle position tombe sur une tuile bloquée (Utilisez `Program.ScèneActuelle.CarteActuelle[y,x]`).
 Cette méthode doit être accessible dans les classes enfants, mais pas à d'autres codes clients.
-* `MettreÀJour()` : cette méthode sera appelée à chaque mise à jour de la scène (l'univers du jeu). C'est ici que la logique principale des entités se fait. Par exemple, pour le joueur, l'état des touches pressées est vérifié et le joueur se déplace en accord. Pour un ennemi, il est déplacer dans sa direction de patrouille. Cette méthode doit être `public`.
-* `SubirDégats` : cette méthode doit prendre en paramètre un `int` qui représente des dégâts à infliger sur l'entité. Par défaut, un entité perd un nombre de point de vie équivalent aux dégâts à infliger moins sa défense. Par contre, un entité doit toujours subir au moins un dégat. Cette méthode doit être `public`.
+* `MettreÀJour()` : cette méthode sera appelée à chaque mise à jour de la scène (l'univers du jeu). C'est ici que la logique principale des entités se fait. Par exemple, pour le joueur, l'état des touches pressées est vérifié et le joueur se déplace en accord. Pour un ennemi, il est déplac dans sa direction de patrouille. Cette méthode doit être `public`.
+* `SubirDégats` : cette méthode doit prendre en paramètre un `int` qui représente des dégâts à infliger sur l'entité. Par défaut, une entité perd un nombre de point de vie équivalent aux dégâts à infliger moins sa défense. Par contre, un entité doit toujours subir au moins un dégat. Cette méthode doit être `public`.
 * `ToString()` : cette méthode doit retourner une chaine formattée de la façon suivante :
 ```
 PV:0
@@ -73,10 +73,10 @@ Il existe deux sortes d'ennemis concrêtes : les guerriers et les patineurs
 
 Tous les ennemis, peu importe la spécialisation, ont les suivants :
 
-* un comportement de patrouillage — les ennemis se déplace dans une direction choisie au hazard tant qu'ils ne peuvent continuer. S'il est impossible de se déplacer, leur direction de patrouillage est inversée.
-* Un constructeur paramétrique qui prend en paramètre une `Texture` et un `Vector2i`. La texture est celle qui sera appliqué au `Sprite` de l'ennemi et le vecteur représente la position initiale de l'ennemi.
+* un comportement de patrouillage — les ennemis se déplacent dans une direction choisie au hazard tant qu'ils ne peuvent continuer. S'il est impossible de se déplacer, leur direction de patrouillage est inversée.
+* Un constructeur paramétrique qui prend en paramètre une `Texture` et un `Vector2i`. La texture est celle qui sera appliquée au `Sprite` de l'ennemi et le vecteur représente la position initiale de l'ennemi.
 * un attribut `Vector2i directionPatrouille` qui indique la direction que l'ennemi se déplace lors de son patrouillage. Cette direction doit être initialisé dans le constructeur. La direction est choisie au hazard parmi les 8 points cardinaux possibles **et** la direction $0$ (vecteur de (0,0)). Utilisez le `Random` `GestionnaireRessources.RNG` pour générer des nombres aléatoires;
-* une méthode `MettreÀJour()` qui déplace l'ennemi à chaque 60 appel de mise à jour (à chaque 60 frames). Créez un compteur pour cette tâche;
+* une méthode `MettreÀJour()` qui déplace l'ennemi à chaque 60 appels de mise à jour (à chaque 60 frames). Créez un compteur pour cette tâche;
 * 10 PV et 2 DEF.
 
 ### Les guerriers
@@ -87,7 +87,7 @@ En plus, ils ont une caractéristique de plus que les autres ennemis : ils ont d
 
 Tous les guerriers ont des points d'armure (`int`). Le nombre de points est déterminé à l'instanciation d'un guerrier et doit être un nombre aléatoire entre 1 et 3 inclusivement. Lorsqu'un guerrier subit une attaque, son armure absorbe des dégâts. Un point d'armure → un dégât reçu de moins.
 
-**N.B. : ** Ceci ne sera pas tester _in game_, car le joueur ne peut pas attaquer les ennemis dans cette version du jeu. Vous devez tout de même implanter ce comportement.
+**N.B. : ** Ceci ne sera pas tester _in game_, car le joueur ne peut pas attaquer les ennemis dans cette version du jeu. Vous devez tout de même implanter ce comportement. Vous pouvez faire des tests personnalisés dans la console.
 
 Finalement, le `ToString()` des guerriers doit retourner une chaine formatée comme suit :
 ```
