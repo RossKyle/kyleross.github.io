@@ -1,0 +1,66 @@
+---
+title: "Les classes abstraites"
+output:
+  html_document:
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+Une classe abstraite est une classe qui n'est pas instanciable, c.-à-d. que la classe ne peut pas être utilisée avec `new` pour créer un objet.
+
+Ceci est car une classe abstraite est destinée à servir comme une classe de base pour des classes dérivées. Une classe abstraite est le contraire d'une classe concrète (une classe instanciable). 
+
+## Membres non définis
+Comme le terme implique, une classe abstraite représente quelque chose de non-définie. Dans une telle classe, il y a habituellement une ou plusieurs propriétés/méthodes de déclarées, mais non définies (pas implémenter).
+
+Supposons la classe `Forme2D`. Une forme 2D est un concept tellement général qu'il parait absurde de créer des objets de ce type. Par contre, créer des `Cercle`, `Rectangle` et `Triangle` serait appropriés, soit toutes des instances de classes dérivées de `Forme2D`.
+
+Toutes formes 2D ont un aire. Cette propriété calculée devrait être déclarée dans `Forme2D`. Par contre, calculer l'aire d'un cercle est bien distinct de calculer l'aire d'un rectangle. Il n'y a pas une implémentation pour la propriété qui peut satisfaire plusieurs spécialisations de forme 2D.
+
+```
+class Forme2D
+{
+
+    ...
+ 
+    //déclaration d'une propriété calculée (juste un get) sans implémentation
+    public abstract float Aire { get; };
+    
+    ...
+}
+```
+
+La propriété est donc marquée `abstract` dans sa déclaration et aucune implémentation est donnée. C'est la responsabilité de chaque classe dérivée d'`override` la propriété, **si elle veut être concrête**. Afin qu'une classe soit instanciable, il faut que tous ses membres `abstract` soient définis avec un `override`. 
+
+```
+class Rectangle : Forme2D
+{
+
+    ...
+
+    //implémentation du membre abstrait
+    public override float Aire 
+    { 
+        get { return Longueur * Hauteur; } //la logique pour l'accesseur est donnée !
+    }
+    
+    ...
+}
+```
+
+Grâce au polymorphisme, la bonne version de la propriété calculée sera appelée dans l'exemple suivant :
+
+```
+foreach (Forme2D forme in formes)
+{
+    Console.WriteLine(forme.Aire);
+}
+```
+
+**N.B : ** Ce qui est `abstract` est implicitement `virtual`.
+
+## Exemple « complexe »
+[Cliquez ici](ExempleClasseAbstraite.zip) pour un exemple plus complexe !
+

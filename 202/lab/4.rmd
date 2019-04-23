@@ -4,6 +4,9 @@
 * Compléter les classes marquées;
 * Pour alléger le travail, **aucune** validation est nécessaire dans ce laboratoire.
 
+## Mise en contexte
+Vous travaillez sur un jeu 2D à l'aide de la bibliothèque _SFML.NET_. Il existe déjà une base, mais vous devez compléter les classes pour les entités du jeu, soit le joueur et les divers types d'ennemis.
+
 ## Le gestionnaire de ressources
 La classe `GestionnaireRessources` est une classe `static` (une classe qui ne sert pas de plan pour créer des instances, mais plutôt que de « conteneur » pour des données et méthodes utiles, comme la classe `Math`). Cette classe contient des ressources chargées dans la mémoire du programme, comme des textures.
 
@@ -40,7 +43,7 @@ Tous les types références qui ne sont pas immuables doivent être `private` po
 Cette méthode doit être accessible dans les classes enfants, mais pas à d'autres codes clients.
 * `MettreÀJour()` : cette méthode sera appelée à chaque mise à jour de la scène (l'univers du jeu). C'est ici que la logique principale des entités se fait. Par exemple, pour le joueur, l'état des touches pressées est vérifié et le joueur se déplace en accord. Pour un ennemi, il est déplacer dans sa direction de patrouille. Cette méthode doit être `public`.
 * `SubirDégats` : cette méthode doit prendre en paramètre un `int` qui représente des dégâts à infliger sur l'entité. Par défaut, un entité perd un nombre de point de vie équivalent aux dégâts à infliger moins sa défense. Par contre, un entité doit toujours subir au moins un dégat. Cette méthode doit être `public`.
-* `ToString()` doit retourner une chaine formatter de la façon suivante :
+* `ToString()` : cette méthode doit retourner une chaine formattée de la façon suivante :
 ```
 PV:0
 ATK:0
@@ -50,6 +53,9 @@ où les `0` sont les valeurs respectives de PV, ATK et DEF de l'entité.
 
 ### Constructeur
 La classe possède un constructeur paramétrique qui prend en paramètre une `Texture` et un `Vector2i`. Il est possible d'initialiser le `spriteÀDessiner` avec un `new Sprite` en utilisant le constructeur paramètrique de `Sprite` qui prend en paramètre une `Texture`.
+
+## Le joueur
+La majorité de la classe `Joueur` est déjà écrite. Complétez aux endroits indiqués.
 
 ## Les ennemis
 Il existe deux sortes d'ennemis concrêtes : les guerriers et les patineurs
