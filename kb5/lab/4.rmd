@@ -40,3 +40,6 @@ Transpiler votre code avec _Babel_ et utilisez la sortie dans votre HTML, au lie
 ## Question 4
 Dans un nouveau fichier JS, recréez l'équivalent de la classe `Employé` avec le « vrai » modèle P.O.O. de JS.
 Créez une deuxième page HTML identique à la première, mais importez le nouveau JS.
+
+## Remise
+Le travail doit être montré à votre enseignant en classe le 6 mai. Une version électronique doit être soumise avant le cours dans la boite de remise dédiée.
