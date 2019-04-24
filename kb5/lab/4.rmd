@@ -1,0 +1,42 @@
+---
+title: "Laboratoire 4"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+urlcolor: blue
+---
+
+## Question 1
+Avec la syntaxe `class`, créez une classe `Employé`.
+
+Cette classe doit contenir les suivants :
+
+### Propriétés
+
+* `nom`;
+* `prenom`;
+* `age`;
+* `salaire`;
+
+Toutes ses propriétés devront être considéree privée. Créez un `get` et un `set` pour chaque propriété. Validez que l'âge et le salaire sont bien des nombres avant d'affecter la propriété.
+
+### Méthodes
+
+* `genererChaine` est une méthode qui doit retourner une `string` formattée de la façon suivante : "`nom` `prenom` - Âge : `age`, Salaire : `salaire`".
+
+### Constructeur
+
+* La classe doit permettre la constructeur d'un nouvel employé en fournissant 4 paramètres : le nom, prénom, âge et salaire de l'employé à instancier.
+
+## Question 2
+Créez une page HTML contenant un _div_.
+Créez un tableau contenant 3 employés de votre choix. Pour chaque employé, affichez le resultat de `genererChaine` dans le _div_.
+
+## Question 3
+Transpiler votre code avec _Babel_ et utilisez la sortie dans votre HTML, au lieu du JS source avec `class`.
+
+## Question 4
+Dans un nouveau fichier JS, recréez l'équivalent de la classe `Employé` avec le « vrai » modèle P.O.O. de JS.
+Créez une deuxième page HTML identique à la première, mais importez le nouveau JS.

@@ -155,4 +155,23 @@ p1.vieillir();
 console.log(p1.age);
 ```
 
+## Prototype
+Un problème avec attacher des méthodes dans une fonction qui servira de constructeur est que chaque instance créé aura sa propre copie de la même fonction. Ceci n'est pas efficace au niveau de la gestion de la mémoire, car il y aura plusieurs duplicats de la fonction (qui est un objet en mémoire).
+
+Il existe, par chance, la notion de _prototype_. Un prototype est un objet pouvant servir de base commune à plusieurs autres objets.
+
+Si une méthode est attachée à un prototype, et d'autres objets utilisent le prototype, il auront chacun accès à la méthode **sans duplicats* (juste un objet prototype existe, donc juste un objet pour la valeur de la méthode).
+
+La solution :
+```{js}
+function Personne(nom, age) {
+  this.nom = nom;
+  this.age = age;
+}
+
+Personne.prototype.viellir = function() { this.age++; };
+```
+
+La méthode est ajoutée au prototype de la fonction qui servira de constructeur.
+
 [^1]: Il est possible d'ajouter des attributs à des objets de façon dynamique en C\# avec la réflexivité, mais ceci n'est pas une pratique commune.
