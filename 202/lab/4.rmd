@@ -68,7 +68,7 @@ namespace Labo4_Jeu
                 ennemi.MettreÀJour();
         }
 
-        void MettreHUDÀJour(RenderWindow fenêtre)
+        void MettreHUDÀJour()
         {
             HUD[0].DisplayedString = $"Joueur\n\n{JoueurPrincipal}";
             for (int i = 0; i < Ennemis.Count; i++)
