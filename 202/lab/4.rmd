@@ -220,7 +220,7 @@ Les guerriers sont tellement _hot_ qu'ils peuvent se déplacer sur de la lave.
 Ils ont 6 d'ATK.
 En plus, ils ont une caractéristique de plus que les autres ennemis : ils ont de l'armure.
 
-Tous les guerriers ont des points d'armure (`int`). Le nombre de points est déterminé à l'instanciation d'un guerrier et doit être un nombre aléatoire entre 1 et 3 inclusivement. Lorsqu'un guerrier subit une attaque, son armure absorbe des dégâts. Un point d'armure → un dégât reçu de moins.
+Tous les guerriers ont des points d'armure (`int`). Lorsqu'un guerrier subit une attaque, son armure absorbe des dégâts. Un point d'armure → un dégât reçu de moins.
 Les guerriers ont 2 points d'armure.
 
 **N.B. : ** Ceci ne sera pas tester _in game_, car le joueur ne peut pas attaquer les ennemis dans cette version du jeu. Vous devez tout de même implanter ce comportement. Vous pouvez faire des tests personnalisés dans la console.
