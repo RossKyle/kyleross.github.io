@@ -1,0 +1,73 @@
+---
+title: "Exercice interface"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## L'interface `IGénèreÉnergie`
+Cette interface donne la qualité de quelque chose qui peut générer de l'énergie.
+Une chose qui génère de l'énergie a une méthode `GénèreÉnergie()` qui retourne un `float`.
+
+## L'interface `IDémarrable`
+Cette interface donne la qualité de quelque chose qui peut être démarrée.
+Une chose démarrable a une propriété `EstDémarré` de type `bool` et une méthode `Démarrer()` qui retourne `void`.
+
+## La classe `Moteur`
+Un moteur est quelque chose qui génère de l'énergie et qui est démarrable.
+
+Un moteur a un attribut `modèle` de type `string`. Le modèle ne devrait pas être null ou juste des caractères invisible. Si jamais il y a une tentative d'affecter le modèle avec une telle valeur est faite, lancer un `ArgumentException` (`throw new ArgumentException()`).
+
+Implémentez la propriété `EstDémarré` et ajoutez un `set` privé. Aucune validation est nécessaire pour une propriété type `bool`.
+
+Implémentez la propriété `Démarrer` en affectant `EstDémarré` à `true`.
+
+Redéfinnisez `ToString()` pour retourner le modèle du moteur.
+
+Ajoutez un constructeur qui prend en paramétre le modèle. C'est ainsi qu'on décide de valider le modèle.
+
+Finalement, la classe servira de base pour les classes `MoteurÉlectrique` et `MoteurCombustion`. Il n'y a pas d'implémentation pour `GénèreÉnergie` qui satisfait tous les sortes de moteurs, car le calcul pour déterminer la quantité d'énergie varie selon un moteur électrique et un moteur à combustion.
+
+## La classe `MoteurÉlectrique`
+Un moteur électrique est un moteur (duh).
+Un moteur électrique a un attribut `float ampérageMaximum`. L'ampérage maximum ne peut être une valeur négative. Serrez le minimum à 0.
+
+Ajoutez un constructeur qui prend en paramètre le modèle et l'ampérage maximum, ce qui explique le raisonnement dérrière la validation de l'ampérage.
+
+Redéfinnisez `ToString()` pour retourner la même chose que son parent, mais en plus du mot "Électrique" sur une nouvelle ligne.
+
+À cause de la complexité physique d'un moteur, retournez simplement la valeur _10_ dans la méthode `GénèreÉnergie()`.
+
+## La classe `MoteurCombustion`
+Ajoutez un constructeur qui prend en paramètre le modèle.
+
+Redéfinnisez `ToString()` pour retourner la même chose que son parent, mais en plus du mot "Combustion" sur une nouvelle ligne.
+
+À cause de la complexité physique d'un moteur, retournez simplement la valeur _20_ dans la méthode `GénèreÉnergie()`.
+
+## La classe `Voiture`
+Une voiture est quelque chose qui est démarrable.
+
+Une voiture a un moteur. Ce moteur ne peut être `null`. Si jamais une tentative d'affecter le moteur de la voiture avec `null` est faite, lancer un `ArgumentNullException`.
+
+Implémentez la méthode `Démarrer()` en démarrant le moteur du véhicule et en affectant `EstDémarré` à `true`.
+
+Ajoutez un constructeur qui prend un moteur en paramètre (c'est pour cette raison qu'on s'assure que le moteur n'est pas null).
+
+Redéfinnisez `ToString()` pour retourner une chaine avec le format suivant :
+```
+Démarré? A
+Moteur : B
+```
+
+où 'A' est soit `true` ou `false` et 'B' est le résultat du `ToString()` approprié du moteur de la voiture.
+
+
+## Tests
+Dans la fonction `Main` de la classe `Program`, créez un tableau de moteurs.
+Ajoutez des moteurs électriques et à combustion dans le tableau.
+Pour chaque moteur, créez un nouveau véhicule avec le moteur en question. Démarrez le véhicule et affichez dans la console sa représentation en chaine de caractère.
