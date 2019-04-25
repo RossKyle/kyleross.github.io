@@ -419,7 +419,7 @@ $(document).ready(function () {
 <p>Comme le terme implique, une classe abstraite représente quelque chose de non-définie. Dans une telle classe, il y a habituellement une ou plusieurs propriétés/méthodes de déclarées, mais non définies (pas implémenter).</p>
 <p>Supposons la classe <code>Forme2D</code>. Une forme 2D est un concept tellement général qu’il parait absurde de créer des objets de ce type. Par contre, créer des <code>Cercle</code>, <code>Rectangle</code> et <code>Triangle</code> serait appropriés, soit toutes des instances de classes dérivées de <code>Forme2D</code>.</p>
 <p>Toutes formes 2D ont un aire. Cette propriété calculée devrait être déclarée dans <code>Forme2D</code>. Par contre, calculer l’aire d’un cercle est bien distinct de calculer l’aire d’un rectangle. Il n’y a pas une implémentation pour la propriété qui peut satisfaire plusieurs spécialisations de forme 2D.</p>
-<pre><code>class Forme2D
+<pre><code>absract class Forme2D
 {
 
     ...

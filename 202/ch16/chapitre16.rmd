@@ -20,7 +20,7 @@ Supposons la classe `Forme2D`. Une forme 2D est un concept tellement général q
 Toutes formes 2D ont un aire. Cette propriété calculée devrait être déclarée dans `Forme2D`. Par contre, calculer l'aire d'un cercle est bien distinct de calculer l'aire d'un rectangle. Il n'y a pas une implémentation pour la propriété qui peut satisfaire plusieurs spécialisations de forme 2D.
 
 ```
-class Forme2D
+absract class Forme2D
 {
 
     ...
