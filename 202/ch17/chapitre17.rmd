@@ -1,0 +1,15 @@
+---
+title: "Les interfaces"
+output:
+  html_document:
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+[Exemple IComparable](Ex1.zip)
+
+[Exemple Animaux](Ex2.zip)
+
+<iframe align="center" src="https://docs.google.com/presentation/d/e/2PACX-1vSJ-igHs_EGnQYwux97SA2SQfUmsuF4o7W1NHWQjo4Ut-ZTx6rpZeRZDGeO8LHiNiAMxBz1TtMrLoTY/embed?start=false&loop=false&delayms=160000" frameborder="0" width="940" height="560" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
