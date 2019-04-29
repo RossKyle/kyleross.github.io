@@ -1,0 +1,207 @@
+**Pour pas mal tout ce qui est possible avec jQuery...https://www.w3schools.com/jquery/jquery_ref_overview.asp**
+
+jQuery est une bibliothèque créée par John Resig en 2006. Cette bibliothèque est un fichier JS qui peut être importé comme tout autre fichier JS dans une page HTML. La bibliothèque est une collection d'outils qui permet principalement la navigation dans le DOM et la gestion d'évènements et d'animations. Ce qui rend jQuery si populaire et essentiel à connaître est qu'il permet d'utiliser une syntaxe simplifiée pour réaliser des tâches communes.
+
+Par exemple, voici une comparaison qui illustre comment jQuery simplifi le code :
+
+```{js}
+//Version 1 : JS « vanille »
+let elementsLi = document.querySelectorAll("li"); //retourne un tableau de tous les éléments de liste dans le document
+
+for (let li of elementLis)
+    li.classList.add("red"); //ajoute une classe a tous les li
+
+//Version 2 : jQuery
+$("li").addClass("red"); //c'est tout !
+```
+
+## Où chercher la bibliothèque
+La meilleur façon d'ajouter jQuery à un projet Web est de l'importer d'un CDN (Content Delivery Network). Un CDN, bref, va livrer une ressource en sélectionnant le serveur le plus proche du client. Par exemple, si un site importe le fichier JS de jQuery à partir du CDN de Google, l'utilisateur au Canada sera servi le fichier d'un serveur situé dans sa région. Ceci optimise le temps de chargement de la page selon l'emplacement de la personne qui le visionne.
+
+Voici le lien vers jquery.js sur le CDN de Cloudflare, par exemple.
+https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js
+
+Il existe plusieurs CDN. Une recherche en ligne pour _jQuery CDN_ suffit pour en trouver plusieurs.
+
+### Version minimisée
+
+Il existe habituellement une version minimisée des bibliothèques JS. 
+https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js
+
+Celles-ci ne changent pas la logique dans le code, mais sont sans tous les caractères qui aide à la lisibilité. La différence dans les tailles de fichiers est majeure. Conséquemment, il est préféré de toujours utilisé les versions minimisées.
+
+```
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="autreFichierJS..."</script>
+</head>
+```
+
+## Sélectionner des éléments avec jQuery
+Premièrement, une expression débutant avec `$` fait appel à un outil de jQuery. Pour sélectionner des éléments du DOM avec jQuery, il fait utiliser `$` suivi de parenthèses.
+
+Entre les parenthèses une `string` est entrée comme paramètre. Cette chaine représente la méthode et le contenu à sélectionner sous forme de sélecteur CSS.
+
+Pour une liste de sélecteurs CSS :https://www.w3schools.com/cssref/css_selectors.asp 
+
+Par exemple, `$("*")` retourne un objet contenant tous les éléments du DOM. Cette méthode est comparable à `document.querySelectorAll("*")`, mais beacoup plus rapide à écrire.
+
+#### HTML
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+#### JS
+```{js}
+window.onload = function() {
+  for (let e of $("*"))
+    console.log(`${e} : ${e.tagName}`); //${...} n'a aucun lien avec jQuery
+}
+```
+
+## jQuery c. `document.`
+Par contre, les fonctions styles `document.` retourne un soit un _noeud du DOM_ ou un `Node List`. Ceci est distinct de qu'est-ce que jQuery return. En fait, jQuery retourne des objets différents.
+
+`document.getElementById(...)` retourne un noeud (élément DOM) qui possède des propriétés comme `classList` et `textContent`. Un `NodeList`, retourné par `document.querySelectorAll(...)`, par exemple, est un objet qui représente une liste d'éléments du DOM.
+
+`$("*")`, par exemple, ne retourne pas un `NodeList`. `$(#div1)` ne retourne même pas un élément du DOM ! En fait, jQuery nous retourne des objets avec des propriétés complètement distinctes de ceux retournés par les méthodes `document.`.
+
+Pour voir la différence :
+```{js}
+window.onload = function() {
+  let div = document.getElementById("div1");
+  for (let prop in div)
+    document.write(`${prop} : ${div[prop]}<br>`);
+
+  document.write("******************************************<br>");
+
+  div = $("#div1");
+  for (let prop in div)
+    document.write(`${prop} : ${div[prop]}<br>`);
+}
+```
+
+Les deux méthodes retournent _conceptuellement_ la même chose, mais avec deux _représentations_ distinctes.
+
+Cette ligne au tout début du chapitre illustre bien qu'un objet jQuery n'est pas du tout comme un `NodeList` : `$("li").addClass("red");`
+
+## Affecter un ensemble d'objets jQuery
+Que `$(...)` retourne un objet « unique » ou un objet qui représente un ensemble contenant tous les éléments qui correspondent aux sélecteurs CSS, il est possible d'affecter tous les éléments sélectionner sans boucles explicitement écrites.
+
+Pour affecter le text de tous les `divs`, par exemple :
+`$("div").text("bonjour");`
+
+Et pour un seul `div` :
+`$("#div1").text("bonjour");`
+
+## Plus de sélecteurs que le CSS
+En fait, les sélecteurs CSS sont qu'un sous-ensemble des sélecteurs possibles avec jQuery. Pour une liste complète des sélecteurs jQuery (sélecteur CSS + des sélecteurs spécifiques à jQuery), visitez : https://www.w3schools.com/jquery/jquery_ref_selectors.asp.
+
+Il y a des sélecteurs pour chercher des éléments de formulaires typiques, qui sont très pratique :
+
+#### HTML
+```
+<body>
+<input type="text" class="style1">
+<input type="text" name="nomChien">
+<input type="text" name="nomChien">
+</body>
+```
+
+#### CSS
+```
+.style1 {
+  background-color: blue;
+}
+.style2 {
+  border: 2px solid black;
+}
+```
+
+#### JS
+```{js}
+window.onload = function() {
+  $(":text.style1").addClass("style2");
+  $(":text[name='nomChien']").addClass("style2");
+}
+```
+
+## Chercher/affecter des propriétés de l'objet envelopé par l'objet jQuery
+Un objet jQuery est un _wrapper_ qui enveloppe un autre objet. Cet autre objet peut être un élément du DOM ou non. Pour accéder aux propriétés du « vrai » objet, un objet jQuery a la méthode `attr`.
+
+```{js}
+console.log($(":text").first().attr("id"); //1 param → chercher
+$(":text").attr("required", "true"); //2 params → affecter
+```
+
+## Équivalent d'un _foreach_
+Les ensembles d'objets jQuery ont une méthode `each` qui prend en paramètre une fonction à appeler pour chaque élément.
+
+```{js}
+$("li").each(function() {
+  console.log("foo");
+});
+```
+
+## `$(this)`
+Lorsqu'un objet jQuery est un ensemble et une propriété de chaque élément contenu est modifiée ou cherchée, il est toujours possible de faire référence à l'objet « actuel ».
+
+Car il n'y a pas de boucle `for`, `$(this)` est utilisé pour identifier l'objet jQuery en cours de traitement.
+
+```{js}
+$(":text[name='nomChien']").each(function() {
+  console.log($(this).attr("id"));
+});
+```
+
+## Évènements
+Il est possible de facilement gérer les évènements d'éléments du DOM avec jQuery.
+
+Il suffit d'utiliser la propriété `on` :
+```{js}
+$(":button").on("click", function() {
+  alert($(this).val());
+});
+```
+
+Il est aussi possible de passer un objet en paramètre :
+
+```
+$('button').on({
+  click : function() {
+    alert('Vous avez cliqué !');
+  },
+    mouseup : function() {
+      alert('Vous avez relâché le clic !');
+  }
+});
+```
+
+La valeur de la propriété `on` est une fonction qui prend en paramètre une `string` et une `function`. La chaine est pour identifier un évènement (onclick, onchanged, onfocus, etc.) et la `function` est le _callback_ (fonction de rappel).
+
+## Animations
+hide
+fadeIn
+
+## Ajouter un élément au DOM
+Il est possible d'ajouter un élément dans le DOM avec `append`.
+
+```{js}
+window.onload = function() {
+  $("body").append("<p>Test</p>")
+}
+```
+
+## Mot important
+Les exemples dans ce chapitre ne font qu'éfleurer les possibilités avec jQuery. Il y a beaucoup plus de fonctionnalités à découvrir avec cette bibliothèque. Nous n'avons pas le temps de voir plus que la surface, malheureusement.
