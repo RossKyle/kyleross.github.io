@@ -1,3 +1,13 @@
+---
+title: "jQuery"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+urlcolor: blue
+---
+
 **Pour pas mal tout ce qui est possible avec jQuery...https://www.w3schools.com/jquery/jquery_ref_overview.asp**
 
 jQuery est une bibliothèque créée par John Resig en 2006. Cette bibliothèque est un fichier JS qui peut être importé comme tout autre fichier JS dans une page HTML. La bibliothèque est une collection d'outils qui permet principalement la navigation dans le DOM et la gestion d'évènements et d'animations. Ce qui rend jQuery si populaire et essentiel à connaître est qu'il permet d'utiliser une syntaxe simplifiée pour réaliser des tâches communes.
@@ -177,8 +187,8 @@ $(":button").on("click", function() {
 
 Il est aussi possible de passer un objet en paramètre :
 
-```
-$('button').on({
+```{js}
+$(":button").on({
   click : function() {
     alert('Vous avez cliqué !');
   },
