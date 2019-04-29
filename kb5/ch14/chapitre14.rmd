@@ -80,8 +80,8 @@ window.onload = function() {
 }
 ```
 
-## jQuery c. `document.`
-Par contre, les fonctions styles `document.` retourne un soit un _noeud du DOM_ ou un `Node List`. Ceci est distinct de qu'est-ce que jQuery return. En fait, jQuery retourne des objets différents.
+## jQuery contre. `document.`
+Par contre, les fonctions styles `document.` retourne soit un _noeud du DOM_ ou un `Node List`. Ceci est distinct de qu'est-ce que jQuery return. En fait, jQuery retourne des objets différents.
 
 `document.getElementById(...)` retourne un noeud (élément DOM) qui possède des propriétés comme `classList` et `textContent`. Un `NodeList`, retourné par `document.querySelectorAll(...)`, par exemple, est un objet qui représente une liste d'éléments du DOM.
 

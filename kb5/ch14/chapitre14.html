@@ -483,9 +483,9 @@ window.onload = function() {
 </script>
 </div>
 </div>
-<div id="jquery-c.-document." class="section level2">
-<h2>jQuery c. <code>document.</code></h2>
-<p>Par contre, les fonctions styles <code>document.</code> retourne un soit un <em>noeud du DOM</em> ou un <code>Node List</code>. Ceci est distinct de qu’est-ce que jQuery return. En fait, jQuery retourne des objets différents.</p>
+<div id="jquery-contre.-document." class="section level2">
+<h2>jQuery contre. <code>document.</code></h2>
+<p>Par contre, les fonctions styles <code>document.</code> retourne soit un <em>noeud du DOM</em> ou un <code>Node List</code>. Ceci est distinct de qu’est-ce que jQuery return. En fait, jQuery retourne des objets différents.</p>
 <p><code>document.getElementById(...)</code> retourne un noeud (élément DOM) qui possède des propriétés comme <code>classList</code> et <code>textContent</code>. Un <code>NodeList</code>, retourné par <code>document.querySelectorAll(...)</code>, par exemple, est un objet qui représente une liste d’éléments du DOM.</p>
 <p><code>$(&quot;*&quot;)</code>, par exemple, ne retourne pas un <code>NodeList</code>. <code>$(#div1)</code> ne retourne même pas un élément du DOM ! En fait, jQuery nous retourne des objets avec des propriétés complètement distinctes de ceux retournés par les méthodes <code>document.</code>.</p>
 <p>Pour voir la différence :</p>
