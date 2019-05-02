@@ -1,3 +1,4 @@
+```
 class Program
 {
     public static void Main(string[] args)
@@ -51,7 +52,9 @@ class Program
         return r;
     }
 }    
+```
 
+```
 public class Rapport
 {
     private Random rng;
@@ -72,8 +75,8 @@ public class Rapport
         RNG = new Random();
     }
 }
- 
- 
+``` 
+
  
  
  

@@ -372,55 +372,79 @@ $(document).ready(function () {
 </div>
 
 
-<p>class Program { public static void Main(string[] args) { //Test1 Test(); //Test2 Random r2 = Test2(); //Test3 Rapport rap = new Rapport(new Random()); //Test4 Random r3 = new Random(); Test4(r3); //Test5 Rapport rap3 = Test5(); //Test6 Rapport rap4 = new Rapport(); //Test7 Random r4 = Test7(); Console.WriteLine(r4.Next()); }</p>
-<pre><code>static void Test()
+<pre><code>class Program
 {
-    Random r = new Random();
-}
+    public static void Main(string[] args)
+    {
+        //Test1
+        Test();
+        //Test2
+        Random r2 = Test2();
+        //Test3
+        Rapport rap = new Rapport(new Random());
+        //Test4
+        Random r3 = new Random();
+        Test4(r3);
+        //Test5
+        Rapport rap3 = Test5();
+        //Test6
+        Rapport rap4 = new Rapport();
+        //Test7
+        Random r4 = Test7();
+        Console.WriteLine(r4.Next());
+    }
 
-static Random Test2()
-{
-    Random r = new Random();
-    return r;
-}
+    static void Test()
+    {
+        Random r = new Random();
+    }
 
-static Rapport Test4(Random r)
-{
-    Rapport rap = new Rapport(r);
-    return rap;
-}
+    static Random Test2()
+    {
+        Random r = new Random();
+        return r;
+    }
 
-static Rapport Test5()
-{
-    Random r = new Random();
-    Rapport rap = new Rapport(r);
-    return rap;
-}
+    static Rapport Test4(Random r)
+    {
+        Rapport rap = new Rapport(r);
+        return rap;
+    }
 
-static Random Test7()
+    static Rapport Test5()
+    {
+        Random r = new Random();
+        Rapport rap = new Rapport(r);
+        return rap;
+    }
+
+    static Random Test7()
+    {
+        Rapport rap = new Rapport();
+        Random r = rap.RNG;
+        return r;
+    }
+}    </code></pre>
+<pre><code>public class Rapport
 {
-    Rapport rap = new Rapport();
-    Random r = rap.RNG;
-    return r;
+    private Random rng;
+
+    public Random RNG
+    {
+        get { return rng; }
+        set { rng = value; }
+    }
+
+    public Rapport(Random rng)
+    {
+        RNG = rng;
+    }
+
+    public Rapport()
+    {
+        RNG = new Random();
+    }
 }</code></pre>
-<p>}</p>
-<p>public class Rapport { private Random rng;</p>
-<pre><code>public Random RNG
-{
-    get { return rng; }
-    set { rng = value; }
-}
-
-public Rapport(Random rng)
-{
-    RNG = rng;
-}
-
-public Rapport()
-{
-    RNG = new Random();
-}</code></pre>
-<p>}</p>
 
 
 
