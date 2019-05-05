@@ -1,0 +1,48 @@
+---
+title: "Requête HTTP avec GET"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+urlcolor: blue
+---
+
+## JSON
+JavaScript Object Notation : ceci est une syntaxe pour représenter des objets en JS en chaine de texte. C'est très commun de sérialiser (transformer en chaine binaire ou chaine de texte) des objets pour les envoyer à un client, par exemple. La sérialisation permet de la communication entre programme.
+
+Ce qui est particulièrement bien de la syntaxe JSON est qu'elle est identique à la représentation d'objet en JS.
+
+En JSON et en JS, un objet est représenté comme un tableau associatif de pairs clé-valeur.
+
+Il est possible de sérialiser des objets JS en d'autre format (notamment XML), mais JSON est plus conviviale.
+
+## Requête HTTP
+Une requête HTTP est synonyme d'une requête faite via le web (HTTP étant le protocol de web). Il existe plusieurs _méthodes_ de requête HTTP.
+
+Pour le moment, la méthode GET sera utilisé, grâce à sa simplicité. Cette méthode sert à chercher de l'information sur un serveur.
+
+La réponse du serveur est souvent soit en XML ou en JSON. En JS, il est préférable d'avoir une réponse en JSON, car la réponse est facilement traduite à un objet JS !
+
+## AJAX
+Asynchronus JavaScript and XML : ceci n'est pas une bibliothèque, mais plutôt un ensemble de techniques de dévelopment web.
+
+Principalement, le but est de faire des requêtes HTTP **asynchrone** dans un JS. La réponse des requêtes (XML à l'époque) étant aussi traitée avec JS.
+
+De nos jours, AJAX est plutôt devenu du AJAJ (Asynchronus JavaScript and JSON), mais les développeurs comprennent que AJAX n'implique plus nécessairement du XML.
+
+_Asynchrone_ implique que le code JS continu l'exécution **sans attendre la complétion de la requête**. Ceci est une forme de programmation parralel, où plusieurs opérations peuvent être en exécution simultanément.
+
+En JS, il est possible de facilement faire des requêtes AJAX grâce à jQuery.
+
+La fonction `get(...)` rend la chose facile :
+
+```{js}
+$.get(`URLavecParamètres`, function(data) {...});
+```
+Le premier paramètre est l'URL du serveur. Souvent, le serveur est un service web qui prend des paramètres du client, afin d'avoir une réponse personnalisée. Ces paramètres sont mis dans l'URL, lorsque la méthode GET est utilisée.
+
+Le deuxième paramètre est une fonction de rappel (callback) qui est appelée lorsque la requête s'est complétée avec succès. Cette fonction peut prendre un paramètre qui représentera la réponse JSON traduite en objet JS. Bref, le paramètre est l'objet contenant les données reçues.
+
+## Exemple méthode GET avec AJAX
+<iframe width="100%" height="300" src="https://jsfiddle.net/KayRoss/gnawqk48/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
