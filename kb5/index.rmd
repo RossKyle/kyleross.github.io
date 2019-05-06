@@ -43,3 +43,4 @@ urlcolor: blue
 	* [partie B](lab/2b.html)
 3. [Récapitulatif](lab/3.html)
 4. [P.O.O.](lab/4.html)
+5. [PFI](pfi/pfi.html)
