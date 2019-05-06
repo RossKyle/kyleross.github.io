@@ -24,13 +24,13 @@ Suivez les étapes suivantes, afin de préparer les ressources pour le projet :
 
 1. Créez un fichier `index.html`;
 2. Créez un fichier `main.js`;
-3. Créez un fichier `styles.js`;
+3. Créez un fichier `styles.css`;
 4. Dans `index.html`, ajoutez une référence vers une version minimisée de jQuery hébergée sur un CDN;
 5. Dans `index.html`, ajoutez une référence vers `main.js`;
 6. Dans `index.html`, ajoutez la balise suivante :  
 `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">`. Ceci est un fichier CSS situé sur un CDN;
 7. Dans `index.html`, ajoutez une référence vers `styles.css`.
-8. Dans le `body` d'`index.html`, ajoutez un `div` avec le id _contenu_ ou _content (choisissez entre français et anglais).
+8. Dans le `body` d'`index.html`, ajoutez un `div` avec le id _contenu_ ou _content_ (choisissez entre français et anglais).
 
 ## Phase 1 : Chercher des données d'un service web et génération d'éléments du DOM
 Tous le travail pour cette phase se produit dans `main.js`. Le but est de chercher des informations de contact d'un service web avec une requête HTTP.
