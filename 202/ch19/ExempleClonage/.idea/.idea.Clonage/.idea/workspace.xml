@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d3bd306-6740-4ed6-b594-34026442467b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Clonage/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Clonage/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Clonage/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Clonage/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clonage/Pilote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Clonage/Pilote.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clonage/bin/Debug/Clonage.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Clonage/bin/Debug/Clonage.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clonage/bin/Debug/Clonage.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Clonage/bin/Debug/Clonage.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clonage/obj/Debug/Clonage.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Clonage/obj/Debug/Clonage.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clonage/obj/Debug/Clonage.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Clonage/obj/Debug/Clonage.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clonage/obj/Debug/Clonage.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Clonage/obj/Debug/Clonage.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clonage/obj/Debug/Clonage.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Clonage/obj/Debug/Clonage.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chapitre19.html" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre19.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chapitre19.rmd" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre19.rmd" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,10 +21,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Clonage/Avion.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
+            <state relative-caret-position="-1075">
               <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
               <folding>
                 <marker date="1557192078167" expanded="false" signature="6:115" ph="..." />
@@ -37,20 +46,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clonage/Pilote.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+            <state relative-caret-position="-1292">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
-                <marker date="1557192466880" expanded="false" signature="6:115" ph="..." />
-                <marker date="1557192466880" expanded="true" signature="134:1162" ph="{...}" />
-                <marker date="1557192466880" expanded="true" signature="153:1160" ph="{...}" />
-                <marker date="1557192466880" expanded="true" signature="228:460" ph="{...}" />
-                <marker date="1557192466880" expanded="true" signature="287:450" ph="{...}" />
-                <marker date="1557192466880" expanded="true" signature="487:717" ph="{...}" />
-                <marker date="1557192466880" expanded="true" signature="545:707" ph="{...}" />
-                <marker date="1557192466880" expanded="true" signature="765:833" ph="{...}" />
-                <marker date="1557192466880" expanded="true" signature="939:950" ph="{...}" />
-                <marker date="1557192466880" expanded="true" signature="981:1038" ph="{...}" />
-                <marker date="1557192466880" expanded="true" signature="1081:1153" ph="{...}" />
+                <marker date="1557259136430" expanded="false" signature="6:115" ph="..." />
+                <marker date="1557259136430" expanded="true" signature="134:1182" ph="{...}" />
+                <marker date="1557259136430" expanded="true" signature="173:1180" ph="{...}" />
+                <marker date="1557259136430" expanded="true" signature="248:480" ph="{...}" />
+                <marker date="1557259136430" expanded="true" signature="307:470" ph="{...}" />
+                <marker date="1557259136430" expanded="true" signature="507:737" ph="{...}" />
+                <marker date="1557259136430" expanded="true" signature="565:727" ph="{...}" />
+                <marker date="1557259136430" expanded="true" signature="785:853" ph="{...}" />
+                <marker date="1557259136430" expanded="true" signature="959:970" ph="{...}" />
+                <marker date="1557259136430" expanded="true" signature="1001:1058" ph="{...}" />
+                <marker date="1557259136430" expanded="true" signature="1101:1173" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -59,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clonage/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="210">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
               <folding>
                 <marker date="1557253489673" expanded="false" signature="6:115" ph="..." />
                 <marker date="1557253489673" expanded="true" signature="134:842" ph="{...}" />
@@ -75,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clonage/Voiture.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
+            <state relative-caret-position="267">
               <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
               <folding>
                 <marker date="1557192078150" expanded="false" signature="6:115" ph="..." />
@@ -96,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clonage/Véhicule.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-837">
-              <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+            <state relative-caret-position="-89">
+              <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
               <folding>
                 <marker date="1557192078157" expanded="false" signature="6:115" ph="..." />
                 <marker date="1557192078157" expanded="true" signature="134:1914" ph="{...}" />
@@ -116,10 +125,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clonage/Vector2.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="-906">
               <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding>
                 <marker date="1557191503473" expanded="true" signature="17:701" ph="{...}" />
@@ -137,7 +146,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clonage/IClonable.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
+            <state relative-caret-position="275">
               <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
               <folding>
                 <marker date="1557187818207" expanded="true" signature="17:86" ph="{...}" />
@@ -168,16 +177,16 @@
         <option value="$PROJECT_DIR$/Clonage/Avion.cs" />
         <option value="$PROJECT_DIR$/Clonage/Véhicule.cs" />
         <option value="$PROJECT_DIR$/Clonage/Voiture.cs" />
-        <option value="$PROJECT_DIR$/Clonage/Pilote.cs" />
         <option value="$PROJECT_DIR$/Clonage/Program.cs" />
         <option value="$PROJECT_DIR$/Clonage/Vector2.cs" />
+        <option value="$PROJECT_DIR$/Clonage/Pilote.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="10" />
     <option name="y" value="19" />
-    <option name="width" value="947" />
+    <option name="width" value="467" />
     <option name="height" value="1051" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -186,8 +195,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="FileSystemExplorer" />
-      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -195,11 +202,18 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="Clonage" type="24d0babc:SolutionExplorerModelNode" />
             </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Clonage" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Clonage" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -223,19 +237,19 @@
   </component>
   <component name="RunManager">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Clonage/bin/Debug/Clonage.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Clonage/bin/Debug" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Clonage/Clonage.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="None" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.5.2" />
       <method v="2">
         <option name="Build" enabled="true" />
       </method>
@@ -252,12 +266,13 @@
       <option name="presentableId" value="Default" />
       <updated>1557187143374</updated>
       <workItem from="1557187145789" duration="4609000" />
-      <workItem from="1557252510145" duration="980000" />
+      <workItem from="1557252510145" duration="1582000" />
+      <workItem from="1557258054919" duration="1472000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5589000" />
+    <option name="totallyTimeSpent" value="7663000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -269,18 +284,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="19" width="947" height="1051" extended-state="0" />
-    <editor active="true" />
+    <frame x="10" y="19" width="627" height="1051" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.12176724" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.40574506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Build" weight="0.3290735" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.399361" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -313,29 +328,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Clonage/Pilote.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-          <folding>
-            <marker date="1557192466880" expanded="false" signature="6:115" ph="..." />
-            <marker date="1557192466880" expanded="true" signature="134:1162" ph="{...}" />
-            <marker date="1557192466880" expanded="true" signature="153:1160" ph="{...}" />
-            <marker date="1557192466880" expanded="true" signature="228:460" ph="{...}" />
-            <marker date="1557192466880" expanded="true" signature="287:450" ph="{...}" />
-            <marker date="1557192466880" expanded="true" signature="487:717" ph="{...}" />
-            <marker date="1557192466880" expanded="true" signature="545:707" ph="{...}" />
-            <marker date="1557192466880" expanded="true" signature="765:833" ph="{...}" />
-            <marker date="1557192466880" expanded="true" signature="939:950" ph="{...}" />
-            <marker date="1557192466880" expanded="true" signature="981:1038" ph="{...}" />
-            <marker date="1557192466880" expanded="true" signature="1081:1153" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Clonage/IClonable.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
+        <state relative-caret-position="275">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
           <folding>
             <marker date="1557187818207" expanded="true" signature="17:86" ph="{...}" />
@@ -344,10 +339,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Clonage/Voiture.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+          <folding>
+            <marker date="1557192078150" expanded="false" signature="6:115" ph="..." />
+            <marker date="1557192078150" expanded="true" signature="134:1154" ph="{...}" />
+            <marker date="1557192078150" expanded="true" signature="165:1152" ph="{...}" />
+            <marker date="1557192078150" expanded="true" signature="263:460" ph="{...}" />
+            <marker date="1557192078150" expanded="true" signature="326:450" ph="{...}" />
+            <marker date="1557192078150" expanded="true" signature="532:585" ph="{...}" />
+            <marker date="1557192078150" expanded="true" signature="671:739" ph="{...}" />
+            <marker date="1557192078150" expanded="true" signature="781:911" ph="{...}" />
+            <marker date="1557192078150" expanded="true" signature="954:1046" ph="{...}" />
+            <marker date="1557192078150" expanded="true" signature="1088:1146" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Clonage/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="210">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding>
             <marker date="1557253489673" expanded="false" signature="6:115" ph="..." />
             <marker date="1557253489673" expanded="true" signature="134:842" ph="{...}" />
@@ -358,10 +372,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Clonage/Vector2.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-906">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding>
+            <marker date="1557191503473" expanded="true" signature="17:701" ph="{...}" />
+            <marker date="1557191503473" expanded="true" signature="71:699" ph="{...}" />
+            <marker date="1557191503473" expanded="true" signature="139:228" ph="{...}" />
+            <marker date="1557191503473" expanded="true" signature="247:336" ph="{...}" />
+            <marker date="1557191503473" expanded="true" signature="378:444" ph="{...}" />
+            <marker date="1557191503473" expanded="true" signature="499:589" ph="{...}" />
+            <marker date="1557191503473" expanded="true" signature="632:693" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Clonage/Véhicule.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-837">
-          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+        <state relative-caret-position="-89">
+          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
           <folding>
             <marker date="1557192078157" expanded="false" signature="6:115" ph="..." />
             <marker date="1557192078157" expanded="true" signature="134:1914" ph="{...}" />
@@ -379,9 +409,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Clonage/Pilote.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1292">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <marker date="1557259136430" expanded="false" signature="6:115" ph="..." />
+            <marker date="1557259136430" expanded="true" signature="134:1182" ph="{...}" />
+            <marker date="1557259136430" expanded="true" signature="173:1180" ph="{...}" />
+            <marker date="1557259136430" expanded="true" signature="248:480" ph="{...}" />
+            <marker date="1557259136430" expanded="true" signature="307:470" ph="{...}" />
+            <marker date="1557259136430" expanded="true" signature="507:737" ph="{...}" />
+            <marker date="1557259136430" expanded="true" signature="565:727" ph="{...}" />
+            <marker date="1557259136430" expanded="true" signature="785:853" ph="{...}" />
+            <marker date="1557259136430" expanded="true" signature="959:970" ph="{...}" />
+            <marker date="1557259136430" expanded="true" signature="1001:1058" ph="{...}" />
+            <marker date="1557259136430" expanded="true" signature="1101:1173" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Clonage/Avion.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
+        <state relative-caret-position="-1075">
           <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
           <folding>
             <marker date="1557192078167" expanded="false" signature="6:115" ph="..." />
@@ -395,41 +445,6 @@
             <marker date="1557192078167" expanded="true" signature="1087:1306" ph="{...}" />
             <marker date="1557192078167" expanded="true" signature="1348:1404" ph="{...}" />
             <marker date="1557192078167" expanded="true" signature="1455:1589" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Clonage/Voiture.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
-          <folding>
-            <marker date="1557192078150" expanded="false" signature="6:115" ph="..." />
-            <marker date="1557192078150" expanded="true" signature="134:1154" ph="{...}" />
-            <marker date="1557192078150" expanded="true" signature="165:1152" ph="{...}" />
-            <marker date="1557192078150" expanded="true" signature="263:460" ph="{...}" />
-            <marker date="1557192078150" expanded="true" signature="326:450" ph="{...}" />
-            <marker date="1557192078150" expanded="true" signature="532:585" ph="{...}" />
-            <marker date="1557192078150" expanded="true" signature="671:739" ph="{...}" />
-            <marker date="1557192078150" expanded="true" signature="781:911" ph="{...}" />
-            <marker date="1557192078150" expanded="true" signature="954:1046" ph="{...}" />
-            <marker date="1557192078150" expanded="true" signature="1088:1146" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Clonage/Vector2.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding>
-            <marker date="1557191503473" expanded="true" signature="17:701" ph="{...}" />
-            <marker date="1557191503473" expanded="true" signature="71:699" ph="{...}" />
-            <marker date="1557191503473" expanded="true" signature="139:228" ph="{...}" />
-            <marker date="1557191503473" expanded="true" signature="247:336" ph="{...}" />
-            <marker date="1557191503473" expanded="true" signature="378:444" ph="{...}" />
-            <marker date="1557191503473" expanded="true" signature="499:589" ph="{...}" />
-            <marker date="1557191503473" expanded="true" signature="632:693" ph="{...}" />
           </folding>
         </state>
       </provider>

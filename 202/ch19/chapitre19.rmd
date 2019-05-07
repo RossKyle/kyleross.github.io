@@ -12,7 +12,7 @@ urlcolor: blue
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS2Jj5owifGwCifXKrDu1zEHRbd_2yOcH6XAoqNklE-0DneT6jLrxhc7_Fu0d-dcw/embed?start=false&loop=false&delayms=60000" frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 ## Exemple
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/rXf1xt" frameborder="0"></iframe>
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/FEHfvt" frameborder="0"></iframe>
 
 ## Modèle de conception : clonage
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTqkkDWUkHcwCPPMrNWnbnlnzDoOFsM1D5xbMZsXZ8aR-2iwBjdu1T-bDlozn7ujQ/embed?start=false&loop=false&delayms=60000" frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>

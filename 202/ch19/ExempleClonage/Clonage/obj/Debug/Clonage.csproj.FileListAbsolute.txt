@@ -1,15 +1,22 @@
-C:\Users\Kyle Ross\Desktop\Clonage\Clonage\bin\Debug\Clonage.exe.config
-C:\Users\Kyle Ross\Desktop\Clonage\Clonage\bin\Debug\Clonage.exe
-C:\Users\Kyle Ross\Desktop\Clonage\Clonage\bin\Debug\Clonage.pdb
-C:\Users\Kyle Ross\Desktop\Clonage\Clonage\obj\Debug\Clonage.csprojResolveAssemblyReference.cache
-C:\Users\Kyle Ross\Desktop\Clonage\Clonage\obj\Debug\Clonage.exe
-C:\Users\Kyle Ross\Desktop\Clonage\Clonage\obj\Debug\Clonage.pdb
-C:\Users\kyle.ross\Desktop\Clonage\Clonage\bin\Debug\Clonage.exe.config
-C:\Users\kyle.ross\Desktop\Clonage\Clonage\obj\Debug\Clonage.exe
-C:\Users\kyle.ross\Desktop\Clonage\Clonage\obj\Debug\Clonage.pdb
-C:\Users\kyle.ross\Desktop\Clonage\Clonage\bin\Debug\Clonage.exe
-C:\Users\kyle.ross\Desktop\Clonage\Clonage\bin\Debug\Clonage.pdb
-C:\Users\kyle.ross\Desktop\Clonage\Clonage\obj\Debug\Clonage.csprojResolveAssemblyReference.cache
-C:\Users\Kyle.Ross\Google Drive\Collège Lionel-Groulx\202\2017\Exemples\Clonage\Clonage\bin\Debug\Clonage.exe.config
-C:\Users\Kyle.Ross\Google Drive\Collège Lionel-Groulx\202\2017\Exemples\Clonage\Clonage\obj\Debug\Clonage.exe
-C:\Users\Kyle.Ross\Google Drive\Collège Lionel-Groulx\202\2017\Exemples\Clonage\Clonage\obj\Debug\Clonage.pdb
+C:/Users/Kyle Ross/Desktop/Clonage/Clonage/bin/Debug/Clonage.exe.config
+C:/Users/Kyle Ross/Desktop/Clonage/Clonage/bin/Debug/Clonage.exe
+C:/Users/Kyle Ross/Desktop/Clonage/Clonage/bin/Debug/Clonage.pdb
+C:/Users/Kyle Ross/Desktop/Clonage/Clonage/obj/Debug/Clonage.csprojResolveAssemblyReference.cache
+C:/Users/Kyle Ross/Desktop/Clonage/Clonage/obj/Debug/Clonage.exe
+C:/Users/Kyle Ross/Desktop/Clonage/Clonage/obj/Debug/Clonage.pdb
+C:/Users/kyle.ross/Desktop/Clonage/Clonage/bin/Debug/Clonage.exe.config
+C:/Users/kyle.ross/Desktop/Clonage/Clonage/obj/Debug/Clonage.exe
+C:/Users/kyle.ross/Desktop/Clonage/Clonage/obj/Debug/Clonage.pdb
+C:/Users/kyle.ross/Desktop/Clonage/Clonage/bin/Debug/Clonage.exe
+C:/Users/kyle.ross/Desktop/Clonage/Clonage/bin/Debug/Clonage.pdb
+C:/Users/kyle.ross/Desktop/Clonage/Clonage/obj/Debug/Clonage.csprojResolveAssemblyReference.cache
+C:/Users/Kyle.Ross/Google Drive/Collège Lionel-Groulx/202/2017/Exemples/Clonage/Clonage/bin/Debug/Clonage.exe.config
+C:/Users/Kyle.Ross/Google Drive/Collège Lionel-Groulx/202/2017/Exemples/Clonage/Clonage/obj/Debug/Clonage.exe
+C:/Users/Kyle.Ross/Google Drive/Collège Lionel-Groulx/202/2017/Exemples/Clonage/Clonage/obj/Debug/Clonage.pdb
+/home/kyle/work/clg/classes/202/ch19/ExempleClonage/Clonage/bin/Debug/Clonage.exe.config
+/home/kyle/work/clg/classes/202/ch19/ExempleClonage/Clonage/bin/Debug/Clonage.exe
+/home/kyle/work/clg/classes/202/ch19/ExempleClonage/Clonage/bin/Debug/Clonage.pdb
+/home/kyle/work/clg/classes/202/ch19/ExempleClonage/Clonage/obj/Debug/Clonage.csprojResolveAssemblyReference.cache
+/home/kyle/work/clg/classes/202/ch19/ExempleClonage/Clonage/obj/Debug/Clonage.csproj.CoreCompileInputs.cache
+/home/kyle/work/clg/classes/202/ch19/ExempleClonage/Clonage/obj/Debug/Clonage.exe
+/home/kyle/work/clg/classes/202/ch19/ExempleClonage/Clonage/obj/Debug/Clonage.pdb

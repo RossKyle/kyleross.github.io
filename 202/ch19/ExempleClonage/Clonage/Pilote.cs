@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clonage
 {
-    class Pilote
+    class Pilote : IClonable<Pilote>
     {
         string code;
         string nom;
