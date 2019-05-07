@@ -11,7 +11,7 @@ namespace Clonage
         static void Main(string[] args)
         {
             Vector2<float> point1 = new Vector2<float>(9, -3.1416f);
-            Console.WriteLine(point1.Clone().ToString());
+            Console.WriteLine(point1.Clone().X);
             
             Voiture maVoiture = new Voiture(4);
             Pilote leMeilleurPilote = new Pilote("XKCD-42", "Fox McCloud");
