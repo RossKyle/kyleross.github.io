@@ -1,0 +1,116 @@
+---
+title: "Délégués et lambdas"
+output:
+  html_document:
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## Délégation
+La délégation est quelque chose fait régulièrement. Le principe s'applique entre un _délégateur_ et un _délégué_. Le délégateur _délégue_ des tâches a des délégués.
+
+En programmation, ceci prend la forme d'une fonction qui appel une autre fonction. Une fonction _délégue_ donc une partie de sa tâche. En autre mots, **un délégué est une fonction** utilisée par une autre fonction.
+
+Par exemple, imaginons un restaurant et le chef est en charge de gérer la cuisine. Le chef va _déléguer_ des tâches à ses sous-chefs, afin de compléter sa propre tâche de gestion de cuisine.
+
+Un autre exemple : imaginons une fonction `CalculerTaxes(...)`. Cette fonction a pour but de retourner le montant en taxe à payer sur un montant pris en paramètre. Cette fonction peut faire appel à une fonction `CalculerTPS(...)` et une fonction `CalculerTVQ(...)`, afin d'accomplir sa tâche.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/pAgi9E" frameborder="0"></iframe>
+
+Un autre exemple : imaginons une fonction `CalculerSomme(...)` qui prend en paramètre un tableau d'entiers. Cette fonction a la tâche de retourner la somme de tous les entiers entre 3 et 5 (inclusivemetn) dans le tableau reçu. Une fonction `EstEntre3Et5(...)` est appelée pour tester les entiers.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/i9ppks" frameborder="0"></iframe>
+
+D'autres exemples de délégation :
+
+* Appel à `Console.WriteLine(...)` dans la fonction `Main(...)`;
+* Un constructeur d'une classe dérivée qui appel un constructeur de base;
+* Un appel à un mutateur ou accesseur via une propriété;
+* etc...
+
+## Fonction qui prend en paramètre une fonction
+### Contexte
+Supposons que nous cherchons une version de `CalculerSomme(...)` qui additonne seulement les entiers divisible par 3. Une nouvelle fonction `EstDivisiblePar3(...)` qui prend en paramètre un entier peut être créée pour être utilisée comme délégué.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/ng9h8K" frameborder="0"></iframe>
+
+### Problème
+Notez un problème majeur avec cette approche : de la redondance !
+
+Pour chaque nouvelle condition utilisée pour filtrer les entiers, il faut créer une nouvelle fonction quasi identique.
+
+Par exemple, si nous voulons seulement additionner les entiers qui sont _premiers_, il faudra créer une nouvelle fonction `CalculerSomme(...)` où que le délégué choisi est changé.
+
+### Solution
+Une fonction peut prendre d'autre fonction en paramètre de plusieurs façon en C#. Premièrement, le type `Func<T>` peut être utilisé pour créer des références à des fonctions. Le `T` est pour représenter le type de retour de la fonction référée.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/7FWKg8" frameborder="0"></iframe>
+
+Il existe aussi `Func<T, T2, ..., TResult>` qui représente une fonction qui prend en paramètre un `T`, `T2`, etc. et retourne un `TResult`.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/SPMHPr" frameborder="0"></iframe>
+
+La solution au problème initial est simple : envoyer le délégué à utiliser en paramètre.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/RoAt6S" frameborder="0"></iframe>
+
+## Prédicat
+Un prédicat est une fonction qui prend un paramètre et test le paramètre contre des conditions. Le prédicat retourne donc un `bool`, indiquant si le paramètre passe les tests ou non. Dans la solution plus haut, les délégués envoyés en paramètre à `CalculerSomme(...)` sont plus précisement des prédicats.
+
+Il est commun de trouver des fonctions qui prennent en paramètre des prédicats.
+
+## `IEnumerable`
+Lorsque la bibliothèque `LINQ` est ajoutée, tous les `IEnumerable` gagnent des méthodes qui servent à filtrer leurs données.
+
+Les tableaux, `List`, `string` et plusieurs autres structures sont énumérables. En fait, `foreach` fonctionne seulement avec des conteneurs `IEnumerable`.
+
+La méthode `Where(...)` par exemple, prend un `Func<T, bool>` où `T` est le type du contenu dans l'`IEnumerable`. Cette fonction est bien un prédicat qui va tester un élément `T` du conteneur et retourner `true` si l'élément passe les tests.
+
+Voici quelques exemples :
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/rY9SRO" frameborder="0"></iframe
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/IPw8jL" frameborder="0"></iframe>
+
+## Délégué de sélection
+Un délégué peut servir à sélectionner une propriété d'un objet. La méthode `Sum(...)` d'un `IEnumerable` sert souvent à retourner la somme des propriétés sélectionnées de tous les éléments du `IEnumerable`.
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/tese5a" frameborder="0"></iframe>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/RKWYiz" frameborder="0"></iframe>
+
+
+## Lambda
+Écrire une nouvelle fonction pour chaque prédicat ou délégué de sélection est problématique, car il est possible de rapidement polluer une classe avec trop de fonctions.
+
+De plus, il est fréquent que ces fonctions ne seront qu'appelées une seule fois...
+
+Par chance, il est possible d'écrire des **fonctions anonymes**. Une telle fonction n'as pas de déclaration nommé (ce qui donne une identité à une fonction) et peut être écrite _inline_. Bref, de manière qu'il est possible de créer des données sans nom de variable attaché, il est possible de créer des fonctions sans nom directement dans une autre fonction.
+
+Les fonctions anonymes prennent souvent la forme d'une _lambda_, en programmation moderne. Une lambda est une syntaxe qui permet d'écrire une fonction rapidement et sans déclaration.
+
+### Passer de syntaxe classique à syntaxe lambdas
+
+**de**
+```
+typeRetour NomFonction(type1 param1, type2 param2)
+{
+    logique
+    ...
+    return ...; 
+}
+```
+**à**
+`param1, param2, ... => logique`
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/LVLj2w" frameborder="0"></iframe>
+
+Ici, nous écrivons directement les délégués où nécessaire. Une lambda créer une `Func<T...>` appropriée, alors elles sont parfaites pour servir de délégués. Aussi, notez qu'il n'est pas nécessaire d'indiquer les types, ou d'écrire `return`.
+
+Un autre exemple :
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/MWUGMl" frameborder="0"></iframe>
+
+

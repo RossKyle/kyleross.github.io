@@ -12,12 +12,6 @@ urlcolor: blue
 ----
 
 ## Planification 
-1. Mardi 16 avril : Temps laboratoire 3;
-2. Mardi 23 avril : Laboratoire 4 (héritage, polymorphisme, classe abstraite); Remise du laboratoire 3 avant minuit;
-3. Jeudi 25 avril : Interfaces, temps laboratoire 4;
-4. Mardi 30 avril : Exercice interfaces;
-5. Jeudi 2 mai : Cycle de vie, aggrégation, composition;
-6. Mardi 7 mai : Copie superficielle, copie en profondeur, clonage;
 7. Mardi 14 mai : Délégué et lambdas;
 8. Jeudi 16 mai : Présentation de la PFI;
 9. Mardi 21 mai : Exercices divers, cours de révision;
@@ -49,6 +43,7 @@ urlcolor: blue
 19. [Interfaces](ch17/chapitre17.html)
 20. [Cycle de vie](ch18/chapitre18.html)
 21. [Copiage et clonage](ch19/chapitre19.html)
+22. [Délégués et lambdas](ch20/chapitre20.html)
 
 ## Exercices
 * [Fonction et Random](rev/exercices.html)
