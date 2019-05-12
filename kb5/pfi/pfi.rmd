@@ -134,3 +134,34 @@ En utilisant `$.get(...)` avec l'URL http://www.informatique.clg.qc.ca/KB5_Conta
 Votre page doit, dans un premier temps, faire la requête. En deuxième lieu, elle doit créer une `table` dans le `div` _content_ avec `createContactTable` où les contacts sont ceux retournés par la requête.
 
 ![](3.png)
+
+## Phase 2 : Le formulaire d'ajout de contacts
+En bas de la `table`, créer un formulaire de saisie de contact. Le formulaire doit avoir les champs suivants :
+
+* Prénom et Nom : type text;
+* Téléphone : type tel;
+* Courriel : type email;
+* Date de naissance : type date;
+* Sexe : groupe de 3 type radio;
+	* la `value` 0 → M;
+	* 1 → F;
+	* 2 → Autre.
+* Célibataire : type checkbox.
+
+Tous les champs doivent avoir une valeur (`required`) avant la soumission du formulaire. Un checkbox a toujours une valeur (`false` lorsque non coché et `true` lorsque coché).
+
+Styliser le formulaire avec du CSS. Assurez-vous que le tout est propre, lisible et bien aligné. Aussi, les radios et le checkbox doivent être étiquettés. Mettez également des `placeholder` appropriés aux champs.
+
+Finalement, ajoutez un bouton de soumission au formulaire. Lorsque le formulaire est soumis, vous devez créer un nouvel objet représentant un contact avec les données saisies dans le formulaire. Utilisez `jQuery` pour chercher les valeurs des champs. Pour chercher la valeur `boolean` d'un checkbox, utilisez `$([insérez sélecteur]).is(":checked")`.
+
+Le nouveau contact doit avoir les mêmes noms de propriétés que tous les autres contact (`Name`, `Phone`, `Email`, etc.), **sauf** une propriété pour `ID`. Affichez cet objet dans la console et observez le afin de vérifier si tout est en ordre.
+
+Le `Name` devrait être une `string`;
+Le `Phone` devrait être une `string`;
+L'`Email` devrait être une `string`;
+Le `Sexe` devrait être un `number`;
+Le `Birthdate` devrait être une `string`;
+`Single` devrait êtrue un `boolean`;
+
+## Phase 3 : Soumission du nouveau contact au service web
+
