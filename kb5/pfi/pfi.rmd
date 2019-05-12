@@ -154,7 +154,7 @@ Styliser le formulaire avec du CSS. Assurez-vous que le tout est propre, lisible
 
 Finalement, ajoutez un bouton de soumission au formulaire. Lorsque le formulaire est soumis, vous devez créer un nouvel objet représentant un contact avec les données saisies dans le formulaire. Utilisez `jQuery` pour chercher les valeurs des champs. Pour chercher la valeur `boolean` d'un checkbox, utilisez `$([insérez sélecteur]).is(":checked")`.
 
-Le nouveau contact doit avoir les mêmes noms de propriétés que tous les autres contact (`Name`, `Phone`, `Email`, etc.), **sauf** une propriété pour `ID`. Affichez cet objet dans la console et observez le afin de vérifier si tout est en ordre.
+Le nouveau contact doit avoir les mêmes noms de propriétés que tous les autres contacts (`Name`, `Phone`, `Email`, etc.), **sauf** une propriété pour `ID`. Affichez cet objet dans la console et observez-le afin de vérifier si tout est en ordre.
 
 Le `Name` devrait être une `string`;
 Le `Phone` devrait être une `string`;
@@ -164,4 +164,17 @@ Le `Birthdate` devrait être une `string`;
 `Single` devrait êtrue un `boolean`;
 
 ## Phase 3 : Soumission du nouveau contact au service web
+Au lieu d'utiliser `$.get(...)` avec des paramètres dans l'URL pour envoyer des données à un serveur, vous devez utiliser une autre méthode.
 
+En utilisant la méthode `$.post(...)`, vous devez envoyer l'objet qui représente le nouveau contact au service web, afin qu'il l'ajoute dans la liste de contact. La prochaine fois que quelqu'un fera une requête au service pour chercher tous les contacts, le nouveau contact devrait être présent.
+
+La fonction `post` de jQuery est une façon rapide de faire une requête AJAX pour soumettre un objet JS à un serveur. Vous pouvez utiliser la surcharge de la fonction à 3 paramètres :
+
+1. URL du service web (le même que plus tôt);
+2. la donnée à envoyer au serveur (ici, un objet);
+3. une fonction de rappel (_callback_) qui est appelée une fois que la donnée a été acceptée par le serveur, suite à la soumission du client.
+
+Si la soumission est réalisée avec succès, vous devez mettre à jour la page web, sans faire de rafraîchissement complet (_refresh_). Supprimez la `table` du DOM (chercher comment faire) et ajouter une nouvelle `table`, avec tous les nouveaux contacts, au même endroit.
+
+## Remise
+Vous devez soumettre votre projet complet dans la boite de remise dédiée sur ColNet **avant minuit le 26 mai**. Assurez-vous que le tout fonctionne, car **AUCUN RETARD NE SERA ACCEPTÉ**.

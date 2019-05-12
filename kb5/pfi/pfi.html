@@ -554,11 +554,24 @@ window.onload = function() {
 <p>Tous les champs doivent avoir une valeur (<code>required</code>) avant la soumission du formulaire. Un checkbox a toujours une valeur (<code>false</code> lorsque non coché et <code>true</code> lorsque coché).</p>
 <p>Styliser le formulaire avec du CSS. Assurez-vous que le tout est propre, lisible et bien aligné. Aussi, les radios et le checkbox doivent être étiquettés. Mettez également des <code>placeholder</code> appropriés aux champs.</p>
 <p>Finalement, ajoutez un bouton de soumission au formulaire. Lorsque le formulaire est soumis, vous devez créer un nouvel objet représentant un contact avec les données saisies dans le formulaire. Utilisez <code>jQuery</code> pour chercher les valeurs des champs. Pour chercher la valeur <code>boolean</code> d’un checkbox, utilisez <code>$([insérez sélecteur]).is(&quot;:checked&quot;)</code>.</p>
-<p>Le nouveau contact doit avoir les mêmes noms de propriétés que tous les autres contact (<code>Name</code>, <code>Phone</code>, <code>Email</code>, etc.), <strong>sauf</strong> une propriété pour <code>ID</code>. Affichez cet objet dans la console et observez le afin de vérifier si tout est en ordre.</p>
+<p>Le nouveau contact doit avoir les mêmes noms de propriétés que tous les autres contacts (<code>Name</code>, <code>Phone</code>, <code>Email</code>, etc.), <strong>sauf</strong> une propriété pour <code>ID</code>. Affichez cet objet dans la console et observez-le afin de vérifier si tout est en ordre.</p>
 <p>Le <code>Name</code> devrait être une <code>string</code>; Le <code>Phone</code> devrait être une <code>string</code>; L’<code>Email</code> devrait être une <code>string</code>; Le <code>Sexe</code> devrait être un <code>number</code>; Le <code>Birthdate</code> devrait être une <code>string</code>; <code>Single</code> devrait êtrue un <code>boolean</code>;</p>
 </div>
 <div id="phase-3-soumission-du-nouveau-contact-au-service-web" class="section level2">
 <h2>Phase 3 : Soumission du nouveau contact au service web</h2>
+<p>Au lieu d’utiliser <code>$.get(...)</code> avec des paramètres dans l’URL pour envoyer des données à un serveur, vous devez utiliser une autre méthode.</p>
+<p>En utilisant la méthode <code>$.post(...)</code>, vous devez envoyer l’objet qui représente le nouveau contact au service web, afin qu’il l’ajoute dans la liste de contact. La prochaine fois que quelqu’un fera une requête au service pour chercher tous les contacts, le nouveau contact devrait être présent.</p>
+<p>La fonction <code>post</code> de jQuery est une façon rapide de faire une requête AJAX pour soumettre un objet JS à un serveur. Vous pouvez utiliser la surcharge de la fonction à 3 paramètres :</p>
+<ol style="list-style-type: decimal">
+<li>URL du service web (le même que plus tôt);</li>
+<li>la donnée à envoyer au serveur (ici, un objet);</li>
+<li>une fonction de rappel (<em>callback</em>) qui est appelée une fois que la donnée a été acceptée par le serveur, suite à la soumission du client.</li>
+</ol>
+<p>Si la soumission est réalisée avec succès, vous devez mettre à jour la page web, sans faire de rafraîchissement complet (<em>refresh</em>). Supprimez la <code>table</code> du DOM (chercher comment faire) et ajouter une nouvelle <code>table</code>, avec tous les nouveaux contacts, au même endroit.</p>
+</div>
+<div id="remise" class="section level2">
+<h2>Remise</h2>
+<p>Vous devez soumettre votre projet complet dans la boite de remise dédiée sur ColNet <strong>avant minuit le 26 mai</strong>. Assurez-vous que le tout fonctionne, car <strong>AUCUN RETARD NE SERA ACCEPTÉ</strong>.</p>
 </div>
 
 
