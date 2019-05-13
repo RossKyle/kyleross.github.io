@@ -1,5 +1,5 @@
 ---
-title: "PFI — le gestionnaire de contact"
+title: "PFI — le gestionnaire de contacts"
 output:
   html_document:
     mathjax: null
@@ -174,7 +174,7 @@ La fonction `post` de jQuery est une façon rapide de faire une requête AJAX po
 2. la donnée à envoyer au serveur (ici, un objet);
 3. une fonction de rappel (_callback_) qui est appelée une fois que la donnée a été acceptée par le serveur, suite à la soumission du client.
 
-Si la soumission est réalisée avec succès, vous devez mettre à jour la page web, sans faire de rafraîchissement complet (_refresh_). Supprimez la `table` du DOM (chercher comment faire) et ajouter une nouvelle `table`, avec tous les nouveaux contacts, au même endroit.
+Si la soumission est réalisée avec succès, vous devez mettre à jour la page web, sans faire de rafraîchissement complet (_refresh_). Supprimez la `table` du DOM (chercher comment faire) et ajouter une nouvelle `table` avec tous les nouveaux contacts, au même endroit.
 
 ## Remise
 Vous devez soumettre votre projet complet dans la boite de remise dédiée sur ColNet **avant minuit le 26 mai**. Assurez-vous que le tout fonctionne, car **AUCUN RETARD NE SERA ACCEPTÉ**.
