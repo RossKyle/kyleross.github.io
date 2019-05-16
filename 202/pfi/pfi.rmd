@@ -11,6 +11,7 @@ urlcolor: blue
 
 ## Consignes
 
+* [Téléchargez le projet de départ](pfi2019_depart.zip)
 * Ce travail doit être fait individuellement;
 * Plagiat → couler le cours;
 * Aucune validation de données est demandée, pour alléger le travail;
