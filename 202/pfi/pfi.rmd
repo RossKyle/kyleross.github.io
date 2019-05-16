@@ -1,0 +1,76 @@
+---
+title: "PFI : Graphe"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## Consignes
+
+* Ce travail doit être fait individuellement;
+* Plagiat → couler le cours;
+* Aucune validation de données est demandée, pour alléger le travail;
+
+## Mise en contexte
+Vous devez créer un programme qui affiche un graphe composé de noeuds et de chemins entre des noeuds.
+La bibliothèque SFML.NET est utilisée afin de gérer le graphisme.
+
+
+## Phase 1 : `IClonable<T>`
+Écrivez l'interface `IClonable<T>`. Cette interface contient qu'une seule méthode : `Clone()` qui retoune un `T`.
+
+## Phase 2 : la classe `Noeud`
+Un noeud est un objet qui peut être cloné (`IClonable<T>`) pour retourner un nouveau noeud. Un noeud peut aussi être affiché dans une fenêtre SFML (`Drawable`).
+
+### Attributs/Propriétés
+
+* `string étiquette` : un étiquette pour identifier le noeud. Par exemple, le noeud $A$;
+* `Vector2<float> position` : la position dans l'espace 2D du noeud;
+* `Noeud[] adjacents` : les noeuds qui sont _adjacents_ au noeud;
+* `int capacité` : le nombre de maximum d'adjacents que le noeud peut supporter;
+* `int nbAdjacents` : le nombre actuel de noeuds adjacent au noeud;
+
+Aucune propriété doit être modifiable par un client. Il ne doit pas être possible de retourner, à un client, un type référence à un objet non-immuable via les propriétés.
+
+### Les adjacents
+Chaque noeud a un tableau de noeuds contenant ses noeuds adjacents. Si un noeud $B$ est adjacent à un noeud $A$, il y a un chemin **direct** entre ces deux noeuds. Conséquemment, $A$ est également adjacent à $B$.
+
+Il est possible de savoir s'il existe un chemin entre deux noeuds en utilisant le tableau d'adjacents. Par exemple, si $A$ est adjacent à $B$ et que $C$ est aussi adjacent à $B$, il existe un chemin entre $A$ et $C$, même si $A$ et $C$ ne sont pas adjacent.
+
+### Constructeurs
+Cette classe doit avoir un constructeur paramétrique qui prend en paramètre l'étiquette, la position et la capacité du nouveau noeud à construire.
+
+La classe doit aussi avoir un constructeur de copie **qui ne copie pas les adjacents**, afin d'éviter une boucle infinie. Utilisez le premier constructeur pour implémenter le constructeur de copie.
+
+### Méthodes
+1. `public void AjouterNoeudAdjacent(Noeud adjacent)` : cette méthode doit ajouter un noeud adjacent au noeud appelant cette méthode. Bien entendu, le noeud appelant cette méthode (`this`) devient aussi un adjacent du noeud prit en paramètre. Cette tâche ne peut pas être complétée, par contre, si les noeuds ont atteinte leurs capacités.
+
+2. `bool EstSaturé()` : cette méthode utilitaire indique si le noeud à pleine capacité.
+
+3. `public float CalculerDistance(Noeud autre)` : retourne la distance entre le noeud appelant cette méthode et un noeud prit en paramètre. La méthode doit retourner `-1` si le noeud prit en paramètre n'est pas un noeud adjacent (la distance peut juste être calculée entre noeuds adjacents).
+
+4. Implémentez le _design pattern_ de clonage.
+
+5. `public Noeud[] CopierAdjacents()` : afin d'avoir une façon de retourner tous les adjacents à un client sans avoir de bris d'encapsulation, cette méthode doit retourner une copie des adjacents (où les copies n'ont pas d'adjacents). 
+
+6. Faites une surcharge de `ToString()` afin quelle affiche le format suivant :
+```
+_étiquette_ @_position_
+--Adjacents--
+_étiquetteAdjacent1_, _étiquetteAdjacent2_, etc.
+```
+
+Ex :
+```
+B @(150.400)
+--Adjacents--
+A, C
+```
+
+### Tests
+Afin de tester votre classe, démarrez le programme après avoir enlevé le commentaire à la ligne 15 de `Program.cs`. Ceci va appeler une suite de tests que vous pouvez utiliser pour valider votre code.
+
