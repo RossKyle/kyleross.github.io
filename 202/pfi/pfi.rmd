@@ -75,3 +75,4 @@ A, C
 ### Tests
 Afin de tester votre classe, démarrez le programme après avoir enlevé le commentaire à la ligne 15 de `Program.cs`. Ceci va appeler une suite de tests que vous pouvez utiliser pour valider votre code.
 
+![](1.png)
