@@ -11,9 +11,18 @@ urlcolor: blue
 
 ----
 
+**Checklist fin de session**
+
+1. Regardez le solutionnaire pour l'exercice sur les interface (à venir...);
+2. Exercices de préparation pour l'examen (à venir...);
+3. Collection **A** d'exercices sur délégués et lambdas (à venir...);
+4. Collection **B** d'exercices sur délégués et lamdas (à venir...);
+5. Questions théoriques pour l'examen (à venir...);
+6. PFI !
+
+----
+
 ## Planification 
-7. Mardi 14 mai : Délégué et lambdas;
-8. Jeudi 16 mai : Présentation de la PFI;
 9. Mardi 21 mai : Exercices divers, cours de révision;
 10. **Jeudi 30 mai : Examen final;**
 11. Samedi 2 juin : Remise de la PFI avant minuit;
