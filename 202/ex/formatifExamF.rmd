@@ -115,6 +115,13 @@ Par exemple `Bill;42`.
 
 Tenez pour acquis que la classe `Personne` est bien écrite et offre un constructeur qui prend en paramètre le nom et l'âge de la personne à instancier.
 
+```
+IEnumerable<Personne> générerPersonnes(string cheminFichierÀLire)
+{
+  //...
+
+}
+```
 
 # Solutions
 à venir...
