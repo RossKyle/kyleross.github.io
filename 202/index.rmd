@@ -14,9 +14,9 @@ urlcolor: blue
 **Checklist fin de session**
 
 1. [Regardez le solutionnaire pour l'exercice sur les interface](ex/SolExInterface.zip);
-2. [Exercices de préparation pour l'examen](ex/formatifExamF.html)
-3. Collection **A** d'exercices sur délégués et lambdas (à venir...);
-4. Collection **B** d'exercices sur délégués et lamdas (à venir...);
+2. [Exercices de préparation pour l'examen](ex/formatifExamF.html);
+3. [Collection **1** d'exercices sur délégués et lambdas avec solutionnaire](ex/ExLambda1.zip)
+4. Collection **2** d'exercices sur délégués et lamdas (à venir...);
 5. Questions théoriques pour l'examen (à venir...);
 6. PFI !
 
