@@ -13,8 +13,8 @@ urlcolor: blue
 
 **Checklist fin de session**
 
-1. Regardez le solutionnaire pour l'exercice sur les interface (à venir...);
-2. Exercices de préparation pour l'examen (à venir...);
+1. [Regardez le solutionnaire pour l'exercice sur les interface](ex/SolExInterface.zip);
+2. [Exercices de préparation pour l'examen](ex/formatifExamF.html)
 3. Collection **A** d'exercices sur délégués et lambdas (à venir...);
 4. Collection **B** d'exercices sur délégués et lamdas (à venir...);
 5. Questions théoriques pour l'examen (à venir...);
@@ -66,6 +66,7 @@ urlcolor: blue
 * [Équilibre de parenthèses](ex/3.html)
 	* [Solution](ex/SolutionParenthèses.zip)
 * [Interfaces](ex/4.html)
+	* [Solution](ex/SolExInterface.zi)
 
 ## Laboratoires
 1. [Tortue](lab/1.html)

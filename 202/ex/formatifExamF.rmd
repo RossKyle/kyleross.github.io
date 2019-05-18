@@ -1,0 +1,120 @@
+---
+title: "Préparation examen final"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+Cet exercice sert de préparation pour la section « à développement » de l'examen final.
+
+Répondez aux questions **sans notes et sans ordinateurs**, afin de reproduire l'expérience d'examen !
+
+## 1
+Voici la classe `Employé`
+
+```
+class Employé
+{
+  string nom;
+  float salaire;
+  
+  public string Nom 
+  {
+    get { return nom; }
+    private set { nom = value;
+  }
+  
+  public float Salaire
+  {
+    get { return salaire; }
+    private set { salaire = value; }
+  }
+  
+  public Employé(string nomInit, float salaireInit)
+  {
+    Nom = nomInit;
+    Salaire = salaireInit;
+  }
+  
+  public void DoublerSalaire()
+  {
+    Salaire *= 2;
+  }
+  
+  public Employé Clone()
+  {
+    return new Employé(this);
+  }
+}
+```
+
+**Écrivez le constructeur de copie pour la classe `Employé` qui fait une copie en profondeur.**
+
+## 2
+Voici la classe `Entreprise`
+
+```
+class Entreprise
+{
+  string nom;
+  List<Employé> employés;
+  
+  public string Nom
+  {
+    get { return nom; }
+    private set { nom = value; }
+  }
+  
+  List<Employé> Employés
+  {
+    get { return employés; }
+    set { employés = value; }
+  }
+  
+  public Entreprise(string nomInit)
+  {
+    Nom = nomInit;
+    List<Employé> = new List<Employé>(10);
+  }
+  
+  public void AjouterEmployé(Employé e)
+  {
+    Employés.Add(e);
+  }
+}
+```
+
+**Écrivez un constructeur de copie pour la classe `Entreprise` qui fait une copie en profondeur.**
+
+## 3
+Vous devez écrire les classes `FormeNonUnidimensionelle`, `Cube` et `Forme3D`.
+
+* Toutes les formes non unidimensionelle ont une largeur (`float`) et une hauteur (`float`);
+* Toutes les formes non unidimensionelle ont une aire (`float`);
+* Toutes les formes 3D ont une profondeur (`float`);
+* Toutes les formes 3D ont un volume (`float`) (propriété calculée);
+
+Toutes les classes possèdent un constructeur paramétrique :
+
+* `FormeNonUnidimensionelle` prend en paramètre la largeur et hauteur intiales;
+* `Forme3D `et `Cube` prennent la largeur, la hauteur et le profondeur initiaux.
+
+## 4
+Dans la fonction suivante, écrivez le code pour lire le contenu du fichier texte situé au chemin donné par le paramètre `cheminFichierÀLire`.
+
+Vous devez lire le fichier ligne par ligne, jusqu'à la fin du fichier, et créez des `Personne` en conséquence. La fonction doit retourner l'ensemble des personnes créées.
+
+Tenez pour acquis que chaque ligne a la forme suivante :
+`nom;âge`
+
+Par exemple `Bill;42`.
+
+Tenez pour acquis que la classe `Personne` est bien écrite et offre un constructeur qui prend en paramètre le nom et l'âge de la personne à instancier.
+
+
+# Solutions
+à venir...
