@@ -1,0 +1,77 @@
+---
+title: "Solution : préparation éléments théoriques 2"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles2.css
+link-citations: true
+urlcolor: blue
+---
+1. À quoi sert un `StreamWriter` ?
+
+*  Écrire des données dans un flux, comme un fichier, par exemple.
+
+2. À quoi sert la déclaration d'un `StreamWriter` ou d'un `StreamReader` au début d'un bloc `using` ?
+
+* De fermer le `StreamWriter/Reader` et de libérer la mémoire occupée par l'objet à la fin du bloc `using`.
+
+3. Que veut dire _FILO_ ?
+
+* First In Last Out (premier rentré, dernier sorti)
+
+4. Quelle structure de donnée est _FILO_ ?
+
+* La pile
+
+5. Quels sont les opérations principaux de la structure de données identifiée à la question 4 ?
+
+* Push, Pop, Peek. (Empiler, Dépiler et Regarder)
+
+6. Est-ce que ces opérations sont rapide ? Pourquoi ?
+
+* Super vite — il n'y a jamais d'élément à copier.
+
+7. C'est quoi la pile d'appels d'un programme ?
+
+* Une pile qui contient l'ordre d'exécution des fonctions en cours.
+
+8. À quoi sert le niveau de protection `protected` ?
+
+* À rendre accessible un membre dans le code d'une classe dérivée, mais pas aux autres codes clients.
+
+9. Si un étudiant est une personne, est-ce que le code suivant est valide ? `Personne p = new Étudiant(...);`. Pourquoi ?
+
+* Oui, car `p` est une référence vers une personne et un étudiant est une personne.
+
+10. À quoi sert le qualificateur `override` ?
+
+* De **redéfinir** un membre marqué de `virtual` ou d'`abstract`.
+
+11. Comment est-ce qu'une classe dérivée peut référer à un membre de son parent ?
+
+* Avec le mot clé `base`.
+
+12. Expliquez le but du polymorphisme.
+
+* Appelez la définition d'une méthode ou propriété qui correspond au _vrai_ type d'un objet.
+
+13. Pourquoi est-ce qu'une méthode ou une propriété serait `abstract` ?
+
+* Pour indiquer que tous les enfants de la classe doivent posséder la méthode ou la propriété, mais il est impossible d'implémenter (écrire le code) le membre dans le parent.
+
+14. Exprimez la pertinence des `interfaces`.
+
+* De garantir une implémentation pour une méthode ou une propriété dans une classe ou une struct. L'interface _déclare_ tout ce qui doit être implémenter dans une classe/struct qui suit le protocol.
+
+15. À quel moment est-ce qu'un objet type référence est considéré prêt à se faire libérer de la mémoire ?
+
+* Lorsqu'il n'y a plus de références sur l'objet.
+
+16. C'est quoi un _délégué_, en programmation ?
+
+* Une fonction appelée par une autre fonction.
+
+17. Quel est la distinction entre une copie superficielle et une copie en profondeur (pour un type référence) ?
+
+* Une copie superficielle est de dire qu'une référence égale une autre référence, dont deux référence qui pointe au même objet. Une copie en profondeur créer *un nouvel objet*.

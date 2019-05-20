@@ -1,0 +1,43 @@
+---
+title: "Solution : préparation éléments théoriques 2"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles2.css
+link-citations: true
+urlcolor: blue
+---
+1. À quoi sert un `StreamWriter` ?
+
+2. À quoi sert la déclaration d'un `StreamWriter` ou d'un `StreamReader` au début d'un bloc `using` ?
+
+3. Que veut dire _FILO_ ?
+
+4. Quelle structure de donnée est _FILO_ ?
+
+5. Quels sont les opérations principaux de la structure de données identifiée à la question 4 ?
+
+6. Est-ce que ces opérations sont rapide ? Pourquoi ?
+
+7. C'est quoi la pile d'appels d'un programme ?
+
+8. À quoi sert le niveau de protection `protected` ?
+
+9. Si un étudiant est une personne, est-ce que le code suivant est valide ? `Personne p = new Étudiant(...);`. Pourquoi ?
+
+10. À quoi sert le qualificateur `override` ?
+
+11. Comment est-ce qu'une classe dérivée peut référer à un membre de son parent ?
+
+12. Expliquez le but du polymorphisme.
+
+13. Pourquoi est-ce qu'une méthode ou une propriété serait `abstract` ?
+
+14. Exprimez la pertinence des `interfaces`.
+
+15. À quel moment est-ce qu'un objet type référence est considéré prêt à se faire libérer de la mémoire ?
+
+16. C'est quoi un _délégué_, en programmation ?
+
+17. Quel est la distinction entre une copie superficielle et une copie en profondeur (pour un type référence) ?

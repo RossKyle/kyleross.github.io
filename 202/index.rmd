@@ -17,7 +17,7 @@ urlcolor: blue
 2. [Exercices de préparation pour l'examen](ex/formatifExamF.html);
 3. [Collection **1** d'exercices sur délégués et lambdas avec solutionnaire](ex/ExLambda1.zip)
 4. Collection **2** d'exercices sur délégués et lamdas (à venir...);
-5. Questions théoriques pour l'examen (à venir...);
+5. [Questions théoriques pour l'examen](rev/prepex2.html)[Solutions](rev/prepex2S.html)
 6. PFI !
 
 ----
