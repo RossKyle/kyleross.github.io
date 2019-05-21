@@ -479,7 +479,45 @@ A, C</code></pre>
 </div>
 <div id="phase-3-la-classe-graphe" class="section level2">
 <h2>Phase 3 : La classe <code>Graphe</code></h2>
-<p>Créez une classe <code>Graphe</code>. Un graphe est clonable et peut être affiché dans une fenêtre SFML. Un graphe est essentiellement une liste de noeuds qui peut faire des traitements basés sur cette données.</p>
+<pre><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using SFML.Graphics;
+using SFML.System;
+
+namespace pfi2019
+{
+    public class Graphe : //Complétez cette ligne
+    {
+        //COMPLÉTEZ LA CLASSE
+    
+        public void Draw(RenderTarget target, RenderStates states)
+        {
+            DéssinerChemins(target, Noeuds);
+            foreach (var n in noeuds)
+                n.Draw(target, RenderStates.Default);
+        }
+        
+        void DéssinerChemins(RenderTarget target, List&lt;Noeud&gt; noeuds)
+        {
+            foreach (Noeud n in noeuds)
+            {
+                foreach (Noeud a in n.CopierAdjacents())
+                {
+                    if (Noeuds.Contains(a))
+                    {
+                        Vertex[] chemin = new Vertex[2];
+                        chemin[0] = new Vertex(new Vector2f(n.Position.X + 50, n.Position.Y + 50), Color.Black);
+                        chemin[1] = new Vertex(new Vector2f(a.Position.X + 50, a.Position.Y + 50), Color.Black);
+
+                        target.Draw(chemin, 0, 2, PrimitiveType.Lines);
+                    }
+                }
+            }
+        }
+    }
+}</code></pre>
+<p>Créez une classe <code>Graphe</code> avec le code ci-haut. Vous devez compléter cette classe. Un graphe est clonable et peut être affiché dans une fenêtre SFML. Un graphe est essentiellement une liste de noeuds qui peut faire des traitements basés sur cette données.</p>
 <div id="attributsproprietes-1" class="section level3">
 <h3>Attributs/Propriétés</h3>
 <ul>
