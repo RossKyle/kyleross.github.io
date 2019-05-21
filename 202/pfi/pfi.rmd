@@ -91,3 +91,55 @@ Un graphe est essentiellement une liste de noeuds qui peut faire des traitements
 * `int nbAdjacents` : le nombre actuel de noeuds adjacent au noeud;
 
 Aucune propriété doit être modifiable par un client. Il ne doit pas être possible de retourner, à un client, un type référence à un objet non-immuable via les propriétés.
+
+### Constructeurs
+* Un constructeur par défaut;
+* Un constructeur de copie qui fait une copie **en profondeur** d'un graphe. Le nouveau graphe doit avoir exactement le même état que l'original.
+
+### Méthodes
+
+* `public void AjouterNoeud(Noeud noeudÀAjouter)` : cette méthode doit ajouter un noeud au graphe, si le noeud n'est pas déjà contenu dans le graphe;
+* Implémentez le _design pattern_ de clonage;
+
+**BONUS**
+
+* `public bool ACheminEntre(Noeud a, Noeud b)` : le but de cette méthode est de retourner s'il existe un **chemin** entre les deux noeuds donnés en paramètre. Cette méthode sert principalement à appeler la méthode suivante :
+* `bool ACheminEntre(Noeud a, Noeud b, List<Noeud> visités)` : Cette méthode privée fait presque tout le travail pour `ACheminEntre(Noeud a, Noeud b)` en utilisant une liste de noeud qui commence vide. Cette liste est pour garder en mémoire tous les noeuds visités dans l'optique de trouver s'il existe un chemin entre deux noeuds. Pour vous aider, rendez la propriété pour le tableau d'adjacents d'un noeud `public`. Pour réaliser ce problème, vous pouvez utiliser un algorithme _récursif_, ce qui implique que cette méthode appel _elle-même_ pour résoudre le problème. Un cas : pour **trouver s'il y a un chemin** entre $A$ et $F$ (où ces deux noeuds ne sont pas adjacentes), il faut **trouver s'il y a un chemin** entre $B$ et $F$, alors il faut **trouver s'il y a un chemin** entre $C$ et $F$, ... 
+
+### Tests
+Décommentez tous le code dans `Program.cs`, mais commentez la ligne `CréerScène(TestsGraphe.Test4())`. Commentez aussi la ligne `CréerScène(TestsGraphe.Test5())` si vous n'avez pas fait le bonus.
+
+#### Test1 et Test2
+
+![](2.png)
+
+#### Test3
+
+Console :
+`Nombre de chemin unique : 5`
+
+#### Test5
+
+![](4.png)
+
+Console :
+```
+True
+False
+```
+
+
+## Phase 4 : Créer des noeuds à partir d'un fichier
+Dans la classe `Program.cs`, écrivez la fonction `public static List<Noeud> CréerNoeudsDeFichier(string cheminDuFichier)`.
+
+Cette fonction doit lire un fichier texte où chaque ligne représente un noeud. Les lignes sont formatées de la façon suivante : `étiquette;posX:posY;capacité;adjacent1,adjacent2,adjactent3...`
+
+Notez qu'il est aussi possible qu'un noeud n'aille pas d'adjacents : `étiquette;posX:posY;capacité`.
+
+Vous devez retourner une liste de noeud, où chaque noeud est créé à partir d'une ligne du fichier. Le `Test4` de `TestsGraphe` utilise cette fonction avec le fichier `noeuds` (dont vous avez déjà).
+
+
+### Tests
+Décommentez la ligne `CréerScène(TestsGraphe.Test4())` dans `Program.cs`.
+
+![](3.png)
