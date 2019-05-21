@@ -86,9 +86,6 @@ Un graphe est essentiellement une liste de noeuds qui peut faire des traitements
 
 * `List<Noeud> noeuds` : une liste de tous les noeuds dans le graphe;
 * `int NbChemins` : une propriété calculée qui retourne le nombre de chemins **uniques** dans le graphe. **Toute la logique doit être faite en une ligne et avec une _lambda_ en utilisant LINQ**.
-* `public void AjouterNoeud(
-* `int capacité` : le nombre de maximum d'adjacents que le noeud peut supporter;
-* `int nbAdjacents` : le nombre actuel de noeuds adjacent au noeud;
 
 Aucune propriété doit être modifiable par un client. Il ne doit pas être possible de retourner, à un client, un type référence à un objet non-immuable via les propriétés.
 
