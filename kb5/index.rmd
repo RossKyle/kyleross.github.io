@@ -9,7 +9,7 @@ link-citations: true
 urlcolor: blue
 ---
 
-Examen : 23 mai;  
+Examen : 23 mai; [COMMENCEZ](examen2/examenF.html)
 Remise pour la PFI : 26 mai sur Colnet avant minuit
 
 ----

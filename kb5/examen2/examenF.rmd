@@ -1,0 +1,57 @@
+---
+title: "Examen final"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+urlcolor: blue
+---
+
+## Consignes
+
+* Téléchargez le projet de départ [ici](exF.zip);
+* Aucun HTML ou CSS doit être écrit ou modifié;
+* Répondez à chaque question dans `main.js`. Divisez votre code en fonction et nommez bien vos variables;
+* Plagiat → 0%.
+
+## 1 : POO JS
+
+### A
+Répondez à la question suivante sans utiliser `class`.
+
+Écrivez un constructeur qui prend en paramètre le nom, salaire en nombre d'années d'expérience initial en paramètre.
+
+Un employé a :
+
+* un nom;
+* un salaire;
+* un nombre d'années d'expérience;
+* une méthode `genererChaine()` qui retourne une chaine avec le format suivant : `nom - année expérience - salaire`. Ex : `Bob - 20 - 40000`.
+* une méthode `getNom()` qui retourne le nom de l'employé;
+* une méthode `getSalaire()` qui retourne le salaire de l'employé;
+* une méthode `getExperience()` qui retourne le nombre d'années d'expérience;
+* une méthode `setNom(...)` qui prend en paramètre un nouveau nom. Le nouveau nom ne doit pas être validé.
+* une méthode `setSalaire(...)` qui prend en paramètre une nouvelle valeur de salaire. Cette valeur doit être validée pour être plus grande ou égale à que 0. Si la nouvelle valeur est invalide, donnez la valeur de 0 pour le salaire.
+* une méthode `setExperience(...)` qui prend en paramètre une nouvelle valeur pour l'expérience. Cette valeur doit être validée pour être plus grande ou égale à que 0. Si la nouvelle valeur est invalide, donnez la valeur de 0.
+
+### B
+Écrivez une fonction `logEmploye(...)` qui prend en paramètre un employé et affiche, dans la console, tous les noms de ses propriétés avec leur valeur associée.
+
+Créez un employé en utilisant le constructeur écrit dans $A$ et tester votre fonction `logEmploye(...)` avec.
+
+## 2 : jQuery
+
+### A
+Utilisez _jQuery_ pour sélectionner tous les `div` de la page. Ajoutez la classe `evidence` sur tous ces `div`.
+
+### B
+Utilisez _jQuery_ pour sélectionner tous les `input` avec le `name` _option_. Pour chaque option, affichez dans la console la valeur de l'`input`.
+
+### C
+Utilisez jQuery pour sélectionner le bouton avec l'_id_ `btn1`. Faites en sorte qu'une alerte avec le message "bonjour" s'affiche lorsque le bouton est cliqué.
+
+## 3 : Requête HTTP
+
+Faite une requête GET au service web `https://api.openweathermap.org/data/2.5/weather?q=Montreal&appid=49e0ebb398a59b46fbc7e3057f7d9321`. La réponse de cette requête retourne un objet. Cet objet a une propriété `main` qui a comme valeur un autre objet. Affichez la valeur de la propriété `pressure`, de cet autre objet, dans le `span` avec l'_id_ `conteneurDonnee`.
+
