@@ -55,3 +55,5 @@ Utilisez jQuery pour sélectionner le bouton avec l'_id_ `btn1`. Faites en sorte
 
 Faite une requête GET au service web `https://api.openweathermap.org/data/2.5/weather?q=Montreal&appid=49e0ebb398a59b46fbc7e3057f7d9321`. La réponse de cette requête retourne un objet. Cet objet a une propriété `main` qui a comme valeur un autre objet. Affichez la valeur de la propriété `pressure`, de cet autre objet, dans le `span` avec l'_id_ `conteneurDonnee`.
 
+## Remise
+Soumettez votre `main.js` dans la boite de remise sur ColNet.
