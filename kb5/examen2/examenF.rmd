@@ -20,7 +20,7 @@ urlcolor: blue
 ### A
 Répondez à la question suivante sans utiliser `class`.
 
-Écrivez un constructeur qui prend en paramètre le nom, salaire en nombre d'années d'expérience initial en paramètre.
+Écrivez un constructeur qui prend en paramètre le nom, le salaire et le nombre d'années d'expérience initial en paramètre.
 
 Un employé a :
 
