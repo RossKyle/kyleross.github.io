@@ -545,6 +545,10 @@ namespace pfi2019
 <li><code>bool ACheminEntre(Noeud a, Noeud b, List&lt;Noeud&gt; visités)</code> : Cette méthode privée fait presque tout le travail pour <code>ACheminEntre(Noeud a, Noeud b)</code> en utilisant une liste de noeud qui commence vide. Cette liste est pour garder en mémoire tous les noeuds visités dans l’optique de trouver s’il existe un chemin entre deux noeuds. Pour vous aider, rendez la propriété pour le tableau d’adjacents d’un noeud <code>public</code>. Pour réaliser ce problème, vous pouvez utiliser un algorithme <em>récursif</em>, ce qui implique que cette méthode appel <em>elle-même</em> pour résoudre le problème. Un cas : pour <strong>trouver s’il y a un chemin</strong> entre <span class="math inline"><em>A</em></span> et <span class="math inline"><em>F</em></span> (où ces deux noeuds ne sont pas adjacentes), il faut <strong>trouver s’il y a un chemin</strong> entre <span class="math inline"><em>B</em></span> et <span class="math inline"><em>F</em></span>, alors il faut <strong>trouver s’il y a un chemin</strong> entre <span class="math inline"><em>C</em></span> et <span class="math inline"><em>F</em></span>, …</li>
 </ul>
 </div>
+<div id="ajouter-les-fichiers-csfml-selon-votre-plateforme" class="section level3">
+<h3>Ajouter les fichiers CSFML selon votre plateforme</h3>
+<p>Naviguez dans au dossier <code>pfi2019_départ</code> (le dossier qui contient tout votre travail) et ensuite aller dans <code>packages/CSFML.2.5.0/runtimes</code>. Finalement, si vous êtes sur Windows, naviguer au dossier <code>win-x86</code> et puis <code>native</code>. Copiez tous les fichiers et collez les dans <code>pfi2019/bin/Debug</code>.</p>
+</div>
 <div id="tests-1" class="section level3">
 <h3>Tests</h3>
 <p>Décommentez tous le code dans <code>Program.cs</code>, mais commentez la ligne <code>CréerScène(TestsGraphe.Test4())</code>. Commentez aussi la ligne <code>CréerScène(TestsGraphe.Test5())</code> si vous n’avez pas fait le bonus.</p>

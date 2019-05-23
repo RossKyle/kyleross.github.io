@@ -144,6 +144,9 @@ Aucune propriété doit être modifiable par un client. Il ne doit pas être pos
 * `public bool ACheminEntre(Noeud a, Noeud b)` : le but de cette méthode est de retourner s'il existe un **chemin** entre les deux noeuds donnés en paramètre. Cette méthode sert principalement à appeler la méthode suivante :
 * `bool ACheminEntre(Noeud a, Noeud b, List<Noeud> visités)` : Cette méthode privée fait presque tout le travail pour `ACheminEntre(Noeud a, Noeud b)` en utilisant une liste de noeud qui commence vide. Cette liste est pour garder en mémoire tous les noeuds visités dans l'optique de trouver s'il existe un chemin entre deux noeuds. Pour vous aider, rendez la propriété pour le tableau d'adjacents d'un noeud `public`. Pour réaliser ce problème, vous pouvez utiliser un algorithme _récursif_, ce qui implique que cette méthode appel _elle-même_ pour résoudre le problème. Un cas : pour **trouver s'il y a un chemin** entre $A$ et $F$ (où ces deux noeuds ne sont pas adjacentes), il faut **trouver s'il y a un chemin** entre $B$ et $F$, alors il faut **trouver s'il y a un chemin** entre $C$ et $F$, ... 
 
+### Ajouter les fichiers CSFML selon votre plateforme
+Naviguez dans au dossier `pfi2019_départ` (le dossier qui contient tout votre travail) et ensuite aller dans `packages/CSFML.2.5.0/runtimes`. Finalement, si vous êtes sur Windows, naviguer au dossier `win-x86` et puis `native`. Copiez tous les fichiers et collez les dans `pfi2019/bin/Debug`.
+
 ### Tests
 Décommentez tous le code dans `Program.cs`, mais commentez la ligne `CréerScène(TestsGraphe.Test4())`. Commentez aussi la ligne `CréerScène(TestsGraphe.Test5())` si vous n'avez pas fait le bonus.
 
