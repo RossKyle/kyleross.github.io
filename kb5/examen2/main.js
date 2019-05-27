@@ -1,93 +1,73 @@
-window.onload = function() {
-
-  let testNom = "Joe";
-  let testSalaire = 40000;
-  let testExp = 5;
-
-  let ep1 = new Employe(testNom, testSalaire, testExp);
-
-  let selectTousLesDiv = $("div");
-  for(let div of selectTousLesDiv){
-    div.classList.add("evidence");
-  }
-
-  let selectInputOption = $("input");
-  for(let input of selectInputOption){
-    if(input.name === "option" ){
-      console.log(input.value);
-    }
-  }
-
-
-  $("#btn1").on("click", function () {
-    alert("bonjour")
+window.onload = function () {
+  let Employe = new Employer("Bob","20","40000");
+  logEmploye(Employe);
+  $("div").addClass("evidence");
+  $(":radio[name = 'option']").each(function () {
+    console.log($(this).val());
   });
 
-  let url = "https://api.openweathermap.org/data/2.5/weather?q=Montreal&appid=49e0ebb398a59b46fbc7e3057f7d9321";
-
-  let obj = $.get(url, function (data) {
-    let result = data.main.prototype;
-    console.log(result);
-    let span = $("span");
-    span.text = main.prototype;
+  $(":button[id='btn1']").on({
+    click : function(){
+      alert('Bonjour!');
+    }
   })
+  $.get("https://api.openweathermap.org/data/2.5/weather?q=Montreal&appid=49e0ebb398a59b46fbc7e3057f7d9321", function (objet) {
+    $("#conteneurDonnee").text(objet.main.pressure);
+  });
 };
+function Employer(nomIni,nbrAnneIni,salaireIni){
 
-function Employe(nom, salaire, nbAnneeExp) {
-  this.nom = nom;
-  this.salaire = salaire;
-  this.AnneExp = nbAnneeExp;
+
+  this.nom = Employer.setNom(nomIni);
+  this.nom = Employer.getNom();
+
+  this.nbrAnne = Employer.setExperience(nbrAnneIni);
+  this.nbrAnne = Employer.getExperience();
+  this.salaire =  Employer.setSalaire(salaireIni);
+  this.salaire =  Employer.getSalaire();
 }
-
-Employe.prototype.getNom = function () {
-  return this.nom;
-};
-Employe.prototype.setNom = function (nom) {
-  this.nom = nom;
-};
-
-Employe.prototype.getSalaire = function () {
-  return this.salaire;
-};
-Employe.prototype.setSalaire = function (salaire) {
-  if (salaire >= 0){
-    this.salaire = salaire;
-  }
-  else {
-    this.salaire = 0;
-  }
-};
-
-Employe.prototype.getAnneExp = function() {
-  return this.AnneExp;
-};
-Employe.prototype.setAnneExp = function(nbAnne) {
-  if(nbAnne >= 0){
-    this.AnneExp = nbAnne;
-  }
-  else {
-    this.AnneExp = 0;
-  }
-};
-
-Employe.prototype.genererChaine = function(){
-  return this.nom + " - " + this.salaire + " - " + this.AnneExp;
-};
 
 function logEmploye(employe){
 
-  console.log(employe.genererChaine());
+  console.log(employe.genererChaine())
 
-  for (let compteur = 0; compteur < 3; compteur ++){
-    if(compteur === 0){
-      console.log("Nom : " + employe.prototype.getNom());
-    }
-    else if(compteur === 1){
-      console.log("Salaire : " + employe.prototype.getSalaire());
-    }
-    else if(compteur === 2){
-      console.log("Nb Anné Experience : " + employe.prototype.getAnneExp());
-    }
-  }
 }
+
+Employer.prototype.genererChaine = function(){
+  return `${this.nom} - ${this.nbrAnne} - ${this.salaire}`;
+};
+
+Employer.getNom = function() {
+  return this.nom ;
+
+};
+
+Employer.setNom= function(nouveauNom){
+  this.nom = nouveauNom;
+};
+
+Employer.getSalaire = function() {
+  return this.salaire ;
+
+};
+
+Employer.setSalaire = function(nouveauSal){
+  if (nouveauSal < 0) {
+    nouveauSal ="0";
+  }
+  this.salaire = nouveauSal;
+};
+
+Employer.getExperience = function() {
+  return this.nbrAnne ;
+
+};
+
+Employer.setExperience = function(nouveauAnnee){
+  if (nouveauAnnee < 0) {
+    nouveauAnnee ="0";
+  }
+  this.nbrAnne = nouveauAnnee;
+};
+
 
