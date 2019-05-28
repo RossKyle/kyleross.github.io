@@ -452,6 +452,13 @@ $(document).ready(function () {
 }</code></pre>
 <p><strong>Écrivez le constructeur de copie pour la classe <code>Employé</code> qui fait une copie en profondeur.</strong></p>
 </div>
+<div id="solution" class="section level2">
+<h2>Solution</h2>
+<pre><code>protected Employé(Employé employéÀCopier)
+  :this(employéÀCopier.Nom, employéÀCopier.Salaire)
+{
+}</code></pre>
+</div>
 <div id="section-1" class="section level2">
 <h2>2</h2>
 <p>Voici la classe <code>Entreprise</code></p>
@@ -485,20 +492,103 @@ $(document).ready(function () {
 }</code></pre>
 <p><strong>Écrivez un constructeur de copie pour la classe <code>Entreprise</code> qui fait une copie en profondeur.</strong></p>
 </div>
+<div id="solution-1" class="section level2">
+<h2>Solution</h2>
+<pre><code>public Entreprise(Entreprise entrepriseÀCopier)
+  :this(entrepriseÀCopier.Nom)
+{
+  foreach (Employé e in entrepriseÀCopier.Employés)
+    AjouterEmployé(e.Clone());
+}</code></pre>
+</div>
 <div id="section-2" class="section level2">
 <h2>3</h2>
-<p>Vous devez écrire les classes <code>FormeNonUnidimensionelle</code>, <code>Cube</code> et <code>Forme3D</code>.</p>
+<p>Vous devez écrire les classes <code>FormeNonUnidimensionelle</code>, <code>PrismeÀBaseRectangulaire</code> et <code>Forme3D</code>.</p>
 <ul>
 <li>Toutes les formes non unidimensionelle ont une largeur (<code>float</code>) et une hauteur (<code>float</code>);</li>
-<li>Toutes les formes non unidimensionelle ont une aire (<code>float</code>);</li>
+<li>Toutes les formes non unidimensionelle ont une aire (<code>float</code>) (propriété calculée);</li>
 <li>Toutes les formes 3D ont une profondeur (<code>float</code>);</li>
 <li>Toutes les formes 3D ont un volume (<code>float</code>) (propriété calculée);</li>
 </ul>
 <p>Toutes les classes possèdent un constructeur paramétrique :</p>
 <ul>
 <li><code>FormeNonUnidimensionelle</code> prend en paramètre la largeur et hauteur intiales;</li>
-<li><code>Forme3D</code>et <code>Cube</code> prennent la largeur, la hauteur et le profondeur initiaux.</li>
+<li><code>Forme3D</code>et <code>PrismeÀBaseCarré</code> prennent la largeur, la hauteur et le profondeur initiaux.</li>
 </ul>
+</div>
+<div id="solution-2" class="section level2">
+<h2>Solution</h2>
+<pre><code>namespace SolutionEx3Rev
+{
+    public abstract class FormeNonUnidimensionelle
+    {
+        private float largeur;
+        private float hauteur;
+
+        public float Largeur
+        {
+            get { return largeur; }
+            protected set { largeur = value; }
+        }
+
+        public float Hauteur
+        {
+            get { return hauteur; }
+            protected set { hauteur = value; }
+        }
+
+        public abstract float Aire { get; }
+
+        public FormeNonUnidimensionelle(float largeur, float hauteur)
+        {
+            Largeur = largeur;
+            Hauteur = hauteur;
+        }
+    }
+}
+
+namespace SolutionEx3Rev
+{
+    public abstract class Forme3D : FormeNonUnidimensionelle
+    {
+        private float profondeur;
+
+        public float Profondeur
+        {
+            get { return profondeur; }
+            protected set { profondeur = value; }
+        }
+
+        public abstract float Volume { get; }
+
+        public Forme3D(float largeur, float hauteur, float profondeur)
+            : base(largeur, hauteur)
+        {
+            Profondeur = profondeur;
+        }
+    }
+}
+
+namespace SolutionEx3Rev
+{
+    public class PrismeABaseRectangulaire : Forme3D
+    {
+        public override float Aire
+        {
+            get { return 2 * (Largeur * Hauteur) + 2 * (Hauteur * Profondeur) + 2 * (Largeur * Profondeur); }
+        }
+
+        public override float Volume
+        {
+            get { return Largeur * Hauteur * Profondeur; }
+        }
+        
+        public PrismeABaseRectangulaire(float largeur, float hauteur, float profondeur)
+            : base(largeur, hauteur, profondeur)
+        {
+        }
+    }
+}</code></pre>
 </div>
 <div id="section-3" class="section level2">
 <h2>4</h2>
@@ -513,9 +603,23 @@ $(document).ready(function () {
 
 }</code></pre>
 </div>
-<div id="solutions" class="section level1">
-<h1>Solutions</h1>
-<p>à venir…</p>
+<div id="solution-3" class="section level2">
+<h2>Solution</h2>
+<pre><code>IEnumerable&lt;Personne&gt; générerPersonnes(string cheminFichierÀLire)
+{
+  List&lt;Personne&gt; personnes = new List&lt;Personne&gt;(1);
+  using (StreamReader sr = new StreamReader(cheminFichierÀLire))
+  {
+    string ligne;
+    while((ligne = sr.ReadLine()) != null)
+    {
+      string[] info = ligne.Split(new char[]{&#39;;&#39;});
+      personnes.Add(new Personne(info[0], info[1]);
+    }
+  }
+  
+  return personnes;
+}</code></pre>
 </div>
 
 

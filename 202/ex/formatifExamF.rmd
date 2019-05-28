@@ -54,6 +54,14 @@ class Employé
 
 **Écrivez le constructeur de copie pour la classe `Employé` qui fait une copie en profondeur.**
 
+## Solution
+```
+protected Employé(Employé employéÀCopier)
+  :this(employéÀCopier.Nom, employéÀCopier.Salaire)
+{
+}
+```
+
 ## 2
 Voici la classe `Entreprise`
 
@@ -90,18 +98,103 @@ class Entreprise
 
 **Écrivez un constructeur de copie pour la classe `Entreprise` qui fait une copie en profondeur.**
 
+## Solution
+```
+public Entreprise(Entreprise entrepriseÀCopier)
+  :this(entrepriseÀCopier.Nom)
+{
+  foreach (Employé e in entrepriseÀCopier.Employés)
+    AjouterEmployé(e.Clone());
+}
+```
+
 ## 3
-Vous devez écrire les classes `FormeNonUnidimensionelle`, `Cube` et `Forme3D`.
+Vous devez écrire les classes `FormeNonUnidimensionelle`, `PrismeÀBaseRectangulaire` et `Forme3D`.
 
 * Toutes les formes non unidimensionelle ont une largeur (`float`) et une hauteur (`float`);
-* Toutes les formes non unidimensionelle ont une aire (`float`);
+* Toutes les formes non unidimensionelle ont une aire (`float`) (propriété calculée);
 * Toutes les formes 3D ont une profondeur (`float`);
 * Toutes les formes 3D ont un volume (`float`) (propriété calculée);
 
 Toutes les classes possèdent un constructeur paramétrique :
 
 * `FormeNonUnidimensionelle` prend en paramètre la largeur et hauteur intiales;
-* `Forme3D `et `Cube` prennent la largeur, la hauteur et le profondeur initiaux.
+* `Forme3D `et `PrismeÀBaseCarré` prennent la largeur, la hauteur et le profondeur initiaux.
+
+## Solution
+```
+namespace SolutionEx3Rev
+{
+    public abstract class FormeNonUnidimensionelle
+    {
+        private float largeur;
+        private float hauteur;
+
+        public float Largeur
+        {
+            get { return largeur; }
+            protected set { largeur = value; }
+        }
+
+        public float Hauteur
+        {
+            get { return hauteur; }
+            protected set { hauteur = value; }
+        }
+
+        public abstract float Aire { get; }
+
+        public FormeNonUnidimensionelle(float largeur, float hauteur)
+        {
+            Largeur = largeur;
+            Hauteur = hauteur;
+        }
+    }
+}
+
+namespace SolutionEx3Rev
+{
+    public abstract class Forme3D : FormeNonUnidimensionelle
+    {
+        private float profondeur;
+
+        public float Profondeur
+        {
+            get { return profondeur; }
+            protected set { profondeur = value; }
+        }
+
+        public abstract float Volume { get; }
+
+        public Forme3D(float largeur, float hauteur, float profondeur)
+            : base(largeur, hauteur)
+        {
+            Profondeur = profondeur;
+        }
+    }
+}
+
+namespace SolutionEx3Rev
+{
+    public class PrismeABaseRectangulaire : Forme3D
+    {
+        public override float Aire
+        {
+            get { return 2 * (Largeur * Hauteur) + 2 * (Hauteur * Profondeur) + 2 * (Largeur * Profondeur); }
+        }
+
+        public override float Volume
+        {
+            get { return Largeur * Hauteur * Profondeur; }
+        }
+        
+        public PrismeABaseRectangulaire(float largeur, float hauteur, float profondeur)
+            : base(largeur, hauteur, profondeur)
+        {
+        }
+    }
+}
+```
 
 ## 4
 Dans la fonction suivante, écrivez le code pour lire le contenu du fichier texte situé au chemin donné par le paramètre `cheminFichierÀLire`.
@@ -123,5 +216,21 @@ IEnumerable<Personne> générerPersonnes(string cheminFichierÀLire)
 }
 ```
 
-# Solutions
-à venir...
+## Solution
+```
+IEnumerable<Personne> générerPersonnes(string cheminFichierÀLire)
+{
+  List<Personne> personnes = new List<Personne>(1);
+  using (StreamReader sr = new StreamReader(cheminFichierÀLire))
+  {
+    string ligne;
+    while((ligne = sr.ReadLine()) != null)
+    {
+      string[] info = ligne.Split(new char[]{';'});
+      personnes.Add(new Personne(info[0], info[1]);
+    }
+  }
+  
+  return personnes;
+}
+```
