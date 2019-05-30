@@ -25,7 +25,7 @@ urlcolor: blue
 ## Planification 
 Mardi 21 mai : Exercices divers, cours de révision;  
 **Jeudi 30 mai : Examen final;**  
-Samedi 2 juin : Remise de la PFI avant minuit;  
+Dimanche 2 juin : Remise de la PFI avant minuit;  
 Mardi 6 juin : Accès à vos notes finales sur ColNet.  
  
 ----
