@@ -1,0 +1,62 @@
+---
+title: "Manipuler des `GameObject` dans l'éditeur"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+## Ajouter des `GameObject` vides dans une scène avec l'éditeur
+
+Il existe plusieurs façons de créer des `GameObject`. Une des plus simples est de faire un clic droit dans la hiérarchie d'objets pour ouvrir un menu contextuel et ensuite cliquer sur _Create Empty_. Un nouveau `GameObject` « vide » est instancié dans la scène avec une composante `Transform`.
+
+## La composante `Transform`
+
+Il n'y a pas de `GameObject` complètement vide (c.-à-d. avec aucun `Component`), car tous les objets de jeu ont au moins un `Transform`[^1]. C'est sensé, car si un objet est dans une scène, il est dans un espace, et un `Transform` décrit comment il se situe dans cet espace. Peu importe la manière de créer un `GameObject`, il contiendra toujours une instance du `Component` `Transform`. Conséquemment, `Transform` est la composante la plus importante. 
+
+Tout le code pour la classe `Transform` est déjà écrit (bibliothèque _UnityEngine_). Cette classe expose plusieurs propriétés aux codes clients en lecture et écriture (`public get/set`). Une composante peut rendre certaines valeurs d'attributs visible et même modifiable dans l'éditeur. Ceci dit, les trois principaux d'un `Transform` sont accessibles dans l'inspecteur :
+
+* Position;
+* Rotation;
+* Scale (échelle);
+
+Changer ces valeurs transforme le `GameObject` par rapport à son origine. Par exemple, une position de $(1,0,0)$ implique que le `GameObject` subit une translation de 1 unité de distance sur l'axe de $x$, par rapport à son origine. Lorsqu'un objet de jeu n'a pas un parent (un concept à explorer plus tard), son point d'origine est le point $(0,0,0)$ absolu de la scène. Par exemple, `Main Camera` et `Directional Light` n'ont pas de parents, donc ils ont la même valeur de point d'origine, soit $(0,0,0)$.
+
+
+## Modifier la `Transform` d'un `GameObject` dans l'éditeur
+
+Bien que l'inspecteur permet la modification des trois valeurs principales d'une `Transform`, il est souvent plus convivial de faire les transformations directement dans la scène à l'aide de la souris.
+
+Dans le coin supérieur gauche de l'éditeur se trouve des boutons pour modifier les transformations appliquées sur un objet : ![](transbuttons.png)
+
+### Move Tool (position)
+
+Raccourci : W
+
+Cet outil permet de déplacer un `GameObject` sur ses axes (x, y, z). Chaque axe a une couleur, afin de les identifier : rouge → x, vert → y, bleu → z. Avec la souris, « tirer » ou « pousser » sur un axe pour déplacer l'objet. Il est aussi possible de « glisser et déposer » l'objet en débutant le clic à l'intersection des trois axes (qui n'est toujours au centre le l'objet).
+
+### Rotate Tool (rotation)
+
+Raccourci : E
+
+Les trois axes sont représentés par des cercles où il est encore possible de « tirer » et « pousser ». 
+
+### Scale Tool (échelle)
+
+Raccourci : R
+
+Comme avec les deux autres outils, les trois axes peuvent être « tirées » ou « poussées ». Il est aussi possible de faire des homothéties (affecter l'échelle des trois axes simultanément) en utilisant l'intersection des trois axes.
+
+## Ajouter des composantes avec l'inspecteur
+
+Dans l'inspecteur, il y a un bouton étiquetté _Add Component_. Lorsqu'un `GameObject` dans la scène est sélectionné, _Add Component_ permet d'instancier une composante d'une certaine classe et de l'ajouter au conteneur.
+Le `GameObject` a, plus précisément, un _ensemble_ de composantes, c.-à-d. qu'un `GameObject` ne peut avoir de doublons de composantes. Un objet de jeu avec deux `Transform` n'est pas sensé, par exemple.
+
+Pour aider à trouver une composante à ajouter, il existe des catégories de composantes déjà écrites et la barre de recherche. Le dernier élément de la liste déroulante est _New Script_ ; une façon de créer une nouvelle `class` dans le but d'écrire une nouvelle composante.
+
+
+
+[^1]:En fait, un `GameObject` peut avoir un `RectTransform`, au lieu d'un `Transform`, mais son but est le même.
