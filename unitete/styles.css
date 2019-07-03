@@ -25,3 +25,8 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
+pre {
+  font-size: 1em;
+  padding: 0px;
+}

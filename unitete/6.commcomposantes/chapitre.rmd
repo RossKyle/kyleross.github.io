@@ -1,0 +1,105 @@
+---
+title: "Communication entre composantes"
+output:
+  html_document:
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+## `GetComponent<T>()`
+Supposons le script suivant : 
+
+```
+using UnityEngine;
+
+public class MoveComponent : MonoBehaviour
+{
+    void Awake()
+    {
+        //Placer le GameObject à (1,1,1) de son parent
+	
+    }
+}
+```
+
+Dans `void Awake()`, il faut placer l'objet de jeu à $(1,1,1)$ de son parent. Dans le cas qu'il n'y a pas un parent, son point d'origine devient le $(0,0,0)$ absolu.
+
+La composante `Transform` d'un objet de jeu contient les données qui seront utilisées par le moteur pour placer l'objet dans la scène. À l'intérieur de `MoveComponent`, il faut un moyen de chercher une référence à l'instance de `Transform` que le `GameObject` possède, afin de changer l'état de la `Transform`. Par chance, un `MonoBehaviour` hérite de la méthode `GetComponent<T>()`. Cette méthode retourne une référence vers la composante `T` du `GameObject`.
+
+Si le `GameObject` n'a pas la composante `T`, la méthode retourne `null`. Pour retourner tous les composantes du même type, il existe la méthode `GetComponents<T>()`.
+
+
+```
+using UnityEngine;
+
+public class MoveComponent : MonoBehaviour
+{
+    void Awake()
+    {
+        //Placer le GameObject à (1,1,1) de son parent
+        GetComponent<Transform>().localPosition = new Vector3(1,1,1);
+    }
+}
+```
+
+## La propriété `transform`
+Un `MonoBehaviour` hérite la propriété `transform` qui retourne directement une référence au `Transform` du `GameObject`. Car tous les objets de jeu ont une `Transform` et que le besoin de faire référence a cette composante est fréquent, la propriété `transform` existe. Malgré qu'il est attendu que le nom de la propriété commence avec 'T', selon les conventions de nommages C# populaires, la convention de nommage pour les propriétés _JavaScript_ a été préservée pour la rétrocompatibilité. 
+
+```
+using UnityEngine;
+
+public class MoveComponent : MonoBehaviour
+{
+    void Awake()
+    {
+        //Placer le GameObject à (1,1,1) de son parent
+        transform.localPosition = new Vector3(1,1,1);
+    }
+}
+```
+
+## `RequireComponent(...)`
+
+Supposons une composante `LightControllerComponent` qui doit chercher une référence à une `Light` afin de changer sa couleur. La composante a alors une dépendance pour son fonctionnement attendu.
+
+```
+using UnityEngine;
+
+public class LightControllerComponent : MonoBehaviour
+{
+    void Awake()
+    {
+    	Change la couleur de la lumière du GameObject pour rouge
+ 	GetComponent<Light>().color = new Color(255,0,0);
+    }
+}
+```
+
+Si un `GameObject` a un `LightControllerComponent`, mais n'a pas de `Light`, `GetComponent<Light>()` retourne `null`. `null`.color implique un `NullReferenceException` qui n'est jamais `catch`, alors le jeu _crash_.
+
+Bien qu'il soit possible de vérifier pour `null` avec un `if`, il serait bien que n'importe quel `GameObject` qui ajoute un `LightControllerComponent` ajoute aussi une `Light` automatiquement, s'il y en a pas. L'attribut de code `[RequireComponent(...)]` porte ce but.
+
+`RequireComponent(...)` prend en paramètre un objet du type `Type`. La fonction `typeof(T)`, disponible dans tout code C#, retourne un `Type` basé sur le `T` fourni.
+
+```
+using UnityEngine;
+
+[RequireComponent(typeof(Light))]
+public class LightControllerComponent : MonoBehaviour
+{
+    void Awake()
+    {
+    	Change la couleur de la lumière du GameObject pour rouge
+ 	GetComponent<Light>().color = new Color(255,0,0);
+    }
+}
+```
+
+**N.B.** Les objets qui possèdent un script sans `RequireComponent(...)` et qui se font ajouter l'instruction plus tard **n'ajoute pas automatiquement la composante requise**.

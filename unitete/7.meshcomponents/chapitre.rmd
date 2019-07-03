@@ -1,0 +1,14 @@
+## `Material`
+Un
+
+## `MeshFilter`
+Un `MeshFilter` est un composante qui a un attribut `mesh` de type `Mesh`. Un `Mesh` est, essentiellement, un modèle 3D. En français, le mot pour _mesh_ est _maillage_.
+
+Un maillage est une structure de donnée contenant une liste de points, de triangles, d'UVs, etc. Bref, un maillage contient toutes les données brutes pour afficher une géométrie dans un espace 3D. Ceci n'inclut pas les matériels, par contre. Les matériels sont associés à la tâche de texturé une géométrie avec un _shader_.
+
+Bien qu'il soit possible de générer un maillage via code, les maillages sont souvent importés dans un projet. Les extensions de fichiers populaires sont .obj, .3ds, .x, etc.
+
+## `MeshRenderer`
+En infographie, le verbe _render_ fait souvent référence au processus de traiter des données pour rendre une image. Un `MeshRenderer` a le but de, comme son nom implique, de créer une image pour un maillage. Cette composante utilise le `mesh` du `MeshFilter` et un matériel pour faire la rendu. Un `MeshRenderer` a donc une dépendance sur le fait que le `GameObject` qui le possède a aussi un `MeshFilter`. Comme attendu, l'instruction `[RequireComponent(typeof(MeshFilter))]` est présent dans le code de `MeshRenderer`.
+
+

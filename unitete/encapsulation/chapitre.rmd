@@ -1,0 +1,13 @@
+## Enjeu d'encapsulation
+Les pratiques P.O.O. encourage le masquage de données et l'encapsulation. Mettre tous les attributs d'une composante `public` implique qu'un code client (typiquement une autre composante voulant faire appel à des services de celle-ci) peut manipuler l'état de la composante sans restreints. Aussi, dans un _IDE_, les outils comme _Intellisense_ afficheront des données qui ne sont pas nécessairement pertinent pour un client, ce qui augmente la complexité de l'utilisation de la composante.
+
+Bien qu'il soit possible de mettre un attribut `private`, celui-ci ne s'affichera pas dans l'inspecteur. La méthode d'utiliser l'inspecteur pour remplacer un constructeur paramétrique ne s'applique donc plus.
+
+En plus, l'inspecteur modifie directement la valeur d'un attribut. Ceci implique qu'**une propriété associée à l'attribut est ignorée et toutes validations sont outrepassées**. Pour valider l'initialisation d'une composante, il faut utiliser une technique différente d'affecter des propriétés dans un constructeur.
+
+## `[SerializeField]`
+
+## `OnValidate`
+
+## `OnValidate` + accesseurs/mutateurs
+

@@ -15,3 +15,6 @@ urlcolor: blue
 3. [Les fenêtres de l'éditeur](ch3/3.html)
 4. [Manipuler des `GameObject` dans l'éditeur](ch4/4.html)
 5. [Écrire son premier script](ch5/5.html)
+
+## Ressources
+1. [Mood Doge](AssetsSummer.zip)
