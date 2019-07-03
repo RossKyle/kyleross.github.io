@@ -10,11 +10,12 @@ urlcolor: blue
 ---
 
 ## Chapitres
-1. [Introduction aux bases d'Unity](ch1/1.html)
-2. [Unity Hub](ch2/2.html)
-3. [Les fenêtres de l'éditeur](ch3/3.html)
-4. [Manipuler des `GameObject` dans l'éditeur](ch4/4.html)
-5. [Écrire son premier script](ch5/5.html)
+1. [Introduction aux bases d'Unity](1.intro/chapitre.html)
+2. [Unity Hub](2.unityhub/chapitre.html)
+3. [Les fenêtres de l'éditeur](3.fenetresediteur/chapitre.html)
+4. [Manipuler des `GameObject` dans l'éditeur](4.goediteur/chapitre.html)
+5. [Écrire son premier script](5.premierscript/chapitre.html)
+6. [Communication entre composantes](6.commcomposantes/chapitre.html)
 
 ## Ressources
 1. [Mood Doge](AssetsSummer.zip)
