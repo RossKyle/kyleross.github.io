@@ -76,8 +76,8 @@ public class LightControllerComponent : MonoBehaviour
 {
     void Awake()
     {
-    	Change la couleur de la lumière du GameObject pour rouge
- 	GetComponent<Light>().color = new Color(255,0,0);
+        //Change la couleur de la lumière du GameObject pour rouge
+        GetComponent<Light>().color = new Color(255,0,0);
     }
 }
 ```
@@ -96,8 +96,8 @@ public class LightControllerComponent : MonoBehaviour
 {
     void Awake()
     {
-    	Change la couleur de la lumière du GameObject pour rouge
- 	GetComponent<Light>().color = new Color(255,0,0);
+        //Change la couleur de la lumière du GameObject pour rouge
+        GetComponent<Light>().color = new Color(255,0,0);
     }
 }
 ```

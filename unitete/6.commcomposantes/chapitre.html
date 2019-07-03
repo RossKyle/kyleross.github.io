@@ -476,8 +476,8 @@ public class LightControllerComponent : MonoBehaviour
 {
     void Awake()
     {
-        Change la couleur de la lumière du GameObject pour rouge
-    GetComponent&lt;Light&gt;().color = new Color(255,0,0);
+        //Change la couleur de la lumière du GameObject pour rouge
+        GetComponent&lt;Light&gt;().color = new Color(255,0,0);
     }
 }</code></pre>
 <p>Si un <code>GameObject</code> a un <code>LightControllerComponent</code>, mais n’a pas de <code>Light</code>, <code>GetComponent&lt;Light&gt;()</code> retourne <code>null</code>. <code>null</code>.color implique un <code>NullReferenceException</code> qui n’est jamais <code>catch</code>, alors le jeu <em>crash</em>.</p>
@@ -490,8 +490,8 @@ public class LightControllerComponent : MonoBehaviour
 {
     void Awake()
     {
-        Change la couleur de la lumière du GameObject pour rouge
-    GetComponent&lt;Light&gt;().color = new Color(255,0,0);
+        //Change la couleur de la lumière du GameObject pour rouge
+        GetComponent&lt;Light&gt;().color = new Color(255,0,0);
     }
 }</code></pre>
 <p><strong>N.B.</strong> Les objets qui possèdent un script sans <code>RequireComponent(...)</code> et qui se font ajouter l’instruction plus tard <strong>n’ajoute pas automatiquement la composante requise</strong>.</p>
