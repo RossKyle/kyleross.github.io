@@ -1,0 +1,49 @@
+## Espace de coordonnées
+En infographie 3D, un système de coordonnées cartésien avec trois axes nommées $x$, $y$ et $z$ est utilisé avec un espace pour créer un _espace de coordonnées_. Une scène est l'espace de coordonnées du _monde_ où tous objets résident.
+
+## _Scene Gizmo_
+Dans la fenêtre de la scène, l'orientation de l'observateur est montrée par rapport aux trois axes du système du monde :
+
+![](axemonde.png)
+
+Cet affichage s'appel le _scene gizmo_ et utilise les conventions suivantes :
+
+* $y$ est l'axe « par en haut » et « par en bas »;
+* $x$ est « vers la droite » et « vers la gauche »;
+* $z$ est « en avant » et « en arrière ».
+
+L'horizon et le plan quadrillé visibles dans la scène aident l'observateur à s'orienter. Notamment, l'axe $y$ est toujours perpendiculaire au plan quadrillé.
+
+*N.B.* Il est commun de voir les étiquettes pour $y$ et $z$ inversées dans autres contextes. Le choix de noms pour les axes est subjectif.
+
+## Espace du monde et espace local
+Lorsque l'observateur fait une rotation avec un clic droit, il tourne le monde autour de lui. L'observateur, ne faissant pas parti du monde, ne tourne pas avec.
+
+En contraste, des objets dans le monde sont **relatifs au monde**. Une coordonnée d'objet donnée par rapport au monde est dit d'être donnée dans l'**espace de coordonnées du monde**. Ce terme est souvent simplifié à « espace du monde ». Le point d'origine du monde est $(0,0,0)$, alors la position, rotation et échelle d'un objet dans l'espace du monde sont relatifs au point $(0,0,0)$. Si l'univers se déplace, tourne, s'étire[^1], etc., les transformations sont imperceptibles du point de vue des objets. Le monde n'est donc pas transformable dans Unity et représente un espace absolu.
+
+Un objet a aussi **son propre espace de coordonnées**. Cet espace est nommé l'**espace local**. Dans ce système, le point d'origine de l'objet n'est pas celui du monde, mais celui de son _parent_. Ses axes sont aussi relatif au parent. À tout moment, un objet a une position, rotation et échelle, mais deux ensembles de valeurs pour chaque données, soit l'ensemble _monde_ et _local_. 
+
+Un cube est placé à $(1,0,0)$ dans son espace local, or son parent est placé à $(0,1,0)$ dans l'espace du monde, donc le cube est placé à $(1,1,0)$ dans l'espace du monde.
+
+Position locale : $(1,0,0)$
+Position monde : $(1,1,0)$
+
+Un cube n'a pas subit de rotation à l'entour d'un axe de son espace local, or son parent à subit une rotation de 90 degré autour de l'axe $x$ de l'espace du monde, donc le cube a une rotation de 90 degré autour de l'axe $x$ du monde.
+Rotation locale : $(0,0,0)$
+Rotation monde : $(90,0,0)$
+
+Le parent devient effectivement un « monde » pour l'enfant. Si le parent est transformé, tous les enfants de ce monde subissent la même transformation.
+
+Par exemple, un cube est placé à la position $(1,0,0)$ dans l'espace du monde. Ce cube est le parent d'un deuxième cube qui est placé à $(0,1,0)$ dans son espace local. Le deuxième cube est alors placé à $(1,1,0)$ dans l'espace du monde.
+
+De plus, un enfant peut être parent d'autres objets — il est question d'une hierarchie récursive.
+
+_capsule_
+
+## Orientation
+Faire tourner un objet implique tourner son espace local. Si un objet est tourné à l'entour de son axe $y$ de 180 degrée, l'axe $x$ de l'espace local pointe maintenant dans la direction opposée selon le point de vue d'un observateur externe. Si l'objet subit une translation par rapport à son axe de $x$, il sera déplacer dans cette nouvelle direction (encore selon l'observateur). 
+
+_capsule_
+
+
+[^1] : Étirer ou compresser une scène n'est pas une transformation équivalente à l'expansion de l'Univers du vrai monde.

@@ -1,0 +1,103 @@
+Une classe `Joueur` contient une position (`Vector2`) et une méthode `Déplacer(...)` qui prend en paramètre la direction du déplacement. Les directions possibles sont les 4 points cardinaux (nord, est, sud, ouest).
+
+Une première version de la méthode est écrite comme suit :
+
+```
+public void Déplacer(char direction)
+{
+	if (direction == 'n')
+		Position += new Vector2(0,1);
+	else if (direction == 'e') 
+		Position += new Vector2(1,0);
+	else if (direction == 's') 
+		Position += new Vector2(0,-1);
+	else if (direction == 'o') 
+		Position += new Vector2(-1,0);
+}
+```
+
+Bien que le code suivant soit fonctionnel, il est rigide et long.
+
+* Le code décrit un déplacement pour seulement 4 directions. Ajouter des nouvelles directions possibles demande d'ajouter plus de lignes à la méthode;
+* Une structure `if-else` est plus approprié pour changer de _fil de pensées_. Ici, chaque branche n'est pas pour changer la nature de l'opération à faire, car chacun mène à la même chose ­ changer la position; En fait, il y a une `répétition` : vérifie la direction donnée contre potentiellement chaque directions possibles.
+
+Lorsque ces problèmes sont identifiés, une stratégie pour déterminer une solution est de penser aux données qui sont nécessaires pour réaliser la fonction. Dans le cas de `Déplacer(...)` le but de la fonction est de modifier la propriété `Position` et il y a trois données qui sont en jeu pour y arriver. Celles-ci sont la direction du déplacement, les directions possibles et les déplacements possible selon les directions. Construire un algorithme avec ces données en tête mène à un algorithme plus général, et donc plus réutilisable.
+
+D'abbord, si la fonction reçoit aussi les directions possibles et les déplacements possibles, elle reçoit effectivement tous les informations nécessaires pour être accomplie. Au lieu d'écrire comment la fonction doit agir seulement en code, la fonction agira selon les données reçues. Autrement dit, le déroulement du programme est déterminé par les données et non une logique préprogrammée. Ce modèle de programmation s'appel _data driven_, c.-à-d. _dirigé par les données_. Bien qu'il faut écrire du code pour interpréter les données, les données sont les vedettes.
+
+```
+public void Déplacer(char direction, char[] directionPossibles, Vector2[] deltas)
+{
+	if (directionPossibles.Length != deltas.Length)
+		return;
+	for (int i = 0; i < directionPossibles.Length; i++)
+	{
+		if (direction == directionPossibles[i])
+		{
+			Position += deltas[i];
+			break;
+		}
+	}
+}
+```
+
+Dans cette version de `Déplacer(...)`, la méthode reçoit un tableau de directions possibles et également un tableau de déplacements possibles. L'association entre les directions et leurs déplacements appropriées est fait par leurs positions dans les tableaux. Par exemple, le `Vector2` à la position 0 du tableau `deltas` représente le déplacement à faire pour la direction à la position 0 du tableau `directionPossibles`.
+
+Le déroulement de cette fonction change selon l'ensemble de directions et de deltas, et non par une logique de `if-else`. 
+
+```
+Déplacer('n', new char[]{'n', 's'}, new Vector2[]{new Vector2(0,1), new Vector2(0, -1));
+```
+
+```
+Déplacer('x', new char[]{'w', 'r', 'x'}, new Vector2[]{new Vector2(1,1), new Vector2(-1, 1), new Vector2(-1, -1));
+```
+
+Dans le cas de `Déplacer`, une approche sans `char` peut-être préférable :
+
+```
+public void Déplacer(uint direction, Vector2[] deltas)
+{
+	for (uint i = 0; i < deltas.Length; i++)
+	{
+		if (i == direction)
+		{
+			Position += deltas[i];
+			break;
+		}
+	}
+}
+```
+
+Un autre exemple de programmation dirigé par les données est dans la conception d'un algorithme pour les intrants d'un joueur.
+
+```
+void ProcessDigitalInputs()
+{
+	if (Inputs.GetButtonDown(Button.A))
+		Jump();
+	if (Inputs.GetButtonDown(Button.B))
+		Shoot();
+}
+```
+
+Problèmes :
+
+* Il faut modifier le code pour ajouter/retirer des actions;
+* Les associations boutons→actions sont codées en dur;
+* `if` utilisés pour vérifier des problèmes de la même nature (état d'un bouton), au lieu d'une boucle;
+* Déroulement de la fonction est dicté par la logique;
+
+Solution :
+
+* Identifier le but — faire une action selon quel(s) boutton(s) sont pressés;
+* Identifier les données nécessaires — les boutons à vérifier et les actions (délégués) associées à chaque bouton;
+ 
+```	
+void ProcessDigitalInputs(Button inputsToCheck, Action[] actions)
+{
+	for (int i = 0; i < inputs.Length; i++)	
+		if (Inputs.GetButtonDown(inputs[i])
+			actions[i]();
+}
+```

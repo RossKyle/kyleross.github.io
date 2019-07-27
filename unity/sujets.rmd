@@ -1,0 +1,25 @@
+Info
+* Modèle de communication avec un moteur de jeu (communication entre programmes);
+* Langage de scripting;
+* Architecture Entity-Component;
+* Bibliothèque;
+* Évènements;
+* Gameloop;
+* FPS et gestion du temps;
+* Découplage avec des interfaces;
+* Modèle Observateur;
+* Programmation évènementiel;
+* Architecture trois-tiers;
+* Maillage;
+* Matériau;
+* Shader;
+* Data-driven;
+
+Physique
+* Relativité d'espace;
+
+Math
+* Espace de coordonnées, espace monde, espace local;
+* Orientation;
+* Vecteur comme point, vecteur comme direction;
+* Transformations 3D (position/translation, rotation, échelle);

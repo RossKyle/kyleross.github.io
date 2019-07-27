@@ -1,0 +1,10 @@
+Le paradigme de **programation évènementiel** est une implémentation du modèle observateur. Celui-ci est basé sur les notions d'évènements qui sont déclenchés lorsqu'une condition est satisfaite. Quand l'évènement est déclenché, des actions attachées peuvent être exécutées, en plus d'une logique par défaut. Ces actions fournies à un évènement sont donc des délégués. Dans le contexte évènementiel, de tels délégués sont appelés des « fonctions de rappel » (_callbacks_, en anglais). 
+
+Le cas le plus commun de programation évènementiel est dans la conception d'application avec une interface graphique. Une interface graphique est composée d’éléments comme des boutons, curseurs et zones de textes. Ces éléments répondent à l’utilisateur sous forme d’évènements. Par exemple, un bouton déclenche un évènement lorsque l’utilisateur effectue un clic dessus et l'évènement exécute une logique pour sauvegarder un formulaire.
+
+## `event EventHandler`
+
+Le _callback_ est une fonction qui prend deux paramètres et ne retourne pas de valeurs, comme un `Action<T1, T2>`. Les types de ses deux paramètres sont `object` et `EventArgs`. Avec les `event` C#, le _callback_ doit être une fonction qui prend plus de deux paramètre sans plus ni moins. Si la fonction nécessite plus de paramètres ou de retourner une valeur, ces données sont contenu dans l'`EventArgs` reçu. `EventArgs` est un objet consacré à passer de l'information entre le déclencheur de l'évènement et ses l'information entre le déclencheur de l'évènement et ses _callbacks_.
+
+## Chaine de déclenchements
+

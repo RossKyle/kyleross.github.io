@@ -1,0 +1,150 @@
+Supposons le code suivant :
+
+```
+public class MoveComponent: MonoBehaviour
+{
+    void Update()
+    {
+        //La méthode Translate à un paramètre fait une translation 
+        //dans l'espace local avec le vecteur donné
+        transform.Translate(new Vector3(1,0,0)); //translation de 1 unité sur l`axe x local
+    }
+}
+```
+Le vecteur de vitesse est $(1,0,0)$. En une seconde, il est _attendu_ qu'un `GameObject` avec un `MoveComponent` se déplace de 60 unités sur son axe de $x$ local, si le jeu vise 60 FPS. Par contre, si la cible est 30 FPS, l'objet est attendu de se déplacer de 30 unités. Avec ce code, l'état du jeu dépend de la mesure des FPS. Le temps se mesure en _frame_ et non en seconde.
+
+* $\Delta x = V_x_i  \Delta t$
+Supposons $t = 60 frames$; $\Delta x = 1u/f * 60f = 60u$
+
+## Compter des _frames_
+En comptant des _frames_, il est possible de faire des opérations après un lapse de temps (toujours mesuré en _frames_).
+
+```
+public class MoveComponent: MonoBehaviour
+{
+    uint tempsÉcoulé;
+    void Update()
+    {
+        //faire la translation à chaque 60 frames
+        if (tempsÉcoulé == 60)
+        {
+            transform.Translate(new Vector3(1,0,0));
+            tempsÉcoulé = 0;
+        }	
+	else
+	    tempsÉcoulé++;
+    }
+}
+```
+
+## Problèmes avec mesurer le temps en _frames_
+Utiliser les _frames_ comme unité de temps, peut causer des problèmes. Un utilisateur peut forcer un jeu à cibler un FPS plus élevé qu'attendu pour que le temps s'écoule plus vite, par exemple, et « briser » un [jeu multijoueur](https://kotaku.com/fallout-76-betas-physics-are-tied-to-its-framerate-1830140345?IR=T).
+
+
+De plus, il est commun que la mesure des FPS fluctue pendant le jeu. Il est très improbable que deux processeurs — malgré qu'ils soient du même modèle — produisent la même performance. Ceci s'applique sur tous les autres composants d'un ordinateur. Dans la plupart des cas, il est **déconseillé que les vitesses, accélérations et autres taux soient en fonction du FPS**. Si un développeur détermine que le joueur devrait se déplacer de 60 unité par seconde, ceci devrait être le cas même si les FPS varient entre 30 et 120. 
+
+## Logique selon le temps réel
+Supposons qu'un objet doit se déplacer de 60 unités de longueur par seconde et que le temps entre chaque frame est de 1 seconde. À chaque _frame_, l'objet doit se déplacer de 60 unités.
+
+x/1s = 60/1s → x = 60
+
+Maintenant, supposons que le FPS est de 2, donc le temps entre chaque _frame_ est 0.5 seconde ; l'objet doit se déplacer de 30 unités par frames.
+
+x/0.5s = 60/1s → x = 30 
+
+Pour déterminer le nombre d'unité dont l'objet doit se déplacer à un _frame_ donné, tout ce qu'il faut savoir est le temps entre chaque _frame_.
+
+Plus que les FPS est haut, moins de temps qu'il y a entre chaque frame et plus que le déplacement paraît fluide, mais l'objet arrivera au même endroit après une seconde peut importe les FPS. Si le temps entre deux frames est plus long, le déplacement à faire est plus grand pour compenser.
+
+0   1   2   3   4   5  6   7
+ 100 100 200 200 200 50 150
+ 
+## `Time.deltaTime`
+L'API Unity donne une propriété calculée qui sonde le moteur pour savoir combien de secondes le dernier _frame_ a prit pour compléter. Cette propriété est `deltaTime` et se trouve dans la classe `Time`. La propriété est `static` et `public`, alors elle est accessible en tout temps, tant que l'API est importé avec `using UnityEngine`.
+
+
+Pour un déplacement de 60 unités par seconde, invariable des FPS :
+```
+public class MoveComponent: MonoBehaviour
+{
+    void Update()
+    {
+        transform.Translate(new Vector3(60,0,0) * Time.deltaTime);
+    }
+}
+```
+
+## Compter le temps réel
+Supposons un déplacement de 1 unité par seconde, invariable des FPS :
+
+0   1   2   3   4
+ 200 300 100 450
+ 
+Après que 4 _frames_ soient passés, le temps écoulé est de 1050ms. Rendu au 5^e _frame_ (_frame_ 4), le temps écoulé a dépassé une seconde et l'objet est déplacé, mais il y a une erreur de 50 ms. Ces erreurs peuvent s'accumuler rapidement, alors il est important de ne pas repartir le chronomètre à 0s. Aussi, un FPS plus élevé réduit la marge d'erreur, car il y a moins de temps entre chaque _frame_ donc moins de temps avant de réaliser que le temps écoulé ait dépassé une seconde.
+ 
+```
+public class MoveComponent: MonoBehaviour
+{
+    uint tempsÉcoulé;
+    
+    void Update()
+    {
+        tempsÉcoulé += Time.deltaTime;
+	
+        //faire la translation à chaque 60 frames
+        if (tempsÉcoulé > 1)
+        {
+            transform.Translate(new Vector3(1,0,0));
+            tempsÉcoulé -= 1;
+        }	
+    }
+}
+```
+
+Cet algoritme est pratique pour mesuré les FPS :
+
+```
+public class FPSMesurerComponent : MonoBehaviour, IDataProvider;
+{
+    uint tempsÉcoulé;
+    uint nbFrames;
+    
+    void Update()
+    {
+	nbFrames++;
+	tempsÉcoulé += Time.deltaTime;
+	
+        if (tempsÉcoulé > 1)
+        {
+	    Data = nbFrames;
+	    nbFrames = 0;
+            tempsÉcoulé -= 1;
+        }	
+    }
+}
+
+using UnityEditor;
+
+[RequireComponent(typeof(Text))]
+[RequireComponent(typeof(IDataProvider))]
+public class TextUpdateComponent : MonoBehaviour
+{
+    Text textComponent;
+    IDataProvider textDataProvider;
+    
+    void Awake()
+    {
+        textComponent = GetComponent<Text>();
+	textDataProvider = GetComponent<IDataProvider>();
+    }
+    
+    void Update()
+    {
+        textComponent.text = textProvider.Data;
+    }
+}
+```
+
+*N.B.* Dans cet exemple, le `IDataProvider` est le contexte de données qui fourni l'information (`Data`) à être utilisé par l'affichage. Une autre façon d'assigner un contexte de données à une composante sera vu lors du chapitre sur les `ScriptableObjects`.
+
+L'article suivant est un des plus populaires à propos des sujets de ce chapitre : https://web.archive.org/web/20190403012130/https://gafferongames.com/post/fix_your_timestep/ 

@@ -1,0 +1,89 @@
+Un _game loop_ (boucle de jeu, en français) décrit le fil d'exécution du jeu après son démarrage. Un _game loop_ contient les étapes majeures suivantes :
+
+* Gérer les intrants utilisateur;
+* Mettre à jour la scène (et tout les entités qu'elle contient, forcémment);
+* Rendre une image à l'écran qui réflète le nouvel état de la scène;
+* Attendre avant de passer à la prochaine itération de la boucle;
+
+Voici un organigramme qui démontre une boucle de jeu simplifié :
+
+Le suivant est un pseudocode contenant un _game loop_ comme celui de l'organigramme :
+
+```
+int main()
+{
+    while(true)
+    {
+        GérerIntrants();
+        MettreÀJour();
+        RendreImage();
+        Attendre();
+    }
+}
+```
+
+La raison pour laquelle il faut attendre est que la boucle sera exécutée aussi vite que l'ordinateur est capable. Un jeu ne devrait pas un diaporama, mais il ne doit pas être trop vite. De plus, la majorité des écrans ne sont pas en mesure d'afficher plus de 60 images rendues par seconde. Il existe aussi des écrans pouvant afficher jusqu'à 240 images par secondes — ceux-ci sont destinés aux enthousiastes de jeux vidéos.
+
+Avec ce pseudocode, il est alors désirable d'avoir entre 60 et 240 mise à jour/rendues par seconde. Chaque itération de la boucle s'appel une _frame_. La vitesse d'un jeu se mesure alors en _frame_ par seconde; soit le fameux _FPS_.
+
+Il existe des modèles de boucle de jeu où il est possible d'avoir plus de mise à jour que d'images rendues. Ceux-ci sont plus réaliste. Unity possède une boucle sophistiquée, alors il n'est pas nécéssaire de réecrire une boucle. Pour le programmeur, le plus important est de dire à Unity comment une composante devrait être mise à jour lorsque le moteur appel son équivalent à `MettreÀJour()` dans son _game loop_.
+
+## La fonction `void Update()`
+Par défaut, le moteur vise à mettre à jour chaque composante dans une scène 60 fois par seconde, donc une mise à jour à tous les 16.67ms. À chaque interval de temps, le moteur déclenche un évènement pour exécuter un _callback_ ; comme pour le _callback_ à appeler après la première instanciation d'une composante (`void Awake()`), une fonction `void Update()` peut être ajoutée à un script.
+
+```
+public class FooComponent: MonoBehaviour
+{
+    void Update()
+    {
+        transform.Translate(new Vector3(0.1f, 0, 0));
+    }
+}
+```
+
+## Enjeux de performance
+Supposons le script `FooComponent` :
+```
+[RequireComponent(typeof(Light))]
+public class FooComponent: MonoBehaviour
+{
+    void Update()
+    {
+        GetComponent<Light>().color = 
+            new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+    }
+}
+```
+
+Ce code cherche une référence vers une instance de `Light` et affecte sa propriété `color` 60 fois par seconde. Malgré que ce script peut paraître bien écrit, il possède un défaut majeur : `GetComponent<Light>()` est appelée 60 fois par seconde et **retourne toujours la même valeur** ! La référence à la `Light` devrait être cherchée qu'une seule fois.
+
+En plus, lors de l'écriture d'une composante, il faut toujours garder en tête qu'un **très grand nombre d'objets peuvent avoir une instance de la composante**. Si 100 `GameObjects` possèdent un `FooComponent`, il y a $100 * 60$ appels qui sont fait par seconde, lorsqu'il devrait avoir que 100 appels au total (chaque objet cherche leur lumière qu'une seule fois).
+
+Il ne faut pas concevoir des algorithmes qui ne tiennent pas compte de la notions de « scalabilité ». La scalabilité est la capacité d'un système à s'adapter à un changement d'ordre de grandeur. Dans ce cas, la performance du système pour changer la couleur des lumières paraît bien lorsqu'il y a un `FooComponent` dans la scène, mais se détériore rapidement avec l'ajout de plusieurs autres `FooComponent`. Le système n'est pas _scalable_. 
+
+## Awake + Update
+La solution au problème soulevé ci-dessus est de garder en mémoire la référence vers la `Light`, au lieu de la chercher à chaque fois qu'il y a un besoin de l'utiliser.
+
+Un attribut d'instance est ajouté et affecté dans `void Awake()`, qui agit, en pratique, comme un constructeur.
+
+```
+[RequireComponent(typeof(Light))]
+public class FooComponent: MonoBehaviour
+{
+    Light lightComponent;
+    
+    void Awake()
+    {
+    	lightComponent = GetComponent<Light>();
+    }
+    
+    void Update()
+    {
+        lightComponent.color = 
+            new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+    }
+}
+```
+
+Bien que chaque instance de `FooComponent` occupera plus d'espace en mémoire vive, c'est un petit coût de ressources pour atteindre un FPS potentiellement plus élevé. Une machine dîte 64 bit implique que la taille d'une addresse mémoire est 64 bits. Une référence est une addresse mémoire, alors si la taille d'une référence est 64 bits (8 octets).
+

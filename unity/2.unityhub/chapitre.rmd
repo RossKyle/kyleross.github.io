@@ -1,0 +1,40 @@
+---
+title: "Unity Hub"
+output:
+  html_document:
+    mathjax: null
+    theme: lumen
+    css: ../styles.css
+link-citations: true
+urlcolor: blue
+---
+
+_Unity Hub_ est un logiciel pour gérer les projets Unity et les versions d'Unity installées sur la machine. Il est préférable d'utiliser ce logiciel pour créer et ouvrir des projets.
+
+## Installer Unity Hub
+https://store.unity.com/download?ref=personal 
+
+## Installer une version d'Unity
+
+### Aller dans la section _Installs_
+![](install.png)
+
+### Sélectionner la version finale la plus récente
+![](install2.png)
+
+### Sélectionner les ajouts
+![](install3.png)
+<br>
+
+## Créer un nouveau projet Unity
+
+### Aller dans la section _Projects_
+![](new.png)
+
+### Nommez le projet et choisir l'emplacement
+![](new2.png)
+<br> 
+
+## Ouvrir un projet Unity
+### Aller dans projects et cliquer sur un projet
+![](open.png)

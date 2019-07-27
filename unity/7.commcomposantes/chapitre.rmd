@@ -31,9 +31,12 @@ public class MoveComponent : MonoBehaviour
 
 Dans `void Awake()`, il faut placer l'objet de jeu à $(1,1,1)$ de son parent. Dans le cas qu'il n'y a pas un parent, son point d'origine devient le $(0,0,0)$ absolu.
 
-La composante `Transform` d'un objet de jeu contient les données qui seront utilisées par le moteur pour placer l'objet dans la scène. À l'intérieur de `MoveComponent`, il faut un moyen de chercher une référence à l'instance de `Transform` que le `GameObject` possède, afin de changer l'état de la `Transform`. Par chance, un `MonoBehaviour` hérite de la méthode `GetComponent<T>()`. Cette méthode retourne une référence vers la composante `T` du `GameObject`.
+La composante `Transform` d'un objet de jeu contient les données qui seront utilisées par le moteur pour placer l'objet dans la scène. À l'intérieur de `MoveComponent`, il faut un moyen de chercher une référence à l'instance de `Transform` que le `GameObject` possède, afin de changer l'état de la `Transform`. Par chance, un `MonoBehaviour` hérite de la méthode `GetComponent<T>()`. Cette méthode retourne soit une composante ou une `interface` :
 
-Si le `GameObject` n'a pas la composante `T`, la méthode retourne `null`. Pour retourner tous les composantes du même type, il existe la méthode `GetComponents<T>()`.
+* si `T` est un `MonoBehaviour`, une référence vers la composante `T` est retournée;
+* si `T` est une `interface`, une référence vers une composante qui implémente l'interface `T` est retournée.
+
+Si le `GameObject` n'a pas de composantes `T` (ou qui implémente `T`), la méthode retourne `null`. Pour retourner tous les composantes du même type, il existe la méthode `GetComponents<T>()`.
 
 
 ```

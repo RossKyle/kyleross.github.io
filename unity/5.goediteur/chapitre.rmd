@@ -1,4 +1,4 @@
-## ---
+---
 title: "Manipuler des `GameObject` dans l'éditeur"
 output:
   html_document:
@@ -25,14 +25,15 @@ Tout le code pour la classe `Transform` est déjà écrit (bibliothèque _UnityE
 
 Chaque attribut est du type `Vector3`. Un `Vector3` est une `struct` (type valeur) contenant trois `float`, soit `x`, `y` et `z`. Une instance de `Vector3` a aussi plusieurs méthodes.
 
-### Relativité : transformation locale c. absolue
-Changer ces valeurs transforme le `GameObject` par rapport à son origine. Par exemple, une position de $(1,0,0)$ implique que le `GameObject` subit une translation de 1 unité de distance sur l'axe de $x$, par rapport à son origine.
+Changer les valeurs ci-dessus transforme le `GameObject` par rapport à son origine. Par exemple, une position de $(1,0,0)$ implique que le `GameObject` subit une translation de 1 unité de distance sur son axe de $x$, par rapport à son origine.
 
-La hiérarchie porte bien son nom, car les `GameObject` ne sont pas qu'une liste de composantes, mais aussi une liste de `GameObject` enfants. Un `GameObject` peut alors être le **parent** de plusieurs autres objets, et ces objets peuvent aussi être des parents et ainsi de suite. Lorsqu'un objet de jeu n'a pas un parent, son point d'origine est le point $(0,0,0)$ absolu de la scène. Par exemple, `Main Camera` et `Directional Light` n'ont pas de parents, donc ils ont la même valeur de point d'origine, soit $(0,0,0)$. Par contre, lorsqu'un `GameObject` possède un parent, son point d'origine devient la position absolue du parent. Les transformations relatifs aux parents sont dîtes **locales**. Par exemple, dans l'inspecteur, c'est la valeur de `localPosition` qui est réellemment exposée. 
+La hiérarchie porte bien son nom, car les `GameObject` ne sont pas qu'une liste de composantes, mais aussi une liste de `GameObject` enfants. Un `GameObject` peut alors être le **parent** de plusieurs autres objets, et ces objets peuvent aussi être des parents et ainsi de suite. Lorsqu'un objet de jeu n'a pas un parent, le monde est considéré son parent. Par exemple, `Main Camera` et `Directional Light` n'ont pas de parents, donc ils ont la même valeur de point d'origine, soit $(0,0,0)$. Par contre, lorsqu'un `GameObject` possède un parent, son point d'origine devient la position absolue du parent. 
+
+L'inspecteur affiche les valeurs d'une `Transform` seulement pour l'espace local d'un `GameObject`. Plus précisément, ces propriétés sont `localPosition`, `localRotation` et `localScale`.
 
 _Kyle, met une capsule ici, gros lâche_
 
-Les transformation absolues (donc relatifs à la scène, et non un objet parent), sont qualifíés de **world**. La position absolue dans le monde du jeu est `worldPosition`, notamment. Si un `GameObject` n'a pas un parent, ses transformations locales et _world_ sont équivalentes.
+Les transformation dans l'espace du monde (donc relatifs à la scène, et non un objet parent), sont qualifíés de _world_. Notamment, la position absolue dans le monde du jeu est la propriété `position`. Il existe aussi les propriétés `rotation` et `scale`, pour la rotation autour des axes de l'espace du monde et l'échelle selon les axes du monde, respectivement. Si un `GameObject` n'a pas un parent, ses valeur de transformations locales et _world_ sont équivalentes.
 
 ## Modifier la `Transform` d'un `GameObject` dans l'éditeur
 
@@ -40,11 +41,12 @@ Bien que l'inspecteur permet la modification des trois valeurs principales d'une
 
 Dans le coin supérieur gauche de l'éditeur se trouve des boutons pour modifier les transformations appliquées sur un objet : ![](transbuttons.png)
 
+
 ### Move Tool (position)
 
 Raccourci : W
 
-Cet outil permet de déplacer un `GameObject` sur ses axes (x, y, z). Chaque axe a une couleur, afin de les identifier : rouge → x, vert → y, bleu → z. Avec la souris, « tirer » ou « pousser » sur un axe pour déplacer l'objet. Il est aussi possible de « glisser et déposer » l'objet en débutant le clic à l'intersection des trois axes (qui n'est toujours au centre le l'objet).
+Cet outil permet de déplacer un `GameObject` sur les axes (x, y, z). Chaque axe a une couleur, afin de les identifier : rouge → x, vert → y, bleu → z. Avec la souris, « tirer » ou « pousser » sur un axe pour déplacer l'objet. Il est aussi possible de « glisser et déposer » l'objet en débutant le clic à l'intersection des trois axes (qui n'est toujours au centre le l'objet).
 
 ### Rotate Tool (rotation)
 

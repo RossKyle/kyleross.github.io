@@ -1,0 +1,36 @@
+_Si les sujets de délégués et lambdas sont nébuleux, révisez [ici](...)_
+
+Le modèle de conception nommé **« observateur »** permet de notifier un _observateur_ lors d'une mise à jour de son _observé_.
+
+Par exemple, un programme client a un observateur qui observe une base de donnée sur un serveur à distance. Lorsqu'un nouvel enregistrement est entrée dans la base de donnée, le programme met à jour son interface graphique pour afficher des informations par rapport au nouvel enregistrement.
+
+## `Action`
+
+Une `Action` est un type qui représente une référence vers une fonction qui retourne rien. Une `Action` est essentiellement un `Func<T>` où `T` est `void`.  
+
+Habituellement, une `Action` est affectée avec la valeur d'un délégué exprimé par une lambda. Sinon, le délégué peut être une fonction nommée. Soyez prudent à ne pas affecter l'`Action` avec le _résultat_ d'une fonction ; un délégué est effectivement une fonction, une logique.
+
+```
+Action dimensionChangée = () => Console.WriteLine("Une dimension a été changée.");
+```
+
+```
+Action dimensionChangée = OnDimensionChangée; //Pas de ()!
+
+void OnDimensionChangée()
+{
+	Console.WriteLine("Une dimension a été changée.");
+}
+```
+
+## Implémentation du modèle observateur avec `Action`
+
+<iframe width="100%" height="675" src="https://dotnetfiddle.net/Widget/hUadEJ" frameborder="0"></iframe>
+
+Dans l'exemple ci-dessus, l'instance d'`Observateur` dit à son observé quelle logique exécutée lorsque sa valeur de `Foo` est changée. La fonctionnalité donnée est d'ajouter la valeur de `Foo` de l'observé dans la liste `Bar` de l'observateur. Il y a effectivement une communication entre l'observé et l'observateur.
+
+Il existe aussi les classe `Action<T>`, `Action<T1, T2>`, `Action<T1, T2, T3>`, etc. où chaque `T` est un type de paramètre que le délégué reçoit. Ceux-ci sont des versions de `Func<TResult, T1, ...>` sans `TResult`.
+
+Pour un cas plus concret utilisant une base de données, téléchargez [ce projet](...)
+
+Ces exemples montrent une implémentation très simple du modèle de conception, mais le principe d'utiliser des délégués demeure au coeur des implémentations complexes.

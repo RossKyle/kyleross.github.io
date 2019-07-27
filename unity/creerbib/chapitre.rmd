@@ -1,0 +1,10 @@
+Dans des langages sans machine virtuelle, tel que C/C++, une bibliothèque est une collection de fichiers binaires. Ces fichiers sont produits en compilant du code source en langage machine (code natif). Un programmeur peut ensuite appeler des fonctionnalités définies dans le code de la bibliothèque sans le besoin de les compiler lui-même. Sur Windows, une bibliothèque prend habituellement la forme d'un fichier _dll_ (dynamically linked library).
+
+Pour C#, les bibliothèques ont une différence significative : elles ne contiennent pas que du code natif. Le code source C# est majoritairement compilé en code intermédiaire pour être évaluer par la machine virtuelle. Le code destiné à être compilé en intermédiaire s'appel _managed code_. Un _dll_ pour C# est donc principalement composé de _managed code_. En C#, _unmanaged code_ réfère au code C# qui est compilé en code natif.
+
+## Créer une bibliothèque avec _Visual Studio_
+
+## Créer une bibliothèque avec _Rider_
+
+## Importer la bibliothèque dans un projet Unity
+
